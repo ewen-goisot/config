@@ -1,0 +1,47 @@
+
+#pour remettre par defaut: Paper puis enlever le theme
+#j'ai aussi modifie le theme arthur pour faire arthur2, qui a transparence, espacements ... mais qui consomme la carte graphique
+
+rofi.color-window: #ff4444, #dddddd, #ffffff
+#  fond1, ecriture, fond2, selectionne, ecriture selectionne
+rofi.color-normal: #00ccee, #000000, #cccc22, #000000, #ffff00
+rofi.color-active: #eeffee, #000000, #eeffee, #220022, #ffffff
+rofi.color-urgent: #bb0000, #ffffff, #bb0000, #220000, #ff8888
+
+rofi.width: 70
+#rofi.height: 50
+rofi.line-margin: 0
+rofi.lines: 15
+rofi.font: DejaVu Sans Mono 10
+#rofi.separator-style: none
+rofi.columns: 7
+#rofi.font: Inconsolata Bold 22
+rofi.bw: 2
+rofi.eh: 1
+#rofi.hide-scrollbar: true
+#rofi.auto-select: true
+###########
+
+#!rofi.display-drun:⚌
+rofi.sidebar-mode: true
+#multi-select : ne marche pas pour l'instant/je dois comprendre pourquoi
+#pour voir les racourcis clavier de rofi dans rofi, "rofi -show keys"
+#rofi.opacity:50
+#rofi.fixed-num-lines:false
+
+rofi.show-icons: true
+rofi.disabble-history: true
+
+#shift + flèches pour changer de mode
+#choix=$(echo "hello
+#goodbye" | rofi -dmenu -p "message")
+rofi.kb-select-1: KP_1
+rofi.kb-select-2: KP_2
+rofi.kb-select-3: KP_3
+rofi.kb-select-4: KP_4
+rofi.kb-select-5: KP_5
+rofi.kb-select-6: KP_6
+rofi.kb-select-7: KP_7
+rofi.kb-select-8: KP_8
+rofi.kb-select-9: KP_9
+rofi.kb-select-0: KP_0
