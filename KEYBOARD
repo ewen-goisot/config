@@ -1,0 +1,84 @@
+partial alphanumeric_keys
+xkb_symbols "oss" {
+
+
+   include "keypad(oss)"
+
+    name[Group1]="French (alt.)";
+
+augment "level5" 
+	
+	key.type[Group1] = "ONE_LEVEL";
+    key <AC06>	{ [         Caps_Lock ] };
+
+    key <AB04>  { [ ISO_Level3_Shift ] };
+    key <AB05>  { [          Shift_L ] };
+    key <AB06>  { [          Super_R ] };
+	key <AB07>	{ [ ISO_Level5_Shift ] };
+
+
+	key <LCTL>  { [ Multi_key ] };
+	key <LWIN>	{ [ Super_L] };
+	key <LALT>	{ [ Control_L] };
+	key <RALT>	{ [ Alt_L] };
+    key <RWIN>	{ [ Shift_R] };
+	key <RCTL>  { [ Control_R  ] };
+
+	modifier_map Shift   { Shift_L, Shift_R };
+	modifier_map Lock    { Caps_Lock }; // caps lock
+	modifier_map Control { Control_L, Control_R };
+
+	key.type[Group1] = "EIGHT_LEVEL";
+    key <TLDE>	{ [U25A1,  U20D7, U27C2, U221E, U221A] };
+    key <AE01>	{ [KP_1, 1, notsign, U2205] };
+    key <AE02>	{ [KP_2, 2, U2200, U2234] };
+    key <AE03>	{ [KP_3, 3, U2203, U2235] };
+    key <AE04>	{ [KP_4, 4, U2208] };
+    key <AE05>	{ [KP_5, 5, U2282] };
+    key <AE06>	{ [KP_6, 6, U2229, U22C0] };
+    key <AE07>	{ [KP_7, 7, U222A, U22C1] };
+    key <AE08>	{ [KP_8, 8, Greek_SIGMA, Greek_sigma] };
+    key <AE09>	{ [KP_9, 9, Greek_PI, Greek_pi] };
+    key <AE10>	{ [KP_0, 0, U222B, U222E, U2218] };
+    key <AE11>	{ [apostrophe, apostrophe, U222C, U222F, U2206 ] };
+    key <AE12>	{ [quotedbl, quotedbl, U222D, U2230, U2207 ] };
+
+	key.type[Group1] = "EIGHT_LEVEL"; //
+    key <TAB>	{ [ ecircumflex, Ecircumflex ] };
+    key <AD01>	{ [ b, B, question, question, bar, U2016 ] };
+    key <AD02>	{ [ eacute, Eacute, ugrave, Ugrave, ampersand  ] };
+    key <AD03>	{ [ p, P, exclam, exclam, dollar ] };
+    key <AD04>	{ [ o, O, ubreve, Ubreve, numbersign ] };
+    key <AD05>  { [ egrave, Egrave, dead_tilde, dead_tilde, asciitilde ] };
+    key <AD06>	{ [ k, K ] }; //
+    key <AD07>	{ [ dead_circumflex, quotedbl, grave, dead_grave, slash ] }; //
+    key <AD08>	{ [ v, V, Home, Home, parenleft ] };
+    key <AD09>	{ [ d, D, Prior, Prior, parenright ] };
+    key <AD10>	{ [ l, L, Next, Next, braceleft ] };
+    key <AD11>	{ [ j, J, End, End, braceright ] };
+    key <AD12>	{ [ ccedilla, Ccedilla, a, a,  backslash ] };
+
+    key <CAPS>	{ [ period] }; //
+    key <AC01>	{ [ a, A, Insert, Insert, at ] }; //
+    key <AC02>	{ [ u, U, Tab, ISO_Left_Tab, colon ] };
+    key <AC03>	{ [ i, I, Escape, Escape, bracketleft ] };
+    key <AC04>	{ [ e, E, Return, Return, bracketright ] };
+    key <AC05>	{ [ comma, a, a, a,  semicolon ] };
+    key <AC07>	{ [ c, C, BackSpace, Backspace, minus ] };      
+    key <AC08>	{ [ t, T, Left, Left, underscore] };
+    key <AC09>	{ [ s, S, Up, Up, equal, U2260] };
+    key <AC10>	{ [ r, R, Down, Down, plus, U2A01] };
+    key <AC11>	{ [ n, N, Right, Right, asterisk, U2A02] };
+    key <BKSL>	{ [ m, M, Delete, Delete, percent] };
+ //   key <RTRN>	{ [ m, M, Delete, Delete, percent] };
+
+    key <LFSH>	{ [ w, W] }; //
+    key <LSGT>  { [ z, Z, U2202 ] };
+    key <AB01>  { [ agrave, Agrave, dead_grave, dead_grave, asciicircum ] };
+    key <AB02>  { [ y, Y, ae, AE, less, U2A7D] };
+    key <AB03>  { [ x, X, oe, OE, greater, U2A7E ] };
+    key <AB08>  { [ q, Q, guillemotleft, guillemotleft] };
+    key <AB09>  { [ g, G, guillemotright, guillemotright ] };
+    key <AB10>  { [ h, H, ellipsis ] }; //
+    key <RTSH>  { [ f, F ] }; //
+};
