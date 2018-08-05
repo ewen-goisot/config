@@ -1,6 +1,4 @@
 
-#pour remettre par defaut: Paper puis enlever le theme
-#j'ai aussi modifie le theme arthur pour faire arthur2, qui a transparence, espacements ... mais qui consomme la carte graphique
 
 rofi.color-window: #ff4444, #dddddd, #ffffff
 #  fond1, ecriture, fond2, selectionne, ecriture selectionne
@@ -24,7 +22,6 @@ rofi.eh: 1
 
 #!rofi.display-drun:⚌
 rofi.sidebar-mode: true
-#multi-select : ne marche pas pour l'instant/je dois comprendre pourquoi
 #pour voir les racourcis clavier de rofi dans rofi, "rofi -show keys"
 #rofi.opacity:50
 #rofi.fixed-num-lines:false
