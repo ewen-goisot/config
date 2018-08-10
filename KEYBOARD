@@ -9,7 +9,7 @@ xkb_symbols "oss" {
 augment "level5" 
 	
 	key.type[Group1] = "ONE_LEVEL";
-    key <AC06>	{ [         Caps_Lock ] };
+    key <AD06>	{ [         Caps_Lock ] };
 
     key <AB04>  { [ ISO_Level3_Shift ] };
     key <AB05>  { [          Shift_L ] };
@@ -29,6 +29,9 @@ augment "level5"
 	modifier_map Control { Control_L, Control_R };
 
 	key.type[Group1] = "EIGHT_LEVEL";
+
+    key <SPCE> { [ space, nobreakspace, underscore, U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
+
     key <TLDE>	{ [U25A1,  U20D7, U27C2, U221E, U221A] };
     key <AE01>	{ [KP_1, 1, notsign, U2205] };
     key <AE02>	{ [KP_2, 2, U2200, U2234] };
@@ -44,26 +47,26 @@ augment "level5"
     key <AE12>	{ [quotedbl, quotedbl, U222D, U2230, U2207 ] };
 
 	key.type[Group1] = "EIGHT_LEVEL"; //
-    key <TAB>	{ [ ecircumflex, Ecircumflex ] };
-    key <AD01>	{ [ b, B, question, question, bar, U2016 ] };
-    key <AD02>	{ [ eacute, Eacute, ugrave, Ugrave, ampersand  ] };
-    key <AD03>	{ [ p, P, exclam, exclam, dollar ] };
-    key <AD04>	{ [ o, O, ubreve, Ubreve, numbersign ] };
-    key <AD05>  { [ egrave, Egrave, dead_tilde, dead_tilde, asciitilde ] };
-    key <AD06>	{ [ k, K ] }; //
-    key <AD07>	{ [ dead_circumflex, quotedbl, grave, dead_grave, slash ] }; //
-    key <AD08>	{ [ v, V, Home, Home, parenleft ] };
-    key <AD09>	{ [ d, D, Prior, Prior, parenright ] };
-    key <AD10>	{ [ l, L, Next, Next, braceleft ] };
-    key <AD11>	{ [ j, J, End, End, braceright ] };
-    key <AD12>	{ [ ccedilla, Ccedilla, a, a,  backslash ] };
+    key <TAB>	{ [ ecircumflex, Ecircumflex, a, a, backslash ] };
+    key <AD01>	{ [ b, B, question, question, braceleft, U2016 ] };
+    key <AD02>	{ [ eacute, Eacute, ubreve, Ubreve, braceright  ] };
+    key <AD03>	{ [ p, P, exclam, exclam, parenleft ] };
+    key <AD04>	{ [ o, O, ugrave, Ugrave, parenright ] };
+    key <AD05>  { [ egrave, Egrave, dead_tilde, dead_tilde, slash ] };
+    key <AD07>	{ [ dead_circumflex, dead_diaeresis, grave, dead_grave, at ] }; //
+    key <AD08>	{ [ v, V, Home, Home, bar ] };
+    key <AD09>	{ [ d, D, Prior, Prior, ampersand ] };
+    key <AD10>	{ [ l, L, Next, Next, dollar ] };
+    key <AD11>	{ [ j, J, End, End, numbersign ] };
+    key <AD12>	{ [ ccedilla, Ccedilla, a, a,  asciitilde ] };
 
-    key <CAPS>	{ [ period] }; //
-    key <AC01>	{ [ a, A, Insert, Insert, at ] }; //
-    key <AC02>	{ [ u, U, Tab, ISO_Left_Tab, colon ] };
+    key <CAPS>	{ [ period, period, a, a, colon] }; //
+    key <AC01>	{ [ a, A, Insert, Insert, less ] }; //
+    key <AC02>	{ [ u, U, Tab, ISO_Left_Tab, greater ] };
     key <AC03>	{ [ i, I, Escape, Escape, bracketleft ] };
     key <AC04>	{ [ e, E, Return, Return, bracketright ] };
     key <AC05>	{ [ comma, a, a, a,  semicolon ] };
+    key <AC06>	{ [ k, K ] }; //
     key <AC07>	{ [ c, C, BackSpace, Backspace, minus ] };      
     key <AC08>	{ [ t, T, Left, Left, underscore] };
     key <AC09>	{ [ s, S, Up, Up, equal, U2260] };
