@@ -1,4 +1,5 @@
-
+#pour remettre par defaut: Paper puis enlever le theme
+#j'ai aussi modifie le theme arthur pour faire arthur2, qui a transparence, espacements ... mais qui consomme la carte graphique
 
 rofi.color-window: #ff4444, #dddddd, #ffffff
 #  fond1, ecriture, fond2, selectionne, ecriture selectionne
@@ -22,12 +23,14 @@ rofi.eh: 1
 
 #!rofi.display-drun:⚌
 rofi.sidebar-mode: true
+#multi-select : ne marche pas pour l'instant/je dois comprendre pourquoi
 #pour voir les racourcis clavier de rofi dans rofi, "rofi -show keys"
 #rofi.opacity:50
 #rofi.fixed-num-lines:false
 
 rofi.show-icons: true
 rofi.disabble-history: true
+rofi.matching: regex
 
 #shift + flèches pour changer de mode
 #choix=$(echo "hello
@@ -42,3 +45,49 @@ rofi.kb-select-7: KP_7
 rofi.kb-select-8: KP_8
 rofi.kb-select-9: KP_9
 rofi.kb-select-0: KP_0
+
+
+
+rofi.kb-remove-to-eol:               Super+b
+rofi.kb-delete-entry:                Super+eacute
+rofi.kb-clear-line:                  Super+p
+rofi.kb-remove-to-sol:               Super+o 
+
+rofi.kb-primary-paste:               Super+v
+rofi.kb-remove-word-back:            Super+d
+rofi.kb-remove-word-forward:         Super+l
+rofi.kb-secondary-paste:             Super+j
+
+rofi.kb-move-char-back:              Super+a
+rofi.kb-mode-previous:               Super+u
+rofi.kb-mode-next:                   Super+i
+rofi.kb-move-char-forward:           Super+e
+
+rofi.kb-move-front:                  Super+t
+rofi.kb-move-word-back:              Super+s
+rofi.kb-move-word-forward:           Super+r
+rofi.kb-move-end:                    Super+n
+
+rofi.kb-remove-char-forward:         Delete
+rofi.kb-remove-char-back:            BackSpace
+rofi.kb-accept-entry:                Return,KP_Enter
+rofi.kb-accept-custom:               Control+Return
+rofi.kb-accept-entry-continue:       Shift+Return
+rofi.kb-toggle-case-sensitivity:     grave,dead_grave
+rofi.kb-row-left:                    Left
+rofi.kb-row-right:                   Right
+rofi.kb-row-up:                      Up
+rofi.kb-row-down:                    Down
+rofi.kb-row-tab:                     Tab
+rofi.kb-page-prev:                   Page_Up
+rofi.kb-page-next:                   Page_Down
+rofi.kb-row-first:                   Home,KP_Home
+rofi.kb-row-last:                    End,KP_End
+
+rofi.kb-row-select:                  Insert
+rofi.kb-cancel:                      Escape
+rofi.kb-toggle-sort:                 Alt+grave
+rofi.key-window:                     
+rofi.key-run:                        
+rofi.key-ssh:                        
+
