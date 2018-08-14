@@ -224,15 +224,7 @@ alias aê='alias | grep ^ê'
 alias aç='alias | grep ^ç'
 alias aù='alias | grep ^ù'
 
-# Bang! Previous Command Hotkeys
-# print previous command but only the first nth arguments
-# Alt+1, Alt+2 ...etc
-#bindkey -s '\e&' " !:0 \n"
-#bindkey -s '\eé' " !:0-1 \n"
-#bindkey -s '\e"' " !:1 \n"
-#bindkey -s '\e''' "!:0-3 \t"
-#bindkey -s '\e(' "!:0-4 \t"
-#bindkey -s '\e(' " source ~/.zshrc \n"
+
 
 #####bindkey -s '\e-' " !:0-$ " #permettrais de retaper la commande précédante
 #####!!:gs/foo/bar #permettrais de remplacer les occurences de foo par bar de la commande précédante
