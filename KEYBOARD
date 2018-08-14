@@ -9,7 +9,8 @@ xkb_symbols "oss" {
 augment "level5" 
 	
 	key.type[Group1] = "ONE_LEVEL";
-    key <AD06>	{ [         Caps_Lock ] };
+    key <AD06>	{ [         BackSpace ] };
+    key <BKSP>	{ [         Caps_Lock ] };
 
     key <AB04>  { [ ISO_Level3_Shift ] };
     key <AB05>  { [          Shift_L ] };
@@ -65,7 +66,7 @@ augment "level5"
     key <AC02>	{ [ u, U, Tab, ISO_Left_Tab, greater ] };
     key <AC03>	{ [ i, I, Escape, Escape, bracketleft ] };
     key <AC04>	{ [ e, E, Return, Return, bracketright ] };
-    key <AC05>	{ [ comma, a, a, a,  semicolon ] };
+    key <AC05>	{ [ comma, Insert, a, a,  semicolon ] };
     key <AC06>	{ [ k, K ] }; //
     key <AC07>	{ [ c, C, BackSpace, Backspace, minus ] };      
     key <AC08>	{ [ t, T, Left, Left, underscore] };
