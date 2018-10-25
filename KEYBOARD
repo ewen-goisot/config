@@ -1,88 +1,353 @@
 partial alphanumeric_keys
 xkb_symbols "oss" {
+ // noms touches https://www.charvolant.org/doug/xkb/html/node5.html
+
+ include "keypad(oss)"
+
+ name[Group1]="French (alt.)";
+
+ augment "level5"
+
+ key.type[Group1] = "ONE_LEVEL";
+ key <AD06> { [ BackSpace ] };
+ key <BKSP> { [ Caps_Lock ] };
+
+ key <AB04> { [ ISO_Level3_Shift ] };
+ key <AB05> { [ Shift_L ] };
+ key <AB06> { [ Super_R ] };
+ key <AB07> { [ ISO_Level5_Shift ] };
 
 
-   include "keypad(oss)"
+ key <LCTL> { [ Multi_key ] };
+ key <LWIN> { [ Super_L] };
+ key <LALT> { [ Control_L] };
+ key <RALT> { [ Alt_L] };
+ key <RWIN> { [ Shift_R] };
+ key <RCTL> { [ Control_R ] };
 
-    name[Group1]="French (alt.)";
+ modifier_map Shift { Shift_L, Shift_R };
+ modifier_map Lock { Caps_Lock }; // caps lock
+ modifier_map Control { Control_L, Control_R };
 
-augment "level5" 
-	
-	key.type[Group1] = "ONE_LEVEL";
-    key <AD06>	{ [         BackSpace ] };
-    key <BKSP>	{ [         Caps_Lock ] };
+ key.type[Group1] = "EIGHT_LEVEL";
 
-    key <AB04>  { [ ISO_Level3_Shift ] };
-    key <AB05>  { [          Shift_L ] };
-    key <AB06>  { [          Super_R ] };
-	key <AB07>	{ [ ISO_Level5_Shift ] };
+ key <SPCE> { [ space, nobreakspace, underscore, U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
 
+ key <TLDE> { [U25A1, U20D7, U27C2, U221E, U221A] };
+ key <AE01> { [KP_1, 1, notsign, U2205] };
+ key <AE02> { [KP_2, 2, U2200, U2234] };
+ key <AE03> { [KP_3, 3, U2203, U2235] };
+ key <AE04> { [KP_4, 4, U2208] };
+ key <AE05> { [KP_5, 5, U2282] };
+ key <AE06> { [KP_6, 6, U2229, U22C0] };
+ key <AE07> { [KP_7, 7, U222A, U22C1] };
+ key <AE08> { [KP_8, 8, Greek_SIGMA, Greek_sigma] };
+ key <AE09> { [KP_9, 9, Greek_PI, Greek_pi] };
+ key <AE10> { [KP_0, 0, U222B, U222E, U2218] };
+ key <AE11> { [apostrophe, apostrophe, U222C, U222F, U2206 ] };
+ key <AE12> { [quotedbl, quotedbl, U222D, U2230, U2207 ] };
 
-	key <LCTL>  { [ Multi_key ] };
-	key <LWIN>	{ [ Super_L] };
-	key <LALT>	{ [ Control_L] };
-	key <RALT>	{ [ Alt_L] };
-    key <RWIN>	{ [ Shift_R] };
-	key <RCTL>  { [ Control_R  ] };
+ key.type[Group1] = "EIGHT_LEVEL"; //
+ key <TAB> { [ ecircumflex, Ecircumflex, a, a, backslash ] };
+ key <AD01> { [ b, B, question, question, braceleft, U2016 ] };
+ key <AD02> { [ eacute, Eacute, ubreve, Ubreve, braceright ] };
+ key <AD03> { [ p, P, exclam, exclam, parenleft ] };
+ key <AD04> { [ o, O, ugrave, Ugrave, parenright ] };
+ key <AD05> { [ egrave, Egrave, dead_tilde, dead_tilde, slash ] };
+ key <AD07> { [ dead_circumflex, dead_diaeresis, grave, dead_grave, at ] }; //
+ key <AD08> { [ v, V, Home, Home, bar ] };
+ key <AD09> { [ d, D, Prior, Prior, ampersand ] };
+ key <AD10> { [ l, L, Next, Next, dollar ] };
+ key <AD11> { [ j, J, End, End, numbersign ] };
+ key <AD12> { [ ccedilla, Ccedilla, a, a, asciitilde ] };
 
-	modifier_map Shift   { Shift_L, Shift_R };
-	modifier_map Lock    { Caps_Lock }; // caps lock
-	modifier_map Control { Control_L, Control_R };
+ key <CAPS> { [ period, period, a, a, colon] }; //
+ key <AC01> { [ a, A, Insert, Insert, less ] }; //
+ key <AC02> { [ u, U, Tab, ISO_Left_Tab, greater ] };
+ key <AC03> { [ i, I, Escape, Escape, bracketleft ] };
+ key <AC04> { [ e, E, Return, Return, bracketright ] };
+ key <AC05> { [ comma, Insert, a, a, semicolon ] };
+ key <AC06> { [ k, K ] }; //
+ key <AC07> { [ c, C, BackSpace, Backspace, minus ] };
+ key <AC08> { [ t, T, Left, Left, underscore] };
+ key <AC09> { [ s, S, Up, Up, equal, U2260] };
+ key <AC10> { [ r, R, Down, Down, plus, U2A01] };
+ key <AC11> { [ n, N, Right, Right, asterisk, U2A02] };
+ key <BKSL> { [ m, M, Delete, Delete, percent] };
+ // key <RTRN> { [ m, M, Delete, Delete, percent] };
 
-	key.type[Group1] = "EIGHT_LEVEL";
+ key <LFSH> { [ w, W] }; //
+ key <LSGT> { [ z, Z, U2202 ] };
+ key <AB01> { [ agrave, Agrave, dead_grave, dead_grave, asciicircum ] };
+ key <AB02> { [ y, Y, ae, AE, less, U2A7D] };
+ key <AB03> { [ x, X, oe, OE, greater, U2A7E ] };
+ key <AB08> { [ q, Q, guillemotleft, guillemotleft] };
+ key <AB09> { [ g, G, guillemotright, guillemotright ] };
+ key <AB10> { [ h, H, ellipsis ] }; //
+ key <RTSH> { [ f, F ] }; //
+ key <UP> {[Up]};
+ key <LEFT> {[Left]};
+ key <DOWN> {[Down]};
+ key <RGHT> {[Right]};
 
-    key <SPCE> { [ space, nobreakspace, underscore, U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
-
-    key <TLDE>	{ [U25A1,  U20D7, U27C2, U221E, U221A] };
-    key <AE01>	{ [KP_1, 1, notsign, U2205] };
-    key <AE02>	{ [KP_2, 2, U2200, U2234] };
-    key <AE03>	{ [KP_3, 3, U2203, U2235] };
-    key <AE04>	{ [KP_4, 4, U2208] };
-    key <AE05>	{ [KP_5, 5, U2282] };
-    key <AE06>	{ [KP_6, 6, U2229, U22C0] };
-    key <AE07>	{ [KP_7, 7, U222A, U22C1] };
-    key <AE08>	{ [KP_8, 8, Greek_SIGMA, Greek_sigma] };
-    key <AE09>	{ [KP_9, 9, Greek_PI, Greek_pi] };
-    key <AE10>	{ [KP_0, 0, U222B, U222E, U2218] };
-    key <AE11>	{ [apostrophe, apostrophe, U222C, U222F, U2206 ] };
-    key <AE12>	{ [quotedbl, quotedbl, U222D, U2230, U2207 ] };
-
-	key.type[Group1] = "EIGHT_LEVEL"; //
-    key <TAB>	{ [ ecircumflex, Ecircumflex, a, a, backslash ] };
-    key <AD01>	{ [ b, B, question, question, braceleft, U2016 ] };
-    key <AD02>	{ [ eacute, Eacute, ubreve, Ubreve, braceright  ] };
-    key <AD03>	{ [ p, P, exclam, exclam, parenleft ] };
-    key <AD04>	{ [ o, O, ugrave, Ugrave, parenright ] };
-    key <AD05>  { [ egrave, Egrave, dead_tilde, dead_tilde, slash ] };
-    key <AD07>	{ [ dead_circumflex, dead_diaeresis, grave, dead_grave, at ] }; //
-    key <AD08>	{ [ v, V, Home, Home, bar ] };
-    key <AD09>	{ [ d, D, Prior, Prior, ampersand ] };
-    key <AD10>	{ [ l, L, Next, Next, dollar ] };
-    key <AD11>	{ [ j, J, End, End, numbersign ] };
-    key <AD12>	{ [ ccedilla, Ccedilla, a, a,  asciitilde ] };
-
-    key <CAPS>	{ [ period, period, a, a, colon] }; //
-    key <AC01>	{ [ a, A, Insert, Insert, less ] }; //
-    key <AC02>	{ [ u, U, Tab, ISO_Left_Tab, greater ] };
-    key <AC03>	{ [ i, I, Escape, Escape, bracketleft ] };
-    key <AC04>	{ [ e, E, Return, Return, bracketright ] };
-    key <AC05>	{ [ comma, Insert, a, a,  semicolon ] };
-    key <AC06>	{ [ k, K ] }; //
-    key <AC07>	{ [ c, C, BackSpace, Backspace, minus ] };      
-    key <AC08>	{ [ t, T, Left, Left, underscore] };
-    key <AC09>	{ [ s, S, Up, Up, equal, U2260] };
-    key <AC10>	{ [ r, R, Down, Down, plus, U2A01] };
-    key <AC11>	{ [ n, N, Right, Right, asterisk, U2A02] };
-    key <BKSL>	{ [ m, M, Delete, Delete, percent] };
- //   key <RTRN>	{ [ m, M, Delete, Delete, percent] };
-
-    key <LFSH>	{ [ w, W] }; //
-    key <LSGT>  { [ z, Z, U2202 ] };
-    key <AB01>  { [ agrave, Agrave, dead_grave, dead_grave, asciicircum ] };
-    key <AB02>  { [ y, Y, ae, AE, less, U2A7D] };
-    key <AB03>  { [ x, X, oe, OE, greater, U2A7E ] };
-    key <AB08>  { [ q, Q, guillemotleft, guillemotleft] };
-    key <AB09>  { [ g, G, guillemotright, guillemotright ] };
-    key <AB10>  { [ h, H, ellipsis ] }; //
-    key <RTSH>  { [ f, F ] }; //
 };
+
+
+xkb_symbols "ergo" {
+
+ augment "level5"
+
+ include "keypad(oss)"
+
+ name[Group1]="french digits";
+ name[Group2]="french programming";
+ name[Group3]="esperanto digits";
+
+
+ key.type[Group1] = "ONE_LEVEL";
+ key <RALT> { [ ISO_Level3_Shift ] };
+ key <RCTL> { [ ISO_Level5_Shift ] };
+ key <CAPS> { [ caps ] };
+
+ key.type[Group1] = "EIGHT_LEVEL"; //
+ key <TLDE> { [ grave, asciitilde ] };
+ key <AE01> { [ KP_1, 1] };
+ key <AE02> { [ KP_2, 2] };
+ key <AE03> { [ KP_3, 3] };
+ key <AE04> { [ KP_4, 4] };
+ key <AE05> { [ KP_5, 5] };
+ key <AE06> { [ KP_6, 6] };
+ key <AE07> { [ KP_7, 7] };
+ key <AE08> { [ KP_8, 8] };
+ key <AE09> { [ KP_9, 9] };
+ key <AE10> { [ KP_0, 0] };
+ key <AE11> { [ minus, underscore, hyphen, endash ] };
+ key <AE12> { [ equal, plus ] };
+ key <KP1>  { [ U25A1, ISO_Level3_Lock, ISO_Next_Group, ISO_Level5_Lock, w, ISO_Level5_Lock, p, ISO_Level3_Lock ] };
+
+key.type[Group2] = "EIGHT_LEVEL"; //
+ key <AE01> { symbols[Group2] = [ parenright, 1] };
+ key <AE02> { symbols[Group2] = [ parenleft, 2] };
+ key <AE03> { symbols[Group2] = [ ampersand, 3] };
+ key <AE04> { symbols[Group2] = [ quotedbl, 4] };
+ key <AE05> { symbols[Group2] = [ bar, 5] };
+ key <AE06> { symbols[Group2] = [ percent, 6] };
+ key <AE07> { symbols[Group2] = [ asterisk, 7] };
+ key <AE08> { symbols[Group2] = [ minus, 8] };
+ key <AE09> { symbols[Group2] = [ equal, 9] };
+ key <AE10> { symbols[Group2] = [ plus, 0] };
+
+
+ key.type[Group1] = "EIGHT_LEVEL"; //
+
+ key <AB01> { [ z, Z, ae, AE, U2205 ] }; // ê Ê æ Æ ∅ uuu
+ key <AD06> { [ y, Y, grave,      U2032, U2115 ] }; // y Y ` ′ ℕ
+ key <AC11> { [ apostrophe, quotedbl, at,         U203B, U2124 ] }; // m M @ ※ ℤ
+ key <AD10> { [ p, P, numbersign, U00B6, U211A ] }; // p P # ¶ ℚ
+ key <KP3>  { [ eacute, Eacute, dollar, section, U211D ] }; // é É $ § ℝ
+ key <KP4>  { [ egrave, Egrave, asciitilde, periodcentered, U2102 ] }; // ' " ~ · ℂ uuu
+
+ key <KP2>  { [ ecircumflex, Ecircumflex,   oe, OE, U2201 ] }; // à À œ Œ ∁ uuu
+ key <AD09> { [ o, O, asciicircum, U221A, U2229 ] }; // o O ^ √ ∩
+ key <AD07> { [ u, U, backslash,   U221E, U222A ] }; // u U \ ∞ ∪
+ key <AD08> { [ i, I, bar,     brokenbar, U2203 ] }; // i I | ¦ ∃
+ key <AC01> { [ a, A, ampersand,   U2202, U2200 ] }; // a A & ∂ ∀
+ key <AC06> { [ h, H, semicolon, exclamdown, U2208 ] }; // , ! ; ¡ ∈ uuu
+
+ key <AB02> { [ x, X,     U1F12F,    registered ] }; // x X 🄯 ®
+ key <KP5>  { [ agrave, Agrave, copyright, trademark ] }; // z Z © ™
+ key <AB09> { [ period, ellipsis, degree, U203D ] }; // . … ° ‽
+ key <AB08> { [ comma, exclam, minutes,  U2E2E ] }; // è È ′ ⸮ uuu
+ key <AB10> { [ slash, question, seconds, questiondown ] }; // / ? ″ ¿
+
+
+ key <AB05> { [ b, B, percent,  U2030, U2248 ] };                // g G % ‰ ≈ uuu
+ key <AB03> { [ c, C, equal, notequal, U230A ] };                // c C = ≠ ⌊
+ key <AB07> { [ m, M, plus, plusminus, U230B ] };                // h H + ± ⌋ uuu
+ key <AC09> { [ l, L, minus,   endash, U2308 ] };                // l L - – ⌈
+ key <AC04> { [ f, F, asterisk, U00D7, U2309 ] };                // f F * × ⌉
+ key <KP7>  { [ ccedilla, Ccedilla, dagger, doubledagger, U221D ] }; // ù Ù † ‡ ∝ uuu
+
+ key <AC05> { [ g, G, colon,     division, U27C2 ] };       // d D : ÷ ⟂ uuu
+ key <AD05> { [ t, T, parenleft,    U27E6, U220F ] };       // t T ( ⟦ ∏
+ key <AC02> { [ s, S, parenright,   U27E7, U2211 ] };       // s S ) ⟧ ∑
+ key <AB06> { [ n, N, less, lessthanequal, U2228 ] };       // n N <≤ ∨
+ key <AD04> { [ r, R, greater, greaterthanequal, U2227 ] }; // r R > ≥ ∧
+ key <AC08> { [ k, K, U0133, U0132, notsign ] };            // k K ĳ Ĳ ¬
+
+ key <AD01> { [ q, Q, U202F,         U017F ] }; // q Q   ſ
+ key <AC03> { [ d, D, nobreakspace, ssharp ] }; // b B   ß uuu
+ key <AB04> { [ v, V, EuroSign,      U00A4 ] }; // v V € ¤
+ key <AC07> { [ j, J, thorn,         THORN ] }; // j J þ Þ
+ key <AD02> { [ w, W, schwa,         SCHWA ] }; // w W ə Ə
+ key <KP8>  { [ ugrave, Ugrave, eth,   ETH ] }; // ç Ç ð Ð uuu
+
+
+ key <AD03> { [ e, E, e, E ] };
+ key <AD11> { [ bracketleft,  guillemotleft,  braceleft,  leftdoublequotemark  ] }; // [ « { “ 
+ key <AD12> { [ bracketright, guillemotright, braceright, rightdoublequotemark ] }; // ] » } ”
+ key <SPCE> { [ space, space, underscore, underscore ] };
+ //key <RTRN> { [ m, M, Delete, Delete, percent] };
+ key <KP6>  { [ dead_circumflex, dead_diaeresis ] }; // ^ ¨
+ 
+
+ key <AC10> { [ semicolon, colon ] };
+ key <BKSL> { [ backslash, bar ] };
+
+ key <KP9>  { [ ISO_Next_Group, b, c, d, e, f, g, h ] };
+ key <KP0>  { [ dead_grave, b, c, d, e, f, g, h ] };
+ key <KPAD> { [ CodeInput ] };
+ key <KPEN> { [ e, b, c, d, e, f, g, h ] };
+ key <KPSU> { [ e, b, c, d, e, f, g, h ] };
+ key <KPDL> { [ e, b, c, d, e, f, g, h ] };
+ key <KPMU> { [ e, b, c, d, e, f, g, h ] };
+ 
+ key <AB01> { symbols[Group2] = [ z, Z, ae, AE, U2205 ] }; // ê Ê æ Æ ∅ uuu
+ key <AD06> {symbols[Group2] =  [ y, Y, grave,      U2032, U2115 ] }; // y Y ` ′ ℕ
+ key <AC11> {symbols[Group2] =  [ apostrophe, quotedbl, at,         U203B, U2124 ] }; // m M @ ※ ℤ
+ key <AD10> {symbols[Group2] =  [ p, P, numbersign, U00B6, U211A ] }; // p P # ¶ ℚ
+ key <KP3>  {symbols[Group2] =  [ eacute, Eacute, dollar, section, U211D ] }; // é É $ § ℝ
+ key <KP4>  {symbols[Group2] =  [ egrave, Egrave, asciitilde, periodcentered, U2102 ] }; // ' " ~ · ℂ uuu
+
+ key <KP2>  {symbols[Group2] =  [ ecircumflex, Ecircumflex,   oe, OE, U2201 ] }; // à À œ Œ ∁ uuu
+ key <AD09> {symbols[Group2] =  [ o, O, asciicircum, U221A, U2229 ] }; // o O ^ √ ∩
+ key <AD07> {symbols[Group2] =  [ u, U, backslash,   U221E, U222A ] }; // u U \ ∞ ∪
+ key <AD08> {symbols[Group2] =  [ i, I, bar,     brokenbar, U2203 ] }; // i I | ¦ ∃
+ key <AC01> {symbols[Group2] =  [ a, A, ampersand,   U2202, U2200 ] }; // a A & ∂ ∀
+ key <AC06> {symbols[Group2] =  [ h, H, semicolon, exclamdown, U2208 ] }; // , ! ; ¡ ∈ uuu
+
+ key <AB02> {symbols[Group2] =  [ x, X,     U1F12F,    registered ] }; // x X 🄯 ®
+ key <KP5>  {symbols[Group2] =  [ agrave, Agrave, copyright, trademark ] }; // z Z © ™
+ key <AB09> {symbols[Group2] =  [ period, ellipsis, degree, U203D ] }; // . … ° ‽
+ key <AB08> {symbols[Group2] =  [ comma, exclam, minutes,  U2E2E ] }; // è È ′ ⸮ uuu
+ key <AB10> {symbols[Group2] =  [ slash, question, seconds, questiondown ] }; // / ? ″ ¿
+
+
+ key <AB05> {symbols[Group2] =  [ b, B, percent,  U2030, U2248 ] };                // g G % ‰ ≈ uuu
+ key <AB03> {symbols[Group2] =  [ c, C, equal, notequal, U230A ] };                // c C = ≠ ⌊
+ key <AB07> {symbols[Group2] =  [ m, M, plus, plusminus, U230B ] };                // h H + ± ⌋ uuu
+ key <AC09> {symbols[Group2] =  [ l, L, minus,   endash, U2308 ] };                // l L - – ⌈
+ key <AC04> {symbols[Group2] =  [ f, F, asterisk, U00D7, U2309 ] };                // f F * × ⌉
+ key <KP7>  {symbols[Group2] =  [ ccedilla, Ccedilla, dagger, doubledagger, U221D ] }; // ù Ù † ‡ ∝ uuu
+
+ key <AC05> {symbols[Group2] =  [ g, G, colon,     division, U27C2 ] };       // d D : ÷ ⟂ uuu
+ key <AD05> {symbols[Group2] =  [ t, T, parenleft,    U27E6, U220F ] };       // t T ( ⟦ ∏
+ key <AC02> {symbols[Group2] =  [ s, S, parenright,   U27E7, U2211 ] };       // s S ) ⟧ ∑
+ key <AB06> {symbols[Group2] =  [ n, N, less, lessthanequal, U2228 ] };       // n N <≤ ∨
+ key <AD04> {symbols[Group2] =  [ r, R, greater, greaterthanequal, U2227 ] }; // r R > ≥ ∧
+ key <AC08> {symbols[Group2] =  [ k, K, U0133, U0132, notsign ] };            // k K ĳ Ĳ ¬
+
+ key <AD01> {symbols[Group2] =  [ q, Q, U202F,         U017F ] }; // q Q   ſ
+ key <AC03> {symbols[Group2] =  [ d, D, nobreakspace, ssharp ] }; // b B   ß uuu
+ key <AB04> {symbols[Group2] =  [ v, V, EuroSign,      U00A4 ] }; // v V € ¤
+ key <AC07> {symbols[Group2] =  [ j, J, thorn,         THORN ] }; // j J þ Þ
+ key <AD02> {symbols[Group2] =  [ w, W, schwa,         SCHWA ] }; // w W ə Ə
+ key <KP8>  {symbols[Group2] =  [ ugrave, Ugrave, eth,   ETH ] }; // ç Ç ð Ð uuu
+
+
+ key <AD03> {symbols[Group2] =  [ e, E, e, E ] };
+ key <AD11> {symbols[Group2] =  [ bracketleft,  guillemotleft,  braceleft,  leftdoublequotemark  ] }; // [ « { “ 
+ key <AD12> {symbols[Group2] =  [ bracketright, guillemotright, braceright, rightdoublequotemark ] }; // ] » } ”
+ key <SPCE> {symbols[Group2] =  [ space, space, underscore, underscore ] };
+ //key <RTRN> {symbols[Group2] =  [ m, M, Delete, Delete, percent] };
+ key <KP6>  {symbols[Group2] =  [ dead_circumflex, dead_diaeresis ] }; // ^ ¨
+ 
+
+ key <AC10> {symbols[Group2] =  [ semicolon, colon ] };
+ key <BKSL> {symbols[Group2] =  [ backslash, bar ] };
+
+ key <KP9>  {symbols[Group2] =  [ ISO_Next_Group, b, c, d, e, f, g, h ] };
+ key <KP0>  {symbols[Group2] =  [ dead_grave, b, c, d, e, f, g, h ] };
+ key <KPAD> {symbols[Group2] =  [ CodeInput ] };
+ key <KPEN> {symbols[Group2] =  [ e, b, c, d, e, f, g, h ] };
+ key <KPSU> {symbols[Group2] =  [ e, b, c, d, e, f, g, h ] };
+ key <KPDL> {symbols[Group2] =  [ e, b, c, d, e, f, g, h ] };
+ key <KPMU> {symbols[Group2] =  [ e, b, c, d, e, f, g, h ] };
+ key <KPDV> {symbols[Group2] =  [ e, b, c, d, e, f, g, h ] };
+key <KPDV> {symbols[Group2] =  [ e, b, c, d, e, f, g, h ] };
+};
+
+
+xkb_symbols "bepo" {
+
+ include "level3(ralt_switch)"
+ include "keypad(oss)"
+
+ name[Group1]= "French (Bepo, ergonomic, Dvorak way)";
+
+ // First row
+ key <TLDE> { [ dollar, numbersign, endash, paragraph ] }; // $ # – ¶
+ key <AE01> { [ quotedbl, 1, emdash, doublelowquotemark ] }; // " 1 — „
+ key <AE02> { [ guillemotleft, 2, less, leftdoublequotemark ] }; // « 2 < “
+ key <AE03> { [ guillemotright, 3, greater, rightdoublequotemark ] }; // » 3 > ”
+ key <AE04> { [ parenleft, 4, bracketleft, lessthanequal ] }; // ( 4 [ ≤
+ key <AE05> { [ parenright, 5, bracketright, greaterthanequal ] }; // ) 5 ] ≥
+ key <AE06> { [ at, 6, asciicircum ] }; // @ 6 ^
+ key <AE07> { [ plus, 7, plusminus, notsign ] }; // + 7 ± ¬
+ key <AE08> { [ minus, 8, U2212, onequarter ] }; // - 8 − ¼
+ key <AE09> { [ slash, 9, division, onehalf ] }; // / 9 ÷ ½
+ key <AE10> { [ asterisk, 0, multiply, threequarters ] }; // * 0 × ¾
+ key <AE11> { [ equal, degree, notequal, minutes ] }; // = ° ≠ ′
+ key <AE12> { [ percent, grave, U2030, seconds ] }; // % ` ‰ ″
+
+ // Second row
+ key <AD01> { [ b, B, bar, brokenbar ] }; // b B | ¦
+ key <AD02> { [ eacute, Eacute, dead_acute, dead_doubleacute ] }; // é É ˊ ˝
+ key <AD03> { [ p, P, ampersand, section ] }; // p P & §
+ key <AD04> { [ o, O, oe, OE ] }; // o O œ Œ
+ key <AD05> { [ egrave, Egrave, dead_grave, grave ] }; // è È ` `
+ key <AD06> { [ dead_circumflex, exclam, exclamdown ] }; // ^ ! ¡
+ key <AD07> { [ v, V, dead_caron ] }; // v V ˇ
+ key <AD08> { [ d, D, eth, ETH ] }; // d D ð Ð
+ key <AD09> { [ l, L, dead_stroke ] }; // l L /
+ key <AD10> { [ j, J, U0133, U0132 ] }; // j J ĳ Ĳ
+ key <AD11> { [ z, Z, schwa, SCHWA ] }; // z Z ə Ə
+ key <AD12> { [ w, W, dead_breve ] }; // w W ̆
+
+ // Third row
+ key <AC01> { [ a, A, ae, AE ] }; // a A æ Æ
+ key <AC02> { [ u, U, ugrave, Ugrave ] }; // u U ù Ù
+ key <AC03> { [ i, I, dead_diaeresis, dead_abovedot ] }; // i I ̈ ˙
+ key <AC04> { [ e, E, EuroSign, dead_currency ] }; // e E € ¤
+ key <AC05> { [ comma, semicolon, rightsinglequotemark, dead_horn ] }; // , ; ’ ̛
+ key <AC06> { [ c, C, copyright, U017F ] }; // c C © ſ
+ key <AC07> { [ t, T, thorn, THORN ] }; // t T þ Þ
+ key <AC08> { [ s, S, ssharp, U1E9E ] }; // s S ß ẞ
+ key <AC09> { [ r, R, registered, trademark ] }; // r R ® ™
+ key <AC10> { [ n, N, dead_tilde ] }; // n N ~
+ key <AC11> { [ k, K, dead_macron, masculine ] }; // m M ̄ º
+ key <BKSL> { [ ccedilla, Ccedilla, dead_cedilla, dead_belowcomma ] }; // ç Ç ¸ ,
+
+ // Fourth row
+ key <LSGT> { [ ecircumflex, Ecircumflex, slash ] }; // ê Ê /
+ key <AB01> { [ agrave, Agrave, backslash ] }; // à À \
+ key <AB02> { [ y, Y, braceleft, leftsinglequotemark ] }; // y Y { ‘
+ key <AB03> { [ x, X, braceright, rightsinglequotemark ] }; // x X } ’
+ key <AB04> { [ period, colon, ellipsis, periodcentered ] }; // . : … ·
+ key <AB05> { [ m, M, asciitilde ] }; // k K ~
+ key <AB06> { [ apostrophe, question, questiondown, dead_hook ] }; // ' ? ¿ ̉
+ key <AB07> { [ q, Q, dead_abovering, dead_belowdot ] }; // q Q ˚ ̣
+ key <AB08> { [ g, G, dead_greek ] }; // g G µ
+ key <AB09> { [ h, H, dagger, doubledagger ] }; // h H † ‡
+ key <AB10> { [ f, F, dead_ogonek, ordfeminine ] }; // f F ̨ ª
+
+ key <SPCE> { [ space, nobreakspace, underscore, U202F ] }; // ␣ (espace insécable) _ (espace insécable fin)
+
+ key <KP1>  { [ U25A1, b, c, d, e, f, g, h ] };
+ key <KP2>  { [ ecircumflex, Ecircumflex, c, d, e, f, g, h ] };
+ key <KP3>  { [ eacute, Eacute, c, d, e, f, g, h ] };
+ key <KP4>  { [ egrave, Egrave, c, d, e, f, g, h ] };
+ key <KP5>  { [ agrave, Agrave, c, d, e, f, g, h ] };
+ key <KP6>  { [ dead_circumflex, b, c, d, e, f, g, h ] };
+ key <KP7>  { [ ccedilla, Ccedilla, c, d, e, f, g, h ] };
+ key <KP8>  { [ ISO_Prev_Group, b, c, d, e, f, g, h ] };
+ key <KP9>  { [ ISO_Next_Group, b, c, d, e, f, g, h ] };
+ key <KP0>  { [ dead_grave, b, c, d, e, f, g, h ] };
+ key <KPAD> { [ e, b, c, d, e, f, g, h ] };
+ key <KPEN> { [ e, b, c, d, e, f, g, h ] };
+ key <KPSU> { [ e, b, c, d, e, f, g, h ] };
+ key <KPDL> { [ e, b, c, d, e, f, g, h ] };
+ key <KPMU> { [ e, b, c, d, e, f, g, h ] };
+ key <KPDV> { [ e, b, c, d, e, f, g, h ] };
+};
+
