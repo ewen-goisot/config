@@ -1,6 +1,8 @@
 #pour remettre par defaut: Paper puis enlever le theme
 #j'ai aussi modifie le theme arthur pour faire arthur2, qui a transparence, espacements ... mais qui consomme la carte graphique
 
+rofi.modi: run,drun,window,windowcd,ssh
+
 rofi.color-window: #ff4444, #dddddd, #ffffff
 #  fond1, ecriture, fond2, selectionne, ecriture selectionne
 rofi.color-normal: #00ccee, #000000, #cccc22, #000000, #ffff00
@@ -44,36 +46,41 @@ rofi.kb-select-6: KP_6
 rofi.kb-select-7: KP_7
 rofi.kb-select-8: KP_8
 rofi.kb-select-9: KP_9
-rofi.kb-select-0: KP_0
+rofi.kb-select-10: KP_0
 
 
 
-rofi.kb-remove-to-eol:               Super+b
-rofi.kb-delete-entry:                Super+eacute
-rofi.kb-clear-line:                  Super+p
-rofi.kb-remove-to-sol:               Super+o 
 
-rofi.kb-primary-paste:               Super+v
-rofi.kb-remove-word-back:            Super+d
-rofi.kb-remove-word-forward:         Super+l
-rofi.kb-secondary-paste:             Super+j
+rofi.kb-delete-entry:                Super+b
+rofi.kb-secondary-paste:             Super+c
+rofi.kb-mode-previous:               Super+m
+rofi.kb-mode-next:                   Super+l
+rofi.kb-primary-paste:               Super+f
 
-rofi.kb-move-char-back:              Super+a
-rofi.kb-mode-previous:               Super+u
-rofi.kb-mode-next:                   Super+i
-rofi.kb-move-char-forward:           Super+e
-
-rofi.kb-move-front:                  Super+t
-rofi.kb-move-word-back:              Super+s
+rofi.kb-row-select:                  super+g,Insert
+rofi.kb-move-word-back:              Super+t
+rofi.kb-move-char-back:              Super+s
+rofi.kb-move-char-forward:           Super+n
 rofi.kb-move-word-forward:           Super+r
-rofi.kb-move-end:                    Super+n
 
-rofi.kb-remove-char-forward:         Delete
-rofi.kb-remove-char-back:            BackSpace
+rofi.kb-toggle-sort:                 Super+d
+rofi.kb-toggle-case-sensitivity:     Super+v
+
+
+rofi.kb-remove-to-sol:               Super+egrave
+rofi.kb-move-front:                  Super+eacute
+rofi.kb-move-end:                    Super+p
+rofi.kb-remove-to-eol:               Super+apostrophe
+
+rofi.kb-remove-word-back:            Super+o
+rofi.kb-remove-char-back:            Super+a,BackSpace
+rofi.kb-remove-char-forward:         Super+i,Delete
+rofi.kb-remove-word-forward:         Super+u
+rofi.kb-clear-line:                  Super+h
+
 rofi.kb-accept-entry:                Return,KP_Enter
-rofi.kb-accept-custom:               Control+Return
-rofi.kb-accept-entry-continue:       Shift+Return
-rofi.kb-toggle-case-sensitivity:     grave,dead_grave
+rofi.kb-accept-custom:               Super+space
+rofi.kb-accept-entry-continue:       Super+Return
 rofi.kb-row-left:                    Left
 rofi.kb-row-right:                   Right
 rofi.kb-row-up:                      Up
@@ -84,10 +91,7 @@ rofi.kb-page-next:                   Page_Down
 rofi.kb-row-first:                   Home,KP_Home
 rofi.kb-row-last:                    End,KP_End
 
-rofi.kb-row-select:                  Insert
 rofi.kb-cancel:                      Escape
-rofi.kb-toggle-sort:                 Alt+grave
-rofi.key-window:                     
-rofi.key-run:                        
-rofi.key-ssh:                        
-
+rofi.key-window:
+rofi.key-run:
+rofi.key-ssh:
