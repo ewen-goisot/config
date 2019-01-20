@@ -1,29 +1,29 @@
+# disposition adaptée au "zèép'y", une variante de bépo pour ergodox,
+# permettant de taper très vite en français et vite (mieux que qwerty) en anglais
+# mon clavier principal est un ergodox, les touches ctrl mod maj altgr sont très accessibles, et permettant de faire des combinaisons de 3 ou 4 modifieurs sur une seule touche! (cf meh et hyp)
+# j'utilise le code touche (que je ne change pas) au lieu des caractères (pouvant changer d'une langue à l'autre)
+
 set $mod Mod4
+# ergodox ez keys
 set $meh Mod1+Shift+Control
 set $hyp Mod1+Shift+Control+Mod4
 
-bindsym $mod2+r focus left
+#bind $mod2+r focus left
 
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 7
 hide_edge_borders none
 show_marks yes
 for_window [class="^.*"] border normal 2
-floating_modifier $mod
+floating_modifier Control
+mouse_warping none
+popup_during_fullscreen leave_fullscreen
+#hide_edge_borders vertical
+# echo -e "\e]0;titre\a" renomme un erminal
 
+# set $mov " ~/move.sh "
+set $get " ~/get.sh "
 
-for_window [class=".*"] title_format "<span background='red' size='small'> %class </span> <b>%title</b>"
-for_window [class="Chromium-browser"] title_format "<span background='purple' foreground='white' size='small'> Chrom. </span> <b>%title</b>"
-for_window [title="Appel.*"] title_format "<span background='green' foreground='white'> %class </span> <b>%title</b>"
-for_window [class="Terminator"] title_format "<span background='black' foreground='red' size='small'> Termin. </span> <b>%title</b>"
-for_window [title=".*Preferences.*"] title_format "<span background='white' size='small'> %class </span> <b>%title</b>"
-for_window [class="Evince|Zathura"] title_format "<span background='yellow' size='small'> %class </span> <b>%title</b>"
-for_window [class="mpv|vlc"] title_format "<span background='blue' foreground='white' size='small'> %class </span> <b>%title</b>"
-
-
-
-for_window [class="Chromium-browser" title="Save File"] resize set 1000 px 500 px
-for_window [class="Blender|Inkscape|Gimp.*|kdenlive"] move container to workspace $ws4 
-
+# workspace name
 set $ws1 "1:1:🔍"
 set $ws2 "2:2:🌸"
 set $ws3 "3:3:🔧"
@@ -35,134 +35,143 @@ set $ws8 "8:8:💬"
 set $ws9 "9:9:🌿"
 set $ws0 "10:0:🔊"
 
-#####set $n1 exclam
-#####set $n2 colon
-#####set $n3 bracketleft
-#####set $n4 bracketright #####set $n5 braceleft
-#####set $n6 braceright
-#####set $n7 parenleft
-#####set $n8 parenright
-#####set $n9 slash
-#####set $n0 plus
 
-# touches sans shift
-set $n1 KP_1
-set $n2 KP_2
-set $n3 KP_3
-set $n4 KP_4
-set $n5 KP_5
-set $n6 KP_6
-set $n7 KP_7
-set $n8 KP_8
-set $n9 KP_9
-set $n0 KP_0
+# chiffres numpad: change workspace
+set $n1 87
+set $n2 88
+set $n3 89
+set $n4 83
+set $n5 84
+set $n6 85
+set $n7 79
+set $n8 80
+set $n9 81
+set $n0 90
 
-# touches avec shift
-set $nn1 exclam
-set $nn2 at
-set $nn3 numbersign
-set $nn4 dollar
-set $nn5 percent
-set $nn6 asciicircum
-set $nn7 ampersand
-set $nn8 asterisk
-set $nn9 parenleft
-set $nn0 parenright
-
-set $spx  30
-set $sppt 8
+# resize value
+set $spx  20
+set $sppt 1
 set $bpx  100
-set $bppt 24
+set $bppt 10
+
+for_window [class=".*"] title_format "<span background='red' size='small'> %class </span> <b>%title</b>"
+for_window [class="Chromium-browser"] title_format "<span background='purple' foreground='white'> C </span> <b>%title</b>"
+# permettait de mettre directement qqch dessous et de voir le titre. disabbled
+#for_window [class="Chromium-browser"] split tabbed
+#for_window [title="Appel.*"] title_format "<span background='green' foreground='white'> %class </span> <b>%title</b>"
+for_window [title="Appel.*"] move container to workspace $ws8
+for_window [class="Steam"] move container to workspace $ws9; workspace $ws9
+for_window [class="Gnome-terminal"] title_format "<span background='black' foreground='white' size='small'> T </span> <b>%title</b>"
+for_window [title=".*Preferences.*"] title_format "<span background='white' size='small'> %class </span> <b>%title</b>"
+for_window [class="Evince"] title_format "<span background='yellow' size='small'> E </span> <b>%title</b>"
+for_window [class="Zathura"] title_format "<span background='yellow' size='small'> Z </span> <b>%title</b>"
+for_window [class="okular"] title_format "<span background='yellow' size='small'> O </span> <b>%title</b>"
+for_window [class="Gvim|copyq"] floating enable
+for_window [class="mpv|vlc"] title_format "<span background='blue' foreground='white' size='small'> %class </span> <b>%title</b>"
+
+for_window [title="Save File"] resize set 1000 px 500 px
+for_window [class="copyq"] resize set 1200 px 600 px
+for_window [class="Blender|Inkscape|Gimp.*|kdenlive"] move container to workspace $ws4
 
 
+#test:
+bind $mod+152 exec xdo-undo
 
-bindsym $mod+Return exec terminator
-bindsym $mod+space exec terminator
-bindsym $mod+BackSpace kill
+#bindsym $mod+Return exec terminator
+bindsym $mod+space exec gnome-terminal
+bind $mod+26 exec xdotool mousemove 683 384
+bind $mod+22      kill
 
 # left hand = move yourself
-bindsym $mod+z      focus parent
-bindsym $mod+m      workspace prev
-bindsym $mod+p      workspace next
-bindsym $mod+eacute focus child
-bindsym $mod+egrave resize grow height $bpx px or $bppt ppt; resize grow width $bpx px or $bppt ppt
-#
-bindsym $mod+o      focus left
-bindsym $mod+u      focus up
-bindsym $mod+i      focus down
-bindsym $mod+a      focus right
-bindsym $mod+comma  resize shrink width $bpx px or $bppt ppt; resize shrink height $bpx px or $bppt ppt
-#
-bindsym $mod+x      split toggle
-bindsym $mod+y      fullscreen toggle
-bindsym $mod+g      layout toggle tabbed stacked tabbed splith splitv splith
-bindsym $mod+period layout toggle tabbed splith tabbed stacked splitv stacked
+# è é p ' y
+bind $mod+13      focus child
+bind $mod+12      workspace prev
+bind $mod+33      workspace next
+bind $mod+48      focus parent
+bind $mod+29      resize grow height $bpx px or $bppt ppt; resize grow width $bpx px or $bppt ppt
+# o a i u h
+bind $mod+32      exec "~/get.sh move up"
+bind $mod+38      exec "~/get.sh move left"
+bind $mod+31      exec "~/get.sh move right"
+bind $mod+30      exec "~/get.sh move down"
+bind $mod+43      resize shrink width $bpx px or $bppt ppt; resize shrink height $bpx px or $bppt ppt
+# […] x à . , /
+bind $mod+11     mark tar
+bind $mod+53      fullscreen toggle
+bind $mod+14      split toggle
+bind $mod+60      layout toggle tabbed stacked tabbed splith splitv splith
+bind $mod+59      layout toggle tabbed splith tabbed stacked splitv stacked
+bind $mod+61      move container to mark tar
 
 # right hand = move a window
-bindsym $mod+d      kill
-bindsym $mod+t      move left
-bindsym $mod+s      move up
-bindsym $mod+n      move down
-bindsym $mod+r      move right
-#
-bindsym $mod+Up     floating toggle
-bindsym $mod+Down   focus mode_toggle
-#
-bindsym $mod+c      exec "/home/ewen-goisot/Documents/i3script/menu/all.sh"
-bindsym $mod+h      exec chromium-browser
-bindsym $mod+l      exec terminator -e ranger
-bindsym $mod+f      exec pavucontrol
-bindsym $mod+k      move container to workspace prev; workspace prev
-bindsym $mod+ccedilla move container to workspace next; workspace next
-#
-bindsym $mod+b      resize grow width $spx px or $sppt ppt
-bindsym $mod+v      resize grow height $spx px or $sppt ppt
-bindsym $mod+j      resize shrink height $spx px or $sppt ppt
-bindsym $mod+w      resize shrink width $spx px or $sppt ppt
+bind $mod+111     floating toggle
+bind $mod+116     focus mode_toggle
+# TODO mettre le rofi drun et le rofi clipboard en accès facile, et les autres un peu moins
+# b c m l f k
+bind $mod+56      exec "/home/ewen-goisot/Documents/i3script/menu/all.sh"
+bind $mod+54      exec "rofi -show drun"
+bind $mod+58      exec chromium-browser
+bind $mod+46      exec terminator -e ranger
+bind $mod+41      exec pavucontrol
+bind $mod+45      move container to workspace prev; workspace prev
+# g t s n r ^(dead)
+bind $mod+42      kill
+bind $mod+28      exec "~/get.sh focus up"
+bind $mod+39      exec "~/get.sh focus left"
+bind $mod+57      exec "~/get.sh focus right"
+bind $mod+27      exec "~/get.sh focus down"
+bind $mod+15      move container to workspace next; workspace next
+# q d v j ç ù
+bind $mod+24      swap with mark swa; mark swa
+bind $mod+40      resize grow width $spx px or $sppt ppt
+bind $mod+55      resize shrink width $spx px or $sppt ppt
+bind $mod+44      resize grow height $spx px or $sppt ppt
+bind $mod+25      resize shrink height $spx px or $sppt ppt
+bind $mod+17      mark swa
 
 # shift+right hand = options secondaires semblables
-bindsym $mod+Shift+c      exec "rofi -modi \\"run,window,drun\\" -show window"
-bindsym $mod+control+c    exec "rofi -modi \\"drun,run,window\\" -show run"
-bindsym $mod+Shift+h      exec chromium-browser --incognito
-bindsym $mod+Shift+l      exec thunar
-bindsym $mod+Shift+f      exec audacity
+#bind $mod+Shift+54      exec "rofi -modi \\"run,window,drun\\" -show window"
+#bind $mod+control+54    exec "rofi -modi \\"drun,run,window\\" -show run"
+bind $mod+Shift+58      exec chromium-browser --incognito
+bind $mod+Shift+46      exec thunar
+bind $mod+Shift+41      exec audacity
 
 # bureaux virtuels
-bindsym $mod+$n1 workspace $ws1
-bindsym $mod+$n2 workspace $ws2
-bindsym $mod+$n3 workspace $ws3
-bindsym $mod+$n4 workspace $ws4
-bindsym $mod+$n5 workspace $ws5
-bindsym $mod+$n6 workspace $ws6
-bindsym $mod+$n7 workspace $ws7
-bindsym $mod+$n8 workspace $ws8
-bindsym $mod+$n9 workspace $ws9
-bindsym $mod+$n0 workspace $ws0
+bind $mod+$n1 workspace $ws1
+bind $mod+$n2 workspace $ws2
+bind $mod+$n3 workspace $ws3
+bind $mod+$n4 workspace $ws4
+bind $mod+$n5 workspace $ws5
+bind $mod+$n6 workspace $ws6
+bind $mod+$n7 workspace $ws7
+bind $mod+$n8 workspace $ws8
+bind $mod+$n9 workspace $ws9
+bind $mod+$n0 workspace $ws0
 #
-bindsym $mod+Shift+$nn1 move container to workspace $ws1
-bindsym $mod+Shift+$nn2 move container to workspace $ws2
-bindsym $mod+Shift+$nn3 move container to workspace $ws3
-bindsym $mod+Shift+$nn4 move container to workspace $ws4
-bindsym $mod+Shift+$nn5 move container to workspace $ws5
-bindsym $mod+Shift+$nn6 move container to workspace $ws6
-bindsym $mod+Shift+$nn7 move container to workspace $ws7
-bindsym $mod+Shift+$nn8 move container to workspace $ws8
-bindsym $mod+Shift+$nn9 move container to workspace $ws9
-bindsym $mod+Shift+$nn0 move container to workspace $ws0
+bind $mod+Shift+$n1 move container to workspace $ws1
+bind $mod+Shift+$n2 move container to workspace $ws2
+bind $mod+Shift+$n3 move container to workspace $ws3
+bind $mod+Shift+$n4 move container to workspace $ws4
+bind $mod+Shift+$n5 move container to workspace $ws5
+bind $mod+Shift+$n6 move container to workspace $ws6
+bind $mod+Shift+$n7 move container to workspace $ws7
+bind $mod+Shift+$n8 move container to workspace $ws8
+bind $mod+Shift+$n9 move container to workspace $ws9
+bind $mod+Shift+$n0 move container to workspace $ws0
 #
-bindsym $mod+control+$n1 move container to workspace $ws1; workspace $ws1
-bindsym $mod+control+$n2 move container to workspace $ws2; workspace $ws2
-bindsym $mod+control+$n3 move container to workspace $ws3; workspace $ws3
-bindsym $mod+control+$n4 move container to workspace $ws4; workspace $ws4
-bindsym $mod+control+$n5 move container to workspace $ws5; workspace $ws5
-bindsym $mod+control+$n6 move container to workspace $ws6; workspace $ws6
-bindsym $mod+control+$n7 move container to workspace $ws7; workspace $ws7
-bindsym $mod+control+$n8 move container to workspace $ws8; workspace $ws8
-bindsym $mod+control+$n9 move container to workspace $ws9; workspace $ws9
-bindsym $mod+control+$n0 move container to workspace $ws0; workspace $ws0
+bind $mod+control+$n1 move container to workspace $ws1; workspace $ws1
+bind $mod+control+$n2 move container to workspace $ws2; workspace $ws2
+bind $mod+control+$n3 move container to workspace $ws3; workspace $ws3
+bind $mod+control+$n4 move container to workspace $ws4; workspace $ws4
+bind $mod+control+$n5 move container to workspace $ws5; workspace $ws5
+bind $mod+control+$n6 move container to workspace $ws6; workspace $ws6
+bind $mod+control+$n7 move container to workspace $ws7; workspace $ws7
+bind $mod+control+$n8 move container to workspace $ws8; workspace $ws8
+bind $mod+control+$n9 move container to workspace $ws9; workspace $ws9
+bind $mod+control+$n0 move container to workspace $ws0; workspace $ws0
 
 # souris
-bindsym         button2   kill
+bindsym         --release button2   kill
 bindsym   Shift+button2   floating toggle
 bindsym         button3   layout toggle tabbed splith tabbed stacked splitv stacked
 bindsym   Shift+button3   layout toggle tabbed stacked tabbed splith splitv splith
@@ -178,29 +187,30 @@ bindsym         button9   workspace next
 bindsym   Shift+button9   move container to workspace next; workspace next
 
 # numpad éteint
-bindsym KP_Left     focus left
-bindsym KP_Right    focus right
-bindsym KP_Up       focus up
-bindsym KP_Begin    focus down
-bindsym KP_End      move left
-bindsym KP_Next     move right
-bindsym KP_Down     move up
-bindsym KP_Insert   move down
-bindsym KP_Delete   focus parent
-bindsym KP_Home     workspace prev
-bindsym KP_Prior    workspace next
+#bindsym KP_Left     focus left
+#bindsym KP_Right    focus right
+#bindsym KP_Up       focus up
+#bindsym KP_Begin    focus down
+#bindsym KP_End      move left
+#bindsym KP_Next     move right
+#bindsym KP_Down     move up
+#bindsym KP_Insert   move down
+#bindsym KP_Delete   focus parent
+#bindsym KP_Home     workspace prev
+#bindsym KP_Prior    workspace next
 
 # config options
 #####bindsym $mod+w exec terminator -e "vim .config/i3/config"
-bindsym $mod+Shift+u reload
-bindsym $mod+Shift+i restart
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
+bind $mod+Shift+32 exec systemctl suspend
+bind $mod+Shift+38 reload
+bind $mod+Shift+31 restart
+bind $mod+Shift+30 exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
 
 mode "mouse" {
-	bindsym a      exec "xdotool mousemove_relative -- -400     0"
-	bindsym u      exec "xdotool mousemove_relative -- -130     0"
-	bindsym i      exec "xdotool mousemove_relative --  130     0"
-	bindsym e      exec "xdotool mousemove_relative --  400     0"
+	bind 38      exec "xdotool mousemove_relative -- -400     0"
+	bind 30      exec "xdotool mousemove_relative -- -130     0"
+	bind 31      exec "xdotool mousemove_relative --  130     0"
+	bind 26      exec "xdotool mousemove_relative --  400     0"
 
 	bindsym b      exec "xdotool mousemove_relative --  -14     0"
 	bindsym eacute exec "xdotool mousemove_relative --  -42     0"
@@ -217,16 +227,16 @@ mode "mouse" {
 	bindsym l      exec "xdotool mousemove_relative --    0    27"
 	bindsym j      exec "xdotool mousemove_relative --    0     9"
 
-	bindsym $n1      exec "xdotool click 1"
-	bindsym $n2      exec "xdotool click 2"
-	bindsym $n3      exec "xdotool click 3"
-	bindsym $n4      exec "xdotool click 4"
-	bindsym $n5      exec "xdotool click 5"
-	bindsym $n6      exec "xdotool click 6"
-	bindsym $n7      exec "xdotool click 7"
-	bindsym $n8      exec "xdotool click 8"
-	bindsym $n9      exec "xdotool click 9"
-	bindsym $n0      exec "xdotool click 1; xdotool click 1"
+	bind $n1      exec "xdotool click 1"
+	bind $n2      exec "xdotool click 2"
+	bind $n3      exec "xdotool click 3"
+	bind $n4      exec "xdotool click 4"
+	bind $n5      exec "xdotool click 5"
+	bind $n6      exec "xdotool click 6"
+	bind $n7      exec "xdotool click 7"
+	bind $n8      exec "xdotool click 8"
+	bind $n9      exec "xdotool click 9"
+	bind $n0      exec "xdotool click 1; xdotool click 1"
 
 
 
@@ -236,39 +246,44 @@ mode "mouse" {
 }
 
 mode "lazy" {
-	bindsym KP_Left focus left
-	bindsym KP_Right focus right
-	bindsym KP_Up focus up
-	bindsym KP_Begin focus down
-	bindsym KP_End move left
-	bindsym KP_Next move right
-	bindsym KP_Down move up
-	bindsym KP_Insert move down
-	bindsym KP_Delete focus parent
-	bindsym KP_Home workspace prev
-	bindsym KP_Prior workspace next
-	bindsym Left focus left
-	bindsym Right focus right
-	bindsym Up focus up
-	bindsym Down focus down
-	bindsym Shift+Left move left
-	bindsym Shift+Right move right
-	bindsym Shift+Up move up
-	bindsym Shift+Down move down
-	bindsym Return exec terminator
-	bindsym BackSpace mode "default"
+#bindsym KP_Left focus left
+#	bindsym KP_Right focus right
+#	bindsym KP_Up focus up
+#	bindsym KP_Begin focus down
+#	bindsym KP_End move left
+#	bindsym KP_Next move right
+#	bindsym KP_Down move up
+##	bindsym KP_Insert move down
+#	bindsym KP_Delete focus parent
+#	bindsym KP_Home workspace prev
+#	bindsym KP_Prior workspace next
+#	bindsym Left focus left
+#	bindsym Right focus right
+#	bindsym Up focus up
+#	bindsym Down focus down
+#	bindsym Shift+Left move left
+#	bindsym Shift+Right move right
+#	bindsym Shift+Up move up
+#	bindsym Shift+Down move down
+#	bindsym Return exec terminator
+#	bindsym BackSpace mode "default"
 }
 mode "almostLazy"{
-	bindsym Escape mode "lazy"
-	bindsym Shift+Escape mode "default"
-	bindsym $mod+r mode "resize"
-	bindsym $mod+a exec "cd Documents; ./scrb1.sh"
-	bindsym $mod+b exec "cd ~/Documents; ./sURL.sh"
-	bindsym $mod+d exec "cd ~/Documents/i3script; ./superscribe.sh"
+#	bindsym Escape mode "lazy"
+#	bindsym Shift+Escape mode "default"
+#	bindsym $mod+r mode "resize"
+#	bindsym $mod+a exec "cd Documents; ./scrb1.sh"
+#	bindsym $mod+b exec "cd ~/Documents; ./sURL.sh"
+#	bindsym $mod+d exec "cd ~/Documents/i3script; ./superscribe.sh"
 }
 #####bindsym $mod+l mode "lazy"
 #####bindsym $mod+Shift+l mode "almostLazy"
-
+mode "épikes"{
+bindsym Up exec ~/aprog/031_mouscripts/killeft.sh
+bindsym Down exec ~/aprog/031_mouscripts/kilright.sh
+bindsym Left exec ~/aprog/031_mouscripts/movleft.sh
+bindsym Right exec ~/aprog/031_mouscripts/moveright.sh
+}
 
 
 
@@ -284,7 +299,8 @@ bar {
 	font xft:Cousine, FontAwesome 9
 	status_command i3blocks
 	position bottom
-	tray_padding 0
+#tray_padding 0
+#tray_output none
 	strip_workspace_numbers yes
 	workspace_buttons yes
 	colors {
@@ -306,6 +322,7 @@ bindsym $mod+F1 exec "xdotool mousemove 683 384"; mode mouse
 bindsym $mod+F2 mode lazy
 bindsym $mod+F10 exec "xsel -ob | sed 's/$/\n/' >> ~/Documents/i3script/vrac/url.txt"
 bindsym $mod+F12 exec i3lock -c 220044 && systemctl suspend
+bind 192 exec "copyq toggle"
 bindsym Print exec gnome-screenshot -i
 bindsym $mod+Print exec gnome-screenshot -p --file=/home/ewen-goisot/Pictures/varloc.png
 
@@ -326,21 +343,24 @@ bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+; pkill -RTMIN+1 i3block
 bindsym $mod+Left  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
 bindsym $mod+Right exec "amixer set Master 5%+; pkill -RTMIN+1 i3blocks"
 #pactl (pavucontrol??) au lieu de amixer serait-il mieux?
+#
 # XF86AudioMute pour couper le son
 #ou pactl set-sink-volume 0 +5%
-#bindsym Mod2+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 70
-#bindsym Mod2+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 10
+#bind Mod2+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 70
+#bind Mod2+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 10
+bindsym $mod+Return exec ~/.vim-anywhere/bin/run
 
-
-
-exec --no-startup-id xbindkeys
-exec --no-startup-id "setxkbmap fr -variant oci"
+exec --no-startup-id compton
+exec --no-startup-id xbindsyms
+exec --no-startup-id "setxkbmap oo ergo"
 exec --no-startup-id numlockx
-exec --no-startup-id "synclient TouchpadOff=1"
+exec --no-startup-id "synclient TouchpadOff=0"
 exec --no-startup-id copyq
-exec --no-startup-id guake
-exec --no-startup-id volumeicon
+exec --no-startup-id guake -e "tmux new-session -A -t guake"
+exec --no-startup-id orage
+#exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-power-manager
+#exec --no-startup-id xfce4-panel
 exec --no-startup-id nm-applet
 ######exec --no-startup-id blueman
 ######exec --no-startup-id orage
@@ -359,18 +379,18 @@ exec --no-startup-id nm-applet
 
 #set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 #mode "$mode_system" {
-#     bindsym l exec --no-startup-id i3exit lock, mode "default"
-#     bindsym e exec --no-startup-id i3exit logout, mode "default"
-#     bindsym s exec --no-startup-id i3exit suspend, mode "default"
-#     bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-#     bindsym r exec --no-startup-id i3exit reboot, mode "default"
-#     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+#     bind l exec --no-startup-id i3exit lock, mode "default"
+#     bind e exec --no-startup-id i3exit logout, mode "default"
+#     bind s exec --no-startup-id i3exit suspend, mode "default"
+#     bind h exec --no-startup-id i3exit hibernate, mode "default"
+#     bind r exec --no-startup-id i3exit reboot, mode "default"
+#     bind Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 #
 #     # back to normal: Enter or Escape
-#     bindsym Return mode "default"
-#     bindsym Escape mode "default"
+#     bind Return mode "default"
+#     bind Escape mode "default"
 #}
-# bindsym $mod+Pause mode "$mode_system"
+# bind $mod+Pause mode "$mode_system"
 
 #systemd
 
@@ -378,5 +398,4 @@ exec --no-startup-id nm-applet
 #    pm-hibernate
 #    pm-powersave
 #    pm-suspend-hybrid
-
 
