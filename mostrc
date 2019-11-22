@@ -1,0 +1,49 @@
+% Color settings
+
+color normal lightgray black
+color status yellow blue
+color underline brightgreen black
+color overstrike brightred black
+
+% Keybindings
+
+setkey bob			"M"
+setkey column_left	"t"
+setkey column_right	"n"
+setkey delete_window		"W"
+setkey digit_arg		"b"
+setkey down		"s"
+setkey edit			"e"
+setkey edt_backward		"i"
+setkey edt_find			"p"
+setkey edt_find_next		"'"
+setkey edt_forward		"a"
+setkey edt_line			"o"
+setkey edt_page			"u"
+setkey eob		"S"
+setkey exit			"q"
+setkey extended_key		":"
+setkey find_file		"@"
+setkey find_next			"v"
+setkey goto_line		"g"
+setkey goto_mark		"_"
+setkey goto_mark		"'"
+setkey goto_percent		"G"
+setkey help			"h"
+setkey one_window		"J"
+setkey other_window		"w"
+setkey page_down			"r"
+setkey page_left			"c"
+setkey page_right		"l"
+setkey page_up		"f"
+setkey redraw			"^L"
+setkey search_backward		"D"
+setkey search_forward		"d"
+setkey set_mark			"±"
+setkey set_mark			"y"
+setkey show_time		"^T"
+setkey suspend			"^Z"
+setkey toggle_lock		"."
+setkey toggle_width		","
+setkey two_windows		"j"
+setkey up			"m"
