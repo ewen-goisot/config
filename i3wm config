@@ -1,5 +1,3 @@
-# disposition adaptée au "zèép'y", une variante de bépo pour ergodox,
-# permettant de taper très vite en français et vite (mieux que qwerty) en anglais
 # mon clavier principal est un ergodox, les touches ctrl mod maj altgr sont très accessibles, et permettant de faire des combinaisons de 3 ou 4 modifieurs sur une seule touche! (cf meh et hyp)
 # j'utilise le code touche (que je ne change pas) au lieu des caractères (pouvant changer d'une langue à l'autre)
 
@@ -10,34 +8,31 @@ set $alt Mod1
 set $meh Mod1+Shift+Control
 set $hyp Mod1+Shift+Control+Mod4
 
-#bind $mod2+r focus left
-
+#workspace_layout tabbed
 font pango:DejaVu Sans Mono 7
 hide_edge_borders none
 show_marks yes
 for_window [class="^.*"] border normal 2
 floating_modifier Control
+floating_maximum_size 1200 x 620
 mouse_warping none
+focus_follows_mouse no
 popup_during_fullscreen leave_fullscreen
-#hide_edge_borders vertical
-# echo -e "\e]0;titre\a" renomme un erminal
-
-# set $mov " ~/move.sh "
-#set $get " ~/.script/mouse.sh "
 
 # workspace name
-set $ws1 "1:1:🔍"
-set $ws2 "2:2:🌸"
-set $ws3 "3:3:🔧"
-set $ws4 "4:4:⚡"
-set $ws5 "5:5:✅"
-set $ws6 "6:6:💠"
-set $ws7 "7:7:⛔"
-set $ws8 "8:8:💬"
-set $ws9 "9:9:🌿"
-set $ws0 "10:0:🔊"
+set $ws0 "0:0:🔍"
+set $ws1 "1:1:🌸"
+set $ws2 "2:2:🔧"
+set $ws3 "3:3:⚡"
+set $ws4 "4:4:✅"
+set $ws5 "5:5:💠"
+set $ws6 "6:6:⛔"
+set $ws7 "7:7:💬"
+set $ws8 "8:8:🌿"
+set $ws9 "9:9:🔊"
 
-# chiffres numpad: change workspace
+# digits numpad: change workspace
+set $n0 90
 set $n1 87
 set $n2 88
 set $n3 89
@@ -47,108 +42,170 @@ set $n6 85
 set $n7 79
 set $n8 80
 set $n9 81
-set $n0 90
 
-# resize value
-set $spx  20
-set $sppt 1
-set $bpx  100
-set $bppt 10
+set $les 9
+
+set $l1 10
+set $l2 11
+set $l3 12
+set $l4 13
+set $l5 14
+set $l6 15
+set $l7 16
+set $l8 17
+set $l9 18
+set $l0 19
+
+set $lpl 21
+set $lmi 20
+
+set $lq 24
+set $lw 25
+set $le 26
+set $lr 27
+set $lt 28
+set $ly 29
+set $lu 30
+set $li 31
+set $lo 32
+set $lp 33
+set $lbl 34
+set $lbr 35
+
+set $la 38
+set $ls 39
+set $ld 40
+set $lf 41
+set $lg 42
+set $lh 43
+set $lj 44
+set $lk 45
+set $ll 46
+set $lap 48
+
+set $lz 52
+set $lx 53
+set $lc 54
+set $lv 55
+set $lb 56
+set $ln 57
+set $lm 58
+set $lco 59
+set $lpe 60
+set $lsl 61
+
+set $lsp 65
 
 for_window [class=".*"] title_format "<span background='#aa0000' foreground='white'> %class </span> <b>%title</b>"
-for_window [class="Chromium-browser"] title_format "<span background='purple' foreground='white'> C </span> <b>%title</b>"
-for_window [class="Vivaldi-stable"] title_format "<span background='purple' foreground='white'> V </span> <b>%title</b>"
-#for_window [class="Vivaldi-stable" title="Private .*"] title_format "<span background='pink' foreground='purple'> V priv </span> <b>%title</b>"
-# permettait de mettre directement qqch dessous et de voir le titre. disabbled
-#for_window [class="Chromium-browser"] split tabbed
+for_window [class="Chromium.*"] title_format "<span background='purple' foreground='white'> C </span> <b>%title</b>"
+for_window [class="Vivaldi.*"] title_format "<span background='purple' foreground='white'> V </span> <b>%title</b>"
 #for_window [title="Appel.*"] title_format "<span background='green' foreground='white'> %class </span> <b>%title</b>"
-for_window [title="Appel.*"] move container to workspace $ws8
-for_window [class="Steam"] move container to workspace $ws9; workspace $ws9
+for_window [title="Appel.*"] move container to workspace $ws7
 for_window [class="Gnome-terminal"] title_format "<span background='black' foreground='white'> T </span> <b>%title</b>"
 for_window [title=".*Preferences.*"] title_format "<span background='white' size='small'> %class </span> <b>%title</b>"
 for_window [class="Evince"] title_format "<span background='yellow'> E </span> <b>%title</b>"
 for_window [class="Zathura"] title_format "<span background='yellow'> Z </span> <b>%title</b>"
 for_window [class="okular"] title_format "<span background='yellow'> O </span> <b>%title</b>"
-for_window [class="Gvim|copyq"] floating enable
+for_window [class="copyq"] floating enable
 for_window [class="mpv|vlc"] title_format "<span background='blue' foreground='white'> %class </span> <b>%title</b>"
-#for_window [class="Franz"] title_format "<span background='green' foreground='white'> FZ </span> <b>%title</b>"
+for_window [class="Gvim"] title_format "<span background='pink' foreground='black'> %class </span> <b>%title</b>"
 
 for_window [title="Save File"] resize set 1000 px 500 px
-for_window [class="copyq"] resize set 1200 px 600 px
-for_window [class="Blender|Inkscape|Gimp.*|kdenlive"] move container to workspace $ws4
 for_window [class="Gtk-youtube-viewer"] mark tar
 #for_window [class="mpv"] move container to mark tar
 
-bind $mod+34 mode COPY
-bind $mod+35 mode LAZY
+assign [class="Blender|Inkscape|Gimp.*|kdenlive"] $ws3
+assign [class="Steam"] $ws8
 
-
-#test:
-bind $mod+152 exec xdo-undo
-
+#space: vim anywhere
 #bindsym $mod+Return exec terminator
-bindsym $mod+space exec gnome-terminal
-bind $mod+26 exec xdotool mousemove 683 384
-bind $mod+22      kill
+bindsym $mod+space  exec "~/.vim-anywhere/bin/run"
+bindsym $mod+Return exec gnome-terminal
 
-# left hand = move yourself
-# è é p ' y
-bind $mod+13      exec "~/.script/mouse.sh focus child"
-bind $mod+12      exec "~/.script/mouse.sh workspace prev"
-bind $mod+33      exec "~/.script/mouse.sh workspace next"
-bind $mod+48      exec "~/.script/mouse.sh focus parent"
-bind $mod+29      resize grow height $bpx px or $bppt ppt; resize grow width $bpx px or $bppt ppt
-# o a i u h
-bind $mod+32      exec "~/.script/mouse.sh move up"
-bind $mod+38      exec "~/.script/mouse.sh move left"
-bind $mod+31      exec "~/.script/mouse.sh move right"
-bind $mod+30      exec "~/.script/mouse.sh move down"
-bind $mod+43      resize shrink width $bpx px or $bppt ppt; resize shrink height $bpx px or $bppt ppt
-# […] x à . , /
-bind $mod+11     mark tar
-bind $mod+53      exec "~/.script/mouse.sh fullscreen toggle"
-bind $mod+14      exec "~/.script/mouse.sh split toggle"
-bind $mod+60      exec "~/.script/mouse.sh layout toggle tabbed stacked tabbed splith splitv splith"
-bind $mod+59      exec "~/.script/mouse.sh layout toggle tabbed splith tabbed stacked splitv stacked"
-bind $mod+61      exec "~/.script/mouse.sh move container to mark tar"
+# right hand = move yourself
+bind $mod+$lb       exec "telegram-desktop"
+bind $num+$mod+$lb  exec "telegram-desktop"
+bind $mod+$lc       exec "~/.script/mouse.sh workspace prev"
+bind $num+$mod+$lc  exec "~/.script/mouse.sh workspace prev"
+bind $mod+$lm       exec "~/.script/mouse.sh focus up"
+bind $num+$mod+$lm  exec "~/.script/mouse.sh focus up"
+bind $mod+$ll       exec "~/.script/mouse.sh workspace next"
+bind $num+$mod+$ll  exec "~/.script/mouse.sh workspace next"
+bind $mod+$lf       exec "~/.script/mouse.sh focus parent"
+bind $num+$mod+$lf  exec "~/.script/mouse.sh focus parent"
+bind $mod+$lz       exec "~/.script/mouse.sh scratchpad show"
+bind $num+$mod+$lz  exec "~/.script/mouse.sh scratchpad show"
 
-# right hand = move a window
-bind $mod+113     floating toggle
-bind $mod+114     focus mode_toggle
-# TODO mettre le rofi drun et le rofi clipboard en accès facile, et les autres un peu moins
-# b c m l f k
-bind $mod+56      exec "/home/ewen-goisot/Documents/i3script/menu/all.sh"
-bind $mod+54      exec "rofi -show drun"
-bind $mod+58      exec chromium-browser
-#bind $mod+46      exec terminator -e ranger
-bind $mod+46      exec thunar
-bind $mod+41      exec pavucontrol
-bind $mod+45      move container to workspace prev; workspace prev
-# g t s n r ^(dead)
-bind $mod+42      kill
-bind $mod+28      exec "~/.script/mouse.sh focus up"
-bind $mod+39      exec "~/.script/mouse.sh focus left"
-bind $mod+57      exec "~/.script/mouse.sh focus right"
-bind $mod+27      exec "~/.script/mouse.sh focus down"
-bind $mod+15      move container to workspace next; workspace next
-# q d v j ç ù
-bind $mod+24      swap with mark swa; mark swa
-bind $mod+40      exec "~/.script/mouse.sh resize grow width $spx px or $sppt ppt"
-bind $mod+55      exec "~/.script/mouse.sh resize shrink width $spx px or $sppt ppt"
-bind $mod+44      exec "~/.script/mouse.sh resize grow height $spx px or $sppt ppt"
-bind $mod+25      exec "~/.script/mouse.sh resize shrink height $spx px or $sppt ppt"
-bind $mod+17      mark swa
+bind $mod+$lg       kill
+bind $num+$mod+$lg  kill
+bind $mod+$lt       exec "~/.script/mouse.sh focus left"
+bind $num+$mod+$lt  exec "~/.script/mouse.sh focus left"
+bind $mod+$ls       exec "~/.script/mouse.sh focus down"
+bind $num+$mod+$ls  exec "~/.script/mouse.sh focus down"
+bind $mod+$ln       exec "~/.script/mouse.sh focus right"
+bind $num+$mod+$ln  exec "~/.script/mouse.sh focus right"
+bind $mod+$lr       exec "~/.script/mouse.sh focus child"
+bind $num+$mod+$lr  exec "~/.script/mouse.sh focus child"
+bind $mod+$lx       exec "~/.script/mouse.sh move container to scratchpad"
+bind $num+$mod+$lx  exec "~/.script/mouse.sh move container to scratchpad"
 
-# shift+right hand = options secondaires semblables
-#bind $mod+Shift+54      exec "rofi -modi \\"run,window,drun\\" -show window"
-#bind $mod+control+54    exec "rofi -modi \\"drun,run,window\\" -show run"
-bind $mod+Shift+58      exec chromium-browser --incognito
-bind $mod+Shift+46      exec thunar
-bind $mod+Shift+41      exec audacity
+bind $mod+$lq       exec "discord"
+bind $num+$mod+$lq  exec "discord"
+bind $mod+$ld       exec "~/.script/mouse.sh layout toggle tabbed splith tabbed stacked splitv stacked"
+bind $num+$mod+$ld  exec "~/.script/mouse.sh layout toggle tabbed splith tabbed stacked splitv stacked"
+bind $mod+$lv       exec "~/.script/mouse.sh layout toggle tabbed stacked tabbed splith splitv splith"
+bind $num+$mod+$lv  exec "~/.script/mouse.sh layout toggle tabbed stacked tabbed splith splitv splith"
+bind $mod+$lj       exec "~/.script/mouse.sh fullscreen toggle"
+bind $num+$mod+$lj  exec "~/.script/mouse.sh fullscreen toggle"
+bind $mod+$lw       exec "~/.script/mouse.sh split toggle"
+bind $num+$mod+$lw  exec "~/.script/mouse.sh split toggle"
+
+# left hand = move a window
+bind $mod+113       focus mode_toggle
+bind $num+$mod+113  focus mode_toggle
+bind $mod+114       floating toggle
+bind $num+$mod+114  floating toggle
+
+bind $mod+$lbl      exec "~/.script/mouse.sh resize shrink height 89 px or 8 ppt"
+bind $num+$mod+$lbl exec "~/.script/mouse.sh resize shrink height 89 px or 8 ppt"
+bind $mod+$lbr      exec "~/.script/mouse.sh resize shrink width 89 px or 8 ppt"
+bind $num+$mod+$lbr exec "~/.script/mouse.sh resize shrink width 89 px or 8 ppt"
+bind $mod+$lp       exec "~/.script/mouse.sh move up 55 px"
+bind $num+$mod+$lp  exec "~/.script/mouse.sh move up 55 px"
+bind $mod+$lap      exec "~/.script/mouse.sh resize grow width 144 px or 13 ppt"
+bind $num+$mod+$lap exec "~/.script/mouse.sh resize grow width 144 px or 13 ppt"
+
+bind $mod+$lo       exec "~/.script/mouse.sh resize grow height 144 px or 13 ppt"
+bind $num+$mod+$lo  exec "~/.script/mouse.sh resize grow height 144 px or 13 ppt"
+bind $mod+$la       exec "~/.script/mouse.sh move left 55 px"
+bind $num+$mod+$la  exec "~/.script/mouse.sh move left 55 px"
+bind $mod+$li       exec "~/.script/mouse.sh move down 89 px"
+bind $num+$mod+$li  exec "~/.script/mouse.sh move down 89 px"
+bind $mod+$lu       exec "~/.script/mouse.sh move right 89 px"
+bind $num+$mod+$lu  exec "~/.script/mouse.sh move right 89 px"
+
+bind $mod+$lpl      exec pavucontrol
+bind $num+$mod+$lpl exec pavucontrol
+bind $mod+$lmi      exec "XDG_CURRENT_DESKTOP=kde;dolphin"
+bind $num+$mod+$lmi exec "XDG_CURRENT_DESKTOP=kde;dolphin"
+bind $mod+$lpe      exec chromium-browser --incognito
+bind $num+$mod+$lpe exec chromium-browser --incognito
+bind $mod+$lco      exec "rofi -show drun"
+bind $num+$mod+$lco exec "rofi -show drun"
+
+bind $mod+$ly       mode unu
+bind $num+$mod+$ly  mode unu
+bind $mod+$lh       mode dek
+bind $num+$mod+$lh  mode dek
+bind $mod+$lk       mode tri
+bind $num+$mod+$lk  mode tri
+# scratchpad
+#.
+#bind $mod+17      mark swa
 
 # bureaux virtuels
 # TODO utiliser mouse.sh partout
-# TODO modifier le code source de i3 pour lui intégrer ce script (difficile)
+bind $mod+$n0 workspace $ws0
 bind $mod+$n1 workspace $ws1
 bind $mod+$n2 workspace $ws2
 bind $mod+$n3 workspace $ws3
@@ -158,76 +215,26 @@ bind $mod+$n6 workspace $ws6
 bind $mod+$n7 workspace $ws7
 bind $mod+$n8 workspace $ws8
 bind $mod+$n9 workspace $ws9
-bind $mod+$n0 workspace $ws0
 #
-bind $mod+Shift+$n1 move container to workspace $ws1
-bind $mod+Shift+$n2 move container to workspace $ws2
-bind $mod+Shift+$n3 move container to workspace $ws3
-bind $mod+Shift+$n4 move container to workspace $ws4
-bind $mod+Shift+$n5 move container to workspace $ws5
-bind $mod+Shift+$n6 move container to workspace $ws6
-bind $mod+Shift+$n7 move container to workspace $ws7
-bind $mod+Shift+$n8 move container to workspace $ws8
-bind $mod+Shift+$n9 move container to workspace $ws9
-bind $mod+Shift+$n0 move container to workspace $ws0
-#
-bind $mod+control+$n1 move container to workspace $ws1; workspace $ws1
-bind $mod+control+$n2 move container to workspace $ws2; workspace $ws2
-bind $mod+control+$n3 move container to workspace $ws3; workspace $ws3
-bind $mod+control+$n4 move container to workspace $ws4; workspace $ws4
-bind $mod+control+$n5 move container to workspace $ws5; workspace $ws5
-bind $mod+control+$n6 move container to workspace $ws6; workspace $ws6
-bind $mod+control+$n7 move container to workspace $ws7; workspace $ws7
-bind $mod+control+$n8 move container to workspace $ws8; workspace $ws8
-bind $mod+control+$n9 move container to workspace $ws9; workspace $ws9
-bind $mod+control+$n0 move container to workspace $ws0; workspace $ws0
-# bureaux virtuels
-bind $mod+$num+$n1 workspace $ws1
-bind $mod+$num+$n2 workspace $ws2
-bind $mod+$num+$n3 workspace $ws3
-bind $mod+$num+$n4 workspace $ws4
-bind $mod+$num+$n5 workspace $ws5
-bind $mod+$num+$n6 workspace $ws6
-bind $mod+$num+$n7 workspace $ws7
-bind $mod+$num+$n8 workspace $ws8
-bind $mod+$num+$n9 workspace $ws9
-bind $mod+$num+$n0 workspace $ws0
-#
-bind $mod+$num+Shift+$n1 move container to workspace $ws1
-bind $mod+$num+Shift+$n2 move container to workspace $ws2
-bind $mod+$num+Shift+$n3 move container to workspace $ws3
-bind $mod+$num+Shift+$n4 move container to workspace $ws4
-bind $mod+$num+Shift+$n5 move container to workspace $ws5
-bind $mod+$num+Shift+$n6 move container to workspace $ws6
-bind $mod+$num+Shift+$n7 move container to workspace $ws7
-bind $mod+$num+Shift+$n8 move container to workspace $ws8
-bind $mod+$num+Shift+$n9 move container to workspace $ws9
-bind $mod+$num+Shift+$n0 move container to workspace $ws0
-#
-bind $mod+$num+control+$n1 move container to workspace $ws1; workspace $ws1
-bind $mod+$num+control+$n2 move container to workspace $ws2; workspace $ws2
-bind $mod+$num+control+$n3 move container to workspace $ws3; workspace $ws3
-bind $mod+$num+control+$n4 move container to workspace $ws4; workspace $ws4
-bind $mod+$num+control+$n5 move container to workspace $ws5; workspace $ws5
-bind $mod+$num+control+$n6 move container to workspace $ws6; workspace $ws6
-bind $mod+$num+control+$n7 move container to workspace $ws7; workspace $ws7
-bind $mod+$num+control+$n8 move container to workspace $ws8; workspace $ws8
-bind $mod+$num+control+$n9 move container to workspace $ws9; workspace $ws9
-bind $mod+$num+control+$n0 move container to workspace $ws0; workspace $ws0
-
-
-
+bind $mod+control+$n0 move container to workspace $ws0
+bind $mod+control+$n1 move container to workspace $ws1
+bind $mod+control+$n2 move container to workspace $ws2
+bind $mod+control+$n3 move container to workspace $ws3
+bind $mod+control+$n4 move container to workspace $ws4
+bind $mod+control+$n5 move container to workspace $ws5
+bind $mod+control+$n6 move container to workspace $ws6
+bind $mod+control+$n7 move container to workspace $ws7
+bind $mod+control+$n8 move container to workspace $ws8
+bind $mod+control+$n9 move container to workspace $ws9
 
 # souris
-bindsym         --release button2   kill
+bindsym --release button2 kill
 bindsym   Shift+button2   floating toggle
 bindsym         button3   layout toggle tabbed splith tabbed stacked splitv stacked
 bindsym   Shift+button3   layout toggle tabbed stacked tabbed splith splitv splith
-#bindsym         button4   move left; focus right
-#bindsym control+button4   focus left
-#bindsym   Shift+button4   move down; focus up
-#bindsym         button5   move right; focus left
-#bindsym   Shift+button5   move up; focus down
+bindsym         button4   exec true
+bindsym         button5   exec true
+bindsym control+button4   focus left
 bindsym control+button5   focus right
 bindsym         button8   workspace prev
 bindsym   Shift+button8   move container to workspace prev; workspace prev
@@ -235,170 +242,114 @@ bindsym         button9   workspace next
 bindsym   Shift+button9   move container to workspace next; workspace next
 
 # config options
-#####bindsym $mod+w exec terminator -e "vim .config/i3/config"
-bind $mod+Shift+32 exec systemctl suspend
-bind $mod+Shift+38 reload
-bind $mod+Shift+31 restart
-bind $mod+Shift+30 exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
+bind $mod+Control+32      exec systemctl suspend
+bind $num+$mod+Control+32 exec systemctl suspend
+bind $mod+Control+38      reload
+bind $num+$mod+Control+38 reload
+bind $mod+Control+31      restart
+bind $num+$mod+Control+31 restart
+bind $mod+Control+30      exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
+bind $num+$mod+Control+30 exec "i3-nagbar -t warning -m 'Exit?' -b 'Yes' 'i3-msg exit'"
 
-mode "COPY" {
-# front-end "hacking"
-bind 35 mode "LAZY"
-bind 34 mode "-copy-"
-bind 24 mode "default"
-bind 192 exec "copyq toggle"
+mode "unu"{
+		bind $ly mode "o"
+		bind $lh mode "dek"
+		bind $lk mode "tri"
+		bind $les mode default
+	}
+mode "dek"{
+		bind $ly mode "unu"
+		bind $lh mode "o"
+		bind $lk mode "tri"
+		bind $les mode default
+	}
 
-bindsym --release t exec "sleep 0.05; xdotool key F6 F6; sleep 0.05; xdotool key Control+c; sleep 0.05; xdotool key F6; echo '' >> ~/.i3scripts/url.txt; xsel -ob >> ~/.i3scripts/url.txt "
-bindsym --release s exec "~/.script/hack_paste.sh"
-bindsym --release n exec "xdotool type N"
-bindsym --release c exec "~/.script/robot.sh"
-bindsym --release m exec "~/.script/robot2.sh"
-#	bindsym --release s mode -copy-
-#xdotool key F6; "
+mode "tri"{
+	bindsym Print exec "gnome-screenshot -i"
+		bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
+		bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+		bindsym $mod+$alt+Up exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
+		bindsym $mod+$alt+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+		bindsym         --release button2   kill
+		bindsym   Shift+button2   floating toggle
+		bindsym         button3   layout toggle tabbed splith tabbed stacked splitv stacked
+		bindsym   Shift+button3   layout toggle tabbed stacked tabbed splith splitv splith
+		bindsym         button4   exec true
+		bindsym         button5   exec true
+		bindsym control+button4   focus left
+		bindsym control+button5   focus right
+		bind $ly mode "unu"
+		bind $lh mode "dek"
+		bind $lk mode "o"
+		bind $les mode default
+		bind 192 exec "copyq toggle"
+
+# clic rapide (jeu "toss the turtle")
+		bindsym --release b exec "xdotool mousedown 1; sleep 0.05; xdotool mouseup 1"
+		bindsym --release g exec "~/.script/metube.sh"
+		bindsym --release t exec "sleep 0.05; xdotool key F6 F6; sleep 0.05; xdotool key Control+c; sleep 0.05; xdotool key F6; echo '' >> ~/.i3scripts/url.txt; xsel -ob >> ~/.i3scripts/url.txt "
+		bindsym --release s exec "~/.script/hack_paste.sh"
+		bindsym --release n exec "xdotool type N"
+		bindsym --release c exec "~/.script/robot.sh"
+		bindsym --release m exec "~/.script/robot2.sh && ~/.script/mouse.sh focus right"
+		bindsym --release f exec "~/.script/mouse.sh focus left && ~/.script/next2.sh"
 }
-mode "-copy-" {
-bind 35 mode "LAZY"
-bind 34 mode "COPY"
-bind 24 mode "default"
+mode "o" {
+# TODO tous les modes doivent reconnaître la souris
+bindsym Print exec gnome-screenshot -i
+bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Up exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+bindsym         --release button2   kill
+bindsym   Shift+button2   floating toggle
+bindsym         button3   layout toggle tabbed splith tabbed stacked splitv stacked
+bindsym   Shift+button3   layout toggle tabbed stacked tabbed splith splitv splith
+bindsym         button4   exec true
+bindsym         button5   exec true
+bindsym control+button4   focus left
+bindsym control+button5   focus right
+		bind $ly mode "unu"
+		bind $lh mode "dek"
+		bind $lk mode "tri"
+		bind --release $mod+$ly exec "i3-msg mode default; sleep .1; xdotool type y; sleep .1; i3-msg mode o"
+		bind --release $mod+$lh exec "i3-msg mode default; sleep .1; xdotool type h; sleep .1; i3-msg mode o"
+		bind --release $mod+$lk exec "i3-msg mode default; sleep .1; xdotool type k; sleep .1; i3-msg mode o"
+		bind $les mode default
 bind 192 exec "copyq toggle"
 }
-
-mode "LAZY" {
-bind 35 mode "-lazy-"
-bind 34 mode "COPY"
-bind 24 mode "default"
-bind 192 exec "copyq toggle"
-#	bindsym Return exec terminator
-#	bindsym BackSpace mode "default"
-bindsym space exec gnome-terminal
-bind 26 exec xdotool mousemove 683 384
-bind 22      kill
-
-# left hand = move yourself
-# è é p ' y
-bind 13      exec "~/.script/mouse.sh focus child"
-bind 12      exec "~/.script/mouse.sh workspace prev"
-bind 33      exec "~/.script/mouse.sh workspace next"
-bind 48      exec "~/.script/mouse.sh focus parent"
-bind 29      resize grow height $bpx px or $bppt ppt; resize grow width $bpx px or $bppt ppt
-# o a i u h
-bind 32      exec "~/.script/mouse.sh move up"
-bind 38      exec "~/.script/mouse.sh move left"
-bind 31      exec "~/.script/mouse.sh move right"
-bind 30      exec "~/.script/mouse.sh move down"
-bind 43      resize shrink width $bpx px or $bppt ppt; resize shrink height $bpx px or $bppt ppt
-# […] x à . , /
-bind 11     mark tar
-bind 53      fullscreen toggle
-bind 14      split toggle
-bind 60      layout toggle tabbed stacked tabbed splith splitv splith
-bind 59      layout toggle tabbed splith tabbed stacked splitv stacked
-bind 61      move container to mark tar
-
-# right hand = move a window
-bind 111     floating toggle
-bind 116     focus mode_toggle
-# TODO mettre le rofi drun et le rofi clipboard en accès facile, et les autres un peu moins
-# b c m l f k
-#bind 56      exec "/home/ewen-goisot/Documents/i3script/menu/all.sh"
-bind 54      exec "rofi -show drun"
-bind 58      exec chromium-browser
-#bind 46      exec terminator -e ranger
-bind 46      exec thunar
-bind 41      exec pavucontrol
-bind 45      move container to workspace prev; workspace prev
-# g t s n r ^(dead)
-bind 42      kill
-bind 28      exec "~/.script/mouse.sh focus up"
-bind 39      exec "~/.script/mouse.sh focus left"
-bind 57      exec "~/.script/mouse.sh focus right"
-bind 27      exec "~/.script/mouse.sh focus down"
-bind 15      move container to workspace next; workspace next
-# q d v j ç ù
-#bind 24      swap with mark swa; mark swa
-bind 40      resize grow width $spx px or $sppt ppt
-bind 55      resize shrink width $spx px or $sppt ppt
-bind 44      resize grow height $spx px or $sppt ppt
-bind 25      resize shrink height $spx px or $sppt ppt
-bind 17      mark swa
-
-# shift+right hand = options secondaires semblables
-#bind Shift+54      exec "rofi -modi \\"run,window,drun\\" -show window"
-#bind control+54    exec "rofi -modi \\"drun,run,window\\" -show run"
-bind Shift+58      exec chromium-browser --incognito
-bind Shift+46      exec thunar
-bind Shift+41      exec audacity
-
-# bureaux virtuels
-bind $n1 workspace $ws1
-bind $n2 workspace $ws2
-bind $n3 workspace $ws3
-bind $n4 workspace $ws4
-bind $n5 workspace $ws5
-bind $n6 workspace $ws6
-bind $n7 workspace $ws7
-bind $n8 workspace $ws8
-bind $n9 workspace $ws9
-bind $n0 workspace $ws0
-
-#
-}
-mode "-lazy-"{
-bind 35 mode "LAZY"
-bind 34 mode "COPY"
-bind 24 mode "default"
-bind 192 exec "copyq toggle"
-#	bindsym Shift+Escape mode "default"
-#	bindsym $mod+r mode "resize"
-#	bindsym $mod+a exec "cd Documents; ./scrb1.sh"
-#	bindsym $mod+b exec "cd ~/Documents; ./sURL.sh"
-#	bindsym $mod+d exec "cd ~/Documents/i3script; ./superscribe.sh"
-}
-#####bindsym $mod+l mode "LAZY"
-#####bindsym $mod+Shift+l mode "almostLAZY"
-#
-#mode "épikes"{
-#bindsym Up exec ~/aprog/031_mouscripts/killeft.sh
-#bindsym Down exec ~/aprog/031_mouscripts/kilright.sh
-#bindsym Left exec ~/aprog/031_mouscripts/movleft.sh
-#bindsym Right exec ~/aprog/031_mouscripts/moveright.sh
-#}
-
-
 
 
 # Layout colors            bord    backgr  text	   indicator
-client.focused             #ffffff #66ff66 #000000 #ff5555
-client.focused_inactive    #ffffff #3333ff #000000 #ff5555
-client.unfocused           #ffffff #888888 #000000 #ff5555
-client.urgent              #ffffff #ff4444 #000000 #ff5555
+client.focused             #ffff00 #66ff66 #000000 #ff5555
+client.focused_inactive    #ffff00 #0000ff #ffff00 #ff5555
+client.unfocused           #ffff00 #aaaaaa #000000 #ff5555
+client.urgent              #ffff00 #ff4444 #000000 #ff5555
 client.background          #000000 #000000
 
 bar {
-	font xft:Cousine, FontAwesome 9
+	font xft:Cousine, FontAwesome 8
 	status_command i3blocks
 	position bottom
 #tray_padding 0
 #tray_output none
+separator_symbol "▄"
 	strip_workspace_numbers yes
 	workspace_buttons yes
 	colors {
+		separator #ffffff
+		statusline #00ffff
 		#                  bord    backgr  text
 		focused_workspace  #cccccc #880000 #ffffff
 		inactive_workspace #cccccc #aaaa00 #000000
 		urgent_workspace   #cccccc #0044cc #ffffff
+		binding_mode       #cccccc #4400cc #ffffff
 	}
 }
 
 
-# chromium vim
-#copyq menu?
-#####bindsym $mod+a exec copyq show
-#####bindsym $mod+t exec terminator -e top
 
 # options "reglementaires"
-bindsym $mod+F1 exec "xdotool mousemove 683 384"; mode mouse
-bindsym $mod+F2 mode LAZY
 bindsym $mod+F10 exec "xsel -ob | sed 's/$/\n/' >> ~/Documents/i3script/vrac/url.txt"
 bindsym $mod+F12 exec i3lock -c 220044 && systemctl suspend
 bind 192 exec "copyq toggle"
@@ -409,55 +360,41 @@ bindsym Control+Print exec "scrot ~/Pictures/screenshot/$(date '+%Y-%m-%d_%H:%M:
 #bindsym $alt+Print exec "~/.i3scripts/scrot_a.sh"
 #bindsym $mod+Print exec gnome-screenshot -p --file=~/Pictures/varloc.png
 
-bindsym $mod+F5 exec "setxkbmap fr -variant oci"
-bindsym $mod+F6 exec "setxkbmap fr -variant bepo"
-bindsym $mod+F7 exec "setxkbmap oo -variant ergo"
-
-bindsym $mod+F8 exec "setxkbmap us -variant dvp"
-bindsym $mod+F9 exec "setxkbmap oo -variant oss"
-
 bindsym XF86AudioPlay exec rofi -show drun
 bindsym XF86AudioStop exec "mpc stop"
 bindsym XF86AudioNext exec "mpc next"
 bindsym XF86AudioPrev exec "mpc prev"
 
-bindsym XF86AudioRaiseVolume exec "amixer set Master 5%+; pkill -RTMIN+1 i3blocks"
+bind $mod+115       exec "~/.script/mouse_goto.sh"
+bind $mod+Shift+115 exec "~/.script/mouse_save.sh"
+bind $mod+110       exec "~/.script/mouse_local.sh"
+bind $mod+Shift+110 exec xdotool mousemove 683 384
+
+bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
 bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$num+Up exec "amixer set Master 5%+; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$num+Up    exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
 bindsym $mod+$num+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
-bind --release 66  exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
-bind --release 77  exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
+bindsym $mod+$alt+Up    exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+bind --release 66       exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
+bind --release 77       exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
 #pactl (pavucontrol??) au lieu de amixer serait-il mieux?
 #
-# XF86AudioMute pour couper le son
-#ou pactl set-sink-volume 0 +5%
-#bind Mod2+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 70
-#bind Mod2+XF86MonBrightnessDown exec --no-startup-id xbacklight -set 10
-bindsym $mod+Return exec ~/.vim-anywhere/bin/run
 
 exec --no-startup-id compton
 exec --no-startup-id xbindsyms
-exec --no-startup-id "setxkbmap oo ergo"
-exec --no-startup-id numlockx
+exec --no-startup-id "setxkbmap oo ergomath"
+#exec --no-startup-id "xset r rate 200 25"
+#exec --no-startup-id numlockx
 exec --no-startup-id "synclient TouchpadOff=0"
 exec --no-startup-id copyq
 exec --no-startup-id guake -e "tmux new-session -A -t guake"
-#exec --no-startup-id orage
+#exec --no-startup-id "sleep 20 && discord"
 #exec --no-startup-id volumeicon
 exec --no-startup-id xfce4-power-manager
-#exec --no-startup-id xfce4-panel
 exec --no-startup-id nm-applet
-######exec --no-startup-id blueman
-######exec --no-startup-id orage
-######exec --no-startup-id xfce4-panel --disable-wm-check
+# why not possible on xinitrc?
+exec --no-startup-id "feh --bg-scale /home/user/Desktop/wallpaper.jpg"
+exec --no-startup-id blueman-applet
 ######exec --no-startup-id indicator-keylock
-######solar?
 
-
-
-# on peut demander des choses à i3 avec i3-msg (par exemple, se déplacer vers un certain workspace)
-# et i3wm est très poli... de plus quand on se trompe dans un message, il donne les options possibles
-
-# polybar? conky?
-
-# installer i3exit si ∃
