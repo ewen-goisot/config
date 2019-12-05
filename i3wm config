@@ -83,6 +83,7 @@ set $lk 45
 set $ll 46
 set $lap 48
 
+set $lat 51
 set $lz 52
 set $lx 53
 set $lc 54
@@ -92,7 +93,7 @@ set $ln 57
 set $lm 58
 set $lco 59
 set $lpe 60
-set $lsl 61
+set $lud 61
 
 set $lsp 65
 
@@ -133,8 +134,8 @@ bind $mod+$ll       exec "~/.script/mouse.sh workspace next"
 bind $num+$mod+$ll  exec "~/.script/mouse.sh workspace next"
 bind $mod+$lf       exec "~/.script/mouse.sh focus parent"
 bind $num+$mod+$lf  exec "~/.script/mouse.sh focus parent"
-bind $mod+$lz       exec "~/.script/mouse.sh scratchpad show"
-bind $num+$mod+$lz  exec "~/.script/mouse.sh scratchpad show"
+bind $mod+$lz       exec "~/.script/mouse.sh move container to scratchpad"
+bind $num+$mod+$lz  exec "~/.script/mouse.sh move container to scratchpad"
 
 bind $mod+$lg       kill
 bind $num+$mod+$lg  kill
@@ -146,8 +147,9 @@ bind $mod+$ln       exec "~/.script/mouse.sh focus right"
 bind $num+$mod+$ln  exec "~/.script/mouse.sh focus right"
 bind $mod+$lr       exec "~/.script/mouse.sh focus child"
 bind $num+$mod+$lr  exec "~/.script/mouse.sh focus child"
-bind $mod+$lx       exec "~/.script/mouse.sh move container to scratchpad"
-bind $num+$mod+$lx  exec "~/.script/mouse.sh move container to scratchpad"
+bind $mod+$lx       exec "~/.script/mouse.sh scratchpad show"
+bind $num+$mod+$lx  exec "~/.script/mouse.sh scratchpad show"
+
 
 bind $mod+$lq       exec "discord"
 bind $num+$mod+$lq  exec "discord"
@@ -165,6 +167,11 @@ bind $mod+113       focus mode_toggle
 bind $num+$mod+113  focus mode_toggle
 bind $mod+114       floating toggle
 bind $num+$mod+114  floating toggle
+bind  $mod+111 exec "xdotool click 4"
+bind  $mod+116 exec "xdotool click 5"
+bind $mod+$lud exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Goto: '
+bind $mod+$lat exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+
 
 bind $mod+$lbl      exec "~/.script/mouse.sh resize shrink height 89 px or 8 ppt"
 bind $num+$mod+$lbl exec "~/.script/mouse.sh resize shrink height 89 px or 8 ppt"
@@ -266,10 +273,10 @@ mode "dek"{
 
 mode "tri"{
 	bindsym Print exec "gnome-screenshot -i"
-		bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-		bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
-		bindsym $mod+$alt+Up exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-		bindsym $mod+$alt+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+		bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+		bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
+		bindsym $mod+$alt+Up exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+		bindsym $mod+$alt+Down  exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
 		bindsym         --release button2   kill
 		bindsym   Shift+button2   floating toggle
 		bindsym         button3   layout toggle tabbed splith tabbed stacked splitv stacked
@@ -297,10 +304,10 @@ mode "tri"{
 mode "o" {
 # TODO tous les modes doivent reconnaître la souris
 bindsym Print exec gnome-screenshot -i
-bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$alt+Up exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$alt+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Up exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Down  exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
 bindsym         --release button2   kill
 bindsym   Shift+button2   floating toggle
 bindsym         button3   layout toggle tabbed splith tabbed stacked splitv stacked
@@ -370,12 +377,12 @@ bind $mod+Shift+115 exec "~/.script/mouse_save.sh"
 bind $mod+110       exec "~/.script/mouse_local.sh"
 bind $mod+Shift+110 exec xdotool mousemove 683 384
 
-bindsym XF86AudioRaiseVolume exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioLowerVolume exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$num+Up    exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$num+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$alt+Up    exec "amixer set Master 3%+; pkill -RTMIN+1 i3blocks"
-bindsym $mod+$alt+Down  exec "amixer set Master 5%-; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$num+Up    exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$num+Down  exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Up    exec "pactl set-sink-volume 0 +2.33dB; pkill -RTMIN+1 i3blocks"
+bindsym $mod+$alt+Down  exec "pactl set-sink-volume 0 -3.77dB; pkill -RTMIN+1 i3blocks"
 bind --release 66       exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
 bind --release 77       exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
 #pactl (pavucontrol??) au lieu de amixer serait-il mieux?
@@ -384,7 +391,7 @@ bind --release 77       exec "sleep 0.04 && pkill -RTMIN+2 i3blocks"
 exec --no-startup-id compton
 exec --no-startup-id xbindsyms
 exec --no-startup-id "setxkbmap oo ergomath"
-#exec --no-startup-id "xset r rate 200 25"
+exec --no-startup-id "xset r rate 200 25"
 #exec --no-startup-id numlockx
 exec --no-startup-id "synclient TouchpadOff=0"
 exec --no-startup-id copyq
