@@ -1,113 +1,56 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-  export ZSH="/home/ewen-goisot/.oh-my-zsh"
+export ZSH="/home/user/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+#source ~/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
 ZSH_THEME="crunch"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+export PAGER="most"
+XDG_CURRENT_DESKTOP=kde
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
- DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
+DISABLE_LS_COLORS="true"
+alias ls='ls --color=tty --time-style="+%Y-%m-%d"'
+DISABLE_AUTO_TITLE="true"
 ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 HIST_STAMPS="yyyy-mm-dd"
-
-# Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git sudo
+git z
+zsh-autosuggestions
+zsh-syntax-highlighting
 )
+# plugin sudo
+# zsh-syntax-highlighting doit être en dernier
+# bindkey '\ei' expand-or-complete
+# bindkey tout court rappelle la liste des raccourcis clavier, -e emacs, -v nvim
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+	#   export EDITOR='nvim'
+	# else
+		#   export EDITOR='mnvim'
+		# fi
 
-# Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
+#alias echo='echo -E'
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias -g □=' '
-alias aaaaa='setxkbmap fr'
-alias bbbbb='setxkbmap fr'
-alias ggggg='setxkbmap fr'
-alias qqqqq='setxkbmap fr'
-
-alias l='ls'
-alias la='ls -a'
-alias ll='ls -lahG'
-alias llg='ls -lah | grep'
-alias lll='ls -lah'
+#echo -e "\e[?1000;1006;1015h";clear
 
 
-alias c='g++ -w main.cpp'
+
+
 alias cfi='cpufreq-info -fm'
 alias cl='clear'
 alias cll='clear; clear' # efface aussi la dernière commande
@@ -116,46 +59,82 @@ alias chw='chmod +w'
 alias chx='chmod +x'
 alias cw='g++ main.cpp'
 alias co='g++ -w main.cpp -O3 -s'
-alias e='./a.out'
 alias f='touch'
 alias fd='mkdir'
-#alias g='grep' sert déjà pour git
+alias gg='cd'
 alias h='htop'
 alias hh='history'
-alias hg='history | grep'
-alias hl='history | less'
 alias i='inxi -F'
+j () {
+	zathura $1 2>/dev/null
+}
 alias k='kill'
 alias kk='killall'
-alias m='man'
-alias mk='make'
-alias mc='make clear'
+#alias m='man'
+m () {
+	xdotool mousemove $(xdotool getwindowgeometry $(xdotool getwindowfocus) | sed "2! d; s/^.*on: //; s/ (.*$/+1/;s/,/+1; /" | bc | tr "\n" " ")
+	echo -e "\e[?1000;1006h" # capture scroll events
+	tmux rename-window "M $1"
+	man $1
+	tmux set automatic-rename 1
+	echo -e "\e[?1000;1006l"
+}
+alias ma='make'
+alias mo='make && ./output'
+alias mu='make clean'
 alias mi='make install'
 alias p='pidof'
 alias pp='ping -c 3 www.google.com'
 alias q='exit'
-alias r='ranger'
-alias t='top'
+alias r='~/go/bin/lf && cd $(cat /media/ramdisk/lfcd)'
+alias t='top | colout " R " yellow | colout " 0[0.:]*" red | colout " root |/.*" green'
 alias tt='date'
-alias v='vim'
-alias vv='vim *.(c|cpp|h|hpp)'
+alias tv='youtube-viewer -C'    # aud+vid
+#alias tps='curl wttr.in'
+mto () {
+	curl wttr.in/$1
+}
+alias vt='youtube-viewer -C -n' # audio seul
+#alias v='nvim'
+v () {
+	tmux_window_name=$(echo $1 | sed "s#^\(~/\|/home/user/\)\(.\|.config/\)\?##;s#^#V #")
+	tmux rename-window $tmux_window_name
+	nvim $1 $2 $3 $4 $5 $6 $7 $8 $9
+	tmux set automatic-rename 1
+}
+alias vv='nvim *.(c|cpp|h|hpp) || nvim *.(sh|bash|zsh) || nvim *.* || nvim *'
+alias vn='v /dev/null' # écris du texte qui ne sera pas sauvegardé
+#alias wego='~/go/bin/./wego'
+alias xd='xdotool'
 alias xk='xdotool key'
+alias xm='xdotool mousemove'
+alias xt='xdotool type'
+alias xg='xdotool getmouselocation'
 alias y='synclient Touchpadoff=0'
-alias z='synclient Touchpadoff=1'
+alias yy='synclient Touchpadoff=1'
+alias yta='~/.i3scripts/yta.sh'
 
-# principaux déplacements
-# pile
-alias a='pushd .'
-alias aa='pushd'
-alias af='cd ..'
-alias aff='cd ../..'
-alias afff='cd ../../..'
-alias affff='cd ../../../..'
-alias au='popd'
 # déplacements via un menu rofi
-alias ad="var=\$(ls -d */ | cut -f1 -d'/'); var=\$(echo \"..
-\$var\" | rofi -dmenu -i -p \"Sous dossier\"); cd \"\$var\""
-alias mad="var=\$(ls -d */ .*/ | cut -f1 -d'/' | rofi -dmenu -i -p \"Sous dossier\"); cd \"\$var\""
+# la première commande ls est séparée en deux: s'il n'y en a qu'une
+# la commande ne marcherait que dans les dossiers ayant des dossiers normaux ET masqués
+# il est possible de répondre ../dossier meme si . est vide
+# le second ls ne se fait que s'il y a eu un cd
+alias ac="var=\$( (ls -d */ ; ls -d .*/) 2>/dev/null | cut -f1 -d'/' | rofi -dmenu -i -p \"Sous dossier\") && cd \"\$var\" && ls"
+
+alias c='g++ -w main.cpp'
+alias c1='g++ -w'
+
+alias e='./a.out'
+alias e1='./*.out'
+alias e2='./*.sh'
+alias e3='./*.py'
+alias e4='./*.*'
+
+alias l='ls'
+alias la='ls -a'
+alias ll='ls -lahG'
+alias llg='ls -lah | grep'
+alias lll='ls -lahi' # affiche un maximum d'infos dont inode
 
 alias s='sudo'
 alias sdi='sudo dpkg -i'
@@ -169,74 +148,83 @@ alias sop='sudo apt remove --purge'
 alias sor='sudo apt remove'
 alias sos='sudo su'
 alias sra='sudo ranger'
-alias svi='sudo vim'
+alias svi='sudo nvim'
 
-# provient d'un pluggin oh-my-zsh
-alias -g H='| head'
-alias -g T='| tail'
-alias -g G='| grep'
-alias -g L="| less"
-alias -g M="| most" # ne marche pas
-alias -g LL="2>&1 | less"
-alias -g CA="2>&1 | cat -A"
-alias -g NE="2> /dev/null"
-alias -g NUL="> /dev/null 2>&1"
-alias -g P="2>&1| pygmentize -l pytb" # ne marche pas
 
-# é déplacements courants
-alias é='cd ~/aprog/025_sinapt_bis'
-alias éa='cd ~/aprog'
-alias éd='cd ~/Documents'
-alias ék='cd /usr/share/X11/xkb/symbols'
-alias él='cd ~/atxt/acours/maths/CTU\ L3\ semestre\ 2'
-alias ém='cd ~/Music'
-alias ér='cd /'
-alias ét='cd ~/Downloads'
-alias éme='cd /media/ewen-goisot'
-alias émé='cd /media'
-alias éx='cd ~/atxt'
-
-# è scripts courants
-alias è='g++ -w main.cpp && ./a.out'
-alias èv='é; vim *.(c|cpp|h|hpp)'
+# ê musique
+# TODO : changer de dossier, c'est maintenant dans ~/.i3scripts/yta.sh
+alias ê='~/.i3scripts/yta.sh -o ~/Music/varloc'
+alias êt='cat ~/.i3scripts/url.txt'
+alias ês='nvim ~/.i3scripts/url.txt'
+alias ên='echo "#init par zsh" > ~/.i3scripts/url.txt'
+êr () {
+	echo "$1" >> ~/.i3scripts/url.txt
+}
 
 # à éditions courantes de fichiers
-alias à='vim ~/.zshrc'
-alias àb='vim ~/.i3blocks.conf'
-alias àc='vim ~/Documents/configux'
-alias àe="libreoffice --calc 'Documents/emploi du temps.ods'"
-alias àh='vim ~/.zsh_history'
-alias ài='vim ~/.config/i3/config'
-alias àk='sudo vim /usr/share/X11/xkb/symbols/oo'
-alias àl='evince ~/atxt/acours/maths/CTU\ L3\ semestre\ 2/EFcours.pdf'
-alias àr='vim ~/.config/rofi/config'
-alias àv='vim ~/.vimrc'
-alias àvv='vim ~/Documents/vim'
+alias è='v ~/.zshrc'
+alias èb='v ~/.i3blocks.conf'
+alias èc='v ~/Documents/configux'
+alias èe="libreoffice --calc 'Documents/emploi du temps.ods'"
+alias èh='v ~/.zsh_history'
+alias èi='v ~/.config/i3/config'
+alias èk='v /usr/share/X11/xkb/symbols/oo'
+alias èm='v ~/Documents/maudpassss.txt'
+alias èr='v ~/.config/rofi/config'
+alias èv='v ~/.vimrc'
+alias èvv='v ~/Documents/vim'
+alias èt='v ~/.tmux.conf'
 
-alias ç='setxkbmap fr'
-alias çg='setxkbmap oo -variant oss'
-alias çq='setxkbmap us'
-
-alias aà='alias | grep ^à'
 alias aé='alias | grep ^é'
 alias aè='alias | grep ^è'
-alias aê='alias | grep ^ê'
-alias aç='alias | grep ^ç'
-alias aù='alias | grep ^ù'
+
+alias mem='~/.script/mem.sh'
+
+bindkey -s 'ée' 'echo $'
+
+bindkey -s 'éc' 'cd '
+bindkey -s 'ém' '/'
+
+bindkey -s 'ét' '!:0 '
+bindkey -s 'és' ' !:1 '
+bindkey -s 'én' ' !:2 '
+bindkey -s 'ér' ' !:3 '
+bindkey -s 'éx' ' !:4 '
+bindkey -s 'éd' '!:0-$ '
+bindkey -s 'év' '!:0- '
+bindkey -s 'éj' ' !:$ '
+bindkey -s 'éw' '!:0-2 '
+
+bindkey -s 'ééy' '| tail '
+bindkey -s 'ééh' '| head '
+
+bindkey -s 'ééb' '| bc '
+bindkey -s 'ééc' '| cat -A '
+bindkey -s 'éém' '| most '
+bindkey -s 'éél' '| less '
+bindkey -s 'ééf' '; sleep .1 '
+bindkey -s 'ééz' '; sleep 4 '
+
+bindkey -s 'éég' '| grep '
+bindkey -s 'éét' '| tee '
+bindkey -s 'éés' '| sort '
+bindkey -s 'één' ' 2>/dev/null '
+bindkey -s 'éér' '| rofi -dmenu -multi-select'
+
+bindkey -s 'ééq' '| uniq '
+bindkey -s 'ééd' '| sed "s///"'
+bindkey -s 'ééj' ' 2>/dev/null 1>&2 '
+bindkey -s 'ééw' '| wc '
+
+export LESS="--RAW-CONTROL-CHARS"
+
+[[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
+export GROFF_NO_SGR=1
+export EDITOR='nvim'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND="fd   --hidden --exclude snap --color=always"
+export FZF_DEFAULT_OPTS="--height 100%  --preview-window=up:40%:hidden --jump-labels='etusinaghd,v.j-qkcmplébyrofèw+x_z@:;?!()<>#' --bind='ctrl-b:unix-word-rubout,ctrl-g:deselect-all,ctrl-s:preview-page-down,ctrl-t:preview-page-up,ctrl-o:toggle-preview,ctrl-a:toggle-sort,ctrl-k:top,ctrl-j:jump-accept'"
+export FZF_TMUX=0
 
 
-
-#####bindkey -s '\e-' " !:0-$ " #permettrais de retaper la commande précédante
-#####!!:gs/foo/bar #permettrais de remplacer les occurences de foo par bar de la commande précédante
-bindkey -s '□□' "source ~/.zshrc \n"
-bindkey -s '□1' " !:0 "
-bindkey -s '□2' " !:1 "
-bindkey -s '□3' " !:2 "
-bindkey -s '□4' " !:3 "
-bindkey -s '□5' " !:4 "
-bindkey -s '□6' " !:5 "  
-bindkey -s '□7' " !:0 \n"  
-bindkey -s '□8' " !:1 \n"  
-bindkey -s '□9' " !:0-$ \n"  
-bindkey -s '□0' " !:0- "  
-#bindkey -s '□□' " \134 \f"
