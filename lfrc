@@ -1,0 +1,96 @@
+
+
+
+
+
+ map '&' shell-async
+ map '!' shell
+ map '|' shell-pipe
+ map '?' shell-wait
+ map `"` mark-remove
+
+ map @ mark-save
+ map p paste
+ map "'" cut
+ map y copy
+
+ map _ mark-load
+ map i read
+ map u rename
+
+ map ± mark-save
+
+ map k unselect
+
+ map e set hidden!
+
+ map éc :set sortby time; set info time
+ map ém :set sortby size; set info size
+ map él :set sortby natural; set info
+
+ map ég set reverse!
+ map ét set info time
+ map és set info size
+ map én set info
+ map ér set info size:time
+
+
+
+
+
+ map c find-prev
+ map m up
+ map l find-next
+ map f find-back
+
+ map G bottom
+
+ map t updir
+ map s down
+ map n open
+ map r find
+
+ map q quit
+ map d search
+ map v search-next
+ map j clear
+
+map Q :{{
+	$pwd > /media/ramdisk/lfcd
+	quit
+}}
+ map D search-back
+ map V search-prev
+
+
+ map <space> toggle
+
+ map gh cd ~
+ map gg top
+ map gr cd /
+ map gp cd ~/prog
+ map gi cd ~/.config
+ map gk cd /media/user/ramdisk
+ map gt cd /tmp
+ map gx cd /etc/X11
+ map gm cd /media
+ map gu cd /usr/bin
+ map ge cd /etc
+ map gb cd /bin
+ map gy cd ~/.local/share/Trash
+ map go cd ~/Documents
+ map gt cd ~/trav
+
+ map gam cd ~/Music
+ map gav cd ~/Videos
+ map gad cd ~/Desktop
+ map gae cd ~/txt
+ map gap cd ~/Pictures
+ map gag cd ~/git
+
+ map <c-t> half-down
+ map <c-n> half-up
+ map <c-m> page-down
+ map <c-s> page-up
+ map <c-l> redraw
+ map <c-r> reload
