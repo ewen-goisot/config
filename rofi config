@@ -104,4 +104,4 @@ rofi.key-window:
 rofi.key-run:
 rofi.key-ssh:
 
-rofi.kb-screenshot: Control+x
+rofi.kb-screenshot: Control+x,Print
