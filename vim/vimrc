@@ -1,0 +1,187 @@
+
+"vim plugins with vundle
+"https://repo.zenk-security.com/
+"^ source de savoir quasi infinie
+"karabiner = tab :!= c-i (osx uniquement)
+"loupe: meilleure coloration des recherches
+"TODO https://vimawesome.com
+"repeat.vim (compat repeter+plugin)
+"cd ~/.vim/bundle
+"git clone git://github.com/tpope/vim-abolish.git
+"vim surround
+"https://github.com/ervandew/supertab
+"vim ctrlp
+set nocompatible              " be iMproved, required
+set ignorecase
+set smartcase
+set list
+"set listchars=tab:>.,trail:-
+set listchars=eol:$,tab:▸_,trail:~,extends:>,precedes:<
+":hi SpecialKey ctermfg=grey guifg=grey70
+
+"set iskeyword
+"set iskeyword+=.
+"set iskeyword+=,
+set nrformats+=alpha
+
+filetype off                  " required
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
+Plugin 'scrooloose/nerdtree'  " search/open/… files
+Plugin 'scrooloose/nerdcommenter'  " search/open/… files
+Plugin 'vim-syntastic/syntastic' " check errors and warnings
+Plugin 'vim-airline/vim-airline' " better bar (mode… with color)
+Plugin 'mbbill/undotree' " historiqe sous forme d'arbre
+"Plugin 'gko/vim-coloresque'      "prévisualiser les couleurs
+"Plugin 'Valloric/YouCompleteMe'  " autocomplétion automatique
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'easymotion/vim-easymotion'
+"Plugin 'ntpeters/vim-better-whitespace'
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
+Plugin 'majutsushi/tagbar' " acces rapide aux fonctions en C
+Plugin 'fidian/hexmode.git' " hexadecimal
+Plugin 'the-lambda-church/coquille' " coq (testé d'autres, lent ou non fonctionnels dans mon cas
+Plugin 'let-def/vimbufsync' " needed for coquille
+Plugin 'HiPhish/info.vim' " info manual
+"Plugin 'manu/coq-au-vim'
+"Plugin 'octol/vim-cpp-enhanced-hi'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'tounaishouta/coq.vim'
+"Plugin 'christoomey/vim-tmux-navigator'
+"Plugin 'kien/ctrlp.vim'
+call vundle#end()            " required
+filetype plugin indent on    " required
+let g:EasyMotion_keys="tusic'mproghd,v.j-qkfèbylénae"
+"let g:UltiSnipsSnippetDirectories=['~/.vim/bundle/ultisnips','UltiSnips']
+"let g:UltiSnipsExpandTrigger='<tab>'
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('min_pattern_length',1)
+"let g:deoplete-source-attribute-min_pattern_length =1
+set completeopt+=noinsert
+"let g:better_whitespace_enabled=1
+"let g:strip_whitespace_on_save=1
+":EnableWhitespace
+"UpdateRemotePlugins [for nvim one time for deoplete]
+"
+let g:cpp_class_scope_hi = 1
+let g:cpp_member_variable_hi = 1
+let g:cpp_class_decl_hi = 1
+"let g:cpp_experimental_simple_template_hi = 1
+"let g:cpp_experimental_template_hi = 1
+let c_no_curly_error=1
+
+let g:cpp_concepts_hi = 1
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="tabdo"
+
+let g:tagbar_ctags_bin="/usr/bin/ctags"
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
+"helptags ~/.vim/bundle/ctrlp.vim/doc
+"let g:ctrlp_map = '<c-p>'
+
+"let g:tmux_navigator_no_mappings = 1
+
+"n""noremap <c-T> {Up-Mapping} :TmuxNavigateUp<cr>
+"n""noremap <c-S> {Left-Mapping} :TmuxNavigateLeft<cr>
+"n""noremap <c-w><c-l> {Right-Mapping} :TmuxNavigateRight<cr>
+"n""noremap <c-R> {Down-Mapping} :TmuxNavigateDown<cr>
+"n""noremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+"nmap <A-n> gg
+
+au vimenter * colorscheme desert
+hi Search cterm=NONE ctermfg=black ctermbg=yellow
+
+set cursorline
+set cursorcolumn
+set number
+set norelativenumber
+set mouse=a
+set hlsearch
+set autoindent
+set smartindent
+"set cin
+set backspace=indent,eol,start
+set noerrorbells
+au vimenter * hi ColorColumn ctermbg=235
+set colorcolumn=8,16,24,32,40,48,56,64
+" line column value, useless with airline
+set ruler
+au vimenter * hi Search cterm=NONE ctermfg=black ctermbg=169
+au vimenter * hi IncSearch cterm=NONE ctermfg=black ctermbg=82
+au vimenter * hi LineNr ctermfg=102
+au * hi CursorLineNr ctermfg=yellow
+au vimenter * hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
+au vimenter * hi CursorColumn cterm=NONE ctermbg=black ctermfg=white
+au InsertEnter * hi CursorColumn cterm=NONE ctermbg=18 ctermfg=white
+au InsertLeave * hi CursorColumn cterm=NONE ctermbg=black ctermfg=white
+au vimenter * hi EasyMotionTarget2First cterm=bold ctermbg=black ctermfg=208
+au vimenter * hi EasyMotionTarget2Second cterm=bold ctermbg=black ctermfg=yellow
+au vimenter * hi EasyMotionTarget cterm=bold ctermbg=black ctermfg=red
+
+set tabstop=2
+set shiftwidth=2
+"set ignorecase
+set clipboard=unnamed
+set wildmenu
+set showcmd
+set showmode
+set ru
+"set nolist
+set foldmethod=marker
+set ttimeoutlen=0
+":set wrapscan
+":set nowrapscan
+"set nowrap
+
+tab all
+
+
+"nmap <BackSpace> }zz
+"nmap <Delete> {zz
+"nmap <BackSpace> 21<down>
+"nmap <Delete> 13<up>
+"vmap <BackSpace> 21<down>
+"vmap <Delete> 13<up>
+"nmap <Return> o
+"nmap é<Return> i<Return>
+"nmap <Space> ==
+"nmap <PageUp> za<up>zazz
+"nmap <PageDown> za<down>zazz
+"nmap ( <up>zz
+"nmap ) <down>zz
+"vmap ( <up>zz
+"vmap ) <down>zz
+"nmap <C-i> <C-x>
+
+
+"i""noremap <C-R> <C-G>u<C-R>
+"i""noremap <PageUp> <C-o>za<up><C-o>za
+"i""noremap <PageDown> <C-o>za<down><C-o>za
+"i""noremap <C-Up> <C-o>B
+"i""noremap <C-Down> <C-o>W
+"i""noremap  <C-o>dB
+"i""noremap <C-Delete> <C-o>de
+"i""noremap <C-BackSpace> <C-o>db
+
+au FileType cpp :source ~/.vim/.cpp.vimrc
+au FileType hpp :source ~/.vim/.cpp.vimrc
+au FileType c :source ~/.vim/.cpp.vimrc
+au FileType h :source ~/.vim/.cpp.vimrc
+
+"vmap <Delete> {zz
+"vmap <Tab> }zz
+
+source ~/.vim.new
