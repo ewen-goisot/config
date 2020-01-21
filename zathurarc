@@ -22,11 +22,13 @@ map [index] u toggle_index
 map . toggle_statusbar
 map , toggle_inputbar
 
+map + zoom in
+map - zoom out
 map <C-+> zoom in
 map <C--> zoom out
 
-map b rotate rotate-cw
-map B rotate rotate-ccw
+map b rotate rotate-ccw
+map B rotate rotate-cw
 map c zoom in
 map C jumplist backward
 map m scroll up
