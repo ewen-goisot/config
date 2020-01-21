@@ -87,7 +87,7 @@ alias mi='make install'
 alias p='pidof'
 alias pp='ping -c 3 www.google.com'
 alias q='exit'
-alias r='~/go/bin/lf && [[ -s /media/ramdisk/lfcd ]] && [[ $(cat /media/ramdisk/lfcd) != $(pwd) ]] && pushd $(cat /media/ramdisk/lfcd)'
+alias r='lf && [[ -s /media/ramdisk/lfcd ]] && [[ $(cat /media/ramdisk/lfcd) != $(pwd) ]] && pushd $(cat /media/ramdisk/lfcd)'
 alias t='top | colout " R " yellow | colout " 0[0.:]*" red | colout " root |/.*" green'
 alias tt='date'
 alias tv='youtube-viewer -C'    # aud+vid
