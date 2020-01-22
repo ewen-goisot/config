@@ -7,37 +7,46 @@ set statusbar-v-padding 0
 set statusbar-h-padding 0
 set page-padding 5
 
-map _ mark_evaluate
-map \' mark_evaluate
-map y mark_add
+map ! focus_inputbar "!"
+map ? focus_inputbar ":info"
+map ; focus_inputbar ":export "
+map : focus_inputbar ":"
+map \" focus_inputbar ":bdelete "
 
+map @ mark_add
 map p print
+map \' focus_inputbar ":blist "
+map y focus_inputbar ":bmark "
 
-map a focus_inputbar
+map _ mark_evaluate
+map o focus_inputbar ":open "
+map a display_link
 map i follow
-map I display_link
 map u toggle_index
 map [index] u toggle_index
-
-map . toggle_statusbar
-map , toggle_inputbar
+map h recolor
 
 map + zoom in
 map - zoom out
+map . toggle_statusbar
+map , toggle_inputbar
+map k zoom default
 map <C-+> zoom in
 map <C--> zoom out
 
 map b rotate rotate-ccw
 map B rotate rotate-cw
-map c zoom in
+map c jumplist backward
 map C jumplist backward
 map m scroll up
 map M navigate previous
-map l zoom out
+map l jumplist forward
 map L jumplist forward
 map f scroll half-up
 map F scroll full-up
+map <C-b> jumplist backward
 map <C-c> zoom default
+map <C-m> scroll half-down
 map <C-l> recolor
 
 map g goto top
@@ -50,6 +59,7 @@ map n scroll right
 map N scroll page-bottom
 map r scroll half-down
 map R scroll full-down
+map <C-s> scroll half-up
 map <C-r> reload
 
 map q quit
@@ -60,35 +70,59 @@ map V search backward
 map j toggle_page_mode
 map w adjust_window width
 map W adjust_window best-fit
+map <C-q> jumplist forward
+map <C-w> quit
 
+map Enter scroll half-down
+
+map [index] c navigate_index collapse-all
+map [index] m navigate_index up
+map [index] l navigate_index expand-all
+
+map [index] t navigate_index collapse
+map [index] s navigate_index down
+map [index] n navigate_index expand
+
+
+map [fullscreen] ! focus_inputbar "!"
+map [fullscreen] ? focus_inputbar ":info"
+map [fullscreen] ; focus_inputbar ":export "
+map [fullscreen] : focus_inputbar ":"
+map [fullscreen] \" focus_inputbar ":bdelete "
+
+map [fullscreen] @ mark_add
+map [fullscreen] p print
+map [fullscreen] \' focus_inputbar ":blist "
+map [fullscreen] y focus_inputbar ":bmark "
 
 map [fullscreen] _ mark_evaluate
-map [fullscreen] \' mark_evaluate
-map [fullscreen] y mark_add
-
-map [fullscreen] p print
-
-map [fullscreen] a focus_inputbar
+map [fullscreen] o focus_inputbar ":open "
+map [fullscreen] a display_link
 map [fullscreen] i follow
-map [fullscreen] I display_link
 map [fullscreen] u toggle_index
+map [fullscreen] h recolor
 
+map [fullscreen] + zoom in
+map [fullscreen] - zoom out
 map [fullscreen] . toggle_statusbar
 map [fullscreen] , toggle_inputbar
-
+map [fullscreen] k zoom default
 map [fullscreen] <C-+> zoom in
 map [fullscreen] <C--> zoom out
 
-map [fullscreen] b rotate rotate-cw
-map [fullscreen] B rotate rotate-ccw
-map [fullscreen] c zoom in
+map [fullscreen] b rotate rotate-ccw
+map [fullscreen] B rotate rotate-cw
+map [fullscreen] c jumplist backward
 map [fullscreen] C jumplist backward
 map [fullscreen] m scroll up
 map [fullscreen] M navigate previous
-map [fullscreen] l zoom out
+map [fullscreen] l jumplist forward
 map [fullscreen] L jumplist forward
 map [fullscreen] f scroll half-up
 map [fullscreen] F scroll full-up
+map [fullscreen] <C-b> jumplist backward
+map [fullscreen] <C-c> zoom default
+map [fullscreen] <C-m> scroll half-down
 map [fullscreen] <C-l> recolor
 
 map [fullscreen] g goto top
@@ -101,6 +135,7 @@ map [fullscreen] n scroll right
 map [fullscreen] N scroll page-bottom
 map [fullscreen] r scroll half-down
 map [fullscreen] R scroll full-down
+map [fullscreen] <C-s> scroll half-up
 map [fullscreen] <C-r> reload
 
 map [fullscreen] q quit
@@ -111,11 +146,7 @@ map [fullscreen] V search backward
 map [fullscreen] j toggle_page_mode
 map [fullscreen] w adjust_window width
 map [fullscreen] W adjust_window best-fit
+map [fullscreen] <C-q> jumplist forward
+map [fullscreen] <C-w> quit
 
-map [index] c navigate_index collapse-all
-map [index] m navigate_index up
-map [index] l navigate_index expand-all
-
-map [index] t navigate_index collapse
-map [index] s navigate_index down
-map [index] n navigate_index expand
+map [fullscreen] Enter scroll half-down
