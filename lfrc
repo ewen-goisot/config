@@ -1,5 +1,6 @@
-
-
+set color256 true
+set previewer ~/.config/lf/pv.sh
+map h $~/.config/lf/pv.sh $f | most
 
 map '&' shell-async
 map '!' shell
@@ -10,21 +11,23 @@ map `"` mark-remove
 map @ mark-save
 map p paste
 map "'" cut
+map ° :{{
+	$mv $fx ~/.local/share/Trash/lf
+}}
 map y copy
+map Y clear
 
 map g_ mark-save
 map _ mark-load
+map ± mark-save
 
 map o $$PAGER $f
 map a $$OPENER $f
 map i $$EDITOR $f
-map left cmd-history-next
 map u rename
 
-map ± mark-save
-
 map k unselect
-
+map K invert
 map e set hidden!
 
 map éc :set sortby time; set info time
@@ -54,12 +57,11 @@ map n open
 map r find
 
 map q :{{
-	rm /media/ramdisk/lfcd
+	$rm /media/ramdisk/lfcd 2>/dev/null
 	quit
 }}
 map d search
 map v search-next
-map j clear
 
 map Q :{{
 	$pwd > /media/ramdisk/lfcd
@@ -83,13 +85,13 @@ map gm cd /media
 map gu cd /usr/bin
 map ge cd /etc
 map gb cd /bin
-map gy cd ~/.local/share/Trash
+map gy cd ~/.local/share/Trash/lf
 map go cd ~/Documents
-map gt cd ~/trav
+map gt cd ~/Desktop
 
 map gam cd ~/Music
 map gav cd ~/Videos
-map gad cd ~/Desktop
+map gad cd ~/Documents
 map gae cd ~/txt
 map gap cd ~/Pictures
 map gag cd ~/git
