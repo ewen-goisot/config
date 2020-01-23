@@ -1,4 +1,5 @@
 set color256 true
+
 set previewer ~/.config/lf/pv.sh
 map h $~/.config/lf/pv.sh $f | most
 
@@ -21,14 +22,19 @@ map g_ mark-save
 map _ mark-load
 map ± mark-save
 
-map o $$PAGER $f
-map a $$OPENER $f
-map i $$EDITOR $f
+map o $$PAGER $fx
+map a $$OPENER $fx
+map i $$EDITOR $fx
 map u rename
 
-map k unselect
-map K invert
+map + push $chmod<space><space>$fx<left><left><left><left>
+map - push ?file<space>$fx<enter>
+map . push $mkdir<space>
+map , push $touch<space>
+map k invert
+
 map e set hidden!
+map <esc> unselect
 
 map éc :set sortby time; set info time
 map ém :set sortby size; set info size
@@ -62,6 +68,8 @@ map q :{{
 }}
 map d search
 map v search-next
+map j half-up
+map w half-down
 
 map Q :{{
 	$pwd > /media/ramdisk/lfcd
@@ -72,6 +80,7 @@ map V search-prev
 
 
 map <space> toggle
+map <enter> ! $f
 
 map gh cd ~
 map gg top
