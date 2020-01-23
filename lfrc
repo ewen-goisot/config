@@ -7,11 +7,13 @@ map '&' shell-async
 map '!' shell
 map '|' shell-pipe
 map '?' shell-wait
+map ';' :source ~/.config/lf/lfrc
 map `"` mark-remove
 
 map @ mark-save
 map p paste
 map "'" cut
+map <delete> cut
 map ° :{{
 	$mv $fx ~/.local/share/Trash/lf
 }}
@@ -25,6 +27,7 @@ map ± mark-save
 map o $$PAGER $fx
 map a $$OPENER $fx
 map i $$EDITOR $fx
+map <insert> $$EDITOR $fx
 map u rename
 
 map + push $chmod<space><space>$fx<left><left><left><left>
@@ -49,6 +52,10 @@ map ér set info size:time
 
 
 
+map ( page-up
+map ) page-down
+map < half-up
+map > half-down
 
 map c find-prev
 map m up
@@ -68,8 +75,6 @@ map q :{{
 }}
 map d search
 map v search-next
-map j half-up
-map w half-down
 
 map Q :{{
 	$pwd > /media/ramdisk/lfcd
@@ -82,29 +87,28 @@ map V search-prev
 map <space> toggle
 map <enter> ! $f
 
-map gh cd ~
-map gg top
-map gr cd /
 map gp cd ~/prog
-map gi cd ~/.config
-map gk cd /media/user/ramdisk
-map gt cd /tmp
-map gx cd /etc/X11
-map gm cd /media
-map gu cd /usr/bin
-map ge cd /etc
-map gb cd /bin
-map gy cd ~/.local/share/Trash/lf
 map go cd ~/Documents
-map gt cd ~/Desktop
+map gi cd ~/.config
+map gu cd /usr/bin
+map gh cd ~
+map gk cd /media/user/ramdisk
+map ge cd /etc
+map gy cd ~/.local/share/Trash/lf
+map gm cd /media
+map gb cd /bin
+map gg top
+map gt cd /tmp
+map gr cd /
+map gx cd /etc/X11
 
-map gam cd ~/Music
-map gav cd ~/Videos
-map gad cd ~/Documents
-map gae cd ~/txt
 map gap cd ~/Pictures
+map gae cd ~/txt
+map gam cd ~/Music
 map gag cd ~/git
-map gac cd ~/.config
+map gat cd ~/Desktop
+map gav cd ~/Videos
+map gao cd ~/org
 map gas cd ~/.script
 map gaé cd ~/.vim
 
