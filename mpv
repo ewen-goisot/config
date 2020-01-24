@@ -19,9 +19,9 @@ o add chapter 1
 a multiply speed 0.688
 i add volume -6.1
 u multiply speed 1.26
-h set speed 0.5
+h set speed 1
 
-H multiply speed 1.0
+H multiply speed 0.5
 
 +     add video-zoom   0.2
 -     add video-zoom  -0.2
@@ -35,8 +35,7 @@ K cycle-values loop-file "inf" "no"
 Ctrl+a ab-loop
 
 e set speed 2.0
-
-E multiply speed 2.4
+E multiply speed 2
 
 
 
