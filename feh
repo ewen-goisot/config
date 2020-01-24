@@ -1,0 +1,67 @@
+toggle_keep_vp exclam
+toggle_menu question
+toggle_aliasing semicolon
+toggle_actions colon
+toggle_caption quotedbl
+toggle_fixed_geometry parenright
+toggle_pointer parenleft
+toggle_filenames less
+toggle_info greater
+toggle_exif numbersign
+toggle_pause space
+
+menu_up m
+menu_parent t
+menu_down s
+menu_child n
+menu_select g Return
+menu_close q Escape
+
+toggle_fullscreen F11
+
+jump_fwd egrave Page_Up
+jump_first eacute Home
+prev_dir p Up
+jump_last apostrophe End
+save_filelist y
+
+jump_back o Page_Down
+prev_img a Left
+next_dir i Down
+next_img u Right
+save_image h
+
+zoom_out minus C-minus
+zoom_in plus C-plus
+zoom_default w C-a
+
+jump_random e
+
+action_0 0 Return
+
+orient_1 B S-Tab C-S-i
+scroll_up_page M 1-Up
+
+orient_3 b Tab C-i
+reload_plus c
+scroll_up m S-Up
+reload_minus l
+flip f
+reload_image z C-r
+
+remove g Delete
+scroll_left t S-Left
+scroll_down s S-Down
+scroll_right n S-Right
+mirror r
+render x
+
+delete G C-Delete
+scroll_left_page T 1-Left
+scroll_down_page S 1-Down
+scroll_right_page N 1-Right
+
+close q C-w Escape
+zoom_fill d
+size_to_image v
+zoom_fit j
