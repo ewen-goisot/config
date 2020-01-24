@@ -7,6 +7,18 @@ set statusbar-v-padding 0
 set statusbar-h-padding 0
 set page-padding 4
 
+map u toggle_index
+map [index] u toggle_index
+map [fullscreen] u toggle_index
+
+map <C-i> toggle_index
+map [index] <C-i> toggle_index
+map [fullscreen] <C-i> toggle_index
+
+map <Button3> toggle_index
+map [index] <Button3> toggle_index
+map [fullscreen] <Button3> toggle_index
+
 map ! focus_inputbar "!"
 map ? focus_inputbar ":info"
 map ; focus_inputbar ":export "
@@ -23,11 +35,8 @@ map _ mark_evaluate
 map o focus_inputbar ":open "
 map a display_link
 map i follow
-map u toggle_index
-map [index] u toggle_index
 map h recolor
 map <C-a> zoom default
-map <C-i> toggle_index
 
 map + zoom in
 map - zoom out
@@ -75,7 +84,7 @@ map W adjust_window best-fit
 map <C-q> jumplist forward
 map <C-w> quit
 
-map Enter scroll half-down
+map <Return> scroll half-down
 map <A-Left> jumplist backward
 map <A-Right> jumplist forward
 
@@ -103,10 +112,8 @@ map [fullscreen] _ mark_evaluate
 map [fullscreen] o focus_inputbar ":open "
 map [fullscreen] a display_link
 map [fullscreen] i follow
-map [fullscreen] u toggle_index
 map [fullscreen] h recolor
 map [fullscreen] <C-a> zoom default
-map [fullscreen] <C-i> toggle_index
 
 map [fullscreen] + zoom in
 map [fullscreen] - zoom out
