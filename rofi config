@@ -41,67 +41,68 @@ rofi.show-icons: true
 rofi.disabble-history: true
 rofi.matching: regex
 
-rofi.kb-select-1: Super+parenleft
-rofi.kb-select-2: Super+parenright
-rofi.kb-select-3: Super+less
-rofi.kb-select-4: Super+greater
-rofi.kb-select-5: Super+numbersign
-rofi.kb-select-6: Super+quotedbl
-rofi.kb-select-7: Super+colon
-rofi.kb-select-8: Super+semicolon
-rofi.kb-select-9: Super+question
-rofi.kb-select-10: Super+exclam
+rofi.kb-select-1: Super+parenleft,Control+parenleft
+rofi.kb-select-2: Super+parenright,Control+parenright
+rofi.kb-select-3: Super+less,Control+less
+rofi.kb-select-4: Super+greater,Control+greater
+rofi.kb-select-5: Super+numbersign,Control+numbersign
+rofi.kb-select-6: Super+exclam,Control+exclam
+rofi.kb-select-7: Super+question,Control+question
+rofi.kb-select-8: Super+semicolon,Control+semicolon
+rofi.kb-select-9: Super+colon,Control+colon
+rofi.kb-select-10: Super+quotedbl,Control+quotedbl
 
 # shortcuts choisis:
 # flèches
 # i3wm-like
 # shell-like
 
-rofi.kb-remove-word-back:            Super+egrave,Control+w
-rofi.kb-remove-char-back:            Super+eacute,Control+j,BackSpace
-rofi.kb-move-word-back:              Super+p,Control+t
-rofi.kb-remove-char-forward:         Super+apostrophe,Delete
-rofi.kb-row-select:                  super+y,Insert,Control+Insert,Control+y
+rofi.kb-remove-word-back:        Super+egrave,Control+w,Control+BackSpace
+rofi.kb-remove-char-back:        Super+eacute,Control+h,BackSpace
+rofi.kb-move-word-back:          Super+p,Control+t
+rofi.kb-remove-char-forward:     Super+apostrophe,Control+d,Delete
+rofi.kb-row-select:              super+y,Insert,Control+Insert,Control+y
 
-rofi.kb-remove-word-forward:         Super+o
-rofi.kb-move-char-back:              Super+a,Control+b,Left
-rofi.kb-move-word-forward:           Super+i,Control+s
-rofi.kb-move-char-forward:           Super+u,Control+f,Right
-rofi.kb-primary-paste:               Super+h,Shift+Insert,Control+h
+rofi.kb-remove-word-forward:     Super+o,Control+j,Control+Delete
+rofi.kb-move-char-back:          Super+a,Control+b,Left
+rofi.kb-move-word-forward:       Super+i,Control+s
+rofi.kb-move-char-forward:       Super+u,Control+f,Right
+rofi.kb-primary-paste:           Super+h,Control+apostrophe,Shift+Insert
 
-rofi.kb-move-front:                  Super+plus,Control+a
-rofi.kb-move-end:                    Super+minus,Control+e
-rofi.kb-remove-to-sol:               Super+period
-rofi.kb-remove-to-eol:               Super+comma,Control+k
-rofi.kb-secondary-paste:             Super+k
+rofi.kb-move-front:              Super+plus,Control+a
+rofi.kb-move-end:                Super+minus,Control+e
+rofi.kb-remove-to-sol:           Super+period
+rofi.kb-remove-to-eol:           Super+comma,Control+k
+rofi.kb-secondary-paste:         Super+k,Control+eacute
 
 
-rofi.kb-row-tab:                     Super+b,Tab
-rofi.kb-mode-previous:               Super+c,Control+Page_Up
-rofi.kb-row-up:                      Super+m,Up,Control+p
-rofi.kb-mode-next:                   Super+l,Control+Page_Down
-rofi.kb-page-prev:                   Super+f,Page_Up
+rofi.kb-row-tab:                 Super+b,Tab
+rofi.kb-mode-previous:           Super+c,Control+plus,Control+Page_Up
+rofi.kb-row-up:                  Super+m,Up,Control+p
+rofi.kb-mode-next:               Super+l,Control+minus,Control+Page_Down
+rofi.kb-page-prev:               Super+f,Control+q,Page_Up
 
-rofi.kb-delete-entry:                Super+g
-rofi.kb-row-left:                    Super+t
-rofi.kb-row-down:                    Super+s,Down,Control+n
-rofi.kb-row-right:                   Super+n
-rofi.kb-page-next:                   Super+r,Page_Down
-rofi.kb-accept-custom:               Super+x
+rofi.kb-delete-entry:            Super+g,Control+l
+rofi.kb-row-left:                Super+t,Control+period
+rofi.kb-row-down:                Super+s,Down,Control+n
+rofi.kb-row-right:               Super+n,Control+comma
+rofi.kb-page-next:               Super+r,Control+v,Page_Down
+rofi.kb-accept-custom:           Super+x
 
-rofi.kb-clear-line:                  Super+q,Control+u
-rofi.kb-toggle-case-sensitivity:     Super+d
-rofi.kb-toggle-sort:                 Super+v
-rofi.kb-row-first:                   Super+j,Home,KP_Home
-rofi.kb-row-last:                    Super+w,End,KP_End
+rofi.kb-clear-line:              Super+q,Control+u
+rofi.kb-toggle-case-sensitivity: Super+d,Control+egrave
+rofi.kb-toggle-sort:             Super+v,Control+o
+rofi.kb-row-first:               Super+j,Home,KP_Home
+rofi.kb-row-last:                Super+w,End,KP_End
 
-rofi.kb-accept-entry:                Return,KP_Enter,Control+m
-rofi.kb-accept-alt:                  Super+space,Control+i
-rofi.kb-accept-entry-continue:       Super+Return
+rofi.kb-accept-entry:            Return,KP_Enter,Control+m
+rofi.kb-accept-alt:              Super+space,Control+i
+rofi.kb-accept-entry-continue:   Super+Return
 
-rofi.kb-cancel:                      Escape,Control+c,Control+d
+rofi.kb-cancel:                  Escape,Control+c
 rofi.key-window:
 rofi.key-run:
 rofi.key-ssh:
 
-rofi.kb-screenshot: Control+x,Print
+rofi.kb-screenshot:              Control+x,Print
+
