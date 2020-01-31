@@ -52,6 +52,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 
+alias a='zathura'
 alias cfi='cpufreq-info -fm'
 alias cl='clear'
 alias cll='clear; clear' # efface aussi la dernière commande
@@ -62,10 +63,10 @@ alias cw='g++ main.cpp'
 alias co='g++ -w main.cpp -O3 -s'
 alias f='touch'
 alias ff='mkdir'
-#alias gg='cd'
 alias h='htop'
 alias hh='history'
-alias i='inxi -F'
+alias i='feh -T infos'
+alias ii='inxi -F'
 j () {
 	zathura $1 2>/dev/null
 }
@@ -152,22 +153,22 @@ alias sou='sudo apt update'
 alias soy='sudo apt install --only-upgrade'
 alias sp='sudo add-apt-repository'
 alias spr='sudo add-apt-repository --remove'
-#alias sra='sudo ranger'
+alias sr='sudo lf'
 alias s='sudo'
 alias svi='sudo nvim'
 
 
-# ê musique
+# èy musique
 # TODO : changer de dossier, c'est maintenant dans ~/.i3scripts/yta.sh
 alias èy='~/.i3scripts/yta.sh -o ~/Music/varloc'
 alias èyt='cat ~/.i3scripts/url.txt'
 alias èys='nvim ~/.i3scripts/url.txt'
 alias èyn='echo "#init par zsh" > ~/.i3scripts/url.txt'
-êr () {
+èyr () {
 	echo "$1" >> ~/.i3scripts/url.txt
 }
 
-# à éditions courantes de fichiers
+# è éditions courantes de fichiers
 alias è='v ~/.zshrc'
 alias èb='v ~/.i3blocks.conf'
 alias èc='v ~/Documents/configux'
@@ -181,6 +182,33 @@ alias èv='v ~/.vimrc'
 alias èvv='v ~/Documents/vim'
 alias èt='v ~/.tmux.conf'
 
+# èè déplacements courants
+# compatibles avec "g" dans ma config lf
+alias èèh="cd ~"
+alias èèr="cd /"
+alias èèp="cd ~/prog"
+alias èèi="cd ~/.config"
+alias èèk="cd /media/user/ramdisk"
+alias èèt="cd /tmp"
+alias èèx="cd /etc/X11"
+alias èèm="cd /media"
+alias èèu="cd /usr/bin"
+alias èèe="cd /etc"
+alias èèb="cd /bin"
+alias èèy="cd ~/.local/share/Trash/lf"
+alias èèo="cd ~/Documents"
+alias èèt="cd ~/Desktop"
+
+alias èèam="cd ~/Music"
+alias èèav="cd ~/Videos"
+alias èèad="cd ~/Documents"
+alias èèae="cd ~/txt"
+alias èèap="cd ~/Pictures"
+alias èèag="cd ~/git"
+alias èèac="cd ~/.config"
+alias èèas="cd ~/.script"
+alias èèaé="cd ~/.vim"
+
 alias aé='alias | grep ^é'
 alias aè='alias | grep ^è'
 
@@ -191,6 +219,7 @@ bindkey -s 'ée' 'echo $'
 bindkey -s 'éc' 'cd '
 bindkey -s 'ém' '/'
 
+# é extraits de la précédante commande
 bindkey -s 'ét' '!:0 '
 bindkey -s 'és' ' !:1 '
 bindkey -s 'én' ' !:2 '
@@ -201,6 +230,7 @@ bindkey -s 'év' '!:0- '
 bindkey -s 'éj' ' !:$ '
 bindkey -s 'éw' '!:0-2 '
 
+# éé commandes courantes
 bindkey -s 'ééy' '| tail '
 bindkey -s 'ééh' '| head '
 
