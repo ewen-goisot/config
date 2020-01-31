@@ -75,6 +75,17 @@ map q :{{
 }}
 map d search
 map v search-next
+map j :{{
+	updir
+	up
+	open
+}}
+map w :{{
+	updir
+	down
+	open
+}}
+
 
 map Q :{{
 	$pwd > /media/ramdisk/lfcd
