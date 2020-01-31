@@ -4,7 +4,10 @@
 */
 #define ORYX_CONFIGURATOR
 #undef DEBOUNCE
-#define DEBOUNCE 40
+#define DEBOUNCE 30
+
+#undef TAPPING_TERM
+#define TAPPING_TERM 182
 
 #undef ONESHOT_TIMEOUT
 #define ONESHOT_TIMEOUT 2500
