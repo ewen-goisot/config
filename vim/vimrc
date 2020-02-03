@@ -1,4 +1,3 @@
-
 "vim plugins with vundle
 "https://repo.zenk-security.com/
 "^ source de savoir quasi infinie
@@ -11,20 +10,23 @@
 "vim surround
 "https://github.com/ervandew/supertab
 "vim ctrlp
-set nocompatible              " be iMproved, required
+"TODO https://vim.fandom.com/wiki/View_text_file_in_two_columns
+"(split screen)
+" https://www.drchip.org/astronaut/vim/index.html
+" foldcol: what I need for columns
+set nocompatible " be iMproved, required
 set ignorecase
 set smartcase
 set list
 "set listchars=tab:>.,trail:-
 set listchars=eol:$,tab:▸_,trail:~,extends:>,precedes:<
+"set sidescroll=10
 ":hi SpecialKey ctermfg=grey guifg=grey70
 
-"set iskeyword
-"set iskeyword+=.
-"set iskeyword+=,
+"set iskeyword+=.,
 set nrformats+=alpha
 
-filetype off                  " required
+filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " let Vundle manage Vundle, required
@@ -45,9 +47,10 @@ Plugin 'honza/vim-snippets'
 Plugin 'SirVer/ultisnips'
 Plugin 'majutsushi/tagbar' " acces rapide aux fonctions en C
 Plugin 'fidian/hexmode.git' " hexadecimal
-Plugin 'the-lambda-church/coquille' " coq (testé d'autres, lent ou non fonctionnels dans mon cas
+Plugin 'the-lambda-church/coquille' " coq (ap pl tests comparatifs)
 Plugin 'let-def/vimbufsync' " needed for coquille
 Plugin 'HiPhish/info.vim' " info manual
+" TODO rainbow fzf ack
 "Plugin 'manu/coq-au-vim'
 "Plugin 'octol/vim-cpp-enhanced-hi'
 "Plugin 'ctrlpvim/ctrlp.vim'
@@ -55,6 +58,7 @@ Plugin 'HiPhish/info.vim' " info manual
 "Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'kien/ctrlp.vim'
 call vundle#end()            " required
+
 filetype plugin indent on    " required
 let g:EasyMotion_keys="tusic'mproghd,v.j-qkfèbylénae"
 "let g:UltiSnipsSnippetDirectories=['~/.vim/bundle/ultisnips','UltiSnips']
@@ -94,15 +98,9 @@ let g:tagbar_ctags_bin="/usr/bin/ctags"
 
 "let g:tmux_navigator_no_mappings = 1
 
-"n""noremap <c-T> {Up-Mapping} :TmuxNavigateUp<cr>
-"n""noremap <c-S> {Left-Mapping} :TmuxNavigateLeft<cr>
-"n""noremap <c-w><c-l> {Right-Mapping} :TmuxNavigateRight<cr>
-"n""noremap <c-R> {Down-Mapping} :TmuxNavigateDown<cr>
-"n""noremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-"nmap <A-n> gg
 
-au vimenter * colorscheme desert
-hi Search cterm=NONE ctermfg=black ctermbg=yellow
+highlight Normal guifg=white guibg=black
+hi ColorColumn ctermbg=234 guibg=#202020
 
 set cursorline
 set cursorcolumn
@@ -115,73 +113,40 @@ set smartindent
 "set cin
 set backspace=indent,eol,start
 set noerrorbells
-au vimenter * hi ColorColumn ctermbg=235
 set colorcolumn=8,16,24,32,40,48,56,64
-" line column value, useless with airline
 set ruler
-au vimenter * hi Search cterm=NONE ctermfg=black ctermbg=169
-au vimenter * hi IncSearch cterm=NONE ctermfg=black ctermbg=82
-au vimenter * hi LineNr ctermfg=102
-au * hi CursorLineNr ctermfg=yellow
-au vimenter * hi CursorLine cterm=NONE ctermbg=235 ctermfg=NONE
-au vimenter * hi CursorColumn cterm=NONE ctermbg=black ctermfg=white
-au InsertEnter * hi CursorColumn cterm=NONE ctermbg=18 ctermfg=white
-au InsertLeave * hi CursorColumn cterm=NONE ctermbg=black ctermfg=white
-au vimenter * hi EasyMotionTarget2First cterm=bold ctermbg=black ctermfg=208
-au vimenter * hi EasyMotionTarget2Second cterm=bold ctermbg=black ctermfg=yellow
-au vimenter * hi EasyMotionTarget cterm=bold ctermbg=black ctermfg=red
+hi Search cterm=NONE ctermbg=169 ctermfg=black guibg=pink guifg=black
+hi IncSearch cterm=NONE ctermbg=82 ctermfg=black guibg=green guifg=black
+hi LineNr ctermfg=102 guifg=#808080
+hi CursorLineNr ctermfg=yellow
+hi CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=#202020 guifg=NONE
+hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
+au InsertEnter * hi CursorColumn cterm=NONE ctermbg=18 ctermfg=white guibg=#000055 guifg=#ffffff
+au InsertLeave * hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=#000000 guifg=#ffffff
+hi EasyMotionTarget2First cterm=bold ctermbg=black ctermfg=208 guibg=black guifg=orange
+hi EasyMotionTarget2Second cterm=bold ctermbg=black ctermfg=yellow guibg=black guifg=yellow
+hi EasyMotionTarget cterm=bold ctermbg=black ctermfg=red guibg=black guifg=red
 
-set tabstop=2
-set shiftwidth=2
-"set ignorecase
+set tabstop=4
+set shiftwidth=4
 set clipboard=unnamed
 set wildmenu
 set showcmd
 set showmode
 set ru
-"set nolist
 set foldmethod=marker
 set ttimeoutlen=0
-":set wrapscan
-":set nowrapscan
+"set wrapscan
 "set nowrap
 
-tab all
+"tab all
 
-
-"nmap <BackSpace> }zz
-"nmap <Delete> {zz
-"nmap <BackSpace> 21<down>
-"nmap <Delete> 13<up>
-"vmap <BackSpace> 21<down>
-"vmap <Delete> 13<up>
-"nmap <Return> o
-"nmap é<Return> i<Return>
-"nmap <Space> ==
-"nmap <PageUp> za<up>zazz
-"nmap <PageDown> za<down>zazz
-"nmap ( <up>zz
-"nmap ) <down>zz
-"vmap ( <up>zz
-"vmap ) <down>zz
-"nmap <C-i> <C-x>
-
-
-"i""noremap <C-R> <C-G>u<C-R>
-"i""noremap <PageUp> <C-o>za<up><C-o>za
-"i""noremap <PageDown> <C-o>za<down><C-o>za
-"i""noremap <C-Up> <C-o>B
-"i""noremap <C-Down> <C-o>W
-"i""noremap  <C-o>dB
-"i""noremap <C-Delete> <C-o>de
-"i""noremap <C-BackSpace> <C-o>db
 
 au FileType cpp :source ~/.vim/.cpp.vimrc
 au FileType hpp :source ~/.vim/.cpp.vimrc
 au FileType c :source ~/.vim/.cpp.vimrc
 au FileType h :source ~/.vim/.cpp.vimrc
+autocmd FileType text setlocal textwidth=80
 
-"vmap <Delete> {zz
-"vmap <Tab> }zz
 
 source ~/.vim.new
