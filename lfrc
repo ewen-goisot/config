@@ -126,9 +126,9 @@ map gao cd ~/org
 map gas cd ~/.script
 map gaé cd ~/.vim
 
-map <c-t> half-down
-map <c-n> half-up
-map <c-m> page-down
-map <c-s> page-up
+map <c-t> page-down
+map <c-n> page-up
+map <c-m> half-down
+map <c-s> half-up
 map <c-l> redraw
 map <c-r> reload
