@@ -132,3 +132,8 @@ map <c-m> half-down
 map <c-s> half-up
 map <c-l> redraw
 map <c-r> reload
+
+cmap <up> cmd-history-prev
+cmap <down> cmd-history-next
+cmap <pgup> cmd-word-back
+cmap <pgdn> cmd-word
