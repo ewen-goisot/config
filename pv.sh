@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "\e[1;033m$(file -b $1)\e[0m"
+echo "\e[1;033m$(file -b $1 2>/dev/null)\e[0m"
 case "$1" in
 	*.tar*) tar tf "$1";;
 	*.zip) unzip -l "$1";;
@@ -9,7 +9,8 @@ case "$1" in
 	*.pdf) pdftotext "$1" -;;
 	*.odt|*.ods|*.odp|*.sxw) odt2txt "$1";;
 	*.png|*.jpg|*.jpeg|*.JPG) img2txt -f utf8 -d none -W 80 "$1";;
-	*.mp4|*.webm|*.mkv) mediainfo "$1";;
+	*.mp3|*.opus|*.m4a|*.aac|*.wav|*.mp4|*.webm|*.mkv) mediainfo "$1";;
 	*.x|*.out|*.bin) xxd "$1";;
-	*) highlight -O ansi "$1" || cat "$1";;
+	*)echo "\e[1;033m$(wc $1 | awk '{print $1 "l " $2 "w " $3 "c"}')\e[0m";
+		highlight -O ansi "$1" 2>/dev/null || cat "$1";;
 esac
