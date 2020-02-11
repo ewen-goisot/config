@@ -1,4 +1,4 @@
-
+"{{{ left__base
 tnoremap <Esc> <c-\><c-n>
 noremap <ScrollWheelUp> <c-y>
 noremap <ScrollWheelDown> <c-e>
@@ -8,11 +8,13 @@ noremap <c-x> <c-]>
 noremap " "
 noremap : :
 noremap ; :%s///<Left><Left>
+vnoremap ; :s///<Left><Left>
 noremap ? <leader>
 noremap ! :!
 
 noremap @ @
 noremap _ '
+onoremap _ '
 
 noremap o o
 noremap a a
@@ -31,19 +33,58 @@ noremap , u
 noremap k x
 
 noremap e e
+"}}}
+"{{{ right_base
 
-noremap ≠ q
-noremap ± m
+noremap ( :tabp<cr>
+noremap ) :tabn<cr>
+noremap < :bp<cr>
+noremap > :bn<cr>
+noremap # #
 
+"noremap b z
+noremap c ,
+noremap m k<c-y>
+noremap l ;
+noremap f f
+noremap z %
+
+"noremap  g
+noremap t hzh
+noremap s j<c-e>
+noremap n lzl
+noremap r t
+nmap x <plug>(easymotion-s)
+
+"noremap q <c-w>
+noremap q <nop>
+noremap d /
+noremap v nzz
+noremap j b
+noremap w w
+
+nmap <space> <plug>(easymotion-bd-w)
+"}}}
+"{{{ left__shift
+
+noremap ¡ <c-w>=
+noremap ¿ <c-w>8-
+noremap € <c-w>13+
+noremap ¶ <c-w>8<lt>
+noremap § <c-w>13>
+
+noremap ≠ g@
+noremap È gk
+noremap É gj
 noremap P P
 noremap ° D
 noremap Y "+y
-"noremap YY "+yy
 
+noremap ± g_
 noremap O O
 noremap A A
 noremap I I
-
+noremap U C
 noremap H V
 
 noremap ⸮ S
@@ -53,34 +94,8 @@ noremap ² U
 noremap K X
 
 noremap E E
-
-noremap ( :tabp<return>
-noremap ) :tabn<return>
-noremap < :bp<return>
-noremap > :bn<return>
-noremap # #
-
-"noremap b z
-noremap c ,
-noremap m kzz
-noremap l ;
-noremap f f
-noremap z %
-
-"noremap  g
-noremap t h
-noremap s jzz
-noremap n l
-noremap r t
-nmap x <plug>(easymotion-s)
-
-"noremap q q
-noremap d /
-noremap v nzz
-noremap j b
-noremap w w
-
-nmap <space> <plug>(easymotion-bd-w)
+"}}}
+"{{{ right_shift
 
 noremap ↦ (
 noremap ̊  )
@@ -89,15 +104,16 @@ noremap ̂  >
 noremap  ⃗ *
 
 noremap B =
-noremap C {
-noremap M J
-noremap L }
+noremap C {zz
+noremap M <c-y>
+noremap L }zz
 noremap F F
+noremap Z :se wrap!<cr>
 
 noremap G G
-noremap T H
-noremap S M
-noremap N L
+noremap T zh
+noremap S <c-e>
+noremap N zl
 noremap R T
 
 noremap Q Q
@@ -105,94 +121,93 @@ noremap D ?
 noremap V Nzz
 noremap J B
 noremap W W
+"}}}
+"{{{ left__ctrl
 
-noremap <c-p> <c-w>k
+noremap <c-@> <c-^>
+noremap <c-p> "+p
 noremap <c-y> <c-a>
 
-"map <c-o> <c-w>
-noremap <c-a> <c-w>h
-noremap <c-i> <c-w>j
-noremap <c-u> <c-w>l
+noremap <c-_> K
+noremap <c-o> o<Esc>
+noremap <c-a> 0
+noremap <c-i> <c-w>W
+noremap <BS> <c-w>w
+noremap <c-u> 0d$
 noremap <c-h> <c-v>
 
-" + - zoom (terminal)
-"nnoremap <c-b> :Hexmode<CR>
-"inoremap <c-b> <Esc>:Hexmode<CR>
-"vnoremap <c-b> :<C-U>Hexmode<CR>
-
 noremap <c-k> <c-x>
+
+noremap <c-e> $
+"}}}
+"{{{ right_ctrl
 
 noremap <c-b> <c-o>
 noremap <c-m> <c-d>
 noremap <c-f> <c-f>
 
 noremap <c-g> <c-g>
-noremap <c-t> <c-y>
+noremap <c-t> zH
 noremap <c-s> <c-u>
-noremap <c-n> <c-e>
+noremap <c-n> zL
 noremap <c-r> <c-b>
 
 noremap <c-q> <c-i>
 noremap <c-d> <c-t>
+noremap <c-v> i<space><Esc>r<c-v>
+noremap <c-j> J
+noremap <c-w> gJ
+"}}}
+"{{{ prexif q: TODO
 
 "resize, recursive
-noremap <c-o> <nop>
+"noremap <c-o> <nop>
 
-map <c-o>è <c-w>8-<c-o>
-map <c-o>é <c-w>8<lt><c-o>
-noremap <c-o>p <c-w>K
-map <c-o>' <c-w>13><c-o>
-noremap <c-o>y <c-w>=
-
-map <c-o><c-o> <c-w>13+<c-o>
-map <c-o>o <c-w>13+<c-o>
-noremap <c-o>a <c-w>H
-noremap <c-o>i <c-w>J
-noremap <c-o>u <c-w>L
-noremap <c-o>h <c-w>p
-
-noremap <c-o>b <c-w>n
-noremap <c-o>c <c-w>v
-noremap <c-o>m <c-w>^
-noremap <c-o>l <c-w>s
-noremap <c-o>f <c-w>t
-noremap <c-o>z <c-w>P
-
-noremap <c-o>g <c-w>q
-noremap <c-o>t <c-w>f
-noremap <c-o>s <c-w>i
-noremap <c-o>n <c-w>d
-noremap <c-o>r <c-w>b
-noremap <c-o>x <c-w>x
-
-noremap <c-o>q <c-w>o
-noremap <c-o>d <c-w>r
-noremap <c-o>v <c-w>T
-noremap <c-o>j <c-w>_
-noremap <c-o>w <c-w>|
-
-noremap <c-o>M <c-w>g]
-noremap <c-o>F <c-w>g}
-noremap <c-o>Z <c-w>z
-
-noremap <c-o>T <c-w>F
-noremap <c-o>S <c-w>]
-noremap <c-o>N <c-w><c-]>
-noremap <c-o>R <c-w>}
-
-noremap <c-o>D <c-w>R
-
-
-
-
-"inoremap <c-p> <c-r>
-inoremap <c-y> <c-e>
-inoremap <c-h> <c-y>
-"inoremap <c-e> <c-x>
-"inoremap <c-g> <c-w>
-"inoremap <c-n> <c-d>
-"inoremap <c-b> <c-w>
-"cnoremap <c-b> <c-w>
+"map <c-o>è <c-w>8-<c-o>
+"map <c-o>é <c-w>8<lt><c-o>
+"noremap <c-o>p <c-w>K
+"map <c-o>' <c-w>13><c-o>
+"noremap <c-o>y <c-w>=
+"
+"map <c-o><c-o> <c-w>13+<c-o>
+"map <c-o>o <c-w>13+<c-o>
+"noremap <c-o>a <c-w>H
+"noremap <c-o>i <c-w>J
+"noremap <c-o>u <c-w>L
+"noremap <c-o>h <c-w>p
+"
+"noremap <c-o>b <c-w>n
+"noremap <c-o>c <c-w>v
+"noremap <c-o>m <c-w>^
+"noremap <c-o>l <c-w>s
+"noremap <c-o>f <c-w>t
+"noremap <c-o>z <c-w>P
+"
+"noremap <c-o>g <c-w>q
+"noremap <c-o>t <c-w>f
+"noremap <c-o>s <c-w>i
+"noremap <c-o>n <c-w>d
+"noremap <c-o>r <c-w>b
+"noremap <c-o>x <c-w>x
+"
+"noremap <c-o>q <c-w>o
+"noremap <c-o>d <c-w>r
+"noremap <c-o>v <c-w>T
+"noremap <c-o>j <c-w>_
+"noremap <c-o>w <c-w>|
+"
+"noremap <c-o>M <c-w>g]
+"noremap <c-o>F <c-w>g}
+"noremap <c-o>Z <c-w>z
+"
+"noremap <c-o>T <c-w>F
+"noremap <c-o>S <c-w>]
+"noremap <c-o>N <c-w><c-]>
+"noremap <c-o>R <c-w>}
+"
+"noremap <c-o>D <c-w>R
+"}}}
+"{{{ left__prefix_g
 
 inoremap <expr><c-s> deoplete#refresh()
 "lnoremap <c-f> <c-p>
@@ -202,15 +217,18 @@ inoremap <expr><c-s> deoplete#refresh()
 noremap g! g!
 noremap g? g?
 noremap g; :%s///gn<Left><Left><Left><Left>
+vnoremap g; :s///gn<Left><Left><Left><Left>
 noremap g: g:
 noremap g" g~
 
-noremap g@ g@
+"noremap g@ g@
+noremap g@ q
 noremap gp gp
 noremap g' gU
 noremap gy g0
 
-noremap g_ g'
+"noremap g_ g'
+noremap g_ m
 noremap go gd
 noremap ga ga
 noremap gi gi
@@ -224,6 +242,8 @@ noremap g, g,
 noremap gk g$
 
 noremap ge ge
+"}}}
+"{{{ d_prefix_g
 
 noremap g( g_
 noremap g) g^
@@ -286,8 +306,9 @@ noremap b' zO
 noremap by zE
 
 noremap bo zR
-noremap ba z<c-->
+noremap ba zc
 noremap bi zr
+noremap bu zo
 noremap bh zD
 
 noremap b+ z+
