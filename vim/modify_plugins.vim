@@ -49,6 +49,8 @@ call s:CreateMaps('nx', 'AlignBoth',  'Left and right aligned', 'hè')
 call s:CreateMaps('',   ':',          '-Sep2-', '')
 call s:CreateMaps('nx', 'Uncomment',  'Uncomment', 'h,')
 call s:CreateMaps('n',  'AltDelims',  'Switch Delimiters', 'y')
-call s:CreateMaps('i',  'Insert',     'Insert Comment Here', 'hi')
+"call s:CreateMaps('i',  'Insert',     'Insert Comment Here', 'hi')
 call s:CreateMaps('',   ':',          '-Sep3-', '')
 call s:CreateMaps('',   ':help NERDCommenterContents<CR>', 'Help', 'h?')
+
+"inoremap <silent> <plug>NERDCommenterInsert <SPACE><BS><ESC>:call NERDComment('i', "insert")<CR>
