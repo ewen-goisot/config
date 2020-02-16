@@ -1,3 +1,4 @@
+//{{{ ergo mathnum compat
 xkb_symbols "ergomath_compat" {
 
 
@@ -30,13 +31,13 @@ key <KP9>{[KP_9]};
 
 key.type[Group1] = "EIGHT_LEVEL";
 
-key <AE06>{[ parenleft, U21A6, U27E6, U22A2, Pause]};
-key <AE07>{[ parenright, U030A, U27E7, U22A8, F1]};
-key <AE08>{[ less, U0304, U2264, U27F6, F2]};
-key <AE09>{[ greater, U0302, U2265, U2194, F3]};
-key <AE10>{[ numbersign, U20D7, U2205, U2195, F4]};
+key <AE06>{[ parenleft, U21A6, U27E6, U22A2, Pause, U1F537]};
+key <AE07>{[ parenright, U030A, U27E7, U22A8, F1, U1F536]};
+key <AE08>{[ less, U0304, U2264, U27F6, F2, U1F539]};
+key <AE09>{[ greater, U0302, U2265, U2194, F3, U1F538]};
+key <AE10>{[ numbersign, U20D7, U2205, U2195, F4, U29BF]};
 
-key <TLDE>{[ exclam, exclamdown, U2202, U221A, F5]};
+key <TLDE>{[ exclam, exclamdown, U2202, U221A, F5, U1F48E]};
 key <AE01>{[ question, questiondown, U2308, U21CE, F6, U2642]};
 key <AE02>{[ semicolon, EuroSign, U2309, U21CF, F7, U2640 ]};
 key <AE03>{[ colon, UB6, U230A, U21D4, F6, U1F4AD]};
@@ -95,8 +96,8 @@ key <AE12>{[x,X, 4, U2102, F12, U2225]};
 key <LatN>{[q,Q, bracketright, UAC, Insert, Insert]};
 key <LatM>{[d,D, 5, U2227, ISO_Left_Tab, U2199]};
 key <AB08>{[v,V, 6, U2228, Tab, U2198]};
-key <AB09>{[j,J, 7, U22A4, Caps_Lock, U2713]};
-key <AB10>{[w,W, 8, U22A5, Scroll_Lock, U2717]};
-key <BKSL>{[ Multi_key, Agrave, KP_9, U22BB, Menu]};
+key <AB09>{[j,J, 7, U22A4, Caps_Lock, U2705]};
+key <AB10>{[w,W, 8, U22A5, Scroll_Lock, U274E]};
+key <BKSL>{[ Multi_key, Agrave, KP_9, U22BB, Menu, U2219]};
 
 }; //}}}
