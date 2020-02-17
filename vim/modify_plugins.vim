@@ -54,3 +54,32 @@ call s:CreateMaps('',   ':',          '-Sep3-', '')
 call s:CreateMaps('',   ':help NERDCommenterContents<CR>', 'Help', 'h?')
 
 "inoremap <silent> <plug>NERDCommenterInsert <SPACE><BS><ESC>:call NERDComment('i', "insert")<CR>
+
+
+
+"Vundle
+  nnoremap <silent> <buffer> qo :silent bd!<CR>
+  nnoremap <silent> <buffer> ' :exec 'Delete'.getline('.')
+  nnoremap <silent> <buffer> ° :exec 'Delete'.getline('.')<CR>
+
+  nnoremap <silent> <buffer> a  :exec 'Install'.getline('.')<CR>
+  nnoremap <silent> <buffer> A :exec 'Install'.substitute(getline('.'), '^Plugin ', 'Plugin! ', '')<CR>
+
+  nnoremap <silent> <buffer> i :exec 'InstallAndRequire'.getline('.')<CR>
+  nnoremap <silent> <buffer> I :exec 'InstallAndRequire'.substitute(getline('.'), '^Plugin ', 'Plugin! ', '')<CR>
+
+  nnoremap <silent> <buffer> . :VundleLog<CR>
+  nnoremap <silent> <buffer> , :VundleChangelog<CR>
+  nnoremap <silent> <buffer> ? :h vundle<CR>
+
+  nnoremap <silent> <buffer> y :PluginClean<CR>
+  nnoremap <silent> <buffer> Y :PluginClean!<CR>
+
+  nnoremap <buffer> m kzz
+  nnoremap <buffer> s jzz
+  nnoremap <buffer> <lt> zh
+  nnoremap <buffer> > zl
+  nnoremap <buffer> f :PluginSearch<CR>
+  nnoremap <buffer> r :PluginSearch<space>
+  nnoremap <silent> <buffer> u :call vundle#scripts#reload()<CR>
+
