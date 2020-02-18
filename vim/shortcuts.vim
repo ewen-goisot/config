@@ -1,11 +1,90 @@
-"{{{L_base
+"{{{divers
 tnoremap <Esc> <c-\><c-n>
 noremap <ScrollWheelUp> <c-y>
 noremap <ScrollWheelDown> <c-e>
-" for help buffer
+
+"6 lines from tpope vim-sensible:
+if empty(mapcheck('<C-U>', 'i'))
+  inoremap <C-U> <C-G>u<C-U>
+endif
+if empty(mapcheck('<C-W>', 'i'))
+  inoremap <C-W> <C-G>u<C-W>
+endif
+inoremap <expr><c-l> deoplete#complete_common_string()
+inoremap <expr><c-s> deoplete#refresh()
+inoremap <expr>↹ deoplete#toggle()
+"direct map puts a «0» after: why?
+imap <c-j> ↹<BS>
+
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+"inoremap <lt> <lt>><Left>
+inoremap « «»<Left>
+inoremap (<BS> (
+inoremap [<BS> [
+inoremap {<BS> {
+"inoremap <lt><BS> <lt>
+inoremap «<BS> «
+
+onoremap ac a(
+onoremap am a[
+onoremap al a{
+onoremap af a<
+onoremap ic i(
+onoremap im i[
+onoremap il i{
+onoremap if i<
+
+onoremap at a"
+onoremap as a'
+onoremap an at
+onoremap ar a`
+onoremap it i"
+onoremap is i'
+onoremap in it
+onoremap ir i`
+
+onoremap ad ap
+onoremap av as
+onoremap aj aw
+onoremap aw aW
+onoremap id ip
+onoremap iv is
+onoremap ij iw
+onoremap iw iW
+
+vnoremap ac a(
+vnoremap am a[
+vnoremap al a{
+vnoremap af a<
+vnoremap ic i(
+vnoremap im i[
+vnoremap il i{
+vnoremap if i<
+
+vnoremap at a"
+vnoremap as a'
+vnoremap an at
+vnoremap ar a`
+vnoremap it i"
+vnoremap is i'
+vnoremap in it
+vnoremap ir i`
+
+vnoremap ad ap
+vnoremap av as
+vnoremap aj aw
+vnoremap aw aW
+vnoremap id ip
+vnoremap iv is
+vnoremap ij iw
+vnoremap iw iW
+"}}}
+"{{{L_base
 
 noremap ! :!
-noremap ? <leader>
+noremap ?? <leader>
 noremap ; :%s///<Left><Left>
 vnoremap ; :s///<Left><Left>
 noremap : :
@@ -193,6 +272,10 @@ noremap bk zd
 
 noremap b( zW
 noremap b) zG
+"noremap b( :0tabm<cr>
+"noremap b) :tabm<cr>
+"noremap b< :-tabm<cr>
+"noremap b> :+tabm<cr>
 
 noremap bb za
 noremap bc zw
@@ -214,7 +297,6 @@ noremap bv zn
 "}}}
 "{{{L_pf_g
 
-inoremap <expr><c-s> deoplete#refresh()
 "lnoremap <c-f> <c-p>
 "lnoremap <c-r> <c-n>
 "re
@@ -331,12 +413,25 @@ noremap q; :marks<cr>
 noremap q: :his<cr>
 noremap q" :reg<cr>
 
-noremap q_ <c-w>q
-noremap qo <c-w>c
+noremap q@ :Plugin
+noremap qè :TagbarOpen<space>j<cr>
+noremap qé :TagbarToggle<cr>
+noremap qp :NERDTreeFocus<cr>
+noremap q' :NERDTreeToggle<cr>
+"qy <plug>NERDCommenterAlt
+
+noremap q_ <c-w>c
+noremap qo <c-w>q
 noremap qa :wq<cr>
 noremap qi :bd<cr>
 noremap qu :w<cr>
-"qh: nerdtree
+"qh NERDCommenterToggle prefix
+
+"q+ q- fugitive (todo)
+noremap q, :UndotreeToggle<cr>
+noremap q. :UndotreeFocus<cr>
+map qhk ghqk
+"qk <plug>NERDCommenterToggle
 "}}}
 "{{{R_pf_q
 
@@ -368,12 +463,11 @@ noremap qw <c-w>z
 "}}}
 "{{{L_pf_q_shift
 
-noremap q± :qa!<cr>
-noremap qO <c-w>o
-noremap qA :wqa<cr>
+noremap q± <c-w>o
+noremap qO :qa<cr>
+noremap qA :wqa!<cr>
 noremap qI :bw!<cr>
 noremap qU :wa!<cr>
-"qH nerdtree
 "}}}
 "{{{R_pf_q_shift
 
@@ -393,6 +487,8 @@ noremap qX <c-w>gF
 noremap qQ <c-w>R
 noremap qD <c-w>\|
 noremap qV <c-w>_
+noremap qJ <c-w>\|<c-w>_
+noremap qW :ball<cr>
 "}}}
 "{{{L_pf_é
 
@@ -477,4 +573,21 @@ noremap ?d '<
 noremap ?v '>
 noremap ?j '[
 noremap ?w ']
+nmap q+ <Plug>(quickhl-manual-reset)
+xmap q+ <Plug>(quickhl-manual-reset)
+nmap q- <Plug>(quickhl-manual-this)
+xmap q- <Plug>(quickhl-manual-this)
+"for hl test: a b c d e f g h i j k l m n o p q r s t u v w x y z
+"nmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+"xmap <Space>w <Plug>(quickhl-manual-this-whole-word)
+
+"nmap <Space>c <Plug>(quickhl-manual-clear)
+"vmap <Space>c <Plug>(quickhl-manual-clear)
+
+"nmap <Space>M <Plug>(quickhl-manual-reset)
+"xmap <Space>M <Plug>(quickhl-manual-reset)
+
+"nmap <Space>j <Plug>(quickhl-cword-toggle)
+"nmap <Space>] <Plug>(quickhl-tag-toggle)
+"map H <Plug>(operator-quickhl-manual-this-motion)
 "}}}
