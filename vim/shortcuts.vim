@@ -20,10 +20,10 @@ let g:superMatched=2
 function! SuperMatch()
 	" toggle
 	if(g:superMatched!=1)
-		let g:superMatched=1
 		if(g:superMatched==0)
 			echomsg "SuperMatch: ON"
 		endif
+		let g:superMatched=1
 		"auto pair most common symbols:
 		"typing «f(a,b[0» will write «f(a,b[0])»
 		inoremap ( ()<Left>
