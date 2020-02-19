@@ -11,9 +11,10 @@ set-window-option -g xterm-keys on
 set -sq repeat-time 800
 set -g history-limit 1000
 #set repeat-time 1
-set mode-keys emacs
+set mode-keys vi
 
 set -g set-titles on
+set-option -g set-titles-string 'TMUX_#S: [#I:#W] [#P]'
 
 set -g status-bg colour234
 set -g status-fg colour15
@@ -50,6 +51,13 @@ set -g status-right "TMUX"
 #bind -T copy-mode-vi MouseDragEnd1Panebind -T copy-mode-vi MouseDown1Pane select-pane \;\  send-keys -X copy-pipe "pbcopy" \;\  send-keys -X clear-selection
 #bind -t vi-copy y copy-pipe "xclip -sel clip -i"
 
+bind Space last-pane \; run-shell -b "tmux send-keys C-p && sleep .1 && tmux send-keys Enter && sleep .1 && tmux last-pane"
+bind Enter last-window \; run-shell -b "tmux send-keys C-p && sleep .1 && tmux send-keys Enter && sleep .1 && tmux last-window"
+bind Left last-pane
+bind Right last-window
+bind Up list-panes
+bind Down list-windows
+
 bind '!' switch-client -Tchoice \; choose-client
 bind '?' switch-client -Tchoice \; choose-tree
 bind \; source-file ~/.tmux.conf
@@ -61,6 +69,10 @@ bind -r é resize-pane -L 2
 bind p paste-buffer # paste; (default hotkey: ] )
 bind -r "'" resize-pane -R 2
 bind y switch-client -Tchoice \; choose-buffer # tmux clipboard history
+
+bind P show-buffer
+bind ° delete-buffer
+bind Y list-buffers
 
 bind -r o resize-pane -D 2
 bind -r a swap-pane -U
@@ -81,6 +93,8 @@ bind l split-window -v
 bind f unlink-window
 bind z detach-client
 
+
+
 # See: https://github.com/christoomey/vim-tmux-navigator
 #bind -r m if-shell "$is_vim" "send-keys C-p" "select-pane -U"
 #bind -r t if-shell "$is_vim" "send-keys C-a" "select-pane -L"
@@ -94,10 +108,15 @@ bind-key -n C-PageUp previous-window
 bind-key -n C-S-PageDown select-pane -m \; next-window \; swap-window
 bind-key -n C-S-PageUp select-pane -m \; previous-window \; swap-window
 # C-arrows: rotate
+#bind-key -n C-Up next-layout
+#bind-key -n C-Down rotate-window
+#bind-key -n C-Left resize-pane -Z
+#bind-key -n C-Right swap-pane -D
 bind-key -n C-Up next-layout
-bind-key -n C-Down rotate-window
-bind-key -n C-Left resize-pane -Z
-bind-key -n C-Right swap-pane -D
+bind-key -n C-Down select-pane -t :.+
+bind-key -n C-Left swap-pane -D
+bind-key -n C-Right resize-pane -Z
+
 
 bind g new-session
 bind -r t select-pane -L
@@ -116,16 +135,120 @@ unbind-key down
 unbind-key left
 unbind-key right
 
+bind up switch-client -p
+bind down switch-client -n
+# ↹. move window using index
+# display-pane
+# kill-pane
+# last-pane
+# list-panes list-windows
+# pipe?
+# respawn?
+# swap-pane -d
+# kill session or server: ⚡dangerous
+# show messages
+
 # choice-mode n'est plus configurable
 #bind-key -T choice-mode-vi t    send-keys -X tree-collapse
 #bind-key -T choice-mode-vi n    send-keys -X tree-expand
+bind-key -T copy-mode-vi C-f    send-keys -X page-up
+bind-key -T copy-mode-vi C-r    send-keys -X page-down
+bind-key -T copy-mode-vi C-c    send-keys -X cancel
+bind-key -T copy-mode-vi C-l    send-keys -X halfpage-up
+bind-key -T copy-mode-vi C-s    send-keys -X halfpage-down
+bind-key -T copy-mode-vi C-t    send-keys -X scroll-up
+bind-key -T copy-mode-vi C-n    send-keys -X scroll-down
+#bind-key -T copy-mode-vi C-j    send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi C-p    select-pane -U
+bind-key -T copy-mode-vi C-a    select-pane -L
+bind-key -T copy-mode-vi C-i    select-pane -D
+bind-key -T copy-mode-vi C-u    select-pane -R
+bind-key -T copy-mode-vi Enter  send-keys -X copy-selection-and-cancel
+bind-key -T copy-mode-vi C-h    send-keys -X rectangle-toggle
+bind-key -T copy-mode-vi Escape send-keys -X clear-selection
+bind-key -T copy-mode-vi C-\    select-pane -l
+bind-key -T copy-mode-vi Space  send-keys -X begin-selection
+bind-key -T copy-mode-vi 1      command-prompt -N -I 1 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 2      command-prompt -N -I 2 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 3      command-prompt -N -I 3 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 4      command-prompt -N -I 4 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 5      command-prompt -N -I 5 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 6      command-prompt -N -I 6 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 7      command-prompt -N -I 7 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 8      command-prompt -N -I 8 -p (repeat) "send -N \"%%%\""
+bind-key -T copy-mode-vi 9      command-prompt -N -I 9 -p (repeat) "send -N \"%%%\""
+
+bind-key -T copy-mode-vi E      send-keys -X next-space-end
+bind-key -T copy-mode-vi H      send-keys -X select-line
+
+bind-key -T copy-mode-vi F      command-prompt -1 -p "(jump backward)" "send -X jump-backward \"%%%\""
+bind-key -T copy-mode-vi T      send-keys -X top-line
+bind-key -T copy-mode-vi S      send-keys -X middle-line
+bind-key -T copy-mode-vi N      send-keys -X bottom-line
+bind-key -T copy-mode-vi R      command-prompt -1 -p "(jump to backward)" "send -X jump-to-backward \"%%%\""
+bind-key -T copy-mode-vi D      command-prompt -p "(search up)" "send -X search-backward \"%%%\""
+bind-key -T copy-mode-vi V      send-keys -X search-reverse
+bind-key -T copy-mode-vi J      send-keys -X previous-space
+bind-key -T copy-mode-vi W      send-keys -X next-space
+
+bind-key -T copy-mode-vi é      send-keys -X history-top
+bind-key -T copy-mode-vi p      send-keys -X scroll-up
+bind-key -T copy-mode-vi "'"    send-keys -X history-bottom
+# S-Y recommandé pour les copies externes
+bind-key -T copy-mode-vi y      run-shell "tmux send-keys -X copy-selection-and-cancel; tmux save-buffer - | xsel -ip"
+bind-key -T copy-mode-vi Y      run-shell "tmux send-keys -X copy-selection-and-cancel; tmux save-buffer - | xsel -ib"
+bind-key -T copy-mode-vi o      send-keys -X other-end
+bind-key -T copy-mode-vi a      send-keys -X start-of-line
+bind-key -T copy-mode-vi i      send-keys -X scroll-down
+bind-key -T copy-mode-vi u      send-keys -X end-of-line
+bind-key -T copy-mode-vi h      send-keys -X begin-selection
+bind-key -T copy-mode-vi +      send-keys -X copy-end-of-line
+bind-key -T copy-mode-vi -      send-keys -X back-to-indentation
+bind-key -T copy-mode-vi .      send-keys -X previous-paragraph
+bind-key -T copy-mode-vi ,      send-keys -X next-paragraph
+bind-key -T copy-mode-vi k      send-keys -X select-line
+bind-key -T copy-mode-vi e      send-keys -X next-word-end
+
+bind-key -T copy-mode-vi b      send-keys -X append-selection-and-cancel
+bind-key -T copy-mode-vi c      send-keys -X jump-reverse
+bind-key -T copy-mode-vi m      send-keys -X cursor-up
+bind-key -T copy-mode-vi l      send-keys -X jump-again
+bind-key -T copy-mode-vi f      command-prompt -1 -p "(jump forward)" "send -X jump-forward \"%%%\""
+bind-key -T copy-mode-vi g      command-prompt -p "(goto line)" "send -X goto-line \"%%%\""
+bind-key -T copy-mode-vi t      send-keys -X cursor-left
+bind-key -T copy-mode-vi s      send-keys -X cursor-down
+bind-key -T copy-mode-vi n      send-keys -X cursor-right
+bind-key -T copy-mode-vi r      command-prompt -1 -p "(jump to forward)" "send -X jump-to-forward \"%%%\""
+bind-key -T copy-mode-vi q      send-keys -X cancel
+bind-key -T copy-mode-vi d      command-prompt -p "(search down)" "send -X search-forward \"%%%\""
+bind-key -T copy-mode-vi v      send-keys -X search-again
+bind-key -T copy-mode-vi j      send-keys -X previous-word
+bind-key -T copy-mode-vi w      send-keys -X next-word
+
+# bind-key -T copy-mode-vi MouseDown1Pane    select-pane
+bind-key -T copy-mode-vi MouseDrag1Pane    select-pane \; send-keys -X begin-selection
+bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -se c -i"
+# par défaut le scroll était ` -N 5`, trop rapide pour mon usage
+bind-key -T copy-mode-vi WheelUpPane       select-pane \; send-keys -X scroll-up
+bind-key -T copy-mode-vi WheelDownPane     select-pane \; send-keys -X scroll-down
+bind-key -T copy-mode-vi DoubleClick1Pane  select-pane \; send-keys -X select-word
+bind-key -T copy-mode-vi TripleClick1Pane  select-pane \; send-keys -X select-line
+bind-key -T copy-mode-vi NPage             send-keys -X page-down
+bind-key -T copy-mode-vi PPage             send-keys -X page-up
+bind-key -T copy-mode-vi Up                send-keys -X cursor-up
+bind-key -T copy-mode-vi Down              send-keys -X cursor-down
+bind-key -T copy-mode-vi Left              send-keys -X cursor-left
+bind-key -T copy-mode-vi Right             send-keys -X cursor-right
+bind-key -T copy-mode-vi C-Up              send-keys -X scroll-up
+bind-key -T copy-mode-vi C-Down            send-keys -X scroll-down
+
 
 bind-key -T copy-mode C-f    send-keys -X page-up
 bind-key -T copy-mode C-r    send-keys -X page-down
 bind-key -T copy-mode C-c    send-keys -X cancel
 bind-key -T copy-mode C-l    send-keys -X halfpage-up
 bind-key -T copy-mode C-s    send-keys -X halfpage-down
-bind-key -T copy-mode C-n    send-keys -X scroll-up
+bind-key -T copy-mode C-t    send-keys -X scroll-up
 bind-key -T copy-mode C-n    send-keys -X scroll-down
 #bind-key -T copy-mode C-j    send-keys -X copy-selection-and-cancel
 bind-key -T copy-mode C-p    select-pane -U
@@ -148,6 +271,7 @@ bind-key -T copy-mode 8      command-prompt -N -I 8 -p (repeat) "send -N \"%%%\"
 bind-key -T copy-mode 9      command-prompt -N -I 9 -p (repeat) "send -N \"%%%\""
 
 bind-key -T copy-mode E      send-keys -X next-space-end
+bind-key -T copy-mode H      send-keys -X select-line
 
 bind-key -T copy-mode F      command-prompt -1 -p "(jump backward)" "send -X jump-backward \"%%%\""
 bind-key -T copy-mode T      send-keys -X top-line
@@ -169,7 +293,7 @@ bind-key -T copy-mode o      send-keys -X other-end
 bind-key -T copy-mode a      send-keys -X start-of-line
 bind-key -T copy-mode i      send-keys -X scroll-down
 bind-key -T copy-mode u      send-keys -X end-of-line
-bind-key -T copy-mode h      send-keys -X rectangle-toggle
+bind-key -T copy-mode h      send-keys -X begin-selection
 bind-key -T copy-mode +      send-keys -X copy-end-of-line
 bind-key -T copy-mode -      send-keys -X back-to-indentation
 bind-key -T copy-mode .      send-keys -X previous-paragraph
@@ -220,6 +344,7 @@ bind-key -Tchoice n send-keys Right \; switch-client -Tchoice
 bind-key -Tchoice c send-keys '<' \; switch-client -Tchoice
 bind-key -Tchoice l send-keys '>' \; switch-client -Tchoice
 bind-key -Tchoice g send-keys O \; switch-client -Tchoice
+# todo: recherche avec d, mais pour l'instant ne fonctionne pas
 bind-key -Tchoice v send-keys v \; switch-client -Tchoice
 
 bind-key -Tchoice Up send-keys Up \; switch-client -Tchoice
