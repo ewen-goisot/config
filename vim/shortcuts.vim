@@ -5,10 +5,10 @@ noremap <ScrollWheelDown> <c-e>
 
 "6 lines from tpope vim-sensible:
 if empty(mapcheck('<C-U>', 'i'))
-  inoremap <C-U> <C-G>u<C-U>
+	inoremap <C-U> <C-G>u<C-U>
 endif
 if empty(mapcheck('<C-W>', 'i'))
-  inoremap <C-W> <C-G>u<C-W>
+	inoremap <C-W> <C-G>u<C-W>
 endif
 inoremap <expr><c-l> deoplete#complete_common_string()
 inoremap <expr><c-s> deoplete#refresh()
@@ -16,16 +16,91 @@ inoremap <expr>↹ deoplete#toggle()
 "direct map puts a «0» after: why?
 imap <c-j> ↹<BS>
 
-inoremap ( ()<Left>
-inoremap [ []<Left>
-inoremap { {}<Left>
-"inoremap <lt> <lt>><Left>
-inoremap « «»<Left>
-inoremap (<BS> (
-inoremap [<BS> [
-inoremap {<BS> {
-"inoremap <lt><BS> <lt>
-inoremap «<BS> «
+let g:superMatched=2
+function! SuperMatch()
+	" toggle
+	if(g:superMatched!=1)
+		let g:superMatched=1
+		if(g:superMatched==0)
+			echomsg "SuperMatch: ON"
+		endif
+		"auto pair most common symbols:
+		"typing «f(a,b[0» will write «f(a,b[0])»
+		inoremap ( ()<Left>
+		inoremap [ []<Left>
+		inoremap { {}<Left>
+		inoremap « «»<Left>
+		"inoremap <lt> <lt>><Left>
+
+		"no <Left> if matching symbol typed
+		inoremap () ()
+		inoremap [] []
+		inoremap {} {}
+		inoremap «» «»
+		"inoremap <> <>
+
+		"do nothing if backspace is typed after
+		inoremap (<BS> (
+		inoremap [<BS> [
+		inoremap {<BS> {
+		inoremap «<BS> «
+		"inoremap <lt><BS> <lt>
+
+		"tripple instead of doubles for vim's folding
+		"maps may create folds here
+		inoremap }} }}}
+		inoremap {{ {{{
+		inoremap {{<BS> {{
+		inoremap }}<BS> }}
+		"commented fold 2. Warning: it's recursive
+		nmap qh( qha{{<Esc>
+		nmap qh) qha}}<Esc>
+	else
+		"unmap everything
+		let g:superMatched=0
+		echomsg "SuperMatch: OFF"
+		iunmap (
+		iunmap [
+		iunmap {
+		iunmap «
+		"inoremap <lt>
+
+		iunmap ()
+		iunmap []
+		iunmap {}
+		iunmap «»
+		"iunmap <>
+
+		iunmap (<BS>
+		iunmap [<BS>
+		iunmap {<BS>
+		iunmap «<BS>
+		"iunmap <lt><BS>
+
+		iunmap }}
+		iunmap {{
+		iunmap {{<BS>
+		iunmap }}<BS>
+		"commented fold 3. Warning: it's recursive
+		nmap qh( qha{{{<Esc>
+		nmap qh) qha}}}<Esc>
+	endif
+endfunction
+call SuperMatch()
+
+function! FoldCycle()
+	"TODO fold rolling for each method / for recursive folds
+	if &foldmethod == "marker"
+		echomsg "FoldCycle: indent"
+		set foldmethod=indent
+	elseif &foldmethod == "indent"
+		echomsg "FoldCycle: syntax"
+		set foldmethod=syntax
+	else
+		echomsg "FoldCycle: marker (default)"
+		set foldmethod=marker
+	endif
+endfunction
 
 onoremap ac a(
 onoremap am a[
@@ -262,11 +337,13 @@ noremap bi zr
 noremap bu zo
 noremap bh zD
 
-noremap b+ zjzz
-noremap b- zkzz
+noremap b+ zkzz
+noremap b- zjzz
 noremap b. zF
 noremap b, zf
 noremap bk zd
+
+noremap <expr> be FoldCycle()
 "}}}
 "{{{R_pf_b
 
@@ -294,6 +371,8 @@ noremap bx z+
 noremap bq zi
 noremap bd zN
 noremap bv zn
+
+noremap <expr> b<space> SuperMatch()
 "}}}
 "{{{L_pf_g
 
