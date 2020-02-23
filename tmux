@@ -14,20 +14,21 @@ set -g history-limit 1000
 set mode-keys vi
 
 set -g set-titles on
-set-option -g set-titles-string 'TMUX_#S: [#I:#W] [#P]'
+set-option -g set-titles-string '[#P] #I#F #W  [#S TMUX]'
 
 set -g status-bg colour234
 set -g status-fg colour15
 
-# default window title colors
-set-window-option -g window-status-fg colour16
-set-window-option -g window-status-bg colour190
-#set-window-option -g window-status-attr dim
+## default window title colors
+#set-window-option -g window-status-fg colour16
+#set-window-option -g window-status-bg colour190
+set-window-option -g window-status-attr dim
 
-# active window title colors
-set-window-option -g window-status-current-fg colour15
-set-window-option -g window-status-current-bg colour1
-#set-window-option -g window-status-current-attr bright
+## active window title colors
+#set-window-option -g window-status-current-fg colour15
+#set-window-option -g window-status-current-bg colour1
+set-window-option -g window-status-current-attr bright
+set-window-option -g window-status-attr bright
 
 # pane border
 set-option -g pane-border-bg colour248
@@ -45,7 +46,10 @@ set-option -g display-panes-colour colour166 #orange
 # clock
 set-window-option -g clock-mode-colour colour10 #green
 
-set -g status-right "TMUX"
+set-window-option -g window-status-format "#[fg=colour15, bg=colour234]#I#F#[fg=colour234, bg=colour190] #[fg=colour17]#W#[fg=colour190, bg=colour234]"
+set-window-option -g window-status-current-format "#[fg=colour15, bg=colour234]#I#F#[fg=colour234, bg=colour1] #[fg=colour15]#W#[fg=colour1, bg=colour234]"
+set -g status-right "#[fg=colour239, bg=colour234]#[fg=colour15, bg=colour239]#S TMUX"
+set -g status-left "#[fg=colour15, bg=colour239] #P #[fg=colour239, bg=colour234] "
 
 #bind -T copy-mode-vi WheelUpPane select-pane \; send-keys -X -N 2 scroll-upbind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 2 scroll-down
 #bind -T copy-mode-vi MouseDragEnd1Panebind -T copy-mode-vi MouseDown1Pane select-pane \;\  send-keys -X copy-pipe "pbcopy" \;\  send-keys -X clear-selection
@@ -114,7 +118,7 @@ bind-key -n C-S-PageUp select-pane -m \; previous-window \; swap-window
 #bind-key -n C-Right swap-pane -D
 bind-key -n C-Up next-layout
 bind-key -n C-Down select-pane -t :.+
-bind-key -n C-Left swap-pane -D
+bind-key -n C-Left rotate-window
 bind-key -n C-Right resize-pane -Z
 
 
