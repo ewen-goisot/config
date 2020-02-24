@@ -1,15 +1,25 @@
 "{{{divers
+"unmap b
 tnoremap <Esc> <c-\><c-n>
 noremap <ScrollWheelUp> <c-y>
 noremap <ScrollWheelDown> <c-e>
+noremap b <nop>
+noremap g <nop>
+noremap q <nop>
+
+"shell-like commands
+cnoremap <c-b> <c-a>
+cnoremap <c-a> <c-b>
 
 "6 lines from tpope vim-sensible:
-if empty(mapcheck('<C-U>', 'i'))
-	inoremap <C-U> <C-G>u<C-U>
-endif
-if empty(mapcheck('<C-W>', 'i'))
-	inoremap <C-W> <C-G>u<C-W>
-endif
+"if empty(mapcheck('<c-u>', 'i'))
+"endif
+"inoremap <c-u> <Esc>a<c-u>
+"inoremap <c-w> <Esc>a<c-w>
+"inoremap <space> <Esc>a<space>
+"inoremap <c-z> <c-o>2u
+"inoremap <c-y> <c-o>2<c-r>
+
 inoremap <expr><c-l> deoplete#complete_common_string()
 inoremap <expr><c-s> deoplete#refresh()
 inoremap <expr>↹ deoplete#toggle()
@@ -19,7 +29,7 @@ imap <c-j> ↹<BS>
 let g:superMatched=2
 function! SuperMatch()
 	" toggle
-	if(g:superMatched!=1)
+	if(g:superMatched==0 || g:superMatched==2)
 		if(g:superMatched==0)
 			echomsg "SuperMatch: ON"
 		endif
@@ -55,10 +65,15 @@ function! SuperMatch()
 		"commented fold 2. Warning: it's recursive
 		nmap qh( qha{{<Esc>
 		nmap qh) qha}}<Esc>
+
 	else
+		if(g:superMatched==1)
+			echomsg "SuperMatch: ON"
+		endif
 		"unmap everything
 		let g:superMatched=0
 		echomsg "SuperMatch: OFF"
+
 		iunmap (
 		iunmap [
 		iunmap {
@@ -102,6 +117,31 @@ function! FoldCycle()
 	endif
 endfunction
 
+function! Move(dir)
+	if a:dir==0
+		if winline() < 5
+			normal! j
+		else
+			normal! j
+		endif
+	elseif a:dir==1
+		if wincol() < 20
+			normal! l
+		else
+			normal! lzl
+		endif
+	endif
+endfunction
+
+let g:LazyMoved=10
+function! LazyMove()
+	while g:LazyMoved
+		normal! j
+		sleep 1
+		let g:LazyMoved -= 1
+	endwhile
+endfunction
+
 onoremap ac a(
 onoremap am a[
 onoremap al a{
@@ -126,8 +166,8 @@ onoremap aj aw
 onoremap aw aW
 onoremap id ip
 onoremap iv is
-onoremap ij iw
-onoremap iw iW
+onoremap ij iW
+onoremap iw iw
 
 vnoremap ac a(
 vnoremap am a[
@@ -196,6 +236,7 @@ noremap # #
 
 "noremap b z
 noremap c ,
+"TODO rnu scroll/fold incompatible
 noremap m k<c-y>
 noremap l ;
 noremap f f
@@ -203,11 +244,14 @@ noremap z %
 
 "noremap  g
 noremap t hzh
-noremap s j<c-e>
-noremap n lzl
+"noremap s j<c-e>
+vnoremap s j<c-e>
+nnoremap <silent> s :call Move(0)<cr>
+vnoremap n l
+nnoremap <silent> n :call Move(1)<cr>
 noremap r t
 nmap x <plug>(easymotion-s)
-
+"rien
 "noremap q <c-w>
 noremap q <nop>
 noremap d /
@@ -220,10 +264,10 @@ nmap <space> <plug>(easymotion-bd-w)
 "{{{L_shift
 
 noremap ¡ <c-w>=
-noremap ¿ <c-w>5-
-noremap € <c-w>8+
-noremap ¶ <c-w>5<lt>
-noremap § <c-w>8>
+noremap ¿ <c-w>-
+noremap € <c-w>+
+noremap ¶ <c-w><lt>
+noremap § <c-w>>
 
 noremap ≠ g@
 noremap È gk
@@ -265,7 +309,7 @@ noremap L }zz
 noremap F F
 noremap Z :se wrap!<cr>
 
-noremap G G
+noremap G Gzb
 noremap T zh
 noremap S <c-e>
 noremap N zl
@@ -287,9 +331,11 @@ noremap <c-y> <c-a>
 
 noremap <c-_> K
 noremap <c-o> o<Esc>0d$
+vnoremap <c-o> <c-o>
 noremap <c-a> 0
 noremap <c-i> <c-w>W
 noremap <S-Tab> `
+"unmap <BS>
 noremap <BS> <c-w>w
 noremap <Insert> zkzjzCzkzO[zzz
 "zz à la fin donne un mauvais scroll, pourquoi?
@@ -313,15 +359,21 @@ noremap <c-t> zH
 noremap <c-s> <c-u>
 noremap <c-n> zL
 noremap <c-r> <c-f>
+noremap <c-x> <c-]>
 
 noremap <c-q> <c-i>
 noremap <c-d> <c-t>
-noremap <c-v> i<space><Esc>r<c-v>
+noremap <c-v> i <Esc>r<c-v>
 noremap <c-j> J
 noremap <c-w> gJ
-noremap <c-x> <c-]>
 "}}}
 "{{{L_pf_b
+
+noremap b! :buffers<cr>
+noremap b? :ju<cr>
+noremap b; :marks<cr>
+noremap b: :his<cr>
+noremap b" :reg<cr>
 
 noremap b@ [zzz
 noremap bè zM
@@ -380,7 +432,7 @@ noremap <expr> b<space> SuperMatch()
 "lnoremap <c-r> <c-n>
 "re
 
-noremap g! g!
+noremap g! ~
 noremap g? g?
 noremap g; :%s///gn<Left><Left><Left><Left>
 vnoremap g; :s///gn<Left><Left><Left><Left>
@@ -390,11 +442,11 @@ noremap g" g~
 
 "noremap g@ g@
 noremap g@ q
-noremap gè :sl<Space>100m<cr>
+noremap gè :sl 100m<cr>
 noremap gé gs
 noremap gp gp
 noremap g' gU
-noremap gy g0
+vnoremap gy g<c-a>
 
 "noremap g_ g'
 noremap g_ m
@@ -408,7 +460,7 @@ noremap g+ gr
 noremap g- gR
 noremap g. g;
 noremap g, g,
-noremap gk g$
+vnoremap gk g<c-x>
 
 noremap ge ge
 "}}}
@@ -431,18 +483,20 @@ noremap gg gg
 noremap gt zb
 noremap gs zz
 noremap gn zt
-noremap gr gK
+noremap gr gF
 noremap gx gx
 
 noremap gq gq
-noremap gd g<c-a>
+nnoremap gd g<c-a>
 noremap gv gnzz
-"noremap gj zb
+noremap gj :read !date "+[\%Y-\%m-\%d \%H:\%M:\%S]"<cr>
 noremap gw gw
+"g<space> is for test
 "}}}
 "{{{L_pf_g_shift
 
-noremap g€ g&
+noremap g€ &
+noremap g¶ g&
 
 noremap gÈ g<c-]>
 noremap gÉ g]
@@ -452,6 +506,7 @@ noremap g± g`
 noremap gO gD
 noremap gA g8
 noremap gI gI
+noremap gU g<c-g>
 noremap gH gV
 
 noremap g… g+
@@ -473,7 +528,7 @@ noremap gF g^
 noremap gZ go
 "noremap gF gF
 
-noremap gG g<c-g>
+noremap gG <C-End>
 noremap gT H
 noremap gS M
 noremap gN L
@@ -486,14 +541,14 @@ noremap gW gW
 "}}}
 "{{{L_pf_q
 
-noremap q! :buffers<cr>
-noremap q? :ju<cr>
-noremap q; :marks<cr>
-noremap q: :his<cr>
-noremap q" :reg<cr>
+noremap q! :tabc<c-b>
+noremap q? :0tabmove<cr>
+noremap q; :tabmove<cr>
+noremap q: :-tabmove<cr>
+noremap q" :+tabmove<cr>
 
 noremap q@ :Plugin
-noremap qè :TagbarOpen<space>j<cr>
+noremap qè :TagbarOpen j<cr>
 noremap qé :TagbarToggle<cr>
 noremap qp :NERDTreeFocus<cr>
 noremap q' :NERDTreeToggle<cr>
@@ -510,7 +565,9 @@ noremap qu :w<cr>
 noremap q, :UndotreeToggle<cr>
 noremap q. :UndotreeFocus<cr>
 map qhk ghqk
+
 "qk <plug>NERDCommenterToggle
+"qe columns
 "}}}
 "{{{R_pf_q
 
@@ -539,6 +596,8 @@ noremap qd <c-w>p
 noremap qv <c-w>P
 noremap qj <c-w>}
 noremap qw <c-w>z
+
+noremap q<space> :set paste!<cr>
 "}}}
 "{{{L_pf_q_shift
 
@@ -579,21 +638,26 @@ noremap éu ]#
 "}}}
 "{{{R_pf_é
 
-noremap éb [*
-noremap éc [m
-noremap ém ][
-noremap él ]m
-noremap éf [z
+"noremap éb [*
+noremap éb [(
+noremap éc [/
+noremap ém [[
+noremap él ]/
+noremap éf ]s
+"noremap éf [z
 noremap éz [<c-d>
-
-noremap ég <leader>c<space>
-noremap ét [[
-noremap és []
-noremap én ]]
-noremap ér ]z
+"noremap <silent> qq :echom<space>screenrow()<cr>
+"noremap <silent> qq :echom<space>screencol()<cr>
+"noremap ég <leader>c<space>
+noremap ét []
+noremap és ]]
+noremap én ][
+noremap ér ]s
+"noremap ér ]z
 noremap éx ]<c-d>
 
-noremap éq ]*
+"noremap éq ]*
+noremap éq ])
 noremap éd [d
 noremap év ]d
 noremap éj [D
@@ -608,18 +672,20 @@ noremap èu ]`
 "}}}
 "{{{R_pf_è
 
-noremap èc [s
-noremap èm [{
-noremap èl ]s
-noremap èf [c
+noremap èb [{
+noremap èc [c
+noremap èm [m
+noremap èl ]c
+"noremap èf [c
 noremap èz [<c-i>
 
-noremap èt [(
-noremap ès ]}
-noremap èn ](
-noremap èr ]c
+noremap èt [M
+noremap ès ]m
+noremap èn ]M
+"noremap èr ]c
 noremap èx ]<c-i>
 
+noremap èq ]}
 noremap èd [i
 noremap èv ]i
 noremap èj [I
@@ -652,6 +718,7 @@ noremap ?d '<
 noremap ?v '>
 noremap ?j '[
 noremap ?w ']
+noremap q– :QuickhlManualAdd
 nmap q+ <Plug>(quickhl-manual-reset)
 xmap q+ <Plug>(quickhl-manual-reset)
 nmap q- <Plug>(quickhl-manual-this)
