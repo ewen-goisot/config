@@ -1,0 +1,60 @@
+#
+# THIS COMES FROM /home/ewen-goisot, MEANING I MODIFIED IT A BIT!
+# DON'T USE IT IF YOU WANT THE STANDART CRUNCH THEME
+#
+# CRUNCH - created from Steve Eley's cat waxing.
+# Initially hacked from the Dallas theme. Thanks, Dallas Reedy.
+#
+# This theme assumes you do most of your oh-my-zsh'ed "colorful" work at a single machine,
+# and eschews the standard space-consuming user and hostname info.  Instead, only the
+# things that vary in my own workflow are shown:
+#
+# * The time (not the date) *** and seconds
+# * The RVM version and gemset (omitting the 'ruby' name if it's MRI)
+# * The current directory
+# * The Git branch and its 'dirty' state
+# *** error checking
+#
+# Colors are at the top so you can mess with those separately if you like.
+# For the most part I stuck with Dallas's.
+
+#eval my_orange='$FG[214]'
+CRUNCH_BRACKET_COLOR="%{$BG[100]$fg[black]%}"
+CRUNCH_TIME_COLOR="%{$BG[100]$fg[black]%}"
+CRUNCH_RVM_COLOR="%{$bg[black]$fg[magenta]%}"
+CRUNCH_DIR_COLOR="%{$bg[blue]$fg[white]%}"
+CRUNCH_GIT_BRANCH_COLOR="%{$fg[black]%}"
+#CRUNCH_GIT_CLEAN_COLOR="%{$fg[green]%}"
+#CRUNCH_GIT_DIRTY_COLOR="%{$fg[red]%}"
+#CRUNCH_SEP_NUL="%{$bg[blue]$fg[black]%}"
+CRUNCH_SEP_UNU="%{$BG[100]$fg[blue]%}"
+CRUNCH_SEP_DEK="%{$bg[blue]$FG[100]%}"
+#CRUNCH_SEP_TRI="%{$BG[100]$fg[blue]%}"
+CRUNCH_SEP_KVA="%{$FG[100]%}"
+
+
+# These Git variables are used by the oh-my-zsh git_prompt_info helper:
+ZSH_THEME_GIT_PROMPT_PREFIX="$CRUNCH_GIT_BRANCH_COLOR"
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_CLEAN="✅ "
+ZSH_THEME_GIT_PROMPT_DIRTY="❎ "
+
+# Our elements:
+CRUNCH_TIME_="$CRUNCH_DIR_COLOR%!$CRUNCH_SEP_UNU$CRUNCH_TIME_COLOR%D{%m-%d %H:%M}%{$reset_color%}"
+if [ -e ~/.rvm/bin/rvm-prompt ]; then
+  CRUNCH_RVM_="$CRUNCH_BRACKET_COLOR"["$CRUNCH_RVM_COLOR\${\$(~/.rvm/bin/rvm-prompt i v g)#ruby-}$CRUNCH_BRACKET_COLOR"]"%{$reset_color%}"
+else
+  if which rbenv &> /dev/null; then
+    CRUNCH_RVM_="$CRUNCH_BRACKET_COLOR"["$CRUNCH_RVM_COLOR\${\$(rbenv version | sed -e 's/ (set.*$//' -e 's/^ruby-//')}$CRUNCH_BRACKET_COLOR"]"%{$reset_color%}"
+  fi
+fi
+CRUNCH_DIR_="$CRUNCH_SEP_DEK$CRUNCH_DIR_COLOR%~$CRUNCH_SEP_UNU\$(git_prompt_info)"
+CRUNCH_PROMPT="$CRUNCH_BRACKET_COLOR%(!.#.$)%{$reset_color%}$CRUNCH_SEP_KVA"
+
+# Put it all together!
+local return_code="%(?..%{$fg[red]%}[%?])"
+local count_jobs="%1(j.%{$fg[white]%}[%j].)"
+PROMPT="$CRUNCH_TIME_$CRUNCH_RVM_$CRUNCH_DIR_%B${return_code}${count_jobs}%b$CRUNCH_PROMPT %{$reset_color%}"
+# right prompt
+# RPROMPT="$CRUNCH_TIME_"
+#RPN1="%B${return_code}%b $CRUNCH_TIME_"
