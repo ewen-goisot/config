@@ -1,31 +1,89 @@
-"{{{divers
+"{{{insert, command, vrac
 "unmap b
 tnoremap <Esc> <c-\><c-n>
+"tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+tnoremap <expr> <c-o><c-r> '<c-\><c-n>"'.nr2char(getchar()).'pi'
+tnoremap <c-o><c-o> <c-o>
+tnoremap <c-o><Esc> <Esc>
+"tnoremap <c-o>p <c-\><c-n>pi
+tnoremap <c-o><c-p> <c-\><c-n>pi
+tnoremap <c-o><c-m> <c-e> \<c-m>
+"be carefull: symbol depends on shell prompt, using $ is safer
+tnoremap <c-o><c-y> <c-\><c-n>0f2<Right>y$i
+"tnoremap <Up> <c-p>
+"tnoremap <Down> <c-n>
 noremap <ScrollWheelUp> <c-y>
 noremap <ScrollWheelDown> <c-e>
 noremap b <nop>
 noremap g <nop>
 noremap q <nop>
 
-"shell-like commands
-cnoremap <c-b> <c-a>
+"shell-like commands: why default <c-a> is on <c-b> ?
 cnoremap <c-a> <c-b>
+cnoremap <c-b> <Left>
+cnoremap <c-d> <nop>
+cnoremap <c-f> <Right>
+"double: "for extensions"
+cnoremap <c-g><c-g> <c-\>
+cnoremap <c-g><c-t> <c-_>
+cnoremap <c-g><c-n> <c-^>
+cnoremap <c-h> <c-l>
+cnoremap <c-j> <nop>
+cnoremap <c-k> <c-d>
+cnoremap <c-l> <c-f>
+cnoremap <c-o> <c-\>e
+cnoremap <c-q> <c-k>
+cnoremap <c-s> <S-Right>
+cnoremap <c-t> <S-Left>
+cnoremap <c-z> <c-c><c-z>
 
-"6 lines from tpope vim-sensible:
-"if empty(mapcheck('<c-u>', 'i'))
-"endif
-"inoremap <c-u> <Esc>a<c-u>
-"inoremap <c-w> <Esc>a<c-w>
+
+
+
 "inoremap <space> <Esc>a<space>
 "inoremap <c-z> <c-o>2u
 "inoremap <c-y> <c-o>2<c-r>
+"insert and normal has similar behavior
+inoremap <c-a> <Home>
+inoremap <c-b> <Left>
+inoremap <c-e> <End>
+inoremap <c-f> <Right>
+"<c-g> becomes universal prefix
+inoremap <c-g><c-c> <c-g>U
+inoremap <c-g><c-m> <c-g>k
+inoremap <c-g><c-l> <c-g>u
+inoremap <c-g><c-f> <c-\><c-g>
+cnoremap <c-g><c-g> <c-\>
+inoremap <c-g><c-t> <c-_>
+inoremap <c-g><c-s> <c-g>j
+inoremap <c-g><c-n> <c-^>
+inoremap <c-g><c-r> <c-\><c-n>
+inoremap <c-j> <c-t>
+inoremap <c-k> <c-e>
+inoremap <c-q> <c-k>
+inoremap <c-s> <S-Right>
+inoremap <c-t> <S-Left>
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
 
-inoremap <expr><c-l> deoplete#complete_common_string()
-inoremap <expr><c-s> deoplete#refresh()
-inoremap <expr>↹ deoplete#toggle()
-"direct map puts a «0» after: why?
-imap <c-j> ↹<BS>
 
+inoremap <expr><c-h> deoplete#complete_common_string()
+inoremap <expr><c-l> deoplete#refresh()
+"<C-Space> is also on "<c-@>"
+inoremap <C-Space> <c-a>
+inoremap <c-_> <c-]>
+"<Up> and <Down> and others avoid completion
+"TODO is it possible without leaving insert mode?
+inoremap <Up> <c-o><Up>
+inoremap <Down> <c-o><Down>
+inoremap <PageUp> <c-o><PageUp>
+inoremap <PageDown> <c-o><PageDown>
+"inoremap <expr>↹ deoplete#toggle()
+""direct map puts a «0» after: why?
+"imap <c-j> ↹<BS>
+
+"}}}
+"{{{function (next isn't inoremap)
 let g:superMatched=2
 function! SuperMatch()
 	" toggle
@@ -133,15 +191,41 @@ function! Move(dir)
 	endif
 endfunction
 
-let g:LazyMoved=10
-function! LazyMove()
-	while g:LazyMoved
-		normal! j
-		sleep 1
-		let g:LazyMoved -= 1
-	endwhile
-endfunction
+"let g:LazyActive=10
+"let g:LazyStep=10
+"let g:LazyPeriod=1000
+"let g:LazyDirection=1
+"function! LazyMove()
+	"echomsg "start move"
+	"let g:LazyActive=10
+	"while g:LazyActive
+		"normal! jzz
+		"sleep 1
+		""exec "normal! " . g:LazyStep . "j"
+		""exec! "sleep " . g:LazyPeriod . "m"
+		"let g:LazyActive -= 1
+	"endwhile
+"endfunction
 
+let g:SpeedMode=0
+function! SpeedCycle()
+	if g:SpeedMode==0
+		let g:SpeedMode=1
+		echomsg "SpeedCycle: Fast"
+		"f,r fast like in Most and Zathura
+		nnoremap f <c-u>
+		nnoremap r <c-d>
+	else
+		let g:SpeedMode=0
+		echomsg "SpeedCycle: Slow"
+		"f,r slow like in Tmux-copy
+		nnoremap f f
+		nnoremap r t
+	endif
+endfunction
+"   
+"}}}
+"{{{ onoremap
 onoremap ac a(
 onoremap am a[
 onoremap al a{
@@ -245,10 +329,13 @@ noremap z %
 "noremap  g
 noremap t hzh
 "noremap s j<c-e>
-vnoremap s j<c-e>
 nnoremap <silent> s :call Move(0)<cr>
-vnoremap n l
+vnoremap s j<c-e>
+onoremap s j
+"noremap n l
 nnoremap <silent> n :call Move(1)<cr>
+vnoremap n l
+onoremap n l
 noremap r t
 nmap x <plug>(easymotion-s)
 "rien
@@ -274,6 +361,9 @@ noremap È gk
 noremap É gj
 noremap P P
 noremap ° D
+"clipboard yank
+"disabble v_Y (visual whole line yank) but it's a redundant behavior of Vygv<Esc>
+"(= my Hygh<Esc> )
 noremap Y "+y
 
 noremap ± g'
@@ -358,12 +448,15 @@ noremap <c-g> <c-g>
 noremap <c-t> zH
 noremap <c-s> <c-u>
 noremap <c-n> zL
-noremap <c-r> <c-f>
+nnoremap <c-r> <c-f>
+vnoremap <c-r> <c-f>
 noremap <c-x> <c-]>
 
 noremap <c-q> <c-i>
 noremap <c-d> <c-t>
-noremap <c-v> i <Esc>r<c-v>
+"can't directly write some letters like «o» and «u» with <c-v>
+"noremap <c-v> i <Esc>r<c-v>
+noremap <c-v> i <Esc>r
 noremap <c-j> J
 noremap <c-w> gJ
 "}}}
@@ -372,7 +465,7 @@ noremap <c-w> gJ
 noremap b! :buffers<cr>
 noremap b? :ju<cr>
 noremap b; :marks<cr>
-noremap b: :his<cr>
+noremap b: :his c<cr>
 noremap b" :reg<cr>
 
 noremap b@ [zzz
@@ -481,8 +574,11 @@ noremap gz \|
 
 noremap gg gg
 noremap gt zb
+onoremap gt H
 noremap gs zz
+onoremap gs M
 noremap gn zt
+onoremap gn L
 noremap gr gF
 noremap gx gx
 
@@ -534,10 +630,11 @@ noremap gS M
 noremap gN L
 noremap gR z.
 
-noremap gQ gQ
+"is there any difference between Q and gQ ?
+"noremap gQ gQ
 noremap gV gNzz
-noremap gJ ze
-noremap gW gW
+"noremap gJ ze
+"noremap gW gW
 "}}}
 "{{{L_pf_q
 
@@ -567,7 +664,8 @@ noremap q. :UndotreeFocus<cr>
 map qhk ghqk
 
 "qk <plug>NERDCommenterToggle
-"qe columns
+"qe paste mode
+noremap qe :set paste!<cr>
 "}}}
 "{{{R_pf_q
 
@@ -597,14 +695,14 @@ noremap qv <c-w>P
 noremap qj <c-w>}
 noremap qw <c-w>z
 
-noremap q<space> :set paste!<cr>
+noremap <expr> q<space> SpeedCycle()
 "}}}
 "{{{L_pf_q_shift
 
 noremap q± <c-w>o
 noremap qO :qa<cr>
 noremap qA :wqa!<cr>
-noremap qI :bw!<cr>
+noremap qI :bd!<cr>
 noremap qU :wa!<cr>
 "}}}
 "{{{R_pf_q_shift
