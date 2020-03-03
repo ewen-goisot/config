@@ -24,9 +24,11 @@ cnoremap <c-b> <Left>
 cnoremap <c-d> <nop>
 cnoremap <c-f> <Right>
 "double: "for extensions"
+cnoremap <c-g><c-f> <c-\><c-g>
 cnoremap <c-g><c-g> <c-\>
 cnoremap <c-g><c-t> <c-_>
 cnoremap <c-g><c-n> <c-^>
+cnoremap <c-g><c-r> <c-\><c-n>
 cnoremap <c-h> <c-l>
 cnoremap <c-j> <nop>
 cnoremap <c-k> <c-d>
@@ -37,7 +39,13 @@ cnoremap <c-s> <S-Right>
 cnoremap <c-t> <S-Left>
 cnoremap <c-z> <c-c><c-z>
 
-
+noremap "@ "%
+noremap "! "=
+noremap "? "*
+noremap "; "/
+"TODO: check if necessary: _ is not ' for registers
+noremap "_ "_
+noremap @? @*
 
 
 "inoremap <space> <Esc>a<space>
@@ -49,11 +57,11 @@ inoremap <c-b> <Left>
 inoremap <c-e> <End>
 inoremap <c-f> <Right>
 "<c-g> becomes universal prefix
-inoremap <c-g><c-c> <c-g>U
+inoremap <c-g><c-c> <c-g>u
 inoremap <c-g><c-m> <c-g>k
-inoremap <c-g><c-l> <c-g>u
+inoremap <c-g><c-l> <c-g>U
 inoremap <c-g><c-f> <c-\><c-g>
-cnoremap <c-g><c-g> <c-\>
+inoremap <c-g><c-g> <c-\>
 inoremap <c-g><c-t> <c-_>
 inoremap <c-g><c-s> <c-g>j
 inoremap <c-g><c-n> <c-^>
@@ -80,7 +88,7 @@ inoremap <PageUp> <c-o><PageUp>
 inoremap <PageDown> <c-o><PageDown>
 "inoremap <expr>↹ deoplete#toggle()
 ""direct map puts a «0» after: why?
-"imap <c-j> ↹<BS>
+"imap <c-_> ↹<BS>
 
 "}}}
 "{{{function (next isn't inoremap)
@@ -208,8 +216,8 @@ endfunction
 "endfunction
 
 let g:SpeedMode=0
-function! SpeedCycle()
-	if g:SpeedMode==0
+function! SpeedCycle(val)
+	if (g:SpeedMode==0 && a:val==-1) || a:val==1
 		let g:SpeedMode=1
 		echomsg "SpeedCycle: Fast"
 		"f,r fast like in Most and Zathura
@@ -226,23 +234,24 @@ endfunction
 "   
 "}}}
 "{{{ onoremap
-onoremap ac a(
-onoremap am a[
-onoremap al a{
-onoremap af a<
-onoremap ic i(
-onoremap im i[
-onoremap il i{
-onoremap if i<
 
-onoremap at a"
-onoremap as a'
-onoremap an at
-onoremap ar a`
-onoremap it i"
-onoremap is i'
-onoremap in it
-onoremap ir i`
+onoremap ac a"
+onoremap am a'
+onoremap al at
+onoremap af a`
+onoremap ic i"
+onoremap im i'
+onoremap il it
+onoremap if i`
+
+onoremap at a(
+onoremap as a[
+onoremap an a{
+onoremap ar a<
+onoremap it i(
+onoremap is i[
+onoremap in i{
+onoremap ir i<
 
 onoremap ad ap
 onoremap av as
@@ -253,23 +262,23 @@ onoremap iv is
 onoremap ij iW
 onoremap iw iw
 
-vnoremap ac a(
-vnoremap am a[
-vnoremap al a{
-vnoremap af a<
-vnoremap ic i(
-vnoremap im i[
-vnoremap il i{
-vnoremap if i<
+vnoremap ac a"
+vnoremap am a'
+vnoremap al at
+vnoremap af a`
+vnoremap ic i"
+vnoremap im i'
+vnoremap il it
+vnoremap if i`
 
-vnoremap at a"
-vnoremap as a'
-vnoremap an at
-vnoremap ar a`
-vnoremap it i"
-vnoremap is i'
-vnoremap in it
-vnoremap ir i`
+vnoremap at a(
+vnoremap as a[
+vnoremap an a{
+vnoremap ar a<
+vnoremap it i(
+vnoremap is i[
+vnoremap in i{
+vnoremap ir i<
 
 vnoremap ad ap
 vnoremap av as
@@ -295,7 +304,7 @@ noremap ' d
 noremap y y
 
 noremap _ '
-onoremap _ '
+"onoremap _ '
 noremap o o
 noremap a a
 noremap i i
@@ -416,7 +425,7 @@ noremap W W
 
 "<C-Space> mapped on <c-@>
 noremap <c-space> <c-^>
-noremap <c-p> "+p
+noremap <c-p> :CtrlP<cr>
 noremap <c-y> <c-a>
 
 noremap <c-_> K
@@ -492,30 +501,43 @@ noremap <expr> be FoldCycle()
 "}}}
 "{{{R_pf_b
 
-noremap b( zW
-noremap b) zG
-"noremap b( :0tabm<cr>
-"noremap b) :tabm<cr>
-"noremap b< :-tabm<cr>
-"noremap b> :+tabm<cr>
+"noremap b( zW
+"noremap b) zG
+noremap b( :clist<cr>
+noremap b) :breakl<cr>
+noremap b<lt> :che<cr>
+"noremap b> ""yiw:dli <c-r>"<cr>
+"noremap b> :undol<cr>
+noremap b> :changes<cr>
+noremap b# :tabs<cr>
 
-noremap bb za
-noremap bc zw
-noremap bm z=
-noremap bl zg
+noremap bb zA
+noremap bc zi
+noremap bm zN
+noremap bl zn
+"noremap bc zw
+"noremap bm z=
+"noremap bl zg
 noremap bf z-
 noremap bz z^
 
-noremap bg zA
+noremap bg za
 noremap bt zv
 noremap bs zx
 noremap bn zX
 noremap br z<cr>
 noremap bx z+
 
-noremap bq zi
-noremap bd zN
-noremap bv zn
+noremap bq z=
+noremap bd zG
+noremap bv zB
+noremap bj zg
+noremap bw zb
+"those are not on index.txt
+noremap bD zuG
+noremap bV zuB
+noremap bJ zug
+noremap bW zub
 
 noremap <expr> b<space> SuperMatch()
 "}}}
@@ -533,8 +555,10 @@ noremap g: :'<lt>,'>
 vnoremap g: :<c-u>
 noremap g" g~
 
-"noremap g@ g@
 noremap g@ q
+"less important than m'
+"then, the final g@ does not work
+"noremap g@@ q"
 noremap gè :sl 100m<cr>
 noremap gé gs
 noremap gp gp
@@ -543,6 +567,7 @@ vnoremap gy g<c-a>
 
 "noremap g_ g'
 noremap g_ m
+noremap g__ m'
 noremap go gd
 noremap ga ga
 noremap gi gi
@@ -651,10 +676,10 @@ noremap qp :NERDTreeFocus<cr>
 noremap q' :NERDTreeToggle<cr>
 "qy <plug>NERDCommenterAlt
 
-noremap q_ <c-w>c
+noremap q_ :bd<cr>
 noremap qo <c-w>q
 noremap qa :wq<cr>
-noremap qi :bd<cr>
+noremap qi <c-w>c
 noremap qu :w<cr>
 "qh NERDCommenterToggle prefix
 
@@ -675,7 +700,7 @@ noremap q< <c-w>K
 noremap q> <c-w>J
 noremap q# :tabnew<cr>
 
-noremap qb <c-w>T
+noremap qb <c-w>r
 noremap qc <c-w>v
 noremap qm <c-w>k
 noremap ql <c-w>s
@@ -689,24 +714,27 @@ noremap qn <c-w>l
 noremap qr <c-w>b
 noremap qx :enew<cr>
 
-noremap qq <c-w>r
+noremap qq <c-w>T
 noremap qd <c-w>p
 noremap qv <c-w>P
 noremap qj <c-w>}
 noremap qw <c-w>z
 
-noremap <expr> q<space> SpeedCycle()
+noremap <expr> q<space> SpeedCycle(-1)
 "}}}
 "{{{L_pf_q_shift
 
-noremap q± <c-w>o
+"noremap q¡ :tabo<cr>
+
+noremap q± :bd!<cr>
 noremap qO :qa<cr>
 noremap qA :wqa!<cr>
-noremap qI :bd!<cr>
+noremap qI <c-w>o
 noremap qU :wa!<cr>
 "}}}
 "{{{R_pf_q_shift
 
+noremap qB <c-w>R
 noremap qC <c-w>g<c-]>
 noremap qM <c-w>]
 noremap qL <c-w>^
@@ -720,11 +748,11 @@ noremap qN <c-w>d
 noremap qR <c-w>F
 noremap qX <c-w>gF
 
-noremap qQ <c-w>R
+noremap qQ :tabnew\|terminal<cr>
 noremap qD <c-w>\|
 noremap qV <c-w>_
 noremap qJ <c-w>\|<c-w>_
-noremap qW :ball<cr>
+"noremap qW :ball<cr>
 "}}}
 "{{{L_pf_é
 
@@ -742,6 +770,8 @@ noremap éc [/
 noremap ém [[
 noremap él ]/
 noremap éf ]s
+"next isn't on index.txt (sometimes I don't specify it)
+noremap éF ]S
 "noremap éf [z
 noremap éz [<c-d>
 "noremap <silent> qq :echom<space>screenrow()<cr>
@@ -751,6 +781,7 @@ noremap ét []
 noremap és ]]
 noremap én ][
 noremap ér ]s
+noremap éR ]S
 "noremap ér ]z
 noremap éx ]<c-d>
 
