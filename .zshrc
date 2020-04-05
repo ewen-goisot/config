@@ -20,9 +20,12 @@ DISABLE_AUTO_TITLE="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 HIST_STAMPS="yyyy-mm-dd"
 # ZSH_CUSTOM=/path/to/new-custom-folder
+HISTSIZE=10000
 
 plugins=(
 git z
+#web-search
+#ubuntu systemd sysadmin safe-paste
 #zsh-autosuggestions
 zsh-syntax-highlighting
 )
@@ -88,7 +91,7 @@ alias mi='make install'
 alias p='pidof'
 alias pp='ping -c 3 www.google.com'
 alias q='exit'
-alias r='lf && [[ -s /media/ramdisk/lfcd ]] && [[ $(cat /media/ramdisk/lfcd) != $(pwd) ]] && pushd $(cat /media/ramdisk/lfcd)'
+alias lfcd='lf && [[ -s /media/ramdisk/lfcd ]] && [[ $(cat /media/ramdisk/lfcd) != $(pwd) ]] && pushd $(cat /media/ramdisk/lfcd)'
 alias t='top | colout " R " yellow | colout " 0[0.:]*" red | colout " root |/.*" green'
 alias tt='date'
 alias tv='youtube-viewer -C'    # aud+vid
@@ -136,6 +139,7 @@ alias e4='./*.*'
 alias l='ls'
 alias la='ls -a'
 alias ll='ls -lahG'
+alias lsd='ls -d *(-/DN)'
 alias llg='ls -lah | grep'
 alias lll='ls -lahi' # affiche un maximum d'infos dont inode
 
@@ -238,8 +242,8 @@ bindkey -s 'ééb' '| bc '
 bindkey -s 'ééc' '| cat -A '
 bindkey -s 'éém' '| most '
 bindkey -s 'éél' '| less '
-bindkey -s 'ééf' '; sleep .1 '
-bindkey -s 'ééz' '; sleep 4 '
+bindkey -s 'ééf' 'sleep .1 ;'
+bindkey -s 'ééz' 'sleep 4 ;'
 
 bindkey -s 'éég' '| grep '
 bindkey -s 'éét' '| tee '
@@ -258,8 +262,15 @@ bindkey -s 'ééw' '| wc '
 #bindkey -s '^R' 'history | ~/.fzf/bin/fzf-tmux'
 #bindkey -s '^S' 'fd --exclude snap --color=never | ~/.fzf/bin/fzf-tmux'
 #bindkey '^T' 'transpose-chars'
-bindkey -s '^J' '^X'
-bindkey "\e" 'capitalize-word'
+#↓dangerous: make whole line paste with shift-insert harder
+#bindkey -s '^J' '^X'
+bindkey -s '^L' ' lfcd^M'
+bindkey -s '^T' "\eb"
+bindkey -s '^S' "\ef"
+bindkey "\ei" 'capitalize-word'
+bindkey "\et" 'transpose-chars'
+# on ~/.fzf/shell/key-bindings.zsh
+# ^R fzf-history, \er fzf-file, \ec fzf-cd
 
 #vi like in my vim config
 # je ne l'utilise pas pour l'instant, c'est préventif!
@@ -331,6 +342,10 @@ bindkey -a 'H' 'visual-line-mode'
 #bindkey -a 'a' 'select-in-shell-word'
 #bindkey -a 'a' 'select-in-word'
 
+bindkey -M menuselect 't' vi-backward-char
+bindkey -M menuselect 's' vi-down-line-or-history
+bindkey -M menuselect 'm' vi-up-line-or-history
+bindkey -M menuselect 'n' vi-forward-char
 
 
 export LESS="--RAW-CONTROL-CHARS"
@@ -342,7 +357,7 @@ export EDITOR='nvim'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND="fd --exclude snap --color=always"
 #export FZF_DEFAULT_OPTS="--height 100% --preview-window=up:40%:hidden --jump-labels='etusinaghd,v.j-qkcmplébyrofèw+x_z@:;?!()<>#' --bind='ctrl-b:unix-word-rubout,ctrl-g:deselect-all,ctrl-s:preview-page-down,ctrl-t:preview-page-up,ctrl-o:toggle-preview,ctrl-a:toggle-sort,ctrl-k:top,ctrl-j:jump-accept'"
-export FZF_DEFAULT_OPTS="--height 100% --preview='most {}' --preview-window=up:40%:hidden --jump-labels='etusinaghd,v.j-qkcmplbyrofw+x_z@:;?!()<>#' --color='pointer:15' --bind='ctrl-z:deselect-all,ctrl-v:preview-page-down,ctrl-q:preview-page-up,ctrl-r:toggle-preview,ctrl-x:toggle-preview-wrap,ctrl-o:toggle-sort,ctrl-g:top,ctrl-j:jump-accept,ctrl-t:backward-word,ctrl-s:forward-word,ctrl-k:kill-line,ctrl-_:page-down'"
+export FZF_DEFAULT_OPTS="--height 100% --preview='~/.config/lf/pv.sh {}' --preview-window=up:40%:hidden --jump-labels='etusinaghd,v.j-qkcmplbyrofw+x_z@:;?!()<>#' --color='pointer:15' --bind='ctrl-z:deselect-all,ctrl-v:preview-page-down,ctrl-q:preview-page-up,ctrl-r:toggle-preview,ctrl-x:toggle-preview-wrap,ctrl-o:toggle-sort,ctrl-g:top,ctrl-j:jump-accept,ctrl-t:backward-word,ctrl-s:forward-word,ctrl-k:kill-line,ctrl-_:page-up'"
 export FZF_TMUX=1
 export LS_COLORS="cd=1;33:di=1;34:ex=1;32:ln=1;36:*.jpg=1;35:*.png=1;35"
 
