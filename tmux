@@ -27,8 +27,8 @@ set-window-option -g window-status-attr dim
 ## active window title colors
 #set-window-option -g window-status-current-fg colour15
 #set-window-option -g window-status-current-bg colour1
-set-window-option -g window-status-current-attr bright
-set-window-option -g window-status-attr bright
+set-window-option -g window-status-current-attr none
+set-window-option -g window-status-attr none
 
 # pane border
 set-option -g pane-border-bg colour248
@@ -36,20 +36,23 @@ set-option -g pane-active-border-bg colour10
 set-option -g pane-border-fg colour235
 set-option -g pane-active-border-fg colour235
 
+#
+#
 # message text
-set-option -g message-fg colour7 #base02
+set-option -g message-fg colour15 #base02
 set-option -g message-bg colour53 #orange
-
+#%s///g
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
 set-option -g display-panes-colour colour166 #orange
 # clock
 set-window-option -g clock-mode-colour colour10 #green
+set-window-option window-status-bell-style ""
 
-set-window-option -g window-status-format "#[fg=colour15, bg=colour234]#I#F#[fg=colour234, bg=colour190] #[fg=colour17]#W#[fg=colour190, bg=colour234]"
-set-window-option -g window-status-current-format "#[fg=colour15, bg=colour234]#I#F#[fg=colour234, bg=colour1] #[fg=colour15]#W#[fg=colour1, bg=colour234]"
-set -g status-right "#[fg=colour239, bg=colour234]#[fg=colour15, bg=colour239]#S TMUX"
-set -g status-left "#[fg=colour15, bg=colour239] #P #[fg=colour239, bg=colour234] "
+set-window-option -g window-status-format "#[fg=colour85, bg=colour234]#I#F#[fg=colour190]#[fg=colour234, bg=colour190] #[fg=colour17]#W #[fg=colour190, bg=colour234]"
+set-window-option -g window-status-current-format "#[fg=colour85, bg=colour234]#I#F#[fg=colour1]#[fg=colour15, bg=colour1] #W #[fg=colour1, bg=colour234]"
+set -g status-right "#[fg=colour239, bg=colour234]#[fg=colour15, bg=colour239]#S TMUX"
+set -g status-left "#[fg=colour15, bg=colour239] #P #[fg=colour239, bg=colour234] "
 
 #bind -T copy-mode-vi WheelUpPane select-pane \; send-keys -X -N 2 scroll-upbind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 2 scroll-down
 #bind -T copy-mode-vi MouseDragEnd1Panebind -T copy-mode-vi MouseDown1Pane select-pane \;\  send-keys -X copy-pipe "pbcopy" \;\  send-keys -X clear-selection
@@ -111,6 +114,9 @@ bind-key -n C-PageUp previous-window
 # C-S-Page: permutation d'onglets
 bind-key -n C-S-PageDown select-pane -m \; next-window \; swap-window
 bind-key -n C-S-PageUp select-pane -m \; previous-window \; swap-window
+# warning: default st does not understand c-s-page*
+#bind-key -n PageDown select-pane -m \; next-window \; swap-window
+#bind-key -n PageUp select-pane -m \; previous-window \; swap-window
 # C-arrows: rotate
 #bind-key -n C-Up next-layout
 #bind-key -n C-Down rotate-window
@@ -120,6 +126,18 @@ bind-key -n C-Up next-layout
 bind-key -n C-Down select-pane -t :.+
 bind-key -n C-Left rotate-window
 bind-key -n C-Right resize-pane -Z
+bind-key -T copy-mode C-Up next-layout
+bind-key -T copy-mode C-Down select-pane -t :.+
+bind-key -T copy-mode C-Left rotate-window
+bind-key -T copy-mode C-Right resize-pane -Z
+bind-key -T copy-mode-vi C-Up next-layout
+bind-key -T copy-mode-vi C-Down select-pane -t :.+
+bind-key -T copy-mode-vi C-Left rotate-window
+bind-key -T copy-mode-vi C-Right resize-pane -Z
+bind-key -Tchoice C-Up next-layout
+bind-key -Tchoice C-Down select-pane -t :.+
+bind-key -Tchoice C-Left rotate-window
+bind-key -Tchoice C-Right resize-pane -Z
 
 
 bind g new-session
@@ -133,6 +151,8 @@ bind -r d rotate-window
 bind -r v next-layout
 bind -r j resize-pane -Z
 bind -r w join-pane # need mark ↹# , cancel: ↹w
+bind -r x display-panes
+bind -r k kill-pane
 
 unbind-key up
 unbind-key down
@@ -243,8 +263,8 @@ bind-key -T copy-mode-vi Up                send-keys -X cursor-up
 bind-key -T copy-mode-vi Down              send-keys -X cursor-down
 bind-key -T copy-mode-vi Left              send-keys -X cursor-left
 bind-key -T copy-mode-vi Right             send-keys -X cursor-right
-bind-key -T copy-mode-vi C-Up              send-keys -X scroll-up
-bind-key -T copy-mode-vi C-Down            send-keys -X scroll-down
+#bind-key -T copy-mode-vi C-Up              send-keys -X scroll-up
+#bind-key -T copy-mode-vi C-Down            send-keys -X scroll-down
 
 
 bind-key -T copy-mode C-f    send-keys -X page-up
@@ -335,8 +355,8 @@ bind-key -T copy-mode Up                send-keys -X cursor-up
 bind-key -T copy-mode Down              send-keys -X cursor-down
 bind-key -T copy-mode Left              send-keys -X cursor-left
 bind-key -T copy-mode Right             send-keys -X cursor-right
-bind-key -T copy-mode C-Up              send-keys -X scroll-up
-bind-key -T copy-mode C-Down            send-keys -X scroll-down
+#bind-key -T copy-mode C-Up              send-keys -X scroll-up
+#bind-key -T copy-mode C-Down            send-keys -X scroll-down
 
 
 # remap choose-tree, choose-client, choose-buffer shortcuts
