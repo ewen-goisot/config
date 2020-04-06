@@ -189,7 +189,7 @@ bind-key -T copy-mode-vi C-i    select-pane -D
 bind-key -T copy-mode-vi C-u    select-pane -R
 bind-key -T copy-mode-vi Enter  send-keys -X copy-selection-and-cancel
 bind-key -T copy-mode-vi C-h    send-keys -X rectangle-toggle
-bind-key -T copy-mode-vi Escape send-keys -X clear-selection
+bind-key -T copy-mode-vi Escape send-keys -X cancel
 bind-key -T copy-mode-vi C-\    select-pane -l
 bind-key -T copy-mode-vi Space  send-keys -X begin-selection
 bind-key -T copy-mode-vi 1      command-prompt -N -I 1 -p (repeat) "send -N \"%%%\""
@@ -243,7 +243,7 @@ bind-key -T copy-mode-vi t      send-keys -X cursor-left
 bind-key -T copy-mode-vi s      send-keys -X cursor-down
 bind-key -T copy-mode-vi n      send-keys -X cursor-right
 bind-key -T copy-mode-vi r      command-prompt -1 -p "(jump to forward)" "send -X jump-to-forward \"%%%\""
-bind-key -T copy-mode-vi q      send-keys -X cancel
+bind-key -T copy-mode-vi q      send-keys -X clear-selection
 bind-key -T copy-mode-vi d      command-prompt -p "(search down)" "send -X search-forward \"%%%\""
 bind-key -T copy-mode-vi v      send-keys -X search-again
 bind-key -T copy-mode-vi j      send-keys -X previous-word
@@ -281,7 +281,7 @@ bind-key -T copy-mode C-i    select-pane -D
 bind-key -T copy-mode C-u    select-pane -R
 bind-key -T copy-mode Enter  send-keys -X copy-selection-and-cancel
 bind-key -T copy-mode C-h    send-keys -X rectangle-toggle
-bind-key -T copy-mode Escape send-keys -X clear-selection
+bind-key -T copy-mode Escape send-keys -X cancel
 bind-key -T copy-mode C-\    select-pane -l
 bind-key -T copy-mode Space  send-keys -X begin-selection
 bind-key -T copy-mode 1      command-prompt -N -I 1 -p (repeat) "send -N \"%%%\""
@@ -335,7 +335,7 @@ bind-key -T copy-mode t      send-keys -X cursor-left
 bind-key -T copy-mode s      send-keys -X cursor-down
 bind-key -T copy-mode n      send-keys -X cursor-right
 bind-key -T copy-mode r      command-prompt -1 -p "(jump to forward)" "send -X jump-to-forward \"%%%\""
-bind-key -T copy-mode q      send-keys -X cancel
+bind-key -T copy-mode q      send-keys -X clear-selection
 bind-key -T copy-mode d      command-prompt -p "(search down)" "send -X search-forward \"%%%\""
 bind-key -T copy-mode v      send-keys -X search-again
 bind-key -T copy-mode j      send-keys -X previous-word
