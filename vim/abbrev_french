@@ -1,718 +1,1166 @@
-" for "vim anywhere"
-" TODO: change everything
-"
-" abbréviation complétion syntaxe
-abbrev intx intérêt
-" dans mon domaine
-" devenir deviens trouver
-" (doublons)
-"doublons pour les os
-" élément
-" en fait
-" epe epes
-" expression usuelles
-" -> ggI" Go
-iabbrev 1c qwerty
-iabbrev 1d Je reviens dans une minute.:x<Return>
-iabbrev 2c azerty
-iabbrev 2d Je reviens dans environ 5 minutes.:x<Return>
-iabbrev 3c bépo
-iabbrev 3d Je reviens dans environ 20 minutes.:x<Return>
-iabbrev 4d Je reviens dans environ une heure.:x<Return>
-iabbrev 5d Je reviens probablemnt dans plusieurs heures.:x<Return>
-iabbrev ab ambigu
-iabbrev abr abbréviation
-iabbrev abrs abbréviations
-iabbrev abs absent
-iabbrev abt abstrait
-iabbrev abu absolu
-iabbrev abum absolument
-iabbrev ac ancient
-iabbrev acx à côté
-iabbrev adb au début
-iabbrev àdh à l'extérieur
-iabbrev admn après demain
-iabbrev àdn à l'intérieur
-iabbrev ae avec
-iabbrev àhq à chaque
-iabbrev aj aujourd'hui
-iabbrev al alors
-iabbrev alq alors que
-iabbrev amé amélioré
-iabbrev ané année
-iabbrev anj analogie
-iabbrev ap après
-iabbrev apl appel
-iabbrev àpr à peu près
-iabbrev apr apprendre
-iabbrev apx approximatif
-iabbrev ar avoir
-iabbrev ari appris
-iabbrev at autre
-iabbrev dat d'autre
-iabbrev dats d'autres
-iabbrev ato attention
-iabbrev atojn je n'ai pas fait attention
-iabbrev àtt À toute à l'heure!:x<Return>
-iabbrev atx aussitôt
-iabbrev av avait
-iabbrev av avant
-iabbrev avir avant hier
-iabbrev avn arrière
-iabbrev aw QWERTY
-iabbrev az AZERTY
-"iabbrev b bien
-iabbrev b bien
-iabbrev bc beaucoup
-iabbrev be besoin
-iabbrev bes besoins
-iabbrev bj Bonjour:x<Return>
-iabbrev blg blague
-iabbrev btx bientôt
-iabbrev ca capable
-iabbrev cad c'est-à-dire
-iabbrev cat capacités
-iabbrev cb combien
-"iabbrev c c'est
-iabbrev c comme
-iabbrev ccv comment vas-tu?
-iabbrev cdo ci-dessous
-iabbrev cdu ci-dessus
-iabbrev cé c'est
-iabbrev chc chance
-iabbrev ch chose
-iabbrev chm chez moi
-iabbrev chs choses
-iabbrev cla clavier
-iabbrev clc calcul
-iabbrev cl celui
-iabbrev cle celle
-iabbrev cles celles
-iabbrev cls ceux
-iabbrev cm comment
-"iabbrev cn chacun
-iabbrev cné connais
-iabbrev cnm certainement
-iabbrev co contre
-iabbrev coé connecté
-iabbrev coy croyance
-iabbrev cpd cependant
-iabbrev cpq c'est pourquoi
-iabbrev cq ce que
-iabbrev cr contraire
-iabbrev cré corrigé
-iabbrev crm contrairement
-iabbrev cro correction
-iabbrev crp corresponds
-iabbrev crt correct
-iabbrev crv corriger
-iabbrev csa ça
-iabbrev cs ce sont
-iabbrev ct c'était
-iabbrev ctd certitude
-iabbrev ctn certain
-iabbrev cts c'étaient
-iabbrev ctv comme tu veux
-iabbrev cvs ci-contre
-"iabbrev cx cinq
-iabbrev cx côté
-iabbrev cz chez
-iabbrev dar d'ailleurs
-iabbrev dal détail
-iabbrev dals détails
-iabbrev db début
-iabbrev dc donc
-iabbrev ddc degré de certitude
-iabbrev d des
-iabbrev ddg Duck Duck Go
-iabbrev ddh dans deux heures
-iabbrev ddm dans dix minutes
-iabbrev ddn dedans
-iabbrev dé dernier
-iabbrev dè dernière
-iabbrev def défini
-iabbrev defo définition
-iabbrev df difficile
-iabbrev dfm difficilement
-iabbrev dfs difficiles
-iabbrev dh dehors
-iabbrev dico dictionnaire
-iabbrev di Discord
-iabbrev dint sur Internet
-iabbrev diso distinction
-iabbrev disn distinct
-iabbrev dir direct
-iabbrev dirm directement
-iabbrev dj déjà
-iabbrev dlp de plus
-iabbrev dlt dans longtemps (probablement plus de trois heures)
-iabbrev dmn demain
-iabbrev dmo dans un mois
-iabbrev dn dans
-iabbrev dné dans un an
-iabbrev dp depuis
-iabbrev dp Est-tu disponible?:x<Return>
-iabbrev dpq depuis que
-iabbrev dqd depuis quand
-iabbrev drr derrière
-iabbrev dsc dans ce cas
-iabbrev dsm dans une semaine
-iabbrev dso dessous
-iabbrev dsu dessus
-iabbrev dtm dans trente minutes
-iabbrev dtps de temps en temps
-iabbrev duh dans une heure
-iabbrev dvm dans vingt minutes
-iabbrev dvt devant
-iabbrev dx deux
-iabbrev ec encore
-iabbrev éc plus
-iabbrev èdb dès le début
-iabbrev ed différent
-iabbrev ede différente
-iabbrev edes différentes
-iabbrev edh en dehors
-iabbrev eds différents
-iabbrev edso en dessous
-iabbrev edsu au dessus
-iabbrev é est
-iabbrev ê être
-iabbrev efn enfin
-iabbrev efi efficace
-iabbrev efit efficacité
-iabbrev efis efficaces
-iabbrev efim efficacement
-"iabbrev ega en général
-iabbrev ég égal
-iabbrev eg Ergodox
-iabbrev égt égalité
-iabbrev éim évidemment
-iabbrev eit ensuite
-iabbrev e le
-iabbrev el elle
-iabbrev él éventuel
-iabbrev élm éventuellement
-iabbrev él moins
-iabbrev elp en plus
-iabbrev élt élément
-iabbrev ém autant
-iabbrev eng anglais
-iabbrev éno énorme
-iabbrev ens ensemble
-iabbrev env envoyé
-iabbrev ep pareil
-iabbrev eps pareils
-iabbrev eq ergonomique
-iabbrev er entre
-iabbrev erl en réalité
-iabbrev és sont
-iabbrev eté expliqué
-iabbrev etr expliquer
-iabbrev ets explique
-iabbrev évi évident
-iabbrev évim évidement
-iabbrev ex exemple
-iabbrev fb Facebook
-iabbrev fc facile
-iabbrev fcm facilement
-iabbrev fcs faciles
-iabbrev fé fait
-iabbrev f fois
-iabbrev fg figure
-iabbrev fm femme
-iabbrev fml famille
-iabbrev fné finalité
-iabbrev fn fin
-iabbrev fnl final
-iabbrev fnm finalement
-iabbrev fra français
-iabbrev fr faire
-iabbrev ga général
-iabbrev gam généralement
-iabbrev gcp j'ai compris
-iabbrev gde grande
-iabbrev gd grand
-iabbrev gds grands
-iabbrev gé gagné
-iabbrev gé génial
-iabbrev gend de ce genre
-iabbrev gés gagnés
-iabbrev ges grandes
-iabbrev gg gagne
-iabbrev ggl Google
-iabbrev g j'ai
-iabbrev gl GNU/Linux
-iabbrev gr gagner
-iabbrev gv j'avais
-iabbrev gvu j'ai vu
-iabbrev ha haut
-iabbrev has hauts
-iabbrev hau hauteur
-iabbrev h cherche
-iabbrev hé cherché
-iabbrev hm homme
-iabbrev hn humain
-iabbrev ho histoire
-iabbrev hoq historique
-iabbrev hos histoires
-iabbrev hq chaque
-iabbrev hqe chacune
-iabbrev hqf à chaque fois
-iabbrev hqfq à chaque fois que
-iabbrev hqj chaque jour
-iabbrev hqn chacun
-iabbrev hr heure
-iabbrev hrs heures
-iabbrev hs hors sujet
-iabbrev ié il est
-iabbrev iel il/elle
-iabbrev iels ils/elles
-iabbrev ifé informé
-iabbrev ifo infmormation
-iabbrev ifos informations
-iabbrev ifq il faut que
-iabbrev ifqn il ne faut pas que
-iabbrev ifr informer
-iabbrev i il
-iabbrev iji instant
-iabbrev ij pour l'instant
-iabbrev impe importante
-iabbrev impes importantes
-iabbrev imp important
-iabbrev imps importants
-iabbrev ind indirect
-iabbrev inf inférieur
-iabbrev info informatique
-iabbrev ino instant
-iabbrev int intéressant
-iabbrev intn inintéressant
-iabbrev ir hier
-iabbrev irt internet
-iabbrev is existe
-iabbrev ita international
-iabbrev iul inutile
-iabbrev iuls inutiles
-iabbrev iv inverse
-iabbrev japl j'appelle
-iabbrev jé je suis
-iabbrev jev je vais
-iabbrev j jusque
-iabbrev jm jamais
-"iabbrev jm Je suis chez moi:x<Return>
-iabbrev jn je ne
-iabbrev jns je ne sais pas
-iabbrev jpf je préfère
-iabbrev jpq je pense que
-iabbrev jqd jusqu'à quand
-"iabbrev jq jusque
-iabbrev jr jour
-iabbrev jrs jours
-iabbrev js je sais
-iabbrev jd je me demande
-iabbrev jt juste
-iabbrev ju jusqu'à
-"iabbrev jv j'y vais!
-iabbrev jv j'y vais
-iabbrev lé elle est
-iabbrev lg logiciel
-iabbrev lgq logique
-iabbrev lib libre
-iabbrev li Linux
-iabbrev l les
-iabbrev llib logiciel libre
-iabbrev lmj la majorité
-iabbrev lmn la minorité
-iabbrev lng langue
-iabbrev lpl la plupart
-iabbrev lp plus
-iabbrev lqle laquelle
-iabbrev lqles lesquelles
-iabbrev lql lequel
-iabbrev lq lorsque
-iabbrev lqls lesquels
-iabbrev lr leur
-iabbrev lrs leurs
-iabbrev ls elles
-iabbrev lt longtemps
-iabbrev màjf mise à jour forcée
-iabbrev màj mise à jour
-iabbrev màn mise à niveau
-iabbrev mbc Merci beaucoup!:x<Return>
-iabbrev mb moins bien
-iabbrev mchc malchance
-iabbrev md monde
-iabbrev /m ewengoisot@laposte.net:x<Return>
-iabbrev mg malgré
-iabbrev mh mathématiques
-iabbrev mie mieu
-iabbrev mies mieux
-iabbrev min minute
-iabbrev mins minutes
-iabbrev ml milieu
-iabbrev m même
-iabbrev mnà minimum
-iabbrev mn moins
-iabbrev mnx minimum
-iabbrev mof modification
-iabbrev mofs modifications
-iabbrev mom moment
-iabbrev msgé message écrit
-iabbrev msg message
-iabbrev msgv message vocal
-iabbrev ms mais
-iabbrev mt maintenant
-iabbrev mvt mouvement
-iabbrev my moyen
-iabbrev nab compréhensible
-iabbrev namé dégradé
-iabbrev ncé n'est pas
-iabbrev nctd incertitude
-iabbrev nctn incertain
-iabbrev neg = négatif
-iabbrev néy nous sommes
-iabbrev nfn initial
-iabbrev ngcp je n'ai pas compris
-iabbrev ng je n'ai
-iabbrev ngr perdre
-iabbrev nimp sans importance
-iabbrev nis n'existe pas
-iabbrev njm Je ne suis pas chez moi en ce moment:x<Return>
-iabbrev nju à partir
-iabbrev njud à partir de
-iabbrev njum à partir de maintenant
-iabbrev nlib non libre
-iabbrev nlp non plus
-iabbrev nm néanmoins
-iabbrev nmy extrême
-iabbrev nnab incompréhensible
-iabbrev nn non
-iabbrev nobé facultatif
-iabbrev not notre
-iabbrev npci je n'aime pas
-iabbrev npq n'importe quoi
-iabbrev npr imprécis
-iabbrev npro imprécisions
-iabbrev nprr imparfait
-iabbrev nprs imprécisions
-iabbrev npsl impossible
-iabbrev nrj énergie
-iabbrev nrr aucune erreur
-iabbrev nsi ainsi
-iabbrev ns nous
-iabbrev nt dont
-iabbrev ntis ça n'exite pas
-iabbrev ntm normal
-iabbrev ntr pas très
-iabbrev n une
-iabbrev nv nouveau
-iabbrev nvr environ
-iabbrev nya il n'y a pas
-iabbrev obé obligé
-iabbrev obf objectif
-iabbrev obj objet
-iabbrev objs objets
-iabbrev obo obligation
-iabbrev ocvv MIT OpenCourseWare
-iabbrev odg ordre de grandeur
-iabbrev oka au cas où
-iabbrev ol en ligne
-iabbrev o ont
-iabbrev opm optimal
-iabbrev opms optimaux
-iabbrev opn optimisation
-iabbrev opns optimisations
-iabbrev ops open source
-iabbrev opt optimisé
-iabbrev oq ok
-iabbrev ord ordre
-iabbrev org organisation
-iabbrev paln secondaire
-iabbrev palé particulier
-iabbrev pal principal
-iabbrev pals principaux
-iabbrev pà maximun
-iabbrev pbc public
-iabbrev pb problème
-iabbrev pbs problèmes
-iabbrev pci j'apprécie
-iabbrev pc parce que
-iabbrev pê peut être
-iabbrev px peut être
-iabbrev pé premier
-iabbrev pè première
-"iabbrev pf Je n'ai pas tout compris…:x<Return>
-iabbrev pf parfois
-"iabbrev pf préféré
-iabbrev pgch pas grand chose
-iabbrev pje puis-je
-"iabbrev pjv à plus, j'y vais ^^
-iabbrev pjv À plus, j'y vais ^^
-iabbrev plib propriétaire
-iabbrev pl plusieurs
-iabbrev pmn plus ou moins
-iabbrev por propre
-iabbrev posek = positive
-iabbrev pos = positif
-"iabbrev p plus
-iabbrev p pour
-iabbrev pqn est ce que quelqu'un
-iabbrev pq pourquoi
-iabbrev pqp pourquoi pas
-iabbrev pral par analogie
-iabbrev prb probabilité
-iabbrev prm probablement
-iabbrev prop par opposition
-iabbrev prp propriété
-iabbrev pr précis
-iabbrev prpr propriétaire
-iabbrev prr parfait
-iabbrev prxt par extension
-iabbrev psl possible
-iabbrev psng personnage
-iabbrev psngs personnages
-iabbrev psn personne
-iabbrev psns personnes
-iabbrev ps pas
-iabbrev pte petite
-iabbrev ptes petites
-iabbrev pti petit
-iabbrev ptis petits
-iabbrev pt presque
-iabbrev ptr un peu
-iabbrev ptt presque tout
-iabbrev ptu peux-tu
-iabbrev ptx plutôt
-iabbrev pu puis
-iabbrev pun puissant
-iabbrev puns puissants
-iabbrev puc puissance
-iabbrev pvi par ici
-iabbrev pv pouvoir
-iabbrev pvt précédant
-iabbrev qal qualité
-iabbrev qapl est-ce que je peux t'appeler?
-iabbrev qà qu'à
-iabbrev qch quelque chose
-iabbrev qd quand
-iabbrev qéc qu'est ce que c'est
-iabbrev qele quelle
-iabbrev qel quel
-iabbrev qé qu'est ce que
-iabbrev qil qu'il
-iabbrev qi qui
-iabbrev ql qu'elle
-iabbrev qmo que moi
-iabbrev qn quelqu'un
-iabbrev qns quelques uns
-iabbrev qnx quelqu'un d'autre
-iabbrev qon qu'on
-iabbrev qo quoi
-iabbrev qpft que préfères-tu
-iabbrev qq quelque
-iabbrev qqs quelques
-iabbrev q que
-iabbrev qté quantité
-iabbrev qto que toi
-iabbrev qun qu'un
-"iabbrev qx quatre
-iabbrev qx quitte à
-iabbrev rdu J'ai perdu!:x<Return>
-iabbrev rép réponse
-iabbrev rl réel
-iabbrev rlt réalité
-iabbrev rmf supprimer
-iabbrev rm rarement
-iabbrev rr erreur
-iabbrev r rien
-iabbrev rt écart
-iabbrev rab raisonnable
-iabbrev rxs rien à signaler
-iabbrev sbl semblable
-iabbrev sci scientifique
-iabbrev scm scientifiquement
-iabbrev scn science
-iabbrev sito <3 <3 <3 <3 <3 <3 <3 <3
-iabbrev slm seulement
-iabbrev slm solution
-iabbrev slms solutions
-iabbrev sl Salut, comment vas-tu?:x<Return>
-iabbrev smil :)
-iabbrev sm semaine
-iabbrev so sous
-iabbrev spm spécialement
-iabbrev sp spécial
-iabbrev sps spéciaux
-iabbrev srm sérieusement
-iabbrev sr super
-iabbrev srx sérieux
-iabbrev s sans
-iabbrev statm statistiquement
-iabbrev stat statistique
-iabbrev stp s'il te plaît
-iabbrev str structure
-iabbrev stv si tu veux
-iabbrev sup supérieur
-iabbrev spl suplémentaire
-iabbrev su sur
-iabbrev esf c'est suffisant
-iabbrev nesf ce n'est pas suffisant
-iabbrev svp s'il vous plaît
-iabbrev sv souvent
-iabbrev svt suivant
-iabbrev sx six
-iabbrev symb symbole
-iabbrev sys système
-iabbrev sysx système d'exploitation
-iabbrev /t 0604452342
-iabbrev tad tandis
-iabbrev taq tandis que
-iabbrev tà tu as
-iabbrev tè t'ai
-iabbrev té tu es
-iabbrev this théories
-iabbrev thi théorie
-iabbrev thm théoriquement
-iabbrev thqs théoriques
-iabbrev thq théorique
-iabbrev tis ça existe
-iabbrev tj toujours
-iabbrev tlm tellement
-iabbrev tlq tel que
-iabbrev tmd tout le monde
-iabbrev tm étrange
-iabbrev tmp temporaire
-iabbrev tné connait
-iabbrev tnés connaissent
-iabbrev tnq tant que
-iabbrev tn tant
-iabbrev to aussi
-iabbrev tpn pas assez
-iabbrev tpr tenporaire
-iabbrev tps temps
-iabbrev tp trop
-iabbrev tr très
-iabbrev ts tous
-iabbrev ttes toutes
-iabbrev tte toute
-iabbrev tth tout à l'heure
-iabbrev t tout
-iabbrev ttps tout le temps
-iabbrev tvé trouvé
-iabbrev tx trois
-iabbrev ubb Ubuntu (version 18.04 LTS)
-iabbrev ub Ubuntu
-iabbrev udf indéfini
-iabbrev ui oui
-iabbrev uls utiles
-iabbrev ul utile
-iabbrev unq unique
-iabbrev uts utilises
-iabbrev utt utilisent
-iabbrev ut utilise
-iabbrev u un
-iabbrev vam vraiment
-iabbrev va vrai
-iabbrev vc voici
-iabbrev ve vers
-iabbrev vé vous êtes
-iabbrev vl voilà
-iabbrev vot votre
-iabbrev vs vous
-iabbrev vv ^^
-iabbrev v vite
-iabbrev wd Windows
-iabbrev ws Windows
-iabbrev xa ça
-iabbrev xmt exactement
-iabbrev xpr à peu près
-iabbrev xt xdotool
-iabbrev ya il y a
-iabbrev yam y a-t-il
-iabbrev yna il n'y a
-iabbrev yt YouTube
-"inoremap .à
-inoremap .a able
-"inoremap .a avec<Space>
-"inoremap .à avoir<Space>
-"inoremap ,a <Space>anti
-"inoremap .b
-"inoremap .b bien<Space>
-"inoremap .c comme<Space>
-"inoremap .c cteur
-"inoremap .d
-"inoremap .d dans<Space>
-inoremap .e eille
-"inoremap .e ensuite<Space>
-"inoremap .f
-"inoremap .f faire<Space>
-"inoremap .g
-"inoremap .g j'ai<Space>
-"inoremap .h
-"inoremap .h chaque<Space>
-"inoremap ,h <Space>hyper
-inoremap .i ible
-"inoremap .i intéressant<Space>
-"inoremap ,i <Space>inter
-"inoremap ,i <Space>inter
-"inoremap .j
-"inoremap .j je<Space>
-"inoremap .k
-"inoremap .k pourquoi<Space>
-inoremap .l elle
-"inoremap .l le<Space>
-"inoremap .m
-"inoremap .m même<Space>
-"inoremap ,m <Space>mono
-"inoremap .n
-"inoremap .n nous<Space>
-"inoremap .o
-"inoremap .o où<Space>
-"inoremap .p
-"inoremap .p pour<Space>
-"inoremap ,p <Space>poly
-""inoremap .q pourquoi<Space>
-"inoremap q qu
-"inoremap .r
-"inoremap .r rien<Space>
-"inoremap .s
-"inoremap .s tous<Space>
-inoremap .t ette
-"inoremap .t tout<Space>
-"inoremap .u
-"inoremap .u utiliser<Space>
-"inoremap .v
-"inoremap .v vite<Space>
-"inoremap .w
-"inoremap .w voire<Space>
-"inoremap .x
-"inoremap .x par exemple<Space>
-"inoremap .y
-"inoremap .y il y a<Space>
-"inoremap .z
-"inoremap .z zoom<Space>
-" interactions interférer interagir
-" je vais / tu vas…
-" k pour lever le doute
-" la lettre idiote
-" les prefixes, à condition de ne pas interférer…
-"map ê :source ~/.vimrc.wtf<Return>
-" marché? (mot qui sert ds plusieurs contextes)
-"mots globaux courant
-" mouvement n'est plus ergonomique avec cette abr
-"objet? personnage=psg?
-" ou max
-" ou np pour moins?
-"pale pales
-" pluriel etc.
-" point = suffixes
-"proche / semblable
-"set iskeyword+='
-source ~/.vimrc
-"spe spes
-" temporalité
-" TODO il faut qu… qu'elle qu'on qu'il
-" TODO pluriel féminin
-" TODO verge organiser aussi
-" TODO .whatever serait pour les terminaisons (suffixes) et something. pour
-" TODO w+lettre = chiffres? (pos: pas de conflits)
+set iskeyword+=',-
+iab b bien
+iab c comme
+iab d des
+iab e le
+iab f fait
+iab g j'ai
+iab h heure
+iab i avec
+iab j jusque
+iab k mais
+iab l les
+iab m même
+iab n nous
+iab o aussi
+iab p pour
+iab q que
+iab r rien
+iab s sans
+iab t tout
+iab u une
+iab v vous
+iab w aucun
+iab x à
+iab z dont
+iab é être
+iab ' avoir
 
+iab aa abréviation
+iab ab ambigu
+iab ac ancien
+iab ad adresse
+iab ae assez
+iab af afin
+iab ag argument
+iab aj aujourd'hui
+iab ak à confirmer
+iab al alors
+iab am animal
+iab ao attention
+iab ap après
+iab aq attaque
+iab ar autre
+iab at autant
+iab av avant
+iab aw au revoir
+iab ax axiome
+iab ay arrière
+iab aè année
+
+iab ba bas
+iab bb bibliothèque
+iab bc boucle
+iab be besoin
+iab bg badge
+iab bh bonheur
+iab bi bilan
+iab bj bonjour
+iab bk bijection
+iab bl blague
+iab bm binôme
+iab bn bonne nuit
+iab bo bord
+iab bp beaucoup
+iab br bref
+iab bs biens
+iab bt bientôt
+iab bv bienvenue
+iab bw double
+iab bx beau
+iab by balise
+iab bz bizarre
+iab bè bénéfice
+
+iab cb combien
+iab cc conclusion
+iab cg catégorie
+iab ch chose
+iab cj chaud
+iab ck conséquence
+iab cl celui
+iab cm comment
+iab cn certain
+iab co complexe
+iab cp coup
+iab cq ce que
+iab cr contre
+iab cs cause
+iab ct constant
+iab cu court
+iab cw cinq
+iab cx choix
+iab cy cycle
+iab cz chez
+iab cè cette
+
+iab da déjà
+iab db début
+iab dc d'accord
+iab dd dedans
+iab df difficile
+iab dg dommage
+iab dh dehors
+iab di différent
+iab dk direct
+iab dl développement
+iab dm demain
+iab dn donc
+iab dp depuis
+iab dq dès que
+iab dr derrière
+iab ds dans
+iab dt détail
+iab dv devant
+iab dw deux
+iab dy distance
+iab dz droite
+iab dè déficit
+
+iab ea et alors
+iab eb ensemble
+iab ec encore
+iab ed endroit
+iab ee existence
+iab ef effet
+iab eg égal
+iab ei ensuite
+iab ej enjeu
+iab ek en tout cas
+iab el elle
+iab em évenement
+iab eo selon
+iab ep exemple
+iab eq est-ce que
+iab er entre
+iab ew entier
+iab ey essayé
+iab ez hésite
+iab eè extrême
+
+iab fb faible
+iab fc fonction
+iab fd fond
+iab fe femme
+iab ff façon
+iab fg figure
+iab fh fichier
+iab fj froid
+iab fk facultatif
+iab fl facile
+iab fm forme
+iab fn fin
+iab fo fort
+iab fp frappe
+iab fq fréquent
+iab fr fermé
+iab fs fois
+iab ft il faut que
+iab fu futur
+iab fv favori
+iab fw premier
+iab fx faux
+iab fy foyer
+iab fz français
+iab fè fenêtre
+
+iab ga général
+iab gb global
+iab gc j'essaye
+iab gd grand
+iab ge gens
+iab gf j'ai fait
+iab gg Google
+iab gh graphe
+iab gl GNU/Linux
+iab gm généralement
+iab gn genre
+iab gp groupe
+iab gq graphique
+iab gr grade
+iab gs geste
+iab gt garantie
+iab gu gratuit
+iab gv gouvernement
+iab gw milliard
+iab gz gauche
+iab gè génération
+
+iab hb habitude
+iab hc chacun
+iab he hier
+iab hg échange
+iab hh hors
+iab hl échelle
+iab hm homme
+iab hn humain
+iab ho histoire
+iab hp hyper
+iab hq chaque
+iab hr hasard
+iab ht haut
+iab hu huit
+iab hy hypothèse
+iab hè sphère
+
+iab ib immobile
+iab ic incertain
+iab id idée
+iab ig image
+iab ih imaginaire
+iab ii infini
+iab ij injustifié
+iab ik injection
+iab im important
+iab in minimum
+iab io information
+iab iq identique
+iab is instant
+iab it introduction
+iab iu inutile
+iab iv inverse
+iab iw moitié
+iab ix dix
+iab iy interdit
+iab iz indice
+iab iè intérêt
+
+iab ja jusqu'à
+iab jd jardin
+iab jf justifié
+iab jg jugement
+iab jk joker
+iab jl je l'ai
+iab jm jamais
+iab jn je ne
+iab jp je ne vais pas
+iab jr jour
+iab jt juste
+iab ju jeune
+iab jv je vais
+iab jx jeu
+iab jy joyeux
+
+iab ka capitale
+iab kb courbe
+iab kc cassé
+iab kd cadeau
+iab kf conforme
+iab kh caché
+iab ki copie
+iab kk correct
+iab kl classe
+iab kn connu
+iab kp complet
+iab kq caractéristiques
+iab kr clair
+iab ks explosion
+iab kt contrainte
+iab ku courant
+iab kv clavier
+iab kw mille
+iab kx connexion
+iab kè côté
+
+iab lb label
+iab lc local
+iab ld liquide
+iab lg long
+iab lh large
+iab li libre
+iab ll logiciel
+iab lm limite
+iab lo logique
+iab lp longtemps
+iab lq lorsque
+iab lr leur
+iab ls liste
+iab lt lent
+iab lv niveau
+iab lw dernier
+iab ly labyrinthe
+iab lz loisir
+iab lè lumière
+
+iab mb mobile
+iab mc machine
+iab md monde
+iab mf modiifé
+iab mg malgré
+iab mh malheur
+iab mj majorité
+iab mk masque
+iab ml milieu
+iab mm moment
+iab mn mon
+iab mq montrer que
+iab mr merci
+iab ms moins
+iab mt maintenant
+iab mv mouvement
+iab mw million
+iab mx mieux
+iab my moyen
+iab mz maison
+iab mè mètre
+
+iab na normal
+iab nc nécessaire
+iab nd nœud
+iab nf neuf
+iab ng je n'ai
+iab nh n'importe
+iab nj énergie
+iab nk n'importe quoi
+iab nl naturel
+iab nm néanmoins
+iab nn non
+iab nq tant que
+iab nr nature
+iab ns non seulement
+iab nt notre
+iab nv nouveau
+iab nw numéro
+iab nx tant mieux
+iab ny noyau
+iab nz tant pis
+iab nè négatif
+
+iab oa organisation
+iab ob observation
+iab od ordre
+iab oe œuvre
+iab of officiel
+iab og organe
+iab oi ordinateur
+iab oj objet
+iab ol oral
+iab om nombre
+iab oo option
+iab op opinion
+iab oq optique
+iab ot optimal
+iab ov ouvert
+iab ow obstacle
+iab oy oui
+iab oz possible
+iab oè positif
+
+iab pa partiel
+iab pb problème
+iab pd pendant
+iab pe petit
+iab pf parfait
+iab pg page
+iab pj projet
+iab pk pourquoi
+iab pl plus
+iab pm plus ou moins
+iab pn personne
+iab po position
+iab pp principe
+iab pq parce que
+iab pr par
+iab pt point
+iab pw sept
+iab px pixel
+iab py physique
+iab pz phrase
+iab pè presque
+
+iab qa qu'à
+iab qb équilibre
+iab qc quelconque
+iab qd quand
+iab qe qu'est-ce que
+iab qf parfois
+iab qh quelque chose
+iab qi qui
+iab qk quiconque
+iab ql quel
+iab qm quand même
+iab qn quelqu'un
+iab qo quoi
+iab qp quelque part
+iab qq quelque
+iab qs quelques
+iab qt quant
+iab qu question
+iab qv équivalent
+iab qw quatre
+iab qè quitté
+
+iab rb arbre
+iab rc racine
+iab rd rapide
+iab re réel
+iab rf relatif
+iab rg régulier
+iab ri risque
+iab rj rejet
+iab rk récursif
+iab rl résultat
+iab rm rarement
+iab rn retenue
+iab ro rôle
+iab rp rapport
+iab rq remarque
+iab rr erreur
+iab rs reste
+iab rt retour
+iab rv preuve
+iab rw tripple
+iab rx approximatif
+iab ry rythme
+iab rz raison
+iab rè respect
+
+iab sb semblable
+iab sc social
+iab sf suffisant
+iab sg seconde
+iab sh schéma
+iab sj sujet
+iab sk surjection
+iab sl seul
+iab sm simple
+iab sn son
+iab so sous
+iab sp spécial
+iab sq sachant que
+iab sr sur
+iab ss système
+iab st surtout
+iab sv souvent
+iab sx six
+iab sy symbole
+iab sz solution
+iab sè siècle
+
+iab tb tableau
+iab tc tendance
+iab td alors que
+iab tf transfert
+iab tg tangible
+iab th thème
+iab ti théorie
+iab tj toujours
+iab tk tel quel
+iab tl total
+iab tm tellement
+iab tn ton
+iab to trop
+iab tp temps
+iab tq tel que
+iab tr très
+iab ts tous
+iab tt tant
+iab tv travail
+iab tw trois
+iab tx texte
+iab ty type
+iab tz technique
+iab tè théorème
+
+iab ua unanime
+iab ub urbain
+iab uc unicité
+iab ud indéfini
+iab uf sauf
+iab ug usage
+iab ui unité
+iab uj urgent
+iab ul utile
+iab um ultime
+iab uo utilisation
+iab up un peu
+iab uq unique
+iab uu Ubuntu
+iab uw cent
+iab uz usuel
+
+iab vb verbe
+iab vc voici
+iab vd vide
+iab ve vers
+iab vg végétal
+iab vh véhicule
+iab vi vrai
+iab vj vais-je
+iab vk vocation
+iab vl voilà
+iab vm vraiment
+iab vn vacances
+iab vq vécu
+iab vr variable
+iab vt votre
+iab vv vivant
+iab vw valeur
+iab vx vieux
+iab vy voyage
+iab vz version
+iab vè vérifié
+
+iab wa AZERTY
+iab wb BÉPO
+iab wd DuckDuckGo
+iab we ETUSINA
+iab wf Facebook
+iab wg Erdogox
+iab wi Internet
+iab wk Wikipédia
+iab wl Linux
+iab wm I3WM
+iab wn NeoVim
+iab wo ergonomie
+iab wp Wordpress
+iab wq QWERTY
+iab ww Windows
+iab wy YouTube
+
+iab xa exact
+iab xc et cetera
+iab xe expression
+iab xg X.Org
+iab xm maximum
+iab xn annexe
+iab xo explication
+iab xp expérience
+iab xq ex-æquo
+iab xr exercice
+iab xt extérieur
+
+iab ya il y a
+iab yc y compris
+iab yd défaite
+iab ye yeux
+iab yf condition
+iab yl style
+iab ym polynôme
+iab yp il n'y a pas
+iab yr intérieur
+iab yt y a-t-il
+iab yv victoire
+iab zb sombre
+iab zc science
+iab zd soudain
+iab ze sans compter
+iab zg suggestion
+iab zh champ
+iab zk sélection
+iab zl absolu
+iab zm zoom
+iab zn zone
+iab zo solide
+iab zp super
+iab zq sécurité
+iab zr zéro
+iab zt situation
+iab zu absurde
+iab zv suivant
+
+iab èa arrivée
+iab èb abstrait
+iab èc essai
+iab èd départ
+iab èe élément
+iab èf efficace
+iab èg algorythme
+iab èh prochain
+iab èi envie
+iab èj ai-je
+iab èk indirect
+iab èl sinon
+iab èm semaine
+iab èn environ
+iab èo méthode
+iab èp impression
+iab èq équipe
+iab èr frontière
+iab ès source
+iab èt éventuel
+iab èu reçu
+iab èv évident
+
+iab B Bien
+iab C Comme
+iab D Des
+iab E Le
+iab F Fait
+iab G J'ai
+iab H Heure
+iab I Avec
+iab J Jusque
+iab K Mais
+iab L Les
+iab M Même
+iab N Nous
+iab O Aussi
+iab P Pour
+iab Q Que
+iab R Rien
+iab S Sans
+iab T Tout
+iab U Une
+iab V Vous
+iab W Aucun
+iab X À
+iab Z Dont
+iab É Être
+iab '' Avoir
+
+iab Aa Abréviation
+iab Ab Ambigu
+iab Ac Ancien
+iab Ad Adresse
+iab Ae Ancien
+iab Af Afin
+iab Ag Argument
+iab Aj Aujourd'hui
+iab Ak À confirmer
+iab Al Alors
+iab Am Animal
+iab Ao Attention
+iab Ap Après
+iab Aq Attaque
+iab Ar Autre
+iab At Autant
+iab Av Avant
+iab Aw Au revoir
+iab Ax Axiome
+iab Ay Arrière
+iab Aè Année
+
+iab Ba Bas
+iab Bb Bibliothèque
+iab Bc Boucle
+iab Be Besoin
+iab Bg Badge
+iab Bh Bonheur
+iab Bi Bilan
+iab Bj Bonjour
+iab Bk Bijection
+iab Bl Blague
+iab Bm Binôme
+iab Bn Bonne nuit
+iab Bo Bord
+iab Bp Beaucoup
+iab Br Bref
+iab Bs Biens
+iab Bt Bientôt
+iab Bv Bienvenue
+iab Bw Double
+iab Bx Beau
+iab By Balise
+iab Bz Bizarre
+iab Bè Bénéfice
+
+iab Cb Combien
+iab Cc Conclusion
+iab Cg Catégorie
+iab Ch Chose
+iab Cj Chaud
+iab Ck Conséquence
+iab Cl Celui
+iab Cm Comment
+iab Cn Certain
+iab Co Complexe
+iab Cp Coup
+iab Cq Ce que
+iab Cr Contre
+iab Cs Cause
+iab Ct Constant
+iab Cu Court
+iab Cw Cinq
+iab Cx Choix
+iab Cy Cycle
+iab Cz Chez
+iab Cè Cette
+
+iab Da Déjà
+iab Db Début
+iab Dc D'accord
+iab Dd Dedans
+iab Df Difficile
+iab Dg Dommage
+iab Dh Dehors
+iab Di Différent
+iab Dk Direct
+iab Dl Développement
+iab Dm Demain
+iab Dn Donc
+iab Dp Depuis
+iab Dq Dès que
+iab Dr Derrière
+iab Ds Dans
+iab Dt Détail
+iab Dv Devant
+iab Dw Deux
+iab Dy Distance
+iab Dz Droite
+iab Dè Déficit
+
+iab Ea Et alors
+iab Eb Ensemble
+iab Ec Encore
+iab Ed Endroit
+iab Ee Existence
+iab Ef Effet
+iab Eg Égal
+iab Ei Ensuite
+iab Ej Enjeu
+iab Ek En tout cas
+iab El Elle
+iab Em Évenement
+iab Eo Selon
+iab Ep Exemple
+iab Eq Est-ce que
+iab Er Entre
+iab Ew Entier
+iab Ey Essayé
+iab Ez Hésite
+iab Eè Extrême
+
+iab Fb Faible
+iab Fc Fonction
+iab Fd Fond
+iab Fe Femme
+iab Ff Façon
+iab Fg Figure
+iab Fh Fichier
+iab Fj Froid
+iab Fk Facultatif
+iab Fl Facile
+iab Fm Forme
+iab Fn Fin
+iab Fo Fort
+iab Fp Frappe
+iab Fq Fréquent
+iab Fr Fermé
+iab Fs Fois
+iab Ft Il faut que
+iab Fu Futur
+iab Fv Favori
+iab Fw Premier
+iab Fx Faux
+iab Fy Foyer
+iab Fz Français
+iab Fè Fenêtre
+
+iab Ga Général
+iab Gb Global
+iab Gc J'essaye
+iab Gd Grand
+iab Ge Gens
+iab Gf J'ai fait
+iab Gg Google
+iab Gh Graphe
+iab Gl GNU/Linux
+iab Gm Généralement
+iab Gn Genre
+iab Gp Groupe
+iab Gq Graphique
+iab Gr Grade
+iab Gs Geste
+iab Gt Garantie
+iab Gu Gratuit
+iab Gv Gouvernement
+iab Gw Milliard
+iab Gz Gauche
+iab Gè Génération
+
+iab Hb Habitude
+iab Hc Chacun
+iab He Hier
+iab Hg Échange
+iab Hh Hors
+iab Hl Échelle
+iab Hm Homme
+iab Hn Humain
+iab Ho Histoire
+iab Hp Hyper
+iab Hq Chaque
+iab Hr Hasard
+iab Ht Haut
+iab Hu Huit
+iab Hy Hypothèse
+iab Hè Sphère
+
+iab Ib Immobile
+iab Ic Incertain
+iab Id Idée
+iab Ig Image
+iab Ih Imaginaire
+iab Ii Infini
+iab Ij Injustifié
+iab Ik Injection
+iab Im Important
+iab In Minimum
+iab Io Information
+iab Iq Identique
+iab Is Instant
+iab It Introduction
+iab Iu Inutile
+iab Iv Inverse
+iab Iw Moitié
+iab Ix Dix
+iab Iy Interdit
+iab Iz Indice
+iab Iè Intérêt
+
+iab Ja Jusqu'à
+iab Jd Jardin
+iab Jf Justifié
+iab Jg Jugement
+iab Jk Joker
+iab Jl Je l'ai
+iab Jm Jamais
+iab Jn Je ne
+iab Jp Je ne vais pas
+iab Jr Jour
+iab Jt Juste
+iab Ju Jeune
+iab Jv Je vais
+iab Jx Jeu
+iab Jy Joyeux
+
+iab Ka Capitale
+iab Kb Courbe
+iab Kc Cassé
+iab Kd Cadeau
+iab Kf Conforme
+iab Kh Caché
+iab Ki Copie
+iab Kk Correct
+iab Kl Classe
+iab Kn Connu
+iab Kp Complet
+iab Kq Caractéristiques
+iab Kr Clair
+iab Ks Explosion
+iab Kt Contrainte
+iab Ku Courant
+iab Kv Clavier
+iab Kw Mille
+iab Kx Connexion
+iab Kè Côté
+
+iab Lb Label
+iab Lc Local
+iab Ld Liquide
+iab Lg Long
+iab Lh Large
+iab Li Libre
+iab Ll Logiciel
+iab Lm Limite
+iab Lo Logique
+iab Lp Longtemps
+iab Lq Lorsque
+iab Lr Leur
+iab Ls Liste
+iab Lt Lent
+iab Lv Niveau
+iab Lw Dernier
+iab Ly Labyrinthe
+iab Lz Loisir
+iab Lè Lumière
+
+iab Mb Mobile
+iab Mc Machine
+iab Md Monde
+iab Mf Modiifé
+iab Mg Malgré
+iab Mh Malheur
+iab Mj Majorité
+iab Mk Masque
+iab Ml Milieu
+iab Mm Moment
+iab Mn Mon
+iab Mq Montrer que
+iab Mr Merci
+iab Ms Moins
+iab Mt Maintenant
+iab Mv Mouvement
+iab Mw Million
+iab Mx Mieux
+iab My Moyen
+iab Mz Maison
+iab Mè Mètre
+
+iab Na Normal
+iab Nc Nécessaire
+iab Nd Nœud
+iab Nf Neuf
+iab Ng Je n'ai
+iab Nh N'importe
+iab Nj Énergie
+iab Nk N'importe quoi
+iab Nl Naturel
+iab Nm Néanmoins
+iab Nn Non
+iab Nq Tant que
+iab Nr Nature
+iab Ns Non seulement
+iab Nt Notre
+iab Nv Nouveau
+iab Nw Numéro
+iab Nx Tant mieux
+iab Ny Noyau
+iab Nz Tant pis
+iab Nè Négatif
+
+iab Oa Organisation
+iab Ob Observation
+iab Od Ordre
+iab Oe Œuvre
+iab Of Officiel
+iab Og Organe
+iab Oi Ordinateur
+iab Oj Objet
+iab Ol Oral
+iab Om Nombre
+iab Oo Option
+iab Op Opinion
+iab Oq Optique
+iab Ot Optimal
+iab Ov Ouvert
+iab Ow Obstacle
+iab Oy Oui
+iab Oz Possible
+iab Oè Positif
+
+iab Pa Partiel
+iab Pb Problème
+iab Pd Pendant
+iab Pe Petit
+iab Pf Parfait
+iab Pg Page
+iab Pj Projet
+iab Pk Pourquoi
+iab Pl Plus
+iab Pm Plus ou moins
+iab Pn Personne
+iab Po Position
+iab Pp Principe
+iab Pq Parce que
+iab Pr Par
+iab Pt Point
+iab Pw Sept
+iab Px Pixel
+iab Py Physique
+iab Pz Phrase
+iab Pè Presque
+
+iab Qa Qu'à
+iab Qb Équilibre
+iab Qc Quelconque
+iab Qd Quand
+iab Qe Qu'est-ce que
+iab Qf Parfois
+iab Qh Quelque chose
+iab Qi Qui
+iab Qk Quiconque
+iab Ql Quel
+iab Qm Quand même
+iab Qn Quelqu'un
+iab Qo Quoi
+iab Qp Quelque part
+iab Qq Quelque
+iab Qs Quelques
+iab Qt Quant
+iab Qu Question
+iab Qv Équivalent
+iab Qw Quatre
+iab Qè Quitté
+
+iab Rb Arbre
+iab Rc Racine
+iab Rd Rapide
+iab Re Réel
+iab Rf Relatif
+iab Rg Régulier
+iab Ri Risque
+iab Rj Rejet
+iab Rk Récursif
+iab Rl Résultat
+iab Rm Rarement
+iab Rn Retenue
+iab Ro Rôle
+iab Rp Rapport
+iab Rq Remarque
+iab Rr Erreur
+iab Rs Reste
+iab Rt Retour
+iab Rv Preuve
+iab Rw Tripple
+iab Rx Approximatif
+iab Ry Rythme
+iab Rz Raison
+iab Rè Respect
+
+iab Sb Semblable
+iab Sc Social
+iab Sf Suffisant
+iab Sg Seconde
+iab Sh Schéma
+iab Sj Sujet
+iab Sk Surjection
+iab Sl Seul
+iab Sm Simple
+iab Sn Son
+iab So Sous
+iab Sp Spécial
+iab Sq Sachant que
+iab Sr Sur
+iab Ss Système
+iab St Surtout
+iab Sv Souvent
+iab Sx Six
+iab Sy Symbole
+iab Sz Solution
+iab Sè Siècle
+
+iab Tb Tableau
+iab Tc Tendance
+iab Td Alors que
+iab Tf Transfert
+iab Tg Tangible
+iab Th Thème
+iab Ti Théorie
+iab Tj Toujours
+iab Tk Tel quel
+iab Tl Total
+iab Tm Tellement
+iab Tn Ton
+iab To Trop
+iab Tp Temps
+iab Tq Tel que
+iab Tr Très
+iab Ts Tous
+iab Tt Tant
+iab Tv Travail
+iab Tw Trois
+iab Tx Texte
+iab Ty Type
+iab Tz Technique
+iab Tè Théorème
+
+iab Ua Unanime
+iab Ub Urbain
+iab Uc Unicité
+iab Ud Indéfini
+iab Uf Sauf
+iab Ug Usage
+iab Ui Unité
+iab Uj Urgent
+iab Ul Utile
+iab Um Ultime
+iab Uo Utilisation
+iab Up Un peu
+iab Uq Unique
+iab Uu Ubuntu
+iab Uw Cent
+iab Uz Usuel
+
+iab Vb Verbe
+iab Vc Voici
+iab Vd Vide
+iab Ve Vers
+iab Vg Végétal
+iab Vh Véhicule
+iab Vi Vrai
+iab Vj Vais-je
+iab Vk Vocation
+iab Vl Voilà
+iab Vm Vraiment
+iab Vn Vacances
+iab Vq Vécu
+iab Vr Variable
+iab Vt Votre
+iab Vv Vivant
+iab Vw Valeur
+iab Vx Vieux
+iab Vy Voyage
+iab Vz Version
+iab Vè Vérifié
+
+iab Wa AZERTY
+iab Wb BÉPO
+iab Wd DuckDuckGo
+iab We ETUSINA
+iab Wf Facebook
+iab Wg Erdogox
+iab Wi Internet
+iab Wk Wikipédia
+iab Wl Linux
+iab Wm I3WM
+iab Wn NeoVim
+iab Wo Ergonomie
+iab Wp Wordpress
+iab Wq QWERTY
+iab Ww Windows
+iab Wy YouTube
+
+iab Xa Exact
+iab Xc Et cetera
+iab Xe Expression
+iab Xg X.Org
+iab Xm Maximum
+iab Xn Annexe
+iab Xo Explication
+iab Xp Expérience
+iab Xq Ex-æquo
+iab Xr Exercice
+iab Xt Extérieur
+
+iab Ya Il y a
+iab Yc Y compris
+iab Yd Défaite
+iab Ye Yeux
+iab Yf Condition
+iab Yl Style
+iab Ym Polynôme
+iab Yp Il n'y a pas
+iab Yr Intérieur
+iab Yt Y a-t-il
+iab Yv Victoire
+iab Zb Sombre
+iab Zc Science
+iab Zd Soudain
+iab Ze Sans compter
+iab Zg Suggestion
+iab Zh Champ
+iab Zk Sélection
+iab Zl Absolu
+iab Zm Zoom
+iab Zn Zone
+iab Zo Solide
+iab Zp Super
+iab Zq Sécurité
+iab Zr Zéro
+iab Zt Situation
+iab Zu Absurde
+iab Zv Suivant
+
+iab Èa Arrivée
+iab Èb Abstrait
+iab Èc Essai
+iab Èd Départ
+iab Èe Élément
+iab Èf Efficace
+iab Èg Algorythme
+iab Èh Prochain
+iab Èi Envie
+iab Èj Ai-je
+iab Èk Indirect
+iab Èl Sinon
+iab Èm Semaine
+iab Èn Environ
+iab Èo Méthode
+iab Èp Impression
+iab Èq Équipe
+iab Èr Frontière
+iab Ès Source
+iab Èt Éventuel
+iab Èu Reçu
+iab Èv Évident
