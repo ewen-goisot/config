@@ -1,8 +1,26 @@
 set color256 true
 set drawbox true
+set timefmt ' 2006-01-02 15:04:05'
+set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%w/\033[0m\033[1m%f\033[0m"
 
-set previewer ~/.config/lf/pv.sh
-map h $~/.config/lf/pv.sh $f | most
+cmd open ${{
+	case $(file --mime-type "$f" -b) in
+		audio/*) tmux rename-window " mpv  "; mpv $fx; tmux rename-window "      ";;
+		video/*) setsid mpv $fx > /dev/null 2 2>&1 & ;;
+		image/vnd.djvu) (zathura $f 1>/dev/null 2>&1) &;;
+		application/pdf) (zathura $f 1>/dev/null 2>&1) &;;
+		image/*) tmux rename-window " sxiv "; sxiv $fx; tmux rename-window "      ";;
+		text/html) (chromium-browser $f 1>/dev/null 2>&1) &;;
+		text/*) tmux rename-window " nvim "; nvim $fx; tmux rename-window "      ";;
+		inode/*) echo bla;;
+		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+	esac
+}}
+
+cmd on-cd ${{
+	( sleep .1; tmux rename-window " $( pwd | sed "s/.*\/\([^/]\{5\}\)[^/]*$/\1/ ; s/^/     / ; s/^.*\(.....\)$/\1/" )" )&
+}}
+
 
 map '&' shell-async
 map '!' shell
@@ -26,16 +44,19 @@ map _ mark-load
 map ± mark-save
 
 map o $$PAGER $fx
-map a $$OPENER $fx
-map i $$EDITOR $fx
+map a open
+map i $tmux rename-window "$(echo $fx | sed "s# .*# …#g;s#^.*/##;s#^#L #")" && nvim $fx && tmux rename-window "      "
 map <insert> $$EDITOR $fx
 map u rename
+map h invert
 
-map + push $chmod<space><space>$fx<left><left><left><left>
-map - push ?file<space>$fx<enter>
+set previewer ~/.config/lf/pv.sh
+map + $~/.config/lf/pv_most.sh $f | most
+
+map - push $chmod<space><space>$fx<left><left><left><left>
 map . push $mkdir<space>
 map , push $touch<space>
-map k invert
+map k toggle
 
 map e set hidden!
 map <esc> unselect
@@ -55,21 +76,28 @@ map ér set info size:time
 
 map ( page-up
 map ) page-down
-map < half-up
-map > half-down
+map < find-back
+map > find
+map '#' $for i in *;do mv "$i" $(echo $i| sed "s/ /_/g");done
 
 map c find-prev
 map m up
 map l find-next
-map f find-back
+map f half-up
 map z push $<space><space>$fx<left><left><left><left>
 
 map G bottom
 
-map t updir
+map t :{{
+	updir
+	on-cd
+}}
 map s down
-map n open
-map r find
+map n :{{
+	open
+	on-cd
+}}
+map r half-down
 map x ! $f
 
 map q :{{
@@ -82,11 +110,13 @@ map j :{{
 	updir
 	up
 	open
+	on-cd
 }}
 map w :{{
 	updir
 	down
 	open
+	on-cd
 }}
 
 
@@ -98,7 +128,6 @@ map D search-back
 map V search-prev
 
 
-map <space> toggle
 map <enter> half-down
 
 map gp cd ~/prog
@@ -132,8 +161,15 @@ map <c-m> half-down
 map <c-s> half-up
 map <c-l> redraw
 map <c-r> reload
+map <c-z> $ kill -STOP $PPID
 
 cmap <up> cmd-history-prev
 cmap <down> cmd-history-next
-cmap <pgup> cmd-word-back
-cmap <pgdn> cmd-word
+cmap <c-t> cmd-word-back
+cmap <c-s> cmd-word
+
+
+
+
+
+
