@@ -1,0 +1,36 @@
+#!/bin/sh
+
+# The key combo argument has the following form: "[C-][M-][S-]KEY",
+# where C/M/S indicate Ctrl/Meta(Alt)/Shift modifier states and KEY is the X
+# keysym as listed in /usr/include/X11/keysymdef.h without the "XK_" prefix.
+
+#name="<span font='Hack 60'><b></b></span>"
+name="SXIV"
+while read file; do
+	case "$1" in
+		"semicolon") var=$(echo "$file\n-quality $file\n-resize $file\n -crop $file" | rofi -dmenu -p "convert with" -lines 5) && exec convert $file $var & ;;
+		"colon") var=$(echo "$file\nconvert $file\nconvert $file -quality\nconvert $file -resize\nconvert $file -crop" | rofi -dmenu -p "do action" -lines 5) && exec $var & ;;
+		"quotedbl") echo "file" ;;
+		"è") rawtherapee "$file" & ;;
+		"é") inkscape "$file" & ;;
+		"p") gimp "$file" & ;;
+		"apostrophe") cat $file | xclip -selection clipboard -target image/png && notify-send -u low "$name" "copied: $file" & ;;
+		"y") echo -n "$file" | xclip -selection clipboard && notify-send -u low "$name" "copied path: $file" & ;;
+		"Y") readlink -f "$file" | xclip -selection clipboard && notify-send -u low "$name" "copied complete path: $(readlink -f "$file")" & ;;
+		"o") convert -compress jpeg "$file" "$file.pdf" && notify-send "$name" "to pdf: $file" & ;;
+		"a") sxiv "$file" & ;;
+		"i") st -e "nvim $file" & ;;
+		"u") var=$(echo $file | rofi -dmenu -p "rename to" -lines 1) && mv $file $var || notify-send -u critical "$name" "invalid action" & ;;
+		"h") var=$(echo $file | rofi -dmenu -p "duplicate to" -lines 1) && cp $file $var || notify-send -u critical "$name" "invalid action" & ;;
+
+		"b") convert -rotate 90 "$file" "$file" ;;
+		"B") convert -rotate -90 "$file" "$file" ;;
+		"g") mv $file ~/.local/share/Trash/sxiv/ && notify-send "$name" "deleted: $file" & ;;
+		"G") convert -rotate 180 "$file" "$file" ;;
+		"c") convert -flop "$file" "$file" ;;
+		"C") convert -flop "$file" "$file" ;;
+		"l") convert -flip "$file" "$file" ;;
+		"L") convert -flip "$file" "$file" ;;
+	esac
+done
+
