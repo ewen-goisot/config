@@ -4,17 +4,23 @@ export ZSH="/home/user/.oh-my-zsh"
 #source ~/git/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="crunch"
-export PAGER="most"
-export MANPAGER="most"
+export PAGER="less"
+export MANPAGER="less"
+#export PAGER="most"
+#export MANPAGER="most"
 XDG_CURRENT_DESKTOP=kde #for Dolphin TODO delete it
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
-DISABLE_LS_COLORS="true"
+#DISABLE_LS_COLORS="true"
+#export LSCOLORS=""
 alias ls='ls --color=tty --time-style="+%Y-%m-%d"'
 DISABLE_AUTO_TITLE="true"
+ZSH_AUTOSUGGEST_STRATEGY="history"
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=102"
 #ENABLE_CORRECTION="true"
 # COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
@@ -26,9 +32,15 @@ plugins=(
 git z
 #web-search
 #ubuntu systemd sysadmin safe-paste
-#zsh-autosuggestions
+zsh-autosuggestions
 zsh-syntax-highlighting
 )
+#fpath=(~/.zsh.d/ $fpath) # cheat
+#export CHTSH_QUERY_OPTIONS="style=vim"
+#if autoload -U +X add-zle-hook-widget 2>/dev/null; then
+	#add-zle-hook-widget zle-line-pre-redraw _zsh_autosuggest_fetch
+	#add-zle-hook-widget zle-line-pre-redraw _zsh_autosuggest_highlight_apply
+#fi
 # plugin sudo
 # zsh-syntax-highlighting doit être en dernier
 # bindkey '\ei' expand-or-complete
@@ -37,18 +49,6 @@ zsh-syntax-highlighting
 source $ZSH/oh-my-zsh.sh
 
 
-# export MANPATH="/usr/local/man:$MANPATH"
-# export LANG=en_US.UTF-8
-
-# if [[ -n $SSH_CONNECTION ]]; then
-	#   export EDITOR='nvim'
-	# else
-		#   export EDITOR='mnvim'
-		# fi
-
-# export ARCHFLAGS="-arch x86_64"
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-#alias echo='echo -E'
 
 #echo -e "\e[?1000;1006;1015h";clear
 
@@ -62,53 +62,60 @@ alias cll='clear; clear' # efface aussi la dernière commande
 alias chr='chmod +r'
 alias chw='chmod +w'
 alias chx='chmod +x'
+alias cht='cht.sh'
+alias chts='cht.sh --shell'
+chti () {
+	curl https://cht.sh/$1
+}
 alias cw='g++ main.cpp'
 alias co='g++ -w main.cpp -O3 -s'
 alias f='touch'
 alias ff='mkdir'
 alias h='htop'
 alias hh='history'
-alias i='feh -T infos'
+#alias i='feh -T infos'
 alias ii='inxi -F'
 j () {
 	zathura $1 2>/dev/null
 }
 alias k='kill'
 alias kk='killall'
-#alias m='man'
+le () {
+	[ -f ~/.ledit/h.$1 ] || touch ~/.ledit/h.$1
+	ledit -h ~/.ledit/h.$1 -x -u $*
+}
 m () {
-	xdotool mousemove $(xdotool getwindowgeometry $(xdotool getwindowfocus) | sed "2! d; s/^.*on: //; s/ (.*$/+1/;s/,/+1; /" | bc | tr "\n" " ")
-	echo -e "\e[?1000;1006h" # capture scroll events
 	tmux rename-window "M $1"
-	man $1
+	LESSOPEN="|man %s" MAN_KEEP_FORMATTING=1 less -M -is "$@" 2>/dev/null;
 	tmux set automatic-rename 1
-	echo -e "\e[?1000;1006l"
 }
 alias ma='make'
 alias mo='make && ./output'
 alias mu='make clean'
 alias mi='make install'
+alias mpa='mpv --no-video'
 alias p='pidof'
 alias pp='ping -c 3 www.google.com'
+alias pip3='python3 -m pip'
 alias q='exit'
-alias lfcd='lf && [[ -s /media/ramdisk/lfcd ]] && [[ $(cat /media/ramdisk/lfcd) != $(pwd) ]] && pushd $(cat /media/ramdisk/lfcd)'
+#conflict c-z lfcd
+alias lfcd='lf && [[ -s /media/ramdisk/lfcd ]] && [[ $(cat /media/ramdisk/lfcd) != $(pwd) ]] && pushd $(cat /media/ramdisk/lfcd) ; tmux set automatic-rename 1'
 alias t='top | colout " R " yellow | colout " 0[0.:]*" red | colout " root |/.*" green'
 alias tt='date'
-alias tv='youtube-viewer -C'    # aud+vid
 #alias tps='curl wttr.in'
 mto () {
 	curl wttr.in/$1
 }
-alias vt='youtube-viewer -C -n' # audio seul
 #alias v='nvim'
 v () {
-	tmux_window_name=$(echo $1 | sed "s#^\(~/\|/home/user/\)\(.\|.config/\)\?##;s#^#V #")
-	tmux rename-window $tmux_window_name
-	nvim $1 $2 $3 $4 $5 $6 $7 $8 $9
+	#tmux_window_name=$(echo $1 | sed "s#^\(~/\|/home/user/\)\(.\|.config/\)\?##;s#^#V #")
+	tmux rename-window "$(echo $* | sed "s# .*\$# …#g;s#^.*/##;s#^# #")"
+	nvim $*
+	echo "$var"
 	tmux set automatic-rename 1
 }
-alias vv='nvim *.(c|cpp|h|hpp) || nvim *.(sh|bash|zsh) || nvim *.(py|js|tex|go) || nvim *.txt || nvim *.* || nvim *'
-alias vn='v /dev/null' # écris du texte qui ne sera pas sauvegardé
+alias vv='nvim *.(c|cpp|h|hpp) || nvim *.(sh|bash|zsh) || nvim *.(py|js|html|css|tex|go|md) || nvim *.txt || nvim *.* || nvim *'
+alias vn='nvim /dev/null' # écris du texte qui ne sera pas sauvegardé
 #alias wego='~/go/bin/./wego'
 alias xd='xdotool'
 alias xk='xdotool key'
@@ -117,8 +124,10 @@ alias xt='xdotool type'
 alias xg='xdotool getmouselocation'
 #alias y='synclient Touchpadoff=0'
 #alias yy='synclient Touchpadoff=1'
+alias yv='straw-viewer -C'    # aud+vid
+alias ya='straw-viewer -C -n' # audio seul
 alias yta='~/.i3scripts/yta.sh'
-alias ytdl='youtube-dl'
+alias yd='youtube-dl'
 
 # déplacements via un menu rofi
 # la première commande ls est séparée en deux: s'il n'y en a qu'une
@@ -182,8 +191,8 @@ alias èi='v ~/.config/i3/config'
 alias èk='v /usr/share/X11/xkb/symbols/oo'
 alias èm='v ~/Documents/maudpassss.txt'
 alias èr='v ~/.config/rofi/config'
-alias èv='v ~/.vimrc'
-alias èvv='v ~/Documents/vim'
+alias èv='v ~/.config/nvim/init.vim'
+#alias èvv='v ~/Documents/vim'
 alias èt='v ~/.tmux.conf'
 
 # èè déplacements courants
@@ -252,7 +261,7 @@ bindkey -s 'één' ' 2>/dev/null '
 bindkey -s 'éér' '| rofi -dmenu -multi-select'
 
 bindkey -s 'ééq' '| uniq '
-bindkey -s 'ééd' '| sed "s///"'
+bindkey -s 'ééd' '| sed "s///"^B^B^B'
 bindkey -s 'ééj' ' 2>/dev/null 1>&2 '
 bindkey -s 'ééw' '| wc '
 
@@ -350,15 +359,18 @@ bindkey -M menuselect 'n' vi-forward-char
 
 export LESS="--RAW-CONTROL-CHARS"
 
+# TODO not separate less file
 [[ -f ~/.LESS_TERMCAP ]] && . ~/.LESS_TERMCAP
+export LESSKEY="/home/user/.lesskey"
 export GROFF_NO_SGR=1
 export EDITOR='nvim'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#hidden?
 export FZF_DEFAULT_COMMAND="fd --exclude snap --color=always"
-#export FZF_DEFAULT_OPTS="--height 100% --preview-window=up:40%:hidden --jump-labels='etusinaghd,v.j-qkcmplébyrofèw+x_z@:;?!()<>#' --bind='ctrl-b:unix-word-rubout,ctrl-g:deselect-all,ctrl-s:preview-page-down,ctrl-t:preview-page-up,ctrl-o:toggle-preview,ctrl-a:toggle-sort,ctrl-k:top,ctrl-j:jump-accept'"
 export FZF_DEFAULT_OPTS="--height 100% --preview='~/.config/lf/pv.sh {}' --preview-window=up:40%:hidden --jump-labels='etusinaghd,v.j-qkcmplbyrofw+x_z@:;?!()<>#' --color='pointer:15' --bind='ctrl-z:deselect-all,ctrl-v:preview-page-down,ctrl-q:preview-page-up,ctrl-r:toggle-preview,ctrl-x:toggle-preview-wrap,ctrl-o:toggle-sort,ctrl-g:top,ctrl-j:jump-accept,ctrl-t:backward-word,ctrl-s:forward-word,ctrl-k:kill-line,ctrl-_:page-up'"
 export FZF_TMUX=1
+#else, strange colors are set: why?
 export LS_COLORS="cd=1;33:di=1;34:ex=1;32:ln=1;36:*.jpg=1;35:*.png=1;35"
 
 #bd = (BLOCK, BLK)   Block device (buffered) special file
