@@ -1,17 +1,26 @@
 "{{{insert, command, vrac
 "unmap b
-tnoremap <Esc> <c-\><c-n>
-"tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-tnoremap <expr> <c-o><c-r> '<c-\><c-n>"'.nr2char(getchar()).'pi'
-tnoremap <c-o><c-o> <c-o>
-tnoremap <c-o><Esc> <Esc>
-"tnoremap <c-o>p <c-\><c-n>pi
-tnoremap <c-o><c-p> <c-\><c-n>pi
-tnoremap <c-o><c-m> <c-e> \<c-m>
-"be carefull: symbol depends on shell prompt, using $ is safer
-tnoremap <c-o><c-y> <c-\><c-n>0f2<Right>y$i
-"tnoremap <Up> <c-p>
-"tnoremap <Down> <c-n>
+if has('nvim')
+	"terminal mappings
+	tnoremap <Esc> <c-\><c-n>
+	"tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+	tnoremap <expr> <c-o><c-r> '<c-\><c-n>"'.nr2char(getchar()).'pi'
+	tnoremap <c-o><c-o> <c-o>
+	tnoremap <c-o><Esc> <Esc>
+	"tnoremap <c-o>p <c-\><c-n>pi
+	tnoremap <c-o><c-p> <c-\><c-n>pi
+	tnoremap <c-o><c-m> <c-e> \<c-m>
+	"be carefull: symbol depends on shell prompt, using $ is safer
+	tnoremap <c-o><c-y> <c-\><c-n>0f2<Right>y$i
+	"tnoremap <Up> <c-p>
+	"tnoremap <Down> <c-n>
+else
+	"TODO understand why I need to do this
+	noremap <Esc> <Esc><Esc>
+	inoremap <Esc> <Esc><Esc>
+	cnoremap <Esc> <Esc><Esc>
+	vnoremap <Esc> <Esc><Esc>
+endif
 noremap <ScrollWheelUp> <c-y>
 noremap <ScrollWheelDown> <c-e>
 noremap b <nop>
@@ -19,9 +28,12 @@ noremap g <nop>
 noremap q <nop>
 
 "shell-like commands: why default <c-a> is on <c-b> ?
+cnoremap <C-Space> <c-r>"
+cnoremap <c-_> <c-]>
 cnoremap <c-a> <c-b>
 cnoremap <c-b> <Left>
-cnoremap <c-d> <nop>
+"<c-d> hors memo
+cnoremap <c-d> <c-t>
 cnoremap <c-f> <Right>
 "double: "for extensions"
 cnoremap <c-g><c-f> <c-\><c-g>
@@ -30,7 +42,8 @@ cnoremap <c-g><c-t> <c-_>
 cnoremap <c-g><c-n> <c-^>
 cnoremap <c-g><c-r> <c-\><c-n>
 cnoremap <c-h> <c-l>
-cnoremap <c-j> <nop>
+"<c-j> hors memo
+cnoremap <c-j> <c-g>
 cnoremap <c-k> <c-d>
 cnoremap <c-l> <c-f>
 cnoremap <c-o> <c-\>e
@@ -57,7 +70,8 @@ inoremap <c-b> <Left>
 inoremap <c-e> <End>
 inoremap <c-f> <Right>
 "<c-g> becomes universal prefix
-inoremap <c-g><c-c> <c-g>u
+"improve next TODO
+"inoremap <c-g><c-c> <c-g>u
 inoremap <c-g><c-m> <c-g>k
 inoremap <c-g><c-l> <c-g>U
 inoremap <c-g><c-f> <c-\><c-g>
@@ -71,10 +85,12 @@ inoremap <c-k> <c-e>
 inoremap <c-q> <c-k>
 inoremap <c-s> <S-Right>
 inoremap <c-t> <S-Left>
-inoremap <c-u> <c-g>u<c-u>
-inoremap <c-w> <c-g>u<c-w>
+"don't use this because it temporarily disabble abbrev
+"inoremap <c-u> <c-g>u<c-u>
+"inoremap <c-w> <c-g>u<c-w>
 
 
+"TODO key for anti abrev, key for toggle abrev (paste) mode
 inoremap <expr><c-h> deoplete#complete_common_string()
 inoremap <expr><c-l> deoplete#refresh()
 "<C-Space> is also on "<c-@>"
@@ -82,21 +98,25 @@ inoremap <C-Space> <c-a>
 inoremap <c-_> <c-]>
 "<Up> and <Down> and others avoid completion
 "TODO is it possible without leaving insert mode?
-inoremap <Up> <c-o><Up>
-inoremap <Down> <c-o><Down>
-inoremap <PageUp> <c-o><PageUp>
-inoremap <PageDown> <c-o><PageDown>
-"inoremap <expr>↹ deoplete#toggle()
+if has('nvim')
+	inoremap <Up> <c-o><Up>
+	inoremap <Down> <c-o><Down>
+	inoremap <PageUp> <c-o><PageUp>
+	inoremap <PageDown> <c-o><PageDown>
+endif
+noremap <expr>↹ deoplete#toggle()
 ""direct map puts a «0» after: why?
-"imap <c-_> ↹<BS>
+" hors-liste
+map ég ↹
 
 "}}}
 "{{{function (next isn't inoremap)
-let g:superMatched=2
+"default is on
+let g:superMatched=3
 function! SuperMatch()
 	" toggle
-	if(g:superMatched==0 || g:superMatched==2)
-		if(g:superMatched==0)
+	if (g:superMatched==0 || g:superMatched==2)
+		if (g:superMatched==0)
 			echomsg "SuperMatch: ON"
 		endif
 		let g:superMatched=1
@@ -132,13 +152,10 @@ function! SuperMatch()
 		nmap qh( qha{{<Esc>
 		nmap qh) qha}}<Esc>
 
-	else
-		if(g:superMatched==1)
-			echomsg "SuperMatch: ON"
-		endif
-		"unmap everything
+	elseif (g:superMatched==1)
+		"unmap everything, only if mapped before, else E31
+		echomsg "SuperMatch: ON"
 		let g:superMatched=0
-		echomsg "SuperMatch: OFF"
 
 		iunmap (
 		iunmap [
@@ -183,15 +200,16 @@ function! FoldCycle()
 	endif
 endfunction
 
+" TODO: erase because scrolloff works better
 function! Move(dir)
 	if a:dir==0
-		if winline() < 5
+		if winline()<5 || line("$") < winheight(winnr())
 			normal! j
 		else
 			normal! j
 		endif
 	elseif a:dir==1
-		if wincol() < 20
+		if wincol() < 20 || col("$")+12 < winwidth(winnr())
 			normal! l
 		else
 			normal! lzl
@@ -215,22 +233,38 @@ endfunction
 	"endwhile
 "endfunction
 
-let g:SpeedMode=0
+" default, then fct for toggle
+noremap r t
+noremap f f
+noremap <c-m> <c-d>
+noremap <c-s> <c-u>
+let g:SpeedMode=2
+"val==-1: cycle/toggle; other: set
 function! SpeedCycle(val)
-	if (g:SpeedMode==0 && a:val==-1) || a:val==1
+	if ((g:SpeedMode==0 || g:SpeedMode==2) && a:val==-1) || a:val==1
+		if g:SpeedMode==0
+			echomsg "SpeedCycle: Fast"
+		endif
 		let g:SpeedMode=1
-		echomsg "SpeedCycle: Fast"
-		"f,r fast like in Most and Zathura
+		"f,r fast like in Most, Zathura and ctgr
+		"insert mode only
 		nnoremap f <c-u>
 		nnoremap r <c-d>
+		nnoremap <c-m> f
+		nnoremap <c-s> t
 	else
+		if g:SpeedMode==1
+			echomsg "SpeedCycle: Slow"
+		endif
 		let g:SpeedMode=0
-		echomsg "SpeedCycle: Slow"
-		"f,r slow like in Tmux-copy
+		"f,r slow like in Tmux-copy and lf
 		nnoremap f f
 		nnoremap r t
+		nnoremap <c-m> <c-d>
+		nnoremap <c-s> <c-u>
 	endif
 endfunction
+call SpeedCycle(1)
 "   
 "}}}
 "{{{ onoremap
@@ -305,6 +339,8 @@ noremap y y
 
 noremap _ '
 "onoremap _ '
+"<c-e> at the end: better for `100o`
+"noremap o o<c-e>
 noremap o o
 noremap a a
 noremap i i
@@ -321,37 +357,47 @@ noremap e e
 "}}}
 "{{{R_base
 
-noremap ( gT
-noremap ) gt
-noremap < :bp<cr>
-noremap > :bn<cr>
+" gt and gT aren't silent
+noremap <silent> ( :tabp<cr>
+noremap <silent> ) :tabn<cr>
+noremap <silent> < :bp<cr>
+noremap <silent> > :bn<cr>
 noremap # #
 
 "noremap b z
 noremap c ,
 "TODO rnu scroll/fold incompatible
-noremap m k<c-y>
+"nnoremap m k<c-y>
+"vnoremap m kzz
+" better way: scrolloff + easy to access half-screen scroll
+" non canonique, permuté
+noremap m k
+nnoremap <Up> k<c-y>
 noremap l ;
-noremap f f
 noremap z %
 
 "noremap  g
-noremap t hzh
+nnoremap t hzh
+vnoremap t h
+onoremap t h
 "noremap s j<c-e>
-nnoremap <silent> s :call Move(0)<cr>
-vnoremap s j<c-e>
-onoremap s j
+"nnoremap <silent> s :call Move(0)<cr>
+"vnoremap s jzz
+"onoremap s j
+"non canonique
+noremap s j
+noremap <Down> j<c-e>
 "noremap n l
 nnoremap <silent> n :call Move(1)<cr>
 vnoremap n l
 onoremap n l
-noremap r t
 nmap x <plug>(easymotion-s)
 "rien
 "noremap q <c-w>
 noremap q <nop>
 noremap d /
-noremap v nzz
+" previously, nzz but don't update search count
+noremap v n
 noremap j b
 noremap w w
 
@@ -383,7 +429,7 @@ noremap U C
 noremap H V
 
 noremap ⸮ S
-noremap – R
+noremap ½ R
 noremap … <c-r>
 noremap ² U
 noremap K X
@@ -413,11 +459,12 @@ noremap T zh
 noremap S <c-e>
 noremap N zl
 noremap R T
-noremap X :noh<cr>
+"clears both highlight and status
+noremap <silent> X :noh\|echo('')<cr>
 
 noremap Q Q
 noremap D ?
-noremap V Nzz
+noremap V N
 noremap J B
 noremap W W
 "}}}
@@ -429,10 +476,11 @@ noremap <c-p> :CtrlP<cr>
 noremap <c-y> <c-a>
 
 noremap <c-_> K
-noremap <c-o> o<Esc>0d$
+"noremap <c-o> o<Esc>0d$
+noremap <c-o> o<Esc>
 vnoremap <c-o> <c-o>
 noremap <c-a> 0
-noremap <c-i> <c-w>W
+nnoremap <c-i> <c-w>W
 noremap <S-Tab> `
 "unmap <BS>
 noremap <BS> <c-w>w
@@ -450,12 +498,10 @@ noremap <c-e> $
 "{{{R_ctrl
 
 noremap <c-b> <c-o>
-noremap <c-m> <c-d>
 noremap <c-f> <c-b>
 
 noremap <c-g> <c-g>
 noremap <c-t> zH
-noremap <c-s> <c-u>
 noremap <c-n> zL
 nnoremap <c-r> <c-f>
 vnoremap <c-r> <c-f>
@@ -534,6 +580,8 @@ noremap bv zB
 noremap bj zg
 noremap bw zb
 "those are not on index.txt
+"non canonique
+noremap <silent> bB :set spell!<cr>
 noremap bD zuG
 noremap bV zuB
 noremap bJ zug
@@ -576,8 +624,8 @@ noremap gh gv
 
 noremap g+ gr
 noremap g- gR
-noremap g. g;
-noremap g, g,
+noremap g. g,
+noremap g, g;
 vnoremap gk g<c-x>
 
 noremap ge ge
@@ -609,8 +657,8 @@ noremap gx gx
 
 noremap gq gq
 nnoremap gd g<c-a>
-noremap gv gnzz
-noremap gj :read !date "+[\%Y-\%m-\%d \%H:\%M:\%S]"<cr>
+noremap gv gn
+noremap <silent> gj :read !date "+<\%y-\%m-\%d>"<cr>kJ
 noremap gw gw
 "g<space> is for test
 "}}}
@@ -657,7 +705,9 @@ noremap gR z.
 
 "is there any difference between Q and gQ ?
 "noremap gQ gQ
-noremap gV gNzz
+noremap gV gN
+"non canonique
+noremap <silent> gJ :read !date "+<\%Y-\%m-\%d \%H:\%M:\%S>"<cr>kJ
 "noremap gJ ze
 "noremap gW gW
 "}}}
@@ -726,9 +776,10 @@ noremap <expr> q<space> SpeedCycle(-1)
 
 "noremap q¡ :tabo<cr>
 
+"del_buffer, quit_all, write_quit_all, close_other, write_all
 noremap q± :bd!<cr>
-noremap qO :qa<cr>
-noremap qA :wqa!<cr>
+noremap qO :qa!<cr>
+noremap qA :wqa<cr>
 noremap qI <c-w>o
 noremap qU :wa!<cr>
 "}}}
@@ -769,9 +820,9 @@ noremap éb [(
 noremap éc [/
 noremap ém [[
 noremap él ]/
-noremap éf ]s
+noremap éf [s
 "next isn't on index.txt (sometimes I don't specify it)
-noremap éF ]S
+noremap éF [S
 "noremap éf [z
 noremap éz [<c-d>
 "noremap <silent> qq :echom<space>screenrow()<cr>
