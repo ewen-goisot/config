@@ -2,29 +2,32 @@ set iskeyword+=',-
 iab b bien
 iab c comme
 iab d des
-iab e le
+"iab e le
+iab e une
+
 iab f fait
 iab g j'ai
-iab h heure
+iab h hors
 iab i avec
 iab j jusque
 iab k mais
 iab l les
 iab m même
 iab n nous
-iab o aussi
+"iab o aussi
 iab p pour
 iab q que
 iab r rien
 iab s sans
 iab t tout
-iab u une
+iab u aussi
 iab v vous
 iab w aucun
 iab x à
 iab z dont
 iab é être
-iab ' avoir
+"cfl qote
+"iab ' avoir
 
 iab aa abréviation
 iab ab ambigu
@@ -63,7 +66,7 @@ iab bn bonne nuit
 iab bo bord
 iab bp beaucoup
 iab br bref
-iab bs biens
+iab bs bien sûr
 iab bt bientôt
 iab bv bienvenue
 iab bw double
@@ -155,9 +158,9 @@ iab fp frappe
 iab fq fréquent
 iab fr fermé
 iab fs fois
-iab ft il faut que
+iab ft il faut
 iab fu futur
-iab fv favori
+iab fv préféré
 iab fw premier
 iab fx faux
 iab fy foyer
@@ -190,16 +193,18 @@ iab hb habitude
 iab hc chacun
 iab he hier
 iab hg échange
-iab hh hors
+iab hh cherché
+iab hj hasard
 iab hl échelle
 iab hm homme
 iab hn humain
 iab ho histoire
 iab hp hyper
 iab hq chaque
-iab hr hasard
+iab hr heure
 iab ht haut
 iab hu huit
+iab hv terminé
 iab hy hypothèse
 iab hè sphère
 
@@ -285,7 +290,7 @@ iab lè lumière
 iab mb mobile
 iab mc machine
 iab md monde
-iab mf modiifé
+iab mf modifié
 iab mg malgré
 iab mh malheur
 iab mj majorité
@@ -299,7 +304,6 @@ iab ms moins
 iab mt maintenant
 iab mv mouvement
 iab mw million
-iab mx mieux
 iab my moyen
 iab mz maison
 iab mè mètre
@@ -346,7 +350,7 @@ iab oy oui
 iab oz possible
 iab oè positif
 
-iab pa partiel
+"iab pa partiel
 iab pb problème
 iab pd pendant
 iab pe petit
@@ -365,7 +369,7 @@ iab pt point
 iab pw sept
 iab px pixel
 iab py physique
-iab pz phrase
+iab pz plusieurs
 iab pè presque
 
 iab qa qu'à
@@ -417,6 +421,7 @@ iab rè respect
 
 iab sb semblable
 iab sc social
+"iab sd soi-disant
 iab sf suffisant
 iab sg seconde
 iab sh schéma
@@ -477,6 +482,7 @@ iab up un peu
 iab uq unique
 iab uu Ubuntu
 iab uw cent
+iab ux mieux
 iab uz usuel
 
 iab vb verbe
@@ -522,6 +528,7 @@ iab xa exact
 iab xc et cetera
 iab xe expression
 iab xg X.Org
+iab xk exclu
 iab xm maximum
 iab xn annexe
 iab xo explication
@@ -535,12 +542,14 @@ iab yc y compris
 iab yd défaite
 iab ye yeux
 iab yf condition
+iab yk inclu
 iab yl style
 iab ym polynôme
 iab yp il n'y a pas
 iab yr intérieur
 iab yt y a-t-il
 iab yv victoire
+
 iab zb sombre
 iab zc science
 iab zd soudain
@@ -565,7 +574,7 @@ iab èc essai
 iab èd départ
 iab èe élément
 iab èf efficace
-iab èg algorythme
+iab èg algorithme
 iab èh prochain
 iab èi envie
 iab èj ai-je
@@ -588,7 +597,7 @@ iab D Des
 iab E Le
 iab F Fait
 iab G J'ai
-iab H Heure
+iab H Hors
 iab I Avec
 iab J Jusque
 iab K Mais
@@ -646,7 +655,7 @@ iab Bn Bonne nuit
 iab Bo Bord
 iab Bp Beaucoup
 iab Br Bref
-iab Bs Biens
+iab Bs Bien sûr
 iab Bt Bientôt
 iab Bv Bienvenue
 iab Bw Double
@@ -738,9 +747,9 @@ iab Fp Frappe
 iab Fq Fréquent
 iab Fr Fermé
 iab Fs Fois
-iab Ft Il faut que
+iab Ft Il faut
 iab Fu Futur
-iab Fv Favori
+iab Fv Préféré
 iab Fw Premier
 iab Fx Faux
 iab Fy Foyer
@@ -773,16 +782,18 @@ iab Hb Habitude
 iab Hc Chacun
 iab He Hier
 iab Hg Échange
-iab Hh Hors
+iab Hh Cherché
+iab Hj Hasard
 iab Hl Échelle
 iab Hm Homme
 iab Hn Humain
 iab Ho Histoire
 iab Hp Hyper
 iab Hq Chaque
-iab Hr Hasard
+iab Hr Heure
 iab Ht Haut
 iab Hu Huit
+iab Hv Terminé
 iab Hy Hypothèse
 iab Hè Sphère
 
@@ -868,7 +879,7 @@ iab Lè Lumière
 iab Mb Mobile
 iab Mc Machine
 iab Md Monde
-iab Mf Modiifé
+iab Mf Modifié
 iab Mg Malgré
 iab Mh Malheur
 iab Mj Majorité
@@ -882,7 +893,6 @@ iab Ms Moins
 iab Mt Maintenant
 iab Mv Mouvement
 iab Mw Million
-iab Mx Mieux
 iab My Moyen
 iab Mz Maison
 iab Mè Mètre
@@ -929,7 +939,7 @@ iab Oy Oui
 iab Oz Possible
 iab Oè Positif
 
-iab Pa Partiel
+"iab Pa Partiel
 iab Pb Problème
 iab Pd Pendant
 iab Pe Petit
@@ -948,7 +958,7 @@ iab Pt Point
 iab Pw Sept
 iab Px Pixel
 iab Py Physique
-iab Pz Phrase
+iab Pz Plusieurs
 iab Pè Presque
 
 iab Qa Qu'à
@@ -1000,6 +1010,7 @@ iab Rè Respect
 
 iab Sb Semblable
 iab Sc Social
+"iab Sd Soi-disant
 iab Sf Suffisant
 iab Sg Seconde
 iab Sh Schéma
@@ -1060,6 +1071,7 @@ iab Up Un peu
 iab Uq Unique
 iab Uu Ubuntu
 iab Uw Cent
+iab Ux Mieux
 iab Uz Usuel
 
 iab Vb Verbe
@@ -1105,6 +1117,7 @@ iab Xa Exact
 iab Xc Et cetera
 iab Xe Expression
 iab Xg X.Org
+iab Xk Exclu
 iab Xm Maximum
 iab Xn Annexe
 iab Xo Explication
@@ -1118,12 +1131,14 @@ iab Yc Y compris
 iab Yd Défaite
 iab Ye Yeux
 iab Yf Condition
+iab Yk Inclu
 iab Yl Style
 iab Ym Polynôme
 iab Yp Il n'y a pas
 iab Yr Intérieur
 iab Yt Y a-t-il
 iab Yv Victoire
+
 iab Zb Sombre
 iab Zc Science
 iab Zd Soudain
@@ -1148,7 +1163,7 @@ iab Èc Essai
 iab Èd Départ
 iab Èe Élément
 iab Èf Efficace
-iab Èg Algorythme
+iab Èg Algorithme
 iab Èh Prochain
 iab Èi Envie
 iab Èj Ai-je
