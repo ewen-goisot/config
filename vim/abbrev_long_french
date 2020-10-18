@@ -1,0 +1,3017 @@
+
+iab b bien
+"cfl c++
+iab c comme
+iab d des
+iab e une
+iab f fait
+iab g j'ai
+iab h hors
+iab i avec
+iab j jusque
+iab k mais
+iab l les
+iab m même
+iab n nous
+"o aussi
+iab p pour
+iab q que
+iab r rien
+iab s sans
+iab t tout
+iab u une
+iab v vous
+iab w aucun
+iab x à
+iab z dont
+iab é être
+iab cé c'est
+iab pé peut-être
+" pé peut-être: dans le fichier des verbes?
+" d'é d'être
+"cfl qote: 'nokeyword'
+"' avoir
+iab x' avoir
+
+" TODO : msg: message?
+" manière
+
+iab aa abréviation
+iab aas abréviations
+iab aaé abrègé
+iab aaée abrégée
+iab aaés abrégés
+iab aaées abrégées
+iab aae abrège
+
+iab ab ambigu
+iab abe ambiguë
+""anti bloquage système
+iab abs ambigus
+iab abes ambiguës
+iab abé ambiguïté
+iab abés ambiguïtés
+
+iab ac ancien
+iab acs anciens
+iab acn ancienne
+iab acns anciennes
+
+iab ad adresse
+iab ads adresses
+iab adé adressé
+iab adée adressée
+iab adés adressés
+iab adées adressées
+iab adg adressage
+
+iab ae assez
+iab pae pas assez
+
+iab af afin
+
+iab ag argument
+"cfl accent âgé
+"iab agé argumenté
+"iab agée argumentée
+"iab agés argumentés
+"iab agées argumentées
+"iab age argumente
+iab ags arguments
+
+iab aj aujourd'hui
+
+iab ak à confirmer
+iab aké confirmé
+iab akés conférmés
+iab akée confirmée
+iab akées confirmées
+iab ako confirmation
+iab akos confirmations
+
+iab al alors
+"permet tandis
+iab alq alors que
+"eal et alors
+
+iab am animal
+iab ams animaux
+"cfl accent âme
+iab ame animale
+iab ames animales
+
+iab ao attention
+iab aos attentions
+iab aoé attentionné
+iab aoée attentionnée
+iab aoés attentionnés
+iab aoées attentionnées
+iab aof attentif
+iab aofe attentive
+iab aofs attentifs
+iab aofes attentives
+iab fao fait attention
+
+iab ap après
+iab eap et après
+iab apm après-midi
+iab apdm après-demain
+
+iab aq attaque
+iab aqé attaqué
+iab aqée attaquée
+iab aqés attaqués
+iab aqées attaquées
+iab aqn attaquant
+iab aqns attaquants
+iab aqne attaquante
+iab aqnes attaquantes
+iab aqr attaquer
+
+iab d'ar d'autre
+iab d'ars d'autres
+iab l'ar l'autre
+iab d'ars d'autres
+iab ar autre
+iab ars autres
+"TODO: change it pq cfl anglais bras
+iab arm autrement
+
+iab at autant
+
+iab av avant
+iab avhe avant-hier
+
+iab aw au revoir
+
+iab ax axiome
+iab axs axiomes
+iab axq axiomatique
+iab axqs axiomatiques
+
+iab ay arrière
+
+"bof
+iab aè année
+
+iab ba bas
+iab bae basse
+iab baes basses
+iab eba en bas
+
+iab bb bibliothèque
+iab bbs bibliothèques
+
+iab bc boucle
+iab bcs boucles
+iab bcé bouclé
+iab bcée bouclée
+iab bcés bouclés
+iab bcées bouclées
+iab bcr boucler
+
+iab be besoin
+iab bes besoins
+
+iab bg badge
+iab bgs badges
+
+iab bh bonheur
+iab bhl heureux
+iab bhe heureuse
+iab bhes heureuses
+iab bhm heureusement
+
+iab bi bilan
+"pluriel rare, cfl bis
+
+iab bj bonjour
+
+iab bk bijection
+iab bks bijections
+iab bkf bijectif
+iab bkfe bijective
+iab bkfs bijectifs
+iab bkfes bijectives
+
+iab bl blague
+iab bls blagues
+"blagué: conflit avec blé
+
+iab bm binôme
+iab bms binômes
+iab bml binômial
+iab bme binômiale
+iab bmls binômiaux
+iab bmes binômiales
+
+iab bn bonne nuit
+iab bns bonnes nuits
+
+iab bo bord
+iab bos bords
+iab bor bordure
+iab bors bordures
+iab boé bordé
+iab boée bordée
+iab boés bordés
+iab boées bordées
+iab dbo déborde
+iab dboé débordé
+iab dboée débordée
+iab dboés débordés
+iab dboées débordées
+
+iab bp beaucoup
+iab pbp pas beaucoup
+
+iab br bref
+iab bre brève
+iab brs brefs
+iab bres brèves
+iab ebr en bref
+
+iab bs bien sûr
+
+iab bt bientôt
+iab tbt très bientôt
+
+iab bv bienvenue
+"masculin? pluriel?
+
+iab bw double
+iab bws doubles
+iab bwé doublé
+iab bwée doublée
+iab bwés doublés
+iab bwées doublées
+iab ebw en double
+iab bwm doublement
+
+iab bx beau
+iab bxe belle
+iab bxs beaux
+iab bxes belles
+iab bxé beauté
+
+iab by balise
+iab bys balises
+iab byé balisé
+iab byée balisée
+iab byés balisés
+iab byées balisées
+iab byr baliser
+
+"plus fréquent que bizarre
+iab bz étrange
+iab bzs étranges
+iab bzé étrangeté
+iab bzr étranger
+iab bzrs étrangers
+iab bzre étrangère
+iab bzres étrangères
+
+iab bè bénéfice
+iab bès bénéfices
+iab bèr bénéficière
+iab bèrs bénéficières
+
+iab cb combien
+
+"cfl copie conforme
+iab cc conclusion
+iab ccs conclusions
+iab ccr conclure
+iab ccl conclu
+iab cce conclue
+iab ccls conclus
+iab cces conclues
+
+"cfl centigramme
+iab cg catégorie
+iab cgs catégories
+iab cgq catégorique
+iab cgqs catégoriques
+"catégoriquement?
+
+iab ch chose
+iab chs choses
+
+iab cj chaud
+iab cje chaude
+iab cjs chauds
+iab cjes chaudes
+iab cjl chaleur
+
+iab ck conséquence
+iab cks conséquences
+iab pck par conséquent
+
+"cfl centilittre
+iab cl celui
+iab cle celle
+iab cls ceux
+iab cles celles
+
+"cfl centimètre
+iab cm comment
+iab cmr commentaire
+iab cmer commenter
+iab cmé commenté
+iab cmée commentée
+iab cmés commentés
+iab cmées commentées
+
+iab cn certain
+iab cne certaine
+iab cns certains
+iab cnes certaines
+iab cnd certitude
+iab cnds certitudes
+iab cnm certainement
+
+iab co complexe
+"cos cfl cosinus
+iab cops complexes
+iab coé complexité
+
+iab cp coup
+iab cps coups
+
+iab cq ce que
+iab cqi ce qui
+"ce qu'il(s), ce qu'elle(s), ce qu'on
+
+iab cr contre
+"cfl 'B$'
+iab crs contres
+iab crr contraire
+
+iab cs cause
+"css cfl prog
+iab cses causes
+iab csé causé
+iab csée causée
+iab csés causés
+iab csées causées
+iab csr causer
+"csl causal?
+
+iab ct constant
+iab cte constante
+iab cts constants
+iab ctes constantes
+
+iab cu court
+iab cue courte
+iab cus courts
+iab cues courtes
+"radical différent
+iab pcu parcours
+
+iab cw cinq
+
+iab cx choix
+
+iab cy cycle
+iab cys cycles
+iab cyq cyclique
+iab cyqs cycliques
+iab cyé cyclicité
+
+iab cz chez
+
+iab cè cette
+"ces ne gagne pa de tp
+iab da déjà
+iab dav déjà-vu
+
+iab db début
+iab dbs débuts
+iab dbn débutant
+iab dbne débutante
+iab dbns débutants
+iab dbnes débutantes
+
+iab dc d'accord
+"invariable
+
+iab dd dedans
+"peu employé?
+iab edd en dedans
+
+iab df difficile
+iab dfs difficiles
+iab dft difficulté
+iab dfts difficultés
+iab dfm difficilement
+
+iab dg dommage
+"slm le nom?
+iab dgs dommages
+
+iab dh dehors
+iab edh en dehors
+
+iab di différent
+iab die différente
+iab dic différence
+iab dics différences
+iab difs différents
+"dis cfl i vb dire
+iab dils défférents
+"dies cfl anglais
+iab difes différentes
+
+iab dk direct
+iab dks directs
+iab dkm directement
+iab dko direction
+iab dkos directions
+"dkol directionnel
+
+iab dl développement
+iab dlé développé
+iab dlée développée
+iab dlés développés
+iab dlées développées
+iab dlm développement
+
+iab dm demain
+iab xdm à demain
+
+iab dn donc
+
+iab dp depuis
+iab dpq depuis que
+
+iab dq dès que
+
+iab dr derrière
+
+iab ds dans
+
+iab dt détail
+iab dts détails
+iab dté détaillé
+iab dtée détaillée
+iab dtés détaillés
+iab dtées détaillées
+iab dte détaille
+iab dtr détailler
+
+iab dv devant
+
+iab dw deux
+
+iab dy distance
+iab dys dystances
+
+iab dz droite
+iab dzs droites
+
+iab dè déficit
+"dès cfl
+iab dèfs déficits
+iab dèfr déficitaire
+iab dèfrs déficitaires
+
+iab ea et alors
+
+iab eb ensemble
+iab ebs ensembles
+iab ebt ensembliste
+iab ebts ensemblistes
+
+iab ec encore
+
+iab ed endroit
+iab eds endroits
+
+iab ee existence
+iab dee d'existence
+iab lee l'existence
+iab iee il existe
+iab inee il n'existe
+iab ipee il n'existe pas
+iab nee inexistence
+iab eer exister
+iab een existant
+iab eet existe-t-il
+
+iab ef effet
+iab l'ef l'effet
+iab d'ef d'effet
+iab efs effets
+iab sef sans effet
+iab eef en effet
+iab efm effectivement
+
+iab eg égal
+iab egm également
+iab egé égalité
+iab egés égalités
+iab ege égale
+iab egs égaux
+iab eges égales
+iab ieg inégal
+iab iegm inégalement
+iab iegé inégalité
+iab iegés inégalités
+iab iege inégale
+iab iegs inégaux
+iab ieges inégales
+
+iab ei ensuite
+
+iab ej enjeu
+iab ejs enjeux
+
+iab ek en tout cas
+iab enk en aucun cas
+
+iab el elle
+iab els elles
+
+iab em évenement
+iab ems évènement
+
+iab eo selon
+
+iab ep exemple
+"sport collège: iu
+iab eps exemples
+iab epr exemplaire
+iab eprs exemplaires
+iab pep par exemple
+
+iab eq est-ce que
+
+iab er entre
+iab eré entré
+iab erée entrée
+iab erés entrés
+iab erées entrées
+
+iab ew entier
+iab ewe entière
+iab ews entiers
+iab ewes entières
+iab ewm entièrement
+
+iab ey essayé
+iab eys essayée
+iab eye essayée
+iab eyes essayées
+iab eyi essai
+
+iab ez hésite
+iab ezé hésité
+iab ezée hésitée
+iab ezés hésités
+iab ezées hésitées
+iab ezo hésitation
+iab ezos hésitations
+iab ezr hésiter
+
+iab eè extrême
+iab eès extrêmes
+iab eèé extrêmité
+iab eèés extrêmités
+iab eèm extrêmement
+
+iab fb faible
+iab fbs faibles
+iab fbc faiblesse
+iab fbcs faiblesses
+iab fbm faiblement
+
+iab fc fonction
+iab fcs fonctions
+iab fcj fonctionne
+iab fcr fonctionner
+iab fcm fonctionnement
+iab fcl fonctionnel
+iab fce fonctionnelle
+iab fcls fonctionnels
+iab fces fonctionnelles
+
+iab fd fond
+
+iab fe femme
+iab fes femmes
+iab fen féminin
+
+iab ff façon
+iab ffs façons
+iab tff de toute façon
+
+iab fg figure
+iab fgs figures
+iab fgé figuré
+iab fgée figurée
+iab fgés figurés
+iab fgées figurées
+iab fgr figurer
+
+iab fh fichier
+iab fhs fichiers
+iab ffh dossier
+iab ffhs dossiers
+
+iab fj froid
+iab fje froide
+iab fjs froids
+iab fjes froides
+iab fjr froideur
+
+iab fk facultatif
+iab fke facultative
+iab fks facultatifs
+iab fkes facultatives
+
+iab fl facile
+iab fls faciles
+iab flm facilement
+iab flé facilité
+
+iab fm forme
+iab fml formel
+iab fmé formé
+iab fmée formée
+iab fmés formés
+iab fmées formées
+iab fmo formation
+iab fmos formations
+
+iab fn fin
+iab fni fini
+iab fnl final
+iab fne finale
+iab fnls finaux
+iab fnes finales
+"le plus ul des fn*
+iab fnm finalement
+
+iab fo fort
+"foc cfl
+iab foe forte
+iab fos forts
+iab foes fortes
+iab fom fortement
+
+iab fp frappe
+iab fps frappes
+iab fpé frappé
+iab fpée frappée
+iab fpés frappés
+iab fpées frappées
+iab ffp faute de frappe
+
+iab fq fréquent
+iab fqe fréquente
+iab fqs fréquents
+iab fqes fréquentes
+iab fqm fréquemment
+iab fqc fréquence
+
+iab fr fermé
+iab fre fermée
+iab frs fermés
+iab fres fermées
+iab frr fermer
+iab frur fermeture
+iab frurs fermetures
+iab frm fermement
+
+iab fs fois
+
+iab ft il faut
+
+iab fu futur
+"fus cfl
+iab furs futurs
+iab fue future
+iab fues futures
+
+iab fv préféré
+iab fve préférée
+iab fvs préférés
+iab fves préférées
+iab fvr préférer
+iab fvj préfère
+iab fvc préférence
+iab fvcs préférences
+
+iab fw premier
+iab fwe première
+iab fws premiers
+iab fwes premières
+iab fwm premièrement
+
+iab fx faux
+iab fxe fausse
+iab fxes fausses
+iab fxm faussement
+
+iab fy foyer
+iab fys foyers
+
+iab fz français
+iab fze française
+iab fzes françaises
+
+iab fè fenêtre
+iab fès fenêtres
+
+iab ga général
+iab gae générale
+iab gas généraux
+iab gaes générales
+"annulé tpm, pk?
+iab gam généralement
+iab gaé généralité
+iab gaés généralités
+iab gao généralisation
+iab gaos généralisations
+iab ega en général
+
+iab gb global
+iab gbe globale
+iab gbs globaux
+iab gbes globales
+iab gbm globalement
+iab gbé globalité
+
+iab gc j'essaye
+"TODO conjuguer
+
+iab gd grand
+iab gde grande
+iab gds grands
+iab gdes grandes
+iab gdr grandeur
+"initiales++
+"grandement?
+iab odg ordre de grandeur
+iab odgs ordres de grandeur
+
+iab ge gens
+
+iab gf j'ai fait
+iab ngf je n'ai fait
+iab pgf je n'ai pas fait
+
+iab gg Google
+
+iab gh graphe
+iab ghs graphes
+
+iab gl GNU_Linux
+
+iab gm généralement
+
+iab gn genre
+iab gns genres
+
+iab gp groupe
+iab gpr grouper
+"gps cfl
+iab grps groupes
+iab gpé groupé
+iab gpée groupée
+iab gpés groupés
+iab gpées groupées
+iab gpm groupement
+iab rgp regroupe
+iab rgrps regroupes
+iab rgpé regroupé
+iab rgpée regroupée
+iab rgpés regroupés
+iab rgpées regroupées
+iab rgpm regroupement
+iab rgpr regrouper
+
+iab gq graphique
+iab gqs graphiques
+iab gqm graphiquement
+
+iab gr grade
+"gré cfl
+"grdé peu ul
+iab grs grades
+iab grl graduel
+iab grm graduellement
+
+iab gs geste
+iab gss gestes
+
+iab gt garantie
+iab gts garanties
+iab gtl garanti
+iab gtls garantis
+
+iab gu gratuit
+iab gue gratuite
+iab gus gratuits
+iab gues gratuites
+iab gum gratuitement
+"légal?
+
+iab gv gouvernement
+iab gvé gouverné
+iab gvée gouvernée
+iab gvés gouvernés
+iab gvées gouvernées
+iab gvr gouverner
+iab gve gouverne
+
+iab gw milliard
+iab gws milliards
+
+iab gz gauche
+iab gzs gauches
+
+iab gè génération
+iab gès générations
+
+iab hb habitude
+"l'hb, d'hb
+iab hbs habitudes
+iab hbl habituel
+iab hbe habituelle
+iab hbls habituels
+iab hbes habituelles
+iab hbm habituellement
+
+iab hc chacun
+"TODO chacune
+
+iab he hier
+
+iab hg échange
+iab hgs échanges
+iab hgé échangé
+iab hgée échangée
+iab hgés échangés
+iab hgées échangées
+"changés? peu de lettres gagnées
+iab hgm changement
+iab hgms changemenss
+
+iab hh cherché
+iab hhr chercher
+iab hhs cherchés
+iab hhj cherche
+iab hhe cherchée
+iab hhes cherchées
+iab rhh recherché
+iab rhhr rechercher
+iab rhhs recherchés
+iab rhhj recherche
+iab rhhjs recherches
+iab rhhe recherchée
+iab rhhes recherchées
+
+iab hj hasard
+iab phj par hasard
+
+iab hl échelle
+iab hls échelles
+
+iab hm homme
+iab hms hommes
+iab hmn masculin
+
+iab hn humain
+iab hne humaine
+iab hnes humaines
+iab hns humains
+iab hné humanité
+iab hnr humanitaire
+iab hnrs humanitaires
+iab hnm humainement
+
+iab ho histoire
+iab hos histoires
+iab hoq historique
+iab hoqs historiques
+iab hom historiquement
+
+iab hp hyper
+
+iab hq chaque
+iab hqs chaques
+
+iab hr heure
+iab hrs heures
+iab hrr horaire
+iab hrrs horaires
+
+iab ht haut
+iab hte haute
+iab hts hauts
+iab htes hautes
+iab htr hauteur
+iab htm hautement
+
+iab hu huit
+
+iab hy hypothèse
+iab hys hypothèses
+iab hyq hypohétique
+iab hyqs hypothétiques
+iab hym hypothétiquement
+
+iab hè sphère
+iab hès sphères
+iab hèq sphérique
+iab hèqs sphériques
+
+iab ib immobile
+iab ibs immobiles
+
+iab ic incertain
+iab ice incertaine
+iab ics incertains
+iab ices incertaines
+iab icd incertitude
+iab icds incertiudes
+
+iab l'id l'idée
+iab id idée
+iab ids idées
+iab idl idéal
+iab idle idéale
+iab idls idéaux
+iab idles idéales
+iab idm idéalement
+
+iab ig image
+iab igs images
+iab igé imagé
+iab igée imagée
+iab igés imagés
+iab igées imagées
+
+iab ih imaginaire
+iab ihs imaginaires
+
+iab ii infini
+iab iis infinis
+iab iie infinie
+iab iies infinies
+iab iim infiniment
+iab iié infinité
+
+iab ij injustifié
+iab ijs injustifiés
+iab ijb injustifiable
+iab ijbs injustifiables
+"TODO injuste
+
+iab ik injection
+iab iks injections
+iab ikl injectif
+iab ike injective
+iab ikls injectifs
+iab ikes injectives
+
+iab im important
+iab ime importante
+iab ims importants
+iab imes importantes
+iab imc importance
+iab simc sans importance
+iab pim peu importe
+
+iab in minimum
+iab ins minimums
+
+iab io information
+iab ios informations
+iab ioq informatique
+iab ioé informé
+iab ioés informés
+iab ioée informée
+iab ioées informées
+iab ioe informe
+iab ioer informer
+
+iab iq identique
+iab iqs identiques
+iab iqm identiquement
+"cf maths
+iab iqé identité
+iab iqés identités
+iab iqf identifié
+iab iqfe identifiée
+iab iqfs identifiés
+iab iqfes identifiées
+
+iab is instant
+iab iss instants
+iab isé instanté
+iab isée instantanée
+iab isés instantanés
+iab isées instantanées
+iab ism instantanément
+
+iab it introduction
+iab its introductions
+"itl introduit
+
+iab iu inutile
+iab ius inutiles
+iab iué inutilité
+iab ium inutilement
+
+iab iv inverse
+iab ivs inverses
+iab ivé inversé
+iab ivée inversée
+iab ivés inversés
+iab ivées inversées
+iab ivm inversement
+iab ivo inversion
+iab ivos inversions
+
+iab iw moitié
+iab iws moitiés
+
+iab ix dix
+
+iab iy interdit
+iab iye interdite
+iab iys interdits
+iab iyes interdites
+iab iyo interdiction
+iab iyos interdictions
+"peu utile en fait
+
+iab iz indice
+iab izs indices
+iab izo indication
+iab izos indications
+iab izl indicatif
+iab ize indicative
+iab izls indicatifs
+iab izes indicatives
+
+iab iè intérêt
+iab iès intérêts
+iab siè sans intérêt
+iab ièl intéressant
+iab ièe intéressante
+iab ièls intéressants
+iab ièes intéressantes
+
+iab ja jusqu'à
+iab jau jusqu'au
+iab jax jusqu'aux
+
+iab jd jardin
+iab jds jardins
+
+iab jf justifié
+iab jfe justifiée
+iab jfs justifiés
+iab jfes justifiées
+iab jfo justification
+iab jfos justifications
+iab jfb justifiable
+iab jfbs justifiables
+
+iab jg jugement
+iab jgs jugements
+"jugé pè iu
+
+iab jk joker
+iab jks jokers
+
+iab jl je l'ai
+iab njl je ne l'ai pas
+
+iab jm jamais
+
+iab jn je ne
+
+iab jp je ne vais pas
+
+iab jr jour
+iab jrs jours
+iab jré journée
+iab jrés journées
+
+iab jt juste
+iab jts justes
+"cfl sito
+iab jtm justement
+
+iab ju jeune
+"cfl jus
+iab juns jeunes
+iab jues jeunesse
+
+iab jv je vais
+
+"bof
+iab jx jeu
+iab jxs jeux
+iab jxb jouable
+iab jxbs jouables
+iab jxé joué
+iab jxr jouer
+
+iab jy joyeux
+iab jye joyeuse
+iab jyes joyeuses
+iab jym joyeusement
+
+iab ka capitale
+iab kas capitales
+iab kal capital
+iab kals capitaux
+
+iab kb courbe
+iab kbs courbes
+iab kbé courbé
+iab kbée courbée
+iab kbées courbées
+iab kbr courbure
+iab kbrs courbures
+
+iab kc cassé
+iab kcs cassés
+iab kce cassée
+iab kces cassées
+"ar mots: gain fb
+
+iab kd cadeau
+iab kds cadeaux
+
+iab kf conforme
+iab kfs conformes
+iab kfé conformité
+iab kfm conformément
+iab kfi conformisme
+
+iab kh caché
+iab khe cachée
+iab khs cachés
+iab khes cachées
+iab khe cache
+
+iab ki copie
+iab kis copies
+iab kié copié
+iab kiée copiée
+iab kiés copiés
+iab kiées copiées
+"cfl kir
+iab kier copier
+
+iab kk correct
+iab kke correcte
+iab kks corrects
+iab kkes correctes
+iab kkm correctement
+iab kko correction
+iab kkos corrections
+iab kké corrigé
+iab kkée corrigée
+iab kkés corrigés
+iab kkées corrigées
+iab kkl corrige
+iab kkr corriger
+
+iab kl classe
+iab kls classes
+iab klé classé
+iab klée classée
+iab klés classés
+iab klées classées
+iab klr classer
+iab klu classeur
+iab klus classeurs
+iab klm classement
+iab klms classements
+iab klq classique
+iab klqs classiques
+iab klqm classiquement
+
+iab kn connu
+iab kne connue
+iab kns connus
+iab knes connues
+iab knc connaissance
+iab kncs connaissances
+iab ikn inconnu
+iab ikne inconnue
+iab ikns inconnus
+iab iknes inconnues
+
+iab kp complet
+iab kpe complète
+iab kps complets
+iab kpes complètes
+iab kpr compléter
+iab kpm complètement
+iab kpo complétion
+"èn this
+iab akpo auto-complétion
+"maths, hors liste
+iab kpd complétude
+iab kpé complété
+iab kpée complétée
+iab kpés complétés
+iab kpées complétées
+iab ikp incomplet
+iab ikpe incomplète
+iab ikps incomplets
+iab ikpes incomplètes
+iab ikpm incomplètement
+iab ikpd incomplétude
+
+iab kq caractéristiques
+
+iab kr clair
+iab kre claire
+iab krs clairs
+iab kres claires
+iab kré clarté
+iab krés clartés
+iab krm clairement
+
+iab ks explosion
+iab kss explosions
+iab ksl explosif
+iab kse explosive
+iab ksls explosifs
+iab kses explosives
+iab ksr exploser
+iab ksj explose
+
+iab kt contrainte
+iab ktl contraint
+iab kts contraintes
+iab ktls contraints
+
+iab ku courant
+iab kue courante
+iab kus courants
+iab kues courantes
+iab kum couramment
+
+iab kv clavier
+iab kvs claviers
+
+iab kw mille
+iab kws milles
+iab kwr millier
+iab kwrs milliers
+
+iab kx connexion
+iab kxs connexions
+iab kxé connecté
+iab kxée connectée
+iab kxés connectés
+iab kxées connectées
+iab kxr connecteur
+iab kxrs connecteurs
+
+iab kè côté
+iab kès côtés
+iab akè à côté
+iab kèa côte à côte
+
+iab lb label
+iab lbl label
+
+iab lc local
+iab lcs locaux
+iab lce locale
+iab lces locales
+iab lcm localement
+iab lcé localité
+iab lcée localisée
+iab lcés localisés
+iab lcées localisées
+iab lcr localiser
+iab lce localise
+iab lco localisation
+iab lcos localisations
+iab lcoé localisé
+iab lcoée localisée
+iab lcoés localisés
+iab lcoées localisées
+
+iab ld liquide
+iab lds liquides
+iab ldd liquidité
+iab ldds liquidités
+iab ldf liquéfié
+iab ldfe liquéfiée
+iab ldfs liquéfiés
+iab ldfes liquéfiées
+iab ldfo liquéfaction
+iab ldfos liquéfactions
+
+iab lg long
+iab lge longue
+iab lgs longs
+iab lges longues
+iab lgr longueur
+iab lgm longuement
+" langage? ++ ++
+
+iab lh large
+iab lhs larges
+iab lgr largueur
+iab lgrs largueurs
+iab lgm largement
+
+iab li libre
+"cfl lis
+iab libs libres
+"cfl lié
+iab libé libéré
+iab libée libérée
+iab libés libérés
+iab libées libérées
+iab lité liberté
+iab libo libération
+
+iab ll logiciel
+iab lls logiciels
+iab llb logiciel libre
+
+iab lm limite
+iab lms limites
+iab alm à la limite
+iab lmé limité
+iab lmée limitée
+iab lmés limités
+iab lmées limitées
+iab lmo limitation
+iab lmos limitations
+
+iab lo logique
+iab los logiques
+iab lom logiquement
+
+iab lp longtemps
+
+iab lq lorsque
+
+iab lr leur
+iab lrs leurs
+
+iab ls liste
+iab lss listes
+iab lsé listé
+iab lsée listée
+iab lsés listés
+iab lsées listées
+
+iab lt lent
+"cfl? lemme LTE
+iab lte lente
+iab lts lents
+iab ltes lentes
+iab ltm lentement
+iab ltr lenteur
+
+iab lv niveau
+iab lvs niveaux
+
+iab lw dernier
+iab lwe dernière
+iab lws derniers
+iab lwes dernières
+iab lwm dernièrement
+
+iab ly labyrinthe
+"cfl lys
+iab lbys labyrinthes
+
+iab lz loisir
+iab lzs loisirs
+
+iab lè lumière
+iab lès lumières
+iab lèl lumineu
+iab lèe lumineuse
+iab lèls lumineux
+iab lèes lumineuses
+
+iab mb mobile
+iab mbs mobiles
+
+iab mc machine
+iab mcs machines
+iab mcl machinal
+iab mce machinale
+iab mcls machinaux
+iab mces machinales
+iab mcm machinalement
+
+iab md monde
+iab mds mondes
+iab mdl mondial
+iab mde mondiale
+iab mdls mondiaux
+iab mdes mondiales
+iab mdm mondialement
+
+iab mf modifié
+iab mfe modifiée
+iab mfs modifiés
+iab mfes modifiées
+iab mfj modifie
+iab mfr modifier
+iab mfo modification
+iab mfos modifications
+iab mfb modifiable
+iab mfbs modifiables
+"++
+
+iab mg malgré
+
+iab mh malheur
+iab mhl malheureux
+iab mhe malheureuse
+iab mhes malheureuses
+iab mhm malheureusement
+
+iab mj majorité
+iab mjs majorités
+iab mjr majoritaire
+iab mjrs majoritaires
+iab mjm majoritairement
+
+iab mk masque
+iab mks masques
+iab mké masqué
+iab mkée masquée
+iab mkés masqués
+iab mkées masquées
+
+iab ml milieu
+iab mls milieux
+
+iab mm moment
+iab mms moments
+iab mmé momentané
+iab mmée momentanée
+iab mmés momentanés
+iab mmées momentanées
+
+"bof?
+iab mn mon
+
+iab mq montrer que
+"(qu'il existe…)
+iab mqi montrer qu'il
+
+iab mr merci
+iab mrb merci beaucoup
+
+iab ms moins
+iab msg message
+iab msgs messages
+
+iab mt maintenant
+
+iab mv mouvement
+iab mvs mouvements
+iab mvé mouvementé
+iab mvée mouvementée
+iab mvés mouvementés
+iab mvées mouvementées
+
+iab mw million
+iab mws millions
+
+iab mx mieux
+
+iab my moyen
+iab mye moyenne
+iab mys moyens
+iab myes moyennes
+iab mym moyennement
+
+iab mz maison
+iab mzs maisons
+
+iab mè mètre
+iab mès mètres
+iab mèq métrique
+iab mèqs métriques
+iab cmè centimètre
+iab mmè millimètre
+iab kmè kilomètre
+
+iab na normal
+iab nae normale
+iab nas normaux
+iab naes normales
+iab nam normalement
+
+iab nc nécessaire
+iab ncs nécessaires
+iab ncm nécessairement
+iab ncé nécessité
+iab ncés nécessités
+
+iab nd nœud
+iab nds nœuds
+
+iab nf neuf
+iab nfe neuve
+iab nfs neufs
+iab nfes neuves
+
+iab ng je n'ai
+
+iab nh n'importe
+
+iab nj énergie
+iab njs énergies
+iab njq énergique
+iab njqs énergiques
+iab njqm énergiquement
+
+iab nk n'importe quoi
+
+iab nl naturel
+iab nle naturelle
+iab nls naturels
+iab nles naturelles
+iab nlm naturellement
+
+iab nm néanmoins
+
+iab nn non
+
+iab nq tant que
+
+iab nr nature
+iab nrs natures
+
+iab ns non seulement
+
+iab nt notre
+
+iab nv nouveau
+"TODO: nouvel nvl
+iab nve nouvelle
+iab nvs nouveaux
+iab nves nouvelles
+iab nvé nouveauté
+iab nvés nouveautés
+iab nvm nouvellement
+
+iab nw numéro
+iab nws numéros
+
+iab nx tant mieux
+
+iab ny noyau
+iab nys noyaux
+
+iab nz tant pis
+
+iab nè négatif
+iab nèe négative
+iab nès négatifs
+iab nèes négatives
+iab nèm négativement
+
+iab oa organisation
+iab d'oa d'organisation
+"l'oa?
+iab oas organisations
+iab oae organise
+iab oaé organisé
+iab oaée organisée
+iab oaés organisés
+iab oaées organisées
+iab oar organiser
+iab oam organisme
+
+iab ob observation
+iab obs observation
+iab obé observé
+iab obée observée
+iab obés observés
+iab obées observées
+iab obe observe
+iab ober observer
+
+iab od ordre
+iab ods ordres
+iab odé ordonné
+iab odée ordonnée
+iab odés ordonnés
+iab odées ordonnées
+
+iab oe œuvre
+iab oes œuvre
+
+iab of officiel
+iab ofe officielle
+iab ofs officiels
+iab ofes officielles
+iab ofm officiellement
+
+iab og organe
+iab ogs organes
+iab ogq organique
+iab ogqs organiques
+"cfl OGM
+iab ogqm organiquement
+
+iab oi ordinateur
+"cfl ois
+iab ordis ordinateurs
+
+iab oj objet
+iab l'oj l'objet
+iab d'oj d'objet
+iab d'ojs d'objets
+iab ojs objets
+iab ojl objectif
+iab oje objective
+iab ojls objectifs
+iab ojes objectives
+iab ojo objection
+iab ojos objections
+iab ojm objectivement
+iab ojé objectivité
+iab ojés objectivités
+
+iab ol oral
+iab ole orale
+iab ols oraux
+iab oles orales
+iab olm oralement
+
+iab om nombre
+"cfl organisation mondiale (de la) santé
+iab oms nombres
+iab omq numérique
+iab omqs numériques
+iab omm numériquement
+iab omo numération
+"TODO nombreux
+
+iab oo option
+iab oos options
+iab ool optionnel
+iab ooe optionnelle
+iab ools optionnels
+iab ooes optionnelles
+iab oom optionnellement
+
+iab op opinion
+iab ops opinions
+
+iab oq optique
+iab oqs optiques
+
+iab ot optimal
+iab ote optimale
+iab ots optimaux
+iab otes optimales
+iab oté optimisé
+iab otée optimisée
+iab otés optimisés
+iab otées optimisées
+iab oto optimisation
+iab otos optimisations
+
+iab ov ouvert
+"cfl ove
+iab ovte ouverte
+iab ovs ouverts
+iab ovtes ouvertes
+iab ovm ouvertement
+iab ovr ouverture
+iab ovrs ouvertures
+iab ovr ouvrir
+iab ovj ouvre
+
+iab ow obstacle
+iab ows obstables
+
+iab oy oui
+
+iab oz possible
+iab ozs possibles
+iab ozé possibilité
+iab ozés possibilités
+iab ioz impossible
+iab iozs impossibles
+iab iozé impossibilité
+iab iozés impossibilités
+
+iab oè positif
+iab oèe positive
+iab oès positifs
+iab oèes positives
+iab oèm positivement
+
+iab pa pas
+iab pae partiel
+iab paee partielle
+iab paes partiels
+iab paees partielles
+iab paem partiellement
+
+iab pb problème
+iab pbs problèmes
+iab pbq problématique
+iab pbqs problématiques
+
+iab pd pendant
+
+iab pe petit
+iab pee petite
+iab pes petits
+iab pees petites
+
+iab pf parfait
+iab pfe parfaite
+iab pfs parfaits
+iab pfes parfaites
+iab pfm parfaitement
+iab pfo perfection
+iab pfoé perfectionné
+
+iab pg page
+iab pgs pages
+
+iab pj projet
+iab pjs projets
+iab pjo projection
+iab pjos projections
+iab pjl projectif
+iab pje projective
+iab pjls projectifs
+iab pjes projectives
+
+iab pk pourquoi
+iab pkp pourquoi pas
+
+iab pl plus
+iab plp plupart
+iab epl en plus
+
+iab pm plus ou moins
+
+iab pn personne
+iab pns personnes
+iab pnl personnel
+iab pne personnelle
+iab pnls personnels
+iab pnes personnelles
+iab pnm personnellement
+iab pnlé personnalisé
+iab pnlée personnalisée
+iab pnlés personnalisés
+iab pnlées personnalisées
+iab pno personnalisation
+
+iab po position
+iab pos positions
+
+iab pp principe
+iab pps principes
+iab ppl principal
+iab ppe principale
+iab ppls principaux
+iab ppes principales
+iab ppm principalement
+
+iab pq parce que
+iab pqj parce
+
+iab pr par
+
+iab pt point
+iab pts points
+
+iab pw sept
+
+"iab px pixel
+"iab pxs pixels
+iab px précis
+iab pxe précise
+iab pxes précises
+iab pxo précision
+iab pxos précisions
+iab pxé précisé
+iab pxm précisément
+
+iab py physique
+iab pys physiques
+iab pym physiquement
+
+iab pz plusieurs
+
+iab pè presque
+
+iab qon qu'on
+iab qil qu'il
+iab qel qu'elle
+iab qils qu'ils
+iab qels qu'elles
+iab qaj qu'ais-je
+iab qat qu'as-tu
+iab qté quantité
+iab qlé qualité
+
+iab qa qu'à
+iab qau qu'au
+iab qax qu'aux
+
+iab qb équilibre
+iab qbs équilibres
+iab qbé équilibré
+iab qbée équilibrée
+iab qbés équilibrés
+iab qbées équilibrées
+iab qbr éqiulibrer
+
+iab qc quelconque
+iab qcs quelconques
+
+iab qd quand
+
+iab qe qu'est-ce que
+iab qei qu'est-ce qui
+
+iab qf parfois
+
+iab qh quelque chose
+
+iab qi qui
+
+iab qk quiconque
+
+iab ql quel
+iab qle quelle
+iab qls quels
+iab qles quelles
+" TODO lequel laquelle duquel…
+iab lql lequel
+iab lqle laquelle
+iab lqls lesquels
+iab lqles lesquelles
+iab dql duquel
+iab dqle de laquelle
+iab dqls desquels
+iab dqles desquelles
+
+iab qm quand même
+
+iab qn quelqu'un
+"iab qne quelqu'une
+iab qns quelques uns
+
+iab qo quoi
+iab qoq quoique
+
+iab qp quelque part
+
+iab qq quelque
+
+iab qs quelques
+
+iab qt quant
+
+iab qu question
+iab qus questions
+
+iab qv équivalent
+iab qve équivalente
+iab qvs éqiuvalents
+iab qves équivalentes
+iab qvj équivaut
+
+iab qw quatre
+
+iab qè quitté
+iab qèe quittée
+iab qès quittés
+iab qèes quittées
+iab qèj quitte
+iab qèr quitter
+
+iab rb arbre
+iab rbs arbres
+
+iab rc racine
+iab rcs racines
+
+iab rd rapide
+iab rds rapides
+iab rdé rapidité
+iab rdm rapidement
+
+iab re réel
+iab ree réelle
+iab res réels
+iab rees réelles
+"rem cfl
+iab rem réellement
+
+iab rf relatif
+iab rfe relative
+iab rfs relatifs
+iab rfes relatives
+iab rfm relativement
+iab rfé relativité
+
+iab rg régulier
+iab rge régulière
+iab rgs réguliers
+iab rges régulières
+iab rgm régulièrement
+iab rgo régulation
+iab rgé régulé
+iab rgée régulée
+iab rgés régulés
+iab rgées régulées
+iab rgr réguler
+iab rgj régule
+iab rgl règle
+iab rglm règlement
+iab rgls règles
+iab rgg réglage
+iab rgt réglementaire
+iab rgto réglementation
+iab rgts réglementaires
+iab rgtm réglementairement
+iab irg irrégulier
+iab irge irrégulière
+iab irgs irréguliers
+iab irges irrégulières
+iab irgm irrégulièrement
+iab irgo irrégulation
+iab irgé irrégulé
+iab irgée irrégulée
+iab irgés irrégulés
+iab irgées irrégulées
+
+iab ri risque
+"ris cfl
+iab riis risques
+iab rié risqué
+iab riée risquée
+iab riés risqués
+iab riées risquées
+iab rir risquer
+
+iab rj rejet
+iab rjs rejets
+iab rjé rejetté
+iab rjée rejettée
+iab rjés rejettés
+iab rjées rejettées
+iab rje rejette
+iab rjr rejetter
+
+iab rk récursif
+iab rke récursive
+iab rks récursifs
+iab rkes récursives
+iab rko récursion
+iab rkos récursions
+iab rkm récursivement
+iab rkc récurrence
+iab rkcs récurrences
+
+iab rl résultat
+iab rls résultats
+iab rle résulte
+iab rlr résulter
+
+iab rm rarement
+iab rmé rareté
+iab rmés raretés
+
+iab rn retenue
+iab rnl retenu
+iab rns retenues
+iab rnls retenus
+
+iab ro rôle
+iab ros rôles
+
+iab rp rapport
+iab prp par rapport
+iab rps rapports
+iab rpé rapporté
+iab rpée rapportée
+iab rpés rapportés
+iab rpées rapportées
+iab brp birapport
+iab brps birapports
+
+iab rq remarque
+iab rqs remarques
+iab rqé remarqué
+iab rqée remarquée
+iab rqés remarqués
+iab rqées remarquées
+
+iab rr erreur
+iab rrs erreurs
+iab rré erroné
+iab rrée erronée
+iab rrés erronés
+iab rrées erronées
+iab rrm erronément
+
+iab rs reste
+"cfl RSS
+iab rsts restes
+iab rsé resté
+iab rsée restée
+iab rsés restés
+iab rsées restées
+iab rsr rester
+
+iab rt retour
+iab rts retours
+iab rté retourné
+iab rtée retournée
+iab rtés retournés
+iab rtées retournées
+iab rtm retournement
+"TODO rationnel
+
+iab rv preuve
+iab rvs preuves
+iab rvé prouvé
+iab rvée prouvée
+iab rvés prouvés
+iab rvées prouvées
+iab rvr prouver
+
+iab rw triple
+iab rws triplé
+iab rwé triplé
+iab rwée triplée
+iab rwés triplés
+iab rwées triplées
+iab rwr tripler
+iab rwm triplement
+
+iab rx approximatif
+iab rxe approximative
+iab rxs approximatifs
+iab rxes approximatives
+iab rxo approximation
+iab rxos approximations
+iab rxm approximativement
+
+iab ry rythme
+iab rys rythmes
+iab ryé rythmé
+iab ryée rythmée
+iab ryés rythmés
+iab ryées rythmées
+iab ryq rythmique
+iab ryqs rythmiques
+
+iab rz raison
+iab rzs raisons
+iab rzm raisonnement
+iab rzms raisonnements
+iab rzé raisonné
+iab rzée raisonnée
+iab rzés raisonnés
+iab rzées raisonnées
+iab rze raisonne
+iab rzr raisonner
+iab rzb raisonnable
+iab rzbs raisonnables
+iab rzbm raisonnablement
+iab drzb déraisonnable
+iab drzbs déraisonnables
+iab drzbm déraisonnablement
+
+"rè respect
+iab rè réponse
+iab rès réponses
+iab rèl répondu
+iab rèe répondue
+iab rèls répondus
+iab rèes répondues
+"séparés
+iab rèp respect
+iab rèps respects
+iab rèf respectif
+iab rèfe respective
+iab rèfs respectifs
+iab rèfes respectives
+iab rèm respectivement
+
+iab sb semblable
+iab sbs semblables
+iab sbt semblant
+iab sbm semblablement
+iab sbe semble
+iab sbé semblé
+"eep semblée
+
+iab sc social
+iab sce sociale
+iab scs sociaux
+iab sces sociales
+iab scm socialement
+iab scé société
+iab scés sociétés
+
+"sd soi-disant
+
+iab sf suffisant
+iab sfe suffisante
+iab sfs suffisants
+iab sfes suffisantes
+iab sfm suffisemment
+iab sfc suffisance
+"impôt: osef
+iab isf il suffit
+
+iab sg seconde
+iab sgl second
+iab sgs secondes
+iab sgls seconds
+iab sgr secondaire
+iab sgrs secondaires
+iab sgrr seconder
+iab sgé secondé
+iab sgée secondée
+iab sgés secondés
+iab sgées secondées
+
+iab sh schéma
+iab shs schémas
+iab shq schématique
+iab shqs schématiques
+iab shm schématiquement
+iab shé schématisé
+iab shée schématisée
+iab shés schématisés
+iab shées schématisées
+iab shr schématiser
+iab she schématise
+iab sho schématisation
+iab shos schématisations
+
+iab sj sujet
+iab sjs sujets
+iab sjl subjectif
+iab sje subjective
+iab sjls subjectifs
+iab sjes subjectives
+iab sjm subjectivement
+iab sjé subjectivité
+iab sjés subjectivités
+
+iab sk surjection
+iab sks surjections
+iab skl surjectif
+iab ske surjective
+iab skls surjectifs
+iab skes surjectives
+iab ské surjectivité
+iab skés surjectivités
+
+iab sl seul
+iab sle seule
+iab sls seuls
+iab sles seules
+iab slm seulement
+iab sld solitude
+iab slr solitaire
+iab slrs solitaires
+iab isl isolé
+iab isle isolée
+iab isls isolés
+iab isles isolées
+iab islr isoler
+iab isle isole
+iab islo isolation
+
+iab sm simple
+"cfl SMS msg
+iab smps simples
+iab smm simplement
+iab smc simplicité
+iab smf simplifié
+iab smfe simplifiée
+iab smfs simplifiés
+iab smfes simplifiées
+iab smfj simplifie
+iab smfo simpficication
+iab smfos simplifications
+
+iab sn son
+
+iab so sous
+iab dso dessous
+iab edso en dessous
+
+iab sp spécial
+iab sps spéciaux
+iab spe spéciale
+iab spes spéciales
+"b
+iab spé spécialité
+iab spés spécialités
+iab spm spécialement
+iab spi spécialisé
+iab spie spécialisée
+iab spis spécialisés
+iab spies spécialisées
+
+iab sq sachant que
+
+iab sr sur
+iab dsu dessus
+"au vs en ka
+iab edsu au dessus
+
+iab ss système
+iab sss systèmes
+iab ssq systématique
+iab ssqs systématiques
+iab ssm systématiquement
+"système d'exploitation
+
+iab st surtout
+
+iab sv souvent
+
+iab sx six
+
+iab sy symbole
+iab sys symboles
+iab syé symbolisé
+iab syée symbolisée
+iab syés symbolisés
+iab syées symbolisées
+iab sye symbolise
+iab syr symboliser
+iab syq symbolique
+iab syqs symboliques
+iab syqm symboliquement
+"TODO syx syntaxe
+
+iab sz solution
+iab szs solutions
+
+"TODO changer en qh de pl ul
+iab sè siècle
+iab sès siècles
+
+iab tb tableau
+iab tbs tableaux
+
+iab tc tendance
+iab tcs tendances
+iab tcl tendanciel
+iab tce tendancielle
+iab tcls tendanciels
+iab tces tendancielles
+"eei tendanciellement
+
+iab td alors que
+"vs tandis vs tard!!!
+
+iab tf transfert
+iab tfs transferts
+iab tfé transféré
+iab tfée transférée
+iab tfés transférés
+iab tfées transférées
+iab tfer transférer
+iab tfe transfère
+"ms ul q tf
+iab tfm transfèrement
+iab tfms transfèrements
+
+iab tg tangible
+iab tgs tangibles
+iab tgm tangiblement
+iab itg intangible
+iab itgs intangibles
+"eei intangiblement ka
+
+iab th thème
+iab ths thèmes
+iab thq thématique
+iab thqs thématiques
+iab thm thématiquement
+
+iab ti théorie
+iab tis théories
+iab tiq théorique
+iab tiqs théoriques
+iab tim théoriquement
+
+iab tj toujours
+"eq cé ul
+iab ptj pour toujours
+iab dtj depuis toujours
+
+iab tk tel quel
+iab tke telle quelle
+iab tks tels quels
+iab tkes telles quelles
+
+iab tl total
+iab tle totale
+iab tls totaux
+iab tles totales
+iab tlm totalement
+iab tlé totalité
+
+iab tm tellement
+
+iab tn ton
+
+iab to trop
+
+iab tp temps
+iab tpr temporaire
+iab tprs temporaires
+iab tpm temporairement
+iab tpl temporel
+iab tpe temporelle
+iab tpls temporels
+iab tpes temporelles
+"pgf spatial
+
+iab tq tel que
+iab tqe telle que
+iab tqs tels que
+iab tqes telles que
+
+iab tr très
+
+iab ts tous
+
+iab tt tant
+iab tte toute
+iab ttes toutes
+
+iab tv travail
+iab tvs travaux
+"travaillé?
+"slm ka
+
+iab tw trois
+
+iab tx texte
+iab txs textes
+iab txl textuel
+iab txe textuelle
+iab txls textuels
+iab txes textuelle
+iab txm textuellement
+
+iab ty type
+iab tys types
+iab tyq typique
+iab tyqs typiques
+iab tym typiquement
+
+iab tz technique
+iab tzs techniques
+iab tzm techniquement
+
+iab tè théorème
+iab tès théorèmes
+
+iab ua unanime
+iab uas unanimes
+iab uam unanimement
+iab uaé unanimité
+iab uaés unanimités
+
+iab ub urbain
+iab ube urbaine
+iab ubs urbains
+iab ubes urbaines
+iab ubm urbanisme
+
+iab uc unicité
+iab ucs unicités
+
+iab ud indéfini
+iab ude indéfinie
+iab uds indéfinis
+iab udes indéfinies
+iab udm indéfiniment
+" TODO: forme positive défini, définition sert plus souvent
+
+iab uf sauf
+
+iab ug usage
+iab ugs usages
+iab ugl usuel
+iab uge usuelle
+iab ugls usuels
+iab uges usuelles
+iab ugm usuellement
+
+iab ui unité
+iab uis unités
+iab uir unitaire
+iab uirs unitaires
+iab uif unifié
+iab uife unifiée
+iab uifs unifiés
+iab uifes unifiées
+iab uifo unification
+iab uifos unifications
+iab uio union
+iab uios unions
+
+iab uj urgent
+iab uje urgente
+iab ujs urgents
+iab ujes urgentes
+iab ujm urgemment
+
+iab ul utile
+iab uls utiles
+iab ulé utilité
+iab ulés utilités
+"cfl ENS
+iab ulm utilement
+iab ulr utilitaire
+iab ulrs utilitaires
+
+iab um ultime
+iab ums ultimes
+iab umm ultimement
+iab uma ultimatum
+iab umas ultimatums
+
+iab uo utilisation
+iab uos utilisations
+iab uoé utilisé
+iab uoée utilisée
+iab uoés utilisés
+iab uoées utilisées
+iab uoe utilise
+iab uor utiliser
+"TODO:utilisateur
+
+iab up un peu
+
+iab uq unique
+iab uqs uniques
+iab uqm uniquement
+
+iab uu Ubuntu
+
+iab uw cent
+iab uws cents
+
+iab uz usuel
+iab uze usuelle
+iab uzs usuels
+iab uzes usuelles
+iab uzm usuellement
+
+iab vb verbe
+iab vbs verbes
+iab vbl verbal
+iab vbe verballe
+iab vbls verbaux
+iab vbes verballes
+iab vbm verballement
+
+iab vc voici
+
+iab vd vide
+iab vds vides
+iab vdé vidé
+iab vdée vidée
+iab vdés vidés
+iab vdées vidées
+iab vdr vider
+
+iab ve vers
+
+iab vg végétal
+iab vge végétale
+iab vgs végétaux
+iab vges végétales
+
+iab vh véhicule
+"cfl k7
+iab vhs véhicules
+
+iab vi vrai
+"cfl vie vis vies…
+
+iab vj vais-je
+
+iab vk vocation
+iab vks vocations
+
+iab vl voilà
+
+iab vm vraiment
+
+iab vn vacances
+
+iab vq vécu
+iab vqe vécue
+iab vqs vécus
+iab vqes vécues
+
+iab vr variable
+iab vrs variables
+iab vrm variablement
+iab ivr invariable
+"invariant?
+iab ivrs invariables
+iab ivrm invariablement
+
+iab vt votre
+
+iab vv vivant
+iab vve vivante
+iab vvs vivants
+iab vves vivantes
+
+iab vw valeur
+iab vws valeurs
+iab vwm valeureusemet
+iab vwl valeureux
+iab vwe valeureuse
+iab vwes valeureuses
+
+iab vx vieux
+iab vxl vieil
+iab vxe vieille
+iab vxes vieilles
+
+iab vy voyage
+iab vys voyages
+iab vyé voyagé
+
+iab vz version
+iab vzs versions
+
+iab vè vérifié
+iab vèe vérifiée
+iab vès vérifiés
+iab vèes vérifiées
+iab vèo vérification
+iab vèos vérifications
+iab vèb vérifiable
+iab vèbs vérifiables
+
+iab wa AZERTY
+
+iab wb BÉPO
+
+iab wd DuckDuckGo
+
+iab we ETUSINA
+
+iab wf Facebook
+
+iab wg Erdogox
+iab wge Exgodox EZ
+
+iab wi Internet
+iab dwi d'Internet
+
+iab wk Wikipédia
+
+iab wl Linux
+
+iab wm I3WM
+
+iab wn NeoVim
+
+iab wo ergonomie
+iab wos ergonomies
+iab woq ergonomique
+iab woqs ergonomiques
+
+iab wp Wordpress
+
+iab wq QWERTY
+
+iab ww Windows
+
+iab wy YouTube
+
+iab xa exact
+iab xae exacte
+iab xas exacts
+iab xaes exactes
+iab xam exactement
+iab xad exactitude
+iab xads exactitudes
+
+iab xc et cetera
+
+iab xe expression
+iab xes expressions
+iab xel expressif
+iab xee expressive
+iab xels expressifs
+iab xees expressives
+iab xeb exprimable
+iab xebs exprimables
+iab xeé exprimé
+iab xeée exprimée
+iab xeés exprimés
+iab xeées exprimées
+
+iab xg X.Org
+
+iab xk exclu
+iab xke exclue
+iab xks exclus
+iab xkes exclues
+iab xko exclusion
+iab xkos exclusions
+iab xkr exclure
+
+iab xm maximum
+iab xms maximums
+
+iab xn annexe
+iab xns annexes
+
+iab xo explication
+iab xos explications
+iab xoé expliqué
+iab xoée expliquée
+iab xoés expliqués
+iab xoées expliquées
+iab xoj explique
+"cfl ou exclusif
+iab xor expliquer
+iab xol explicatif
+iab xoe explicative
+iab xols explicatifs
+iab xoes explicatives
+iab xob explicable
+iab xobs explicables
+
+iab xp expérience
+iab xps expériences
+"'a' ou 'l' ka
+iab xpl expérimental
+"TODO: adverbe?
+iab xpe expérimentale
+iab xpls expérimentaux
+iab xpes expérimentales
+iab xpo expérimentation
+iab xpos expérimentations
+"xpb expérimentable
+iab xpé expérimenté
+iab xpée expérimentée
+iab xpés expérimentés
+iab xpées expérimentées
+
+iab xq ex-æquo
+
+iab xr exercice
+iab xrs exercices
+iab xre exerce
+iab xrr exercer
+iab xré exercé
+iab xrée exercée
+iab xrés exercés
+iab xrées exercées
+
+iab xt extérieur
+iab xte extéreure
+iab xts extérieurs
+iab xtes extérieures
+iab xtm extérieurement
+iab xto exteriorisation
+iab xtos extériorisations
+iab xté extériorisé
+iab xtée extériorisée
+iab xtés extériorisés
+iab xtées extériorisées
+iab xtj extériorise
+iab xtr extérioriser
+
+iab ya il y a
+"il y en a, il n'y a pas…
+
+iab yc y compris
+
+iab yd défaite
+iab yds défaites
+"ar
+
+iab ye yeux
+
+iab yk inclu
+iab yke incluse
+iab ykes incluses
+iab yks inclus
+iab yko inclusion
+iab ykos inclusions
+iab ykr inclure
+
+iab yf condition
+iab yfs contition
+iab yfl conditionnel
+iab yfe conditionnelle
+iab yfls conditionnels
+iab yfes conditionnelles
+"inconditionnel
+iab yl style
+
+iab ym polynôme
+iab yms polynômes
+iab yml polynômial
+
+iab yp il n'y a pas
+
+iab yr intérieur
+iab yrs intérieurs
+iab yre intérieure
+iab yres intérieures
+iab yrm intérieurement
+
+iab yt y a-t-il
+
+iab yv victoire
+iab yvs victoires
+"victorieux
+
+iab zb sombre
+iab zbs sombres
+iab zbm sombrement
+
+iab zc science
+iab zcs sciences
+iab zcq scientifique
+iab zcqs scientifiques
+iab zcm scientifiquement
+
+iab zd soudain
+iab zds soudains
+iab zde soudaine
+iab zdes soudaines
+iab zdm soudainement
+
+iab ze sans compter
+" compte+
+
+iab zg suggestion
+iab zgs suggestions
+iab zgé suggéré
+iab zgée suggérée
+iab zgés suggérés
+iab zgées suggérées
+iab zgf suggestif
+iab zgfe suggestive
+iab zgfs suggestifs
+iab zgfes suggestives
+
+iab zh champ
+iab zhs champs
+"!=zsh
+
+iab zk sélection
+iab zks sélections
+iab zké sélectionné
+iab zkée sélectionnée
+iab zkés sélectionnés
+iab zkées sélectionnées
+iab zkf sélectif
+iab zkfe sélective
+iab zkfs sélectifs
+iab zkfes sélectives
+iab zke sélectionne
+iab zkr sélectionner
+
+iab zl absolu
+"cfl partiel i zsh fc
+iab zle absolue
+iab zls absolus
+iab zles absolues
+iab zlm absolument
+
+iab zm zoom
+iab zms zooms
+iab zmé zoomé
+"ee ka
+iab zme zoome
+iab zmr zoomer
+"féminin, pluriel ka
+
+iab zn zone
+iab zns zones
+
+iab zo solide
+iab zos solides
+iab zom solidement
+
+iab zp super
+"ee supers ka
+
+iab zq sécurité
+iab zqs sécurités
+iab zqé sécurisé
+iab zqée sécurisée
+iab zqés sécurisés
+iab zqées sécurisées
+iab zqe sécurise
+iab zqr sécuriser
+
+iab zr zéro
+
+iab zt situation
+iab zts situations
+
+iab zu absurde
+iab zus absurdes
+iab zué absurdité
+iab zués absurdités
+"maths:
+iab pzu par l'absurde
+
+iab zv suivant
+iab zve suivante
+iab zvs suivants
+iab zves suivantes
+"TODO précédant ++++
+
+iab èa arrivée
+iab èal arrivé
+iab èas arrivées
+iab èals arrivés
+iab èae arrive
+iab èar arriver
+
+iab èb abstrait
+iab èbe abstraite
+iab èbs abstraits
+iab èbes abstraites
+iab èbo abstraction
+iab èbos abstractions
+iab èbm abstraitement
+
+iab èc essai
+iab ècs essais
+iab èce essaye
+iab ècr essayer
+iab ècé essayé
+iab ècée essayée
+iab ècés essayés
+iab ècées essayées
+
+iab èd départ
+iab èds départs
+"partir ka
+
+iab èe élément
+iab èes éléments
+iab èer élémentaire
+iab èers élémentaires
+" .ment ka
+
+iab èf efficace
+iab èfs efficaces
+iab èfé efficacité
+iab èfém efficacement
+iab èfés efficacités
+iab ièf inefficace
+iab ièfs inefficaces
+iab ièfé inefficacité
+iab ièfém inefficacement
+iab ièfés inefficacités
+
+iab èg algorithme
+iab ègs algorithmes
+iab ègq algorithmique
+iab ègqs algorithmiques
+
+iab èh prochain
+iab èhe prochaine
+iab èhs prochains
+iab èhes prochaines
+iab èhm prochainement
+"TODO proche
+
+
+iab èi envie
+iab èis envies
+
+iab èj ai-je
+iab èk indirect
+iab èks indirects
+iab èks indirecte
+iab èkss indirectes
+
+iab èl sinon
+
+iab èm semaine
+iab èms semaines
+iab èmr hebdomadaire
+iab èmrs hebdomadaires
+
+iab èn environ
+iab èns environs
+iab ènm environnement
+iab ènms environnements
+
+iab èo méthode
+iab èos méthodes
+iab èoq méthodique
+iab èoqs méthodiques
+iab èom méthodiquement
+
+iab èp impression
+iab l'èp l'impression
+iab èps impressions
+iab èpé impressionné
+iab èpés impressionnés
+iab èpée impressionnée
+iab èpées impressionnées
+iab èpe impressionne
+iab èper impressionner
+iab èpers impressionners
+iab èq équipe
+iab èqm équipement
+iab èqms équipements
+iab èqr équiper
+iab èqs équipes
+
+iab èr frontière
+iab èrs frontières
+
+iab ès source
+iab èsr sourcer
+iab èsé sourcé
+iab èsés sourcés
+iab èsée sourcée
+iab èsées sourcées
+
+iab èt éventuel
+iab ètm éventuellement
+iab èts éventuels
+
+iab èu reçu
+iab èus reçus
+iab èue reçue
+iab èues reçues
+
+iab èv évident
+iab èvm évidemment
+iab èvs évidents
+"cfl prénom
+iab ève évidente
+iab èves évidentes
+iab èvc évidence
+iab èvcs évidences
+"époque
+"manque
+"priorité
+"ailleurs++ , d'ailleurs
+"légèrement
+"supplémentaire
+"annulé
+"probablement++
+"période?
+"notamment
+"volontaire
+"déterminé
+"pourtant+
+"cpp c++
+"opposition (par !!)
+"vertical/horizontal?
+"soit
+"comparaison / comparatif
+"cmd commande
+"envers, endroit
+"réflexion?
+"sens???
+"symétrie?
+"étape?
+"instruction??
+"intermédiaire? plus important qu'interdit?
