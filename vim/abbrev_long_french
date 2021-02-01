@@ -1,19 +1,24 @@
-
+set iskeyword+=',-
 iab b bien
-"cfl c++
 iab c comme
 iab d des
-iab e une
+iab e avec
 iab f fait
 iab g j'ai
-iab h hors
-iab i avec
-iab j jusque
+iab h heure
+" TODO 'heure' est rare, 'pas' est fréquent
+" TODO 'sur' est plus fréquent que 'sans'
+" s:sur, ss: sans, sr: sûr, sous: sous (b ms fqt q sur)
+iab i aussi
+" 'pas' est un mot fréquent, 'jour' et un doublon
+" 'par' est plus fréquent que 'autant', de loin
+" TODO aw autant
+iab j jour
 iab k mais
 iab l les
 iab m même
 iab n nous
-"o aussi
+iab o ô
 iab p pour
 iab q que
 iab r rien
@@ -24,18 +29,40 @@ iab v vous
 iab w aucun
 iab x à
 iab z dont
+iab è autant
 iab é être
 iab cé c'est
 iab pé peut-être
-" pé peut-être: dans le fichier des verbes?
-" d'é d'être
-"cfl qote: 'nokeyword'
-"' avoir
+iab d'é d'être
+iab l'é l'être
 iab x' avoir
 
 " TODO : msg: message?
-" manière
+" TODO dépendant, retard, avance, alternative, remplacé, séparation, intuition
+" structure, tradition, transition, entraînement, vitesse (rapidité), emprunt
+" manière écart meilleur jéo:j'étais plutôt
+" fort → force, forcément
+" TODO partout
+" cqa ce qu'a
+" accents auto: gêné? tâche avec accent néanmoins/pourtant
+" accents auto: hôte (c'est plus fréquent que Daïmio ou des trucs du genre)
+" porte-fenêtre??
+" couleur?
+" augmenter, diminuer, puissant (verbe?)
+" origine
+" global: avancant hôte(s)
+" ci-dessus, ci-dessous "est-ce qu'il" ou autres formes de ce genre
+" alq = alors que (td est trop différent)
+" cad c'est-à-dire
+" cependant (cpd?)
+" ainsi?
 
+
+" forçais n'empêch(e|ais)
+
+iab l'aa l'abréviation
+iab d'aa d'abréviation
+iab d'aas d'abréviations
 iab aa abréviation
 iab aas abréviations
 iab aaé abrègé
@@ -52,11 +79,14 @@ iab abes ambiguës
 iab abé ambiguïté
 iab abés ambiguïtés
 
+iab l'ac l'ancien
 iab ac ancien
 iab acs anciens
 iab acn ancienne
 iab acns anciennes
 
+iab l'ad l'adresse
+iab d'ad d'adresse
 iab ad adresse
 iab ads adresses
 iab adé adressé
@@ -72,11 +102,11 @@ iab af afin
 
 iab ag argument
 "cfl accent âgé
-"iab agé argumenté
-"iab agée argumentée
-"iab agés argumentés
-"iab agées argumentées
-"iab age argumente
+iab argé argumenté
+iab argée argumentée
+iab argés argumentés
+iab argées argumentées
+iab arge argumente
 iab ags arguments
 
 iab aj aujourd'hui
@@ -90,10 +120,13 @@ iab ako confirmation
 iab akos confirmations
 
 iab al alors
-"permet tandis
 iab alq alors que
+"permet tandis
+"iab alq alors que
 "eal et alors
 
+iab l'am l'animal
+iab d'am d'animal
 iab am animal
 iab ams animaux
 "cfl accent âme
@@ -112,11 +145,13 @@ iab aofs attentifs
 iab aofes attentives
 iab fao fait attention
 
+iab d'ap d'après
 iab ap après
 iab eap et après
 iab apm après-midi
 iab apdm après-demain
 
+iab l'aq l'attaque
 iab aq attaque
 iab aqé attaqué
 iab aqée attaquée
@@ -135,12 +170,11 @@ iab d'ars d'autres
 iab ar autre
 iab ars autres
 "TODO: change it pq cfl anglais bras
-iab arm autrement
-
-iab at autant
+iab atrm autrement
 
 iab av avant
 iab avhe avant-hier
+iab d'av d'avant
 
 iab aw au revoir
 
@@ -149,10 +183,12 @@ iab axs axiomes
 iab axq axiomatique
 iab axqs axiomatiques
 
+"ou 'ailleurs'
 iab ay arrière
 
 "bof
 iab aè année
+"d'aè l'aè
 
 iab ba bas
 iab bae basse
@@ -170,11 +206,8 @@ iab bcés bouclés
 iab bcées bouclées
 iab bcr boucler
 
-iab be besoin
-iab bes besoins
-
-iab bg badge
-iab bgs badges
+iab bg blague
+iab bgs blagues
 
 iab bh bonheur
 iab bhl heureux
@@ -194,9 +227,14 @@ iab bkfe bijective
 iab bkfs bijectifs
 iab bkfes bijectives
 
-iab bl blague
-iab bls blagues
 "blagué: conflit avec blé
+iab bl balise
+iab bls balises
+iab blsé balisé
+iab blée balisée
+iab blés balisés
+iab blsées balisées
+iab blr baliser
 
 iab bm binôme
 iab bms binômes
@@ -205,8 +243,8 @@ iab bme binômiale
 iab bmls binômiaux
 iab bmes binômiales
 
-iab bn bonne nuit
-iab bns bonnes nuits
+iab bn besoin
+iab bns besoins
 
 iab bo bord
 iab bos bords
@@ -254,27 +292,22 @@ iab bxs beaux
 iab bxes belles
 iab bxé beauté
 
-iab by balise
-iab bys balises
-iab byé balisé
-iab byée balisée
-iab byés balisés
-iab byées balisées
-iab byr baliser
 
 "plus fréquent que bizarre
-iab bz étrange
-iab bzs étranges
-iab bzé étrangeté
-iab bzr étranger
-iab bzrs étrangers
-iab bzre étrangère
-iab bzres étrangères
+iab bz bizarre
+"iab bzs étranges
+"iab bzé étrangeté
+"iab bzr étranger
+"iab bzrs étrangers
+"iab bzre étrangère
+"iab bzres étrangères
 
 iab bè bénéfice
 iab bès bénéfices
 iab bèr bénéficière
 iab bèrs bénéficières
+
+iab ca ça
 
 iab cb combien
 
@@ -330,9 +363,10 @@ iab cnd certitude
 iab cnds certitudes
 iab cnm certainement
 
+" TODO compliqué
 iab co complexe
 "cos cfl cosinus
-iab cops complexes
+iab coxs complexes
 iab coé complexité
 
 iab cp coup
@@ -363,9 +397,10 @@ iab cts constants
 iab ctes constantes
 
 iab cu court
-iab cue courte
+"cfl anglais "cue" = "signal"
+"iab cue courte
 iab cus courts
-iab cues courtes
+"iab cues courtes
 "radical différent
 iab pcu parcours
 
@@ -383,6 +418,7 @@ iab cz chez
 
 iab cè cette
 "ces ne gagne pa de tp
+
 iab da déjà
 iab dav déjà-vu
 
@@ -394,7 +430,6 @@ iab dbns débutants
 iab dbnes débutantes
 
 iab dc d'accord
-"invariable
 
 iab dd dedans
 "peu employé?
@@ -414,7 +449,7 @@ iab dh dehors
 iab edh en dehors
 
 iab di différent
-iab die différente
+iab dife différente
 iab dic différence
 iab dics différences
 iab difs différents
@@ -464,6 +499,8 @@ iab dv devant
 
 iab dw deux
 
+iab dx dû
+
 iab dy distance
 iab dys dystances
 
@@ -478,6 +515,8 @@ iab dèfrs déficitaires
 
 iab ea et alors
 
+iab l'eb l'ensemble
+iab d'eb d'ensemble
 iab eb ensemble
 iab ebs ensembles
 iab ebt ensembliste
@@ -485,12 +524,14 @@ iab ebts ensemblistes
 
 iab ec encore
 
+iab l'ed l'endroit
+iab d'ed d'endroit
 iab ed endroit
 iab eds endroits
 
 iab ee existence
-iab dee d'existence
-iab lee l'existence
+iab d'ee d'existence
+iab l'ee l'existence
 iab iee il existe
 iab inee il n'existe
 iab ipee il n'existe pas
@@ -499,9 +540,9 @@ iab eer exister
 iab een existant
 iab eet existe-t-il
 
-iab ef effet
 iab l'ef l'effet
 iab d'ef d'effet
+iab ef effet
 iab efs effets
 iab sef sans effet
 iab eef en effet
@@ -524,6 +565,8 @@ iab ieges inégales
 
 iab ei ensuite
 
+iab l'ej l'enjeu
+iab d'ej d'enjeu
 iab ej enjeu
 iab ejs enjeux
 
@@ -533,16 +576,20 @@ iab enk en aucun cas
 iab el elle
 iab els elles
 
-iab em évenement
+iab l'em l'évélement
+iab em événement
 iab ems évènement
 
 iab eo selon
 
+iab l'ep l'exemple
+iab d'ep d'exemple
 iab ep exemple
 "sport collège: iu
 iab eps exemples
 iab epr exemplaire
 iab eprs exemplaires
+"pep cfl? anglais
 iab pep par exemple
 
 iab eq est-ce que
@@ -554,17 +601,22 @@ iab erés entrés
 iab erées entrées
 
 iab ew entier
-iab ewe entière
+"ewe cfl anglais brebis
+iab ewte entière
 iab ews entiers
-iab ewes entières
+iab ewtes entières
 iab ewm entièrement
 
-iab ey essayé
-iab eys essayée
-iab eye essayée
-iab eyes essayées
-iab eyi essai
+iab l'ey l'essai
+iab ey essai
+"iab j'eye j'essaye
+iab eys essais
+iab eyé essayé
+iab eyés essayés
+iab eyée essayée
+iab eyées essayées
 
+iab j'ez j'hésite
 iab ez hésite
 iab ezé hésité
 iab ezée hésitée
@@ -600,7 +652,8 @@ iab fd fond
 
 iab fe femme
 iab fes femmes
-iab fen féminin
+"fen cfl anglais marais
+iab femn féminin
 
 iab ff façon
 iab ffs façons
@@ -635,6 +688,7 @@ iab fls faciles
 iab flm facilement
 iab flé facilité
 
+" fmt = format?
 iab fm forme
 iab fml formel
 iab fmé formé
@@ -655,11 +709,13 @@ iab fnm finalement
 
 iab fo fort
 "foc cfl
-iab foe forte
+iab fote forte
 iab fos forts
-iab foes fortes
+iab fotes fortes
 iab fom fortement
-
+"iab foc force ???
+iab focm forcément
+"foe cfl anglais ennemi
 iab fp frappe
 iab fps frappes
 iab fpé frappé
@@ -690,7 +746,8 @@ iab ft il faut
 
 iab fu futur
 "fus cfl
-iab furs futurs
+"furs cfl anglais fourrures
+"iab furs futurs
 iab fue future
 iab fues futures
 
@@ -726,7 +783,8 @@ iab fès fenêtres
 
 iab ga général
 iab gae générale
-iab gas généraux
+"gas cfl anglais gaz
+iab gals généraux
 iab gaes générales
 "annulé tpm, pk?
 iab gam généralement
@@ -767,9 +825,7 @@ iab gg Google
 iab gh graphe
 iab ghs graphes
 
-iab gl GNU_Linux
-
-iab gm généralement
+iab gl GNU/Linux
 
 iab gn genre
 iab gns genres
@@ -815,7 +871,8 @@ iab gu gratuit
 iab gue gratuite
 iab gus gratuits
 iab gues gratuites
-iab gum gratuitement
+"gum cfl anglais
+iab gutm gratuitement
 "légal?
 
 iab gv gouvernement
@@ -847,8 +904,8 @@ iab hbm habituellement
 iab hc chacun
 "TODO chacune
 
-iab he hier
-
+iab l'hg l'échalge
+iab d'hg d'échange
 iab hg échange
 iab hgs échanges
 iab hgé échangé
@@ -876,13 +933,20 @@ iab rhhes recherchées
 iab hj hasard
 iab phj par hasard
 
+iab hk hors
+
+iab l'hl l'échelle
+iab d'hl d'échelle
 iab hl échelle
 iab hls échelles
 
+iab l'hm l'homme
+iab d'hm d'homme
 iab hm homme
 iab hms hommes
 iab hmn masculin
 
+iab l'hn l'humain
 iab hn humain
 iab hne humaine
 iab hnes humaines
@@ -903,7 +967,7 @@ iab hp hyper
 iab hq chaque
 iab hqs chaques
 
-iab hr heure
+iab hr hier
 iab hrs heures
 iab hrr horaire
 iab hrrs horaires
@@ -917,6 +981,12 @@ iab htm hautement
 
 iab hu huit
 
+iab hv terminé
+iab hvs terminés
+iab hvo terminaison
+iab hvos terminaisons
+
+iab l'hy l'hypothèse
 iab hy hypothèse
 iab hys hypothèses
 iab hyq hypohétique
@@ -932,7 +1002,8 @@ iab ib immobile
 iab ibs immobiles
 
 iab ic incertain
-iab ice incertaine
+"ice cfl anglais glace
+iab icte incertaine
 iab ics incertains
 iab ices incertaines
 iab icd incertitude
@@ -942,9 +1013,10 @@ iab l'id l'idée
 iab id idée
 iab ids idées
 iab idl idéal
-iab idle idéale
+"idle cfl anglais ↻ au ralenti
+"iab idle idéale
 iab idls idéaux
-iab idles idéales
+"iab idles idéales
 iab idm idéalement
 
 iab ig image
@@ -956,6 +1028,11 @@ iab igées imagées
 
 iab ih imaginaire
 iab ihs imaginaires
+iab iho imagination
+iab ihé imaginé
+iab ihée imaginée
+iab ihés imaginés
+iab ihées imaginées
 
 iab ii infini
 iab iis infinis
@@ -985,12 +1062,11 @@ iab imc importance
 iab simc sans importance
 iab pim peu importe
 
-iab in minimum
-iab ins minimums
-
 iab io information
 iab ios informations
 iab ioq informatique
+iab d'ioq d'informatique
+iab l'ioq l'informatique
 iab ioé informé
 iab ioés informés
 iab ioée informée
@@ -1008,18 +1084,6 @@ iab iqf identifié
 iab iqfe identifiée
 iab iqfs identifiés
 iab iqfes identifiées
-
-iab is instant
-iab iss instants
-iab isé instanté
-iab isée instantanée
-iab isés instantanés
-iab isées instantanées
-iab ism instantanément
-
-iab it introduction
-iab its introductions
-"itl introduit
 
 iab iu inutile
 iab ius inutiles
@@ -1065,6 +1129,8 @@ iab ièl intéressant
 iab ièe intéressante
 iab ièls intéressants
 iab ièes intéressantes
+iab l'iè l'intérêt
+" TODO l'ajouter dans v_global
 
 iab ja jusqu'à
 iab jau jusqu'au
@@ -1116,12 +1182,14 @@ iab jues jeunesse
 iab jv je vais
 
 "bof
-iab jx jeu
-iab jxs jeux
+"jx jeux directement
+" TODO : mettre ça partout
+iab jx jeux
+"iab jxs jeux
 iab jxb jouable
 iab jxbs jouables
-iab jxé joué
-iab jxr jouer
+"iab jxé joué
+"iab jxr jouer
 
 iab jy joyeux
 iab jye joyeuse
@@ -1493,13 +1561,14 @@ iab mvées mouvementées
 iab mw million
 iab mws millions
 
-iab mx mieux
+iab ux mieux
 
-iab my moyen
-iab mye moyenne
-iab mys moyens
-iab myes moyennes
-iab mym moyennement
+"my cfl anglais mon
+"iab my moyen
+"iab mye moyenne
+"iab mys moyens
+"iab myes moyennes
+"iab mym moyennement
 
 iab mz maison
 iab mzs maisons
@@ -1634,6 +1703,7 @@ iab ogqm organiquement
 
 iab oi ordinateur
 "cfl ois
+"TODO l'ordi / d'ordi
 iab ordis ordinateurs
 
 iab oj objet
@@ -1664,7 +1734,7 @@ iab omq numérique
 iab omqs numériques
 iab omm numériquement
 iab omo numération
-"TODO nombreux
+"TODO nombreux++
 
 iab oo option
 iab oos options
@@ -1733,13 +1803,17 @@ iab pb problème
 iab pbs problèmes
 iab pbq problématique
 iab pbqs problématiques
+iab pbl probable
+iab pbls probables
+iab pbm probablement
 
 iab pd pendant
 
 iab pe petit
-iab pee petite
+"pee cfl anglais
+iab pte petite
 iab pes petits
-iab pees petites
+iab ptes petites
 
 iab pf parfait
 iab pfe parfaite
@@ -1766,6 +1840,7 @@ iab pkp pourquoi pas
 
 iab pl plus
 iab plp plupart
+iab plt plutôt
 iab epl en plus
 
 iab pm plus ou moins
@@ -1792,10 +1867,12 @@ iab ppl principal
 iab ppe principale
 iab ppls principaux
 iab ppes principales
+"ppm cfl sci partie par million
 iab ppm principalement
 
 iab pq parce que
 iab pqj parce
+" parce qu'il et autres variantes
 
 iab pr par
 
@@ -1873,6 +1950,7 @@ iab dql duquel
 iab dqle de laquelle
 iab dqls desquels
 iab dqles desquelles
+"TODO auquel
 
 iab qm quand même
 
@@ -1899,6 +1977,7 @@ iab qve équivalente
 iab qvs éqiuvalents
 iab qves équivalentes
 iab qvj équivaut
+" d/l'équivalent
 
 iab qw quatre
 
@@ -1918,6 +1997,7 @@ iab rcs racines
 iab rd rapide
 iab rds rapides
 iab rdé rapidité
+" vitesse?
 iab rdm rapidement
 
 iab re réel
@@ -1983,12 +2063,12 @@ iab rjées rejettées
 iab rje rejette
 iab rjr rejetter
 
-iab rk récursif
+iab rk récursion
+iab rks récursions
+iab rkf récursif
 iab rke récursive
-iab rks récursifs
+iab rkfs récursifs
 iab rkes récursives
-iab rko récursion
-iab rkos récursions
 iab rkm récursivement
 iab rkc récurrence
 iab rkcs récurrences
@@ -2158,6 +2238,7 @@ iab sgé secondé
 iab sgée secondée
 iab sgés secondés
 iab sgées secondées
+" signal?
 
 iab sh schéma
 iab shs schémas
@@ -2169,7 +2250,8 @@ iab shée schématisée
 iab shés schématisés
 iab shées schématisées
 iab shr schématiser
-iab she schématise
+"she cfl anglais elle
+iab shte schématise
 iab sho schématisation
 iab shos schématisations
 
@@ -2201,9 +2283,10 @@ iab sld solitude
 iab slr solitaire
 iab slrs solitaires
 iab isl isolé
-iab isle isolée
+"isle cfl anglais île
+"iab isle isolée
 iab isls isolés
-iab isles isolées
+"iab isles isolées
 iab islr isoler
 iab isle isole
 iab islo isolation
@@ -2222,10 +2305,6 @@ iab smfo simpficication
 iab smfos simplifications
 
 iab sn son
-
-iab so sous
-iab dso dessous
-iab edso en dessous
 
 iab sp spécial
 iab sps spéciaux
@@ -2247,12 +2326,9 @@ iab dsu dessus
 "au vs en ka
 iab edsu au dessus
 
-iab ss système
-iab sss systèmes
-iab ssq systématique
-iab ssqs systématiques
-iab ssm systématiquement
-"système d'exploitation
+iab ss sous
+iab dss dessous
+iab edss en dessous
 
 iab st surtout
 
@@ -2291,8 +2367,9 @@ iab tcls tendanciels
 iab tces tendancielles
 "eei tendanciellement
 
-iab td alors que
+iab td tard
 "vs tandis vs tard!!!
+"tard ++++
 
 iab tf transfert
 iab tfs transferts
@@ -2346,7 +2423,8 @@ iab tm tellement
 
 iab tn ton
 
-iab to trop
+"to cfl anglais
+"iab to trop
 
 iab tp temps
 iab tpr temporaire
@@ -2411,6 +2489,8 @@ iab ubs urbains
 iab ubes urbaines
 iab ubm urbanisme
 
+iab l'uc l'unicité
+iab d'uc d'unicité
 iab uc unicité
 iab ucs unicités
 
@@ -2423,14 +2503,17 @@ iab udm indéfiniment
 
 iab uf sauf
 
+iab l'ug l'usage
 iab ug usage
 iab ugs usages
+iab d'ugl d'usuel
 iab ugl usuel
 iab uge usuelle
 iab ugls usuels
 iab uges usuelles
 iab ugm usuellement
 
+iab l'ui l'unité
 iab ui unité
 iab uis unités
 iab uir unitaire
@@ -2439,17 +2522,23 @@ iab uif unifié
 iab uife unifiée
 iab uifs unifiés
 iab uifes unifiées
+iab l'uifo l'unification
 iab uifo unification
 iab uifos unifications
+iab l'uio l'union
 iab uio union
 iab uios unions
 
+iab d'uj d'urgent
 iab uj urgent
 iab uje urgente
 iab ujs urgents
 iab ujes urgentes
 iab ujm urgemment
+iab ujc urgence
+iab ujcs urgences
 
+iab d'ul d'utile
 iab ul utile
 iab uls utiles
 iab ulé utilité
@@ -2459,12 +2548,16 @@ iab ulm utilement
 iab ulr utilitaire
 iab ulrs utilitaires
 
+iab l'um l'ultime
+iab d'um d'ultime
+"um half cfl anglais "euh"
 iab um ultime
 iab ums ultimes
 iab umm ultimement
 iab uma ultimatum
 iab umas ultimatums
 
+iab l'uo l'utilisation
 iab uo utilisation
 iab uos utilisations
 iab uoé utilisé
@@ -2475,23 +2568,28 @@ iab uoe utilise
 iab uor utiliser
 "TODO:utilisateur
 
-iab up un peu
+"iab up un peu
 
+iab l'uq l'unique
+iab d'uq d'unique
 iab uq unique
 iab uqs uniques
 iab uqm uniquement
 
+iab d'uu d'Ubuntu
 iab uu Ubuntu
 
 iab uw cent
 iab uws cents
 
+iab d'uz d'usuel
 iab uz usuel
 iab uze usuelle
 iab uzs usuels
 iab uzes usuelles
 iab uzm usuellement
 
+" TODO vb variable, vr vrai p éviter le cfl Vim ll
 iab vb verbe
 iab vbs verbes
 iab vbl verbal
@@ -2531,6 +2629,8 @@ iab vks vocations
 
 iab vl voilà
 
+" TODO déplacer: ce n'est pas canonique d'avoir vrai et vraiment
+" en deux lettres
 iab vm vraiment
 
 iab vn vacances
@@ -2583,17 +2683,16 @@ iab vèos vérifications
 iab vèb vérifiable
 iab vèbs vérifiables
 
-iab wa AZERTY
+iab wa Azerty
 
-iab wb BÉPO
+iab wb Bépo
 
 iab wd DuckDuckGo
 
-iab we ETUSINA
 
 iab wf Facebook
 
-iab wg Erdogox
+iab wg Ergodox
 iab wge Exgodox EZ
 
 iab wi Internet
@@ -2603,33 +2702,39 @@ iab wk Wikipédia
 
 iab wl Linux
 
-iab wm I3WM
+iab wm I3wm
 
 iab wn NeoVim
 
+iab l'wo l'ergonomie
 iab wo ergonomie
 iab wos ergonomies
+iab d'woq d'ergonomique
 iab woq ergonomique
 iab woqs ergonomiques
 
 iab wp Wordpress
 
-iab wq QWERTY
+iab wq Qwerty
 
 iab ww Windows
 
 iab wy YouTube
 
+iab l'xa l'exact
 iab xa exact
+iab l'xae l'exacte
 iab xae exacte
 iab xas exacts
 iab xaes exactes
 iab xam exactement
+iab l'xad l'exactitude
 iab xad exactitude
 iab xads exactitudes
 
-iab xc et cetera
+iab xc et cætera
 
+iab l'xe l'expression
 iab xe expression
 iab xes expressions
 iab xel expressif
@@ -2643,7 +2748,7 @@ iab xeée exprimée
 iab xeés exprimés
 iab xeées exprimées
 
-iab xg X.Org
+iab xg Xorg
 
 iab xk exclu
 iab xke exclue
@@ -2659,6 +2764,8 @@ iab xms maximums
 iab xn annexe
 iab xns annexes
 
+iab l'xo l'explication
+iab d'xo d'explication
 iab xo explication
 iab xos explications
 iab xoé expliqué
@@ -2675,6 +2782,8 @@ iab xoes explicatives
 iab xob explicable
 iab xobs explicables
 
+iab l'xp l'expérience
+iab d'xp d'expérience
 iab xp expérience
 iab xps expériences
 "'a' ou 'l' ka
@@ -2693,7 +2802,10 @@ iab xpées expérimentées
 
 iab xq ex-æquo
 
+iab l'xr l'exercice
+iab d'xr d'exercice
 iab xr exercice
+iab d'xrs d'exercices
 iab xrs exercices
 iab xre exerce
 iab xrr exercer
@@ -2702,6 +2814,8 @@ iab xrée exercée
 iab xrés exercés
 iab xrées exercées
 
+iab l'xt l'extéreur
+iab d'xt d'extérieur
 iab xt extérieur
 iab xte extéreure
 iab xts extérieurs
@@ -2717,7 +2831,7 @@ iab xtj extériorise
 iab xtr extérioriser
 
 iab ya il y a
-"il y en a, il n'y a pas…
+"il y en a++, il n'y a pas…
 
 iab yc y compris
 
@@ -2731,6 +2845,7 @@ iab yk inclu
 iab yke incluse
 iab ykes incluses
 iab yks inclus
+iab l'yko l'inclusion
 iab yko inclusion
 iab ykos inclusions
 iab ykr inclure
@@ -2748,19 +2863,45 @@ iab ym polynôme
 iab yms polynômes
 iab yml polynômial
 
+iab yn minimum
+iab yns minimums
+
 iab yp il n'y a pas
 
+iab l'yr l'intérieur
+iab d'yr d'intérieur
 iab yr intérieur
 iab yrs intérieurs
 iab yre intérieure
 iab yres intérieures
 iab yrm intérieurement
 
+iab l'ys l'instant
+iab d'ys d'instant
+iab ys instant
+iab yss instants
+iab ysé instanté
+iab ysée instantanée
+iab ysés instantanés
+iab ysées instantanées
+iab ysm instantanément
+
 iab yt y a-t-il
+
+iab yu introduction
+iab yus introductions
+"itl introduit
 
 iab yv victoire
 iab yvs victoires
 "victorieux
+
+iab yè système
+iab yès systèmes
+iab yèq systématique
+iab yèqs systématiques
+iab yèm systématiquement
+"système d'exploitation
 
 iab zb sombre
 iab zbs sombres
@@ -2777,6 +2918,7 @@ iab zds soudains
 iab zde soudaine
 iab zdes soudaines
 iab zdm soudainement
+" sans doutes?
 
 iab ze sans compter
 " compte+
@@ -2809,6 +2951,8 @@ iab zkfes sélectives
 iab zke sélectionne
 iab zkr sélectionner
 
+iab l'zl l'absolu
+iab d'zl d'absolu
 iab zl absolu
 "cfl partiel i zsh fc
 iab zle absolue
@@ -2848,6 +2992,8 @@ iab zr zéro
 iab zt situation
 iab zts situations
 
+iab l'zu l'absurde
+iab d'zu d'absurde
 iab zu absurde
 iab zus absurdes
 iab zué absurdité
@@ -2859,8 +3005,9 @@ iab zv suivant
 iab zve suivante
 iab zvs suivants
 iab zves suivantes
-"TODO précédant ++++
+"TODO précédant +++++
 
+iab l'èa l'arrivée
 iab èa arrivée
 iab èal arrivé
 iab èas arrivées
@@ -2868,6 +3015,7 @@ iab èals arrivés
 iab èae arrive
 iab èar arriver
 
+iab d'èb d'abstrait
 iab èb abstrait
 iab èbe abstraite
 iab èbs abstraits
@@ -2876,6 +3024,8 @@ iab èbo abstraction
 iab èbos abstractions
 iab èbm abstraitement
 
+iab l'èc l'essai
+iab d'èc d'essai
 iab èc essai
 iab ècs essais
 iab èce essaye
@@ -2889,23 +3039,31 @@ iab èd départ
 iab èds départs
 "partir ka
 
+iab l'èe l'élément
+iab d'èe d'élément
 iab èe élément
 iab èes éléments
 iab èer élémentaire
 iab èers élémentaires
 " .ment ka
 
+iab d'èf d'efficace
 iab èf efficace
 iab èfs efficaces
+iab l'èfé l'efficacité
 iab èfé efficacité
 iab èfém efficacement
 iab èfés efficacités
+iab d'ièf d'inefficace
 iab ièf inefficace
 iab ièfs inefficaces
+iab l'ièfé l'inefficacité
 iab ièfé inefficacité
 iab ièfém inefficacement
 iab ièfés inefficacités
 
+iab l'èg l'algorithme
+iab d'èg d'algorithme
 iab èg algorithme
 iab ègs algorithmes
 iab ègq algorithmique
@@ -2919,10 +3077,14 @@ iab èhm prochainement
 "TODO proche
 
 
+iab l'èi l'envie
+iab d'èi d'envie
 iab èi envie
 iab èis envies
 
+iab l'èj l'ai-je
 iab èj ai-je
+
 iab èk indirect
 iab èks indirects
 iab èks indirecte
@@ -2936,6 +3098,7 @@ iab èmr hebdomadaire
 iab èmrs hebdomadaires
 
 iab èn environ
+iab d'èn d'environ
 iab èns environs
 iab ènm environnement
 iab ènms environnements
@@ -2947,6 +3110,7 @@ iab èoqs méthodiques
 iab èom méthodiquement
 
 iab èp impression
+iab d'èp d'impression
 iab l'èp l'impression
 iab èps impressions
 iab èpé impressionné
@@ -2956,7 +3120,10 @@ iab èpées impressionnées
 iab èpe impressionne
 iab èper impressionner
 iab èpers impressionners
+
 iab èq équipe
+iab l'èq l'équipe
+iab d'èq d'équipe
 iab èqm équipement
 iab èqms équipements
 iab èqr équiper
@@ -2975,6 +3142,7 @@ iab èsées sourcées
 iab èt éventuel
 iab ètm éventuellement
 iab èts éventuels
+" todo : éventuelle(s)
 
 iab èu reçu
 iab èus reçus
@@ -2991,21 +3159,22 @@ iab èvc évidence
 iab èvcs évidences
 "époque
 "manque
+"(flèche)
 "priorité
-"ailleurs++ , d'ailleurs
+"ailleurs+++ , d'ailleurs+
 "légèrement
 "supplémentaire
 "annulé
-"probablement++
+"probablement+++++ done
 "période?
-"notamment
+"notamment+
 "volontaire
 "déterminé
-"pourtant+
+"pourtant++
 "cpp c++
 "opposition (par !!)
 "vertical/horizontal?
-"soit
+"soit++
 "comparaison / comparatif
 "cmd commande
 "envers, endroit
@@ -3015,3 +3184,9 @@ iab èvcs évidences
 "étape?
 "instruction??
 "intermédiaire? plus important qu'interdit?
+"par défaut
+"
+"d'aj d'aujourd'hui
+"pèndemor: aujourd'aujourd'aujourd'hui
+"contexte isof choix?
+"famille (a plusieurs sens)
