@@ -17,10 +17,11 @@ cmd software-open ${{
 		video/*) var="/ram/mpv_lf.fifo"; ((pgrep -f "^mpv --input-file=$var" && echo "$f" | sed "s/^.*$/loadfile & append/" > $var) || (rm $var; mkfifo $var && setsid mpv --input-file=$var "$f" )) >/dev/null 2>&1 & echo "loading '$f'";;
 		application/octet-stream) var="/ram/mpv_lf.fifo"; ((pgrep -f "^mpv --input-file=$var" && echo "$f" | sed "s/^.*$/loadfile & append/" > $var) || (rm $var; mkfifo $var && setsid mpv --input-file=$var "$f" )) >/dev/null 2>&1 & echo "loading '$f'";;
 		application/pdf) (zathura $f 1>/dev/null 2>&1) &;;
+		application/csv) vd $f;;
 		image/vnd.djvu) (zathura $f 1>/dev/null 2>&1) &;;
 		image/*) (sxiv $fx >/dev/null 2>&1) & ;;
 		text/html) (chromium-browser $f 1>/dev/null 2>&1) &;;
-		text/*) tmux rename-window "🖿 nvim "; nvim $fx; tmux rename-window "🖿      ";;
+        text/*) if (echo $f | grep "plt" >/dev/null); then (mpv --playlist="$f" 1>/dev/null 2>&1 &) & else tmux rename-window "🖿 nvim "; nvim $fx; tmux rename-window "🖿      "; fi;;
 		inode/*) echo bla;;
 		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
 	esac
