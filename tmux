@@ -8,10 +8,11 @@ unbind-key C-b
 #bind é source ~/.tmux.conf
 set -s escape-time 0
 set-window-option -g xterm-keys on
+set -g renumber-windows on
 set -sq repeat-time 800
 set -g history-limit 1000
 #set repeat-time 1
-set mode-keys vi
+set-option -g mode-keys emacs
 
 set -g set-titles on
 set-option -g set-titles-string '[#P] #I#F #W  [#S TMUX]'
@@ -20,43 +21,47 @@ set -g status-bg colour234
 set -g status-fg colour15
 
 ## default window title colors
+#not in tmux3
 #set-window-option -g window-status-fg colour16
-#set-window-option -g window-status-bg colour190
-set-window-option -g window-status-attr dim
+#set-window-option -g window-status-bg colour11
+#set-window-option -g window-status-attr dim
 
 ## active window title colors
 #set-window-option -g window-status-current-fg colour15
 #set-window-option -g window-status-current-bg colour1
-set-window-option -g window-status-current-attr none
-set-window-option -g window-status-attr none
+#set-window-option -g window-status-current-attr none
+#set-window-option -g window-status-attr none
 
-# pane border
-set-option -g pane-border-bg colour248
-set-option -g pane-active-border-bg colour10
-set-option -g pane-border-fg colour235
-set-option -g pane-active-border-fg colour235
+# pane border, not in tmux3
+#set-option -g pane-border-bg colour248
+#set-option -g pane-border-fg colour235
+#set-option -g pane-active-border-bg colour10
+#set-option -g pane-active-border-fg colour235
 
 #
 #
 # message text
-set-option -g message-fg colour15 #base02
-set-option -g message-bg colour53 #orange
+#not in tmux3
+#set-option -g message-fg colour15 #base02
+#set-option -g message-bg colour53 #orange
 #%s///g
 # pane number display
 set-option -g display-panes-active-colour colour33 #blue
 set-option -g display-panes-colour colour166 #orange
 # clock
 set-window-option -g clock-mode-colour colour10 #green
-set-window-option window-status-bell-style ""
+set-window-option -g window-status-bell-style "fg=blue,bg=red"
+set-option -g pane-active-border-style "fg=black, #{?pane_in_mode,bg=yellow,#{?synchronise-panes,bg=red,bg=colour83}}"
+set-option -g pane-border-style "fg=black, bg=colour239"
 
-set-window-option -g window-status-format "#[fg=colour85, bg=colour234]#I#F#[fg=colour190]#[fg=colour234, bg=colour190] #[fg=colour17]#W #[fg=colour190, bg=colour234]"
-set-window-option -g window-status-current-format "#[fg=colour85, bg=colour234]#I#F#[fg=colour1]#[fg=colour15, bg=colour1] #W #[fg=colour1, bg=colour234]"
+#set-option -g automatic-rename-format " #{b:pane_current_path}"
+#set-option -g automatic-rename-format "#{?pane_in_mode,[tmux],#{pane_current_command}}#{?pane_dead,[dead],}"
+set-option -g automatic-rename-format "#{?pane_in_mode,[tmux],#{?#{==:#{pane_current_command},zsh},▌ #{b:pane_current_path},#{pane_current_command}}}#{?pane_dead,[dead],}"
+set-window-option -g window-status-format "#[fg=colour85, bg=colour234]#I#F#[fg=colour11]#[fg=colour17, bg=colour11]#{=12:window_name}#[fg=colour11, bg=colour234]"
+set-window-option -g window-status-current-format "#[fg=colour85, bg=colour234]#I#F#[fg=colour9]#[fg=colour15, bg=colour9]#{=12:window_name}#[fg=colour9, bg=colour234]"
 set -g status-right "#[fg=colour239, bg=colour234]#[fg=colour15, bg=colour239]#S TMUX"
 set -g status-left "#[fg=colour15, bg=colour239] #P #[fg=colour239, bg=colour234] "
 
-#bind -T copy-mode-vi WheelUpPane select-pane \; send-keys -X -N 2 scroll-upbind -T copy-mode-vi WheelDownPane select-pane \; send-keys -X -N 2 scroll-down
-#bind -T copy-mode-vi MouseDragEnd1Panebind -T copy-mode-vi MouseDown1Pane select-pane \;\  send-keys -X copy-pipe "pbcopy" \;\  send-keys -X clear-selection
-#bind -t vi-copy y copy-pipe "xclip -sel clip -i"
 
 bind Space last-pane \; run-shell -b "tmux send-keys C-p && sleep .1 && tmux send-keys Enter && sleep .1 && tmux last-pane"
 bind Enter last-window \; run-shell -b "tmux send-keys C-p && sleep .1 && tmux send-keys Enter && sleep .1 && tmux last-window"
@@ -93,20 +98,14 @@ bind '<' select-pane -m
 bind '>' select-pane -M
 bind '#' move-window
 
-bind b new-window
-bind c split-window -h
+bind b new-window -c '#{pane_current_path}'
+bind c split-window -h -c '#{pane_current_path}'
 bind -r m select-pane -U
-bind l split-window -v
+bind l split-window -v -c '#{pane_current_path}'
 bind f unlink-window
 bind z detach-client
 
-
-
-# See: https://github.com/christoomey/vim-tmux-navigator
-#bind -r m if-shell "$is_vim" "send-keys C-p" "select-pane -U"
-#bind -r t if-shell "$is_vim" "send-keys C-a" "select-pane -L"
-#bind -r s if-shell "$is_vim" "send-keys C-i" "select-pane -D"
-#bind -r n if-shell "$is_vim" "send-keys C-u" "select-pane -R"
+#bind -T root MouseDown3Pane display-menu
 
 # C-Page: déplacement vers un autre 'onglet' (window)
 bind-key -n C-PageDown next-window
@@ -114,14 +113,6 @@ bind-key -n C-PageUp previous-window
 # C-S-Page: permutation d'onglets
 bind-key -n C-S-PageDown select-pane -m \; next-window \; swap-window
 bind-key -n C-S-PageUp select-pane -m \; previous-window \; swap-window
-# warning: default st does not understand c-s-page*
-#bind-key -n PageDown select-pane -m \; next-window \; swap-window
-#bind-key -n PageUp select-pane -m \; previous-window \; swap-window
-# C-arrows: rotate
-#bind-key -n C-Up next-layout
-#bind-key -n C-Down rotate-window
-#bind-key -n C-Left resize-pane -Z
-#bind-key -n C-Right swap-pane -D
 bind-key -n C-Up next-layout
 bind-key -n C-Down select-pane -t :.+
 bind-key -n C-Left rotate-window
@@ -183,10 +174,10 @@ bind-key -T copy-mode-vi C-s    send-keys -X halfpage-down
 bind-key -T copy-mode-vi C-t    send-keys -X scroll-up
 bind-key -T copy-mode-vi C-n    send-keys -X scroll-down
 #bind-key -T copy-mode-vi C-j    send-keys -X copy-selection-and-cancel
-bind-key -T copy-mode-vi C-p    select-pane -U
-bind-key -T copy-mode-vi C-a    select-pane -L
-bind-key -T copy-mode-vi C-i    select-pane -D
-bind-key -T copy-mode-vi C-u    select-pane -R
+#bind-key -T copy-mode-vi C-p    select-pane -U
+#bind-key -T copy-mode-vi C-a    select-pane -L
+#bind-key -T copy-mode-vi C-i    select-pane -D
+#bind-key -T copy-mode-vi C-u    select-pane -R
 bind-key -T copy-mode-vi Enter  send-keys -X copy-selection-and-cancel
 bind-key -T copy-mode-vi C-h    send-keys -X rectangle-toggle
 bind-key -T copy-mode-vi Escape send-keys -X cancel
@@ -275,10 +266,10 @@ bind-key -T copy-mode C-s    send-keys -X halfpage-down
 bind-key -T copy-mode C-t    send-keys -X scroll-up
 bind-key -T copy-mode C-n    send-keys -X scroll-down
 #bind-key -T copy-mode C-j    send-keys -X copy-selection-and-cancel
-bind-key -T copy-mode C-p    select-pane -U
-bind-key -T copy-mode C-a    select-pane -L
-bind-key -T copy-mode C-i    select-pane -D
-bind-key -T copy-mode C-u    select-pane -R
+#bind-key -T copy-mode C-p    select-pane -U
+#bind-key -T copy-mode C-a    select-pane -L
+#bind-key -T copy-mode C-i    select-pane -D
+#bind-key -T copy-mode C-u    select-pane -R
 bind-key -T copy-mode Enter  send-keys -X copy-selection-and-cancel
 bind-key -T copy-mode C-h    send-keys -X rectangle-toggle
 bind-key -T copy-mode Escape send-keys -X cancel
@@ -329,12 +320,14 @@ bind-key -T copy-mode b      send-keys -X append-selection-and-cancel
 bind-key -T copy-mode c      send-keys -X jump-reverse
 bind-key -T copy-mode m      send-keys -X cursor-up
 bind-key -T copy-mode l      send-keys -X jump-again
-bind-key -T copy-mode f      command-prompt -1 -p "(jump forward)" "send -X jump-forward \"%%%\""
+bind-key -T copy-mode f      send-keys -X halfpage-up
+#bind-key -T copy-mode f      command-prompt -1 -p "(jump forward)" "send -X jump-forward \"%%%\""
 bind-key -T copy-mode g      command-prompt -p "(goto line)" "send -X goto-line \"%%%\""
 bind-key -T copy-mode t      send-keys -X cursor-left
 bind-key -T copy-mode s      send-keys -X cursor-down
 bind-key -T copy-mode n      send-keys -X cursor-right
-bind-key -T copy-mode r      command-prompt -1 -p "(jump to forward)" "send -X jump-to-forward \"%%%\""
+bind-key -T copy-mode r      send-keys -X halfpage-down
+#bind-key -T copy-mode r      command-prompt -1 -p "(jump to forward)" "send -X jump-to-forward \"%%%\""
 bind-key -T copy-mode q      send-keys -X clear-selection
 bind-key -T copy-mode d      command-prompt -p "(search down)" "send -X search-forward \"%%%\""
 bind-key -T copy-mode v      send-keys -X search-again
