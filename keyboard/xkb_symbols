@@ -1,6 +1,9 @@
+//{{{ ergo mathnum compat
 xkb_symbols "ergomath_compat" {
 
 
+ //include "level5"
+ //include "level5(modifier_mapping)"
  augment "level5"
  include "keypad(oss)"
  name[Group1]="french ergodox compat";
@@ -43,13 +46,15 @@ key <AE04>{[ quotedbl, section, U230b, U21d2, F9, U1F4AC]};
 
 // permute
 key <AE05>{[ U21b9, ISO_Level3_Lock, U21b9, ISO_Level5_Lock, U21b9, ISO_Level5_Lock, U21b9, ISO_Level3_Lock]};
-key <SPCE>{[ space, nobreakspace, hairspace, emspace, Mode_Switch]};
+key <SPCE>{[ space, space, space, space, Mode_Switch, nobreakspace, hairspace, emspace]};
 key <AD11>{[ at, U2260, U2234, U2206, dead_grave, U2248, ae, AE]};
 key <AD12>{[ underscore, plusminus, U2235, U2207, dead_acute, U2243, oe, OE]};
 key <LatR>{[ apostrophe,  degree, grave, U221e, dead_belowdot, U1f642, ugrave, Ugrave]};
 
 // permute
-key <AC11>{[ISO_Next_Group, ISO_Prev_Group, ISO_First_Group, U22c8, dead_diaeresis, U21cc, Uff, U178 ]};
+// unofficial
+key <AC11>{[ecircumflex, ISO_Prev_Group, ISO_Next_Group, U22c8, dead_diaeresis, U21cc, Uff, U178 ]};
+//key <AC11>{[ISO_Next_Group, ISO_Prev_Group, ISO_First_Group, U22c8, dead_diaeresis, U21cc, Uff, U178 ]};
 key <LatZ>{[ plus, U2e2e, braceleft, U22ca, dead_circumflex, U1f62d, odiaeresis, Odiaeresis]};
 key <LatX>{[ minus, Ubd, braceright, U22c9, dead_caron, U1f60f, adiaeresis, Adiaeresis]};
 key <LatC>{[ period, ellipsis, Uab, U2295, dead_hook, U1f61b, idiaeresis, Idiaeresis]};
@@ -77,7 +82,7 @@ key <LSGT>{[e,E,x,X]};
 
 
 // main droite
-key <LatY>{[b,B, bracketleft, U2282, Delete, U220E]};
+key <LatY>{[b,B, bracketleft, U2286, Delete, U220E]};
 key <LatU>{[c,C, 5, U2229, Home, U2196]};
 key <LatI>{[m,M, 6, U222a, Up, U2191]};
 key <LatO>{[l,L, 7, U2200, End, U2197]};
@@ -96,6 +101,9 @@ key <LatM>{[d,D, b, U2227, ISO_Left_Tab, U2199]};
 key <AB08>{[v,V, c, U2228, Tab, U2198]};
 key <AB09>{[j,J, d, U22a4, Caps_Lock, U2705]};
 key <AB10>{[w,W, e, U22a5, Scroll_Lock, U274E]};
-key <BKSL>{[ Multi_key, Agrave, f, U22bb, Menu, U2224]};
+// unofficial, easyer for French
+key <BKSL>{[ agrave, Multi_key, f, U22bb, Menu, U2224]};
+//key <BKSL>{[ Multi_key, Multi_key, f, U22bb, Menu, U2224]};
 
-}; 
+}; //}}}
+// vim: ft=xkb
