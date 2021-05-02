@@ -20,7 +20,7 @@ cmd software-open ${{
 		application/csv) vd $f;;
 		image/vnd.djvu) (zathura $f 1>/dev/null 2>&1) &;;
 		image/*) (sxiv $fx >/dev/null 2>&1) & ;;
-		text/html) (chromium-browser $f 1>/dev/null 2>&1) &;;
+		text/html) (chromium $f 1>/dev/null 2>&1) &;;
         text/*) if (echo $f | grep "plt" >/dev/null); then (mpv --playlist="$f" 1>/dev/null 2>&1 &) & else tmux rename-window "🖿 nvim "; nvim $fx; tmux rename-window "🖿      "; fi;;
 		inode/*) echo bla;;
 		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
@@ -180,13 +180,13 @@ map èv :cd ~/.vim ; on-cd
 map èy :cd ~/cloc ; on-cd
 map èz :cd ~/.oh-my-zsh ; on-cd
 
-map èab :cd ~/Public ; on-cd
-map èad :cd ~/Documents ; on-cd
-map èag :cd ~/git ; on-cd
-map èam :cd ~/Music ; on-cd
-map èap :cd ~/Pictures ; on-cd
-map èat :cd ~/Templates ; on-cd
-map èav :cd ~/Videos ; on-cd
+map ègb :cd ~/Public ; on-cd
+map ègd :cd ~/Documents ; on-cd
+map ègg :cd ~/git ; on-cd
+map ègm :cd ~/Music ; on-cd
+map ègp :cd ~/Pictures ; on-cd
+map ègt :cd ~/Templates ; on-cd
+map ègv :cd ~/Videos ; on-cd
 
 map <c-l> redraw
 map <c-r> reload
