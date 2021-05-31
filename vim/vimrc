@@ -16,6 +16,8 @@
 " foldcol: what I need for columns
 set nocompatible " be iMproved, required
 syntax on
+set nobackup
+set nowritebackup
 set ignorecase
 set smartcase
 set list
@@ -51,18 +53,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim', {'pinned': 1} " let Vundle manage Vundle, required
 Plugin 'scrooloose/nerdtree', {'pinned': 1}  " search/open/… files
 Plugin 'scrooloose/nerdcommenter', {'pinned': 1}  " quickly comment or uncomment
-Plugin 'vim-syntastic/syntastic' " check errors and warnings
+"Plugin 'vim-syntastic/syntastic' " check errors and warnings
+Plugin 'dense-analysis/ale'
 Plugin 'vim-airline/vim-airline', {'pinned': 1} " better bar (mode… with color)
 Plugin 'mbbill/undotree', {'pinned': 1} " historiqe sous forme d'arbre
-if has('nvim')
-	"TODO
+"if has('nvim')
+	""TODO
 	"Plugin 'glacambre/firenvim'
-else
-	" can use deoplete and somewhat terminal mode on standard Vim (but not as
-	" good as in Nvim)
-	Plugin 'roxma/vim-hug-neovim-rpc'
-	Plugin 'roxma/nvim-yarp'
-endif
+"else
+	"" can use deoplete and somewhat terminal mode on standard Vim (but not as
+	"" good as in Nvim)
+	"Plugin 'roxma/vim-hug-neovim-rpc'
+	"Plugin 'roxma/nvim-yarp'
+"endif
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
@@ -80,7 +83,8 @@ Plugin 'HiPhish/info.vim' " info manual
 Plugin 't9md/vim-quickhl' " multi color highlight
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
+Plugin 'tpope/vim-scriptease'
+"Plugin 'xolox/vim-notes'
 Plugin 'dhruvasagar/vim-table-mode'
 "Plugin 'tounaishouta/coq.vim'
 "Plugin 'christoomey/vim-tmux-navigator'
@@ -97,6 +101,13 @@ Plugin 'dhruvasagar/vim-table-mode'
 call vundle#end()         "required
 
 filetype plugin indent on "required
+"remove non-plugin ':Man' mappings
+"let g:no_man_maps=1
+au FileType help nnoremap <buffer> i /\|\S*\|/b+1<cr>
+au FileType help nnoremap <buffer> <c-m> <c-]>
+au FileType man nmap <buffer> i K
+au FileType man,info nnoremap <buffer> q <nop>
+au FileType man,info,help nmap <buffer> u gO
 let g:EasyMotion_keys="tusic'mproghd,v.j-qkfèbylénae"
 "let g:UltiSnipsSnippetDirectories=['~/.vim/bundle/ultisnips','UltiSnips']
 "let g:UltiSnipsExpandTrigger='<tab>'
@@ -132,6 +143,9 @@ smap <expr><C-i> neosnippet#expandable_or_jumpable() ?
 "smap <C-i> <Plug>(neosnippet_expand_or_jump)
 "xmap <C-i> <Plug>(neosnippet_expand_target)
 
+" check only if saved, like syntastic
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
 
 let g:cpp_class_scope_hi = 1
 let g:cpp_member_variable_hi = 1
@@ -161,6 +175,7 @@ let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 let g:UltiSnipsEditSplit="tabdo"
 
 let g:tagbar_ctags_bin="/usr/bin/ctags"
+"let g:tagbar_show_linenumbers=-1
 "set runtimepath^=~/.vim/bundle/ctrlp.vim
 "helptags ~/.vim/bundle/ctrlp.vim/doc
 "let g:ctrlp_map = '<c-p>'
@@ -173,26 +188,76 @@ hi Visual ctermfg=52
 hi DiffAdd ctermbg=17
 hi DiffChange ctermbg=53
 let g:NERDTreeAutoCenter=0
+let g:NERDTreeMinimalUI=1
+
 let g:quickhl_manual_colors=14
 "TODO gui colors
 let g:quickhl_manual_colors = [
-			\ "ctermfg=15  ctermbg=4  ",
+			\ "ctermfg=15  ctermbg=12  ",
 			\ "ctermfg=16  ctermbg=13 ",
-			\ "ctermfg=15  ctermbg=1  ",
+			\ "ctermfg=15  ctermbg=9  ",
 			\ "ctermfg=16  ctermbg=130",
 			\ "ctermfg=16  ctermbg=10 ",
 			\ "ctermfg=16  ctermbg=14 ",
 			\ "ctermfg=16  ctermbg=15 ",
-			\ "ctermfg=15  ctermbg=4  ",
+			\ "ctermfg=15  ctermbg=12  ",
 			\ "ctermfg=16  ctermbg=13 ",
-			\ "ctermfg=15  ctermbg=1  ",
+			\ "ctermfg=15  ctermbg=9  ",
 			\ "ctermfg=16  ctermbg=130",
 			\ "ctermfg=16  ctermbg=10 ",
 			\ "ctermfg=16  ctermbg=14 ",
 			\ "ctermfg=16  ctermbg=15 ",
 			\ ]
 
+"00 non
+"01 non
+"10 non, rr
+"11 non, large
 
+function! s:IsFirenvimActive(event) abort
+	if !exists('*nvim_get_chan_info')
+		return 0
+	endif
+	let l:ui = nvim_get_chan_info(a:event.chan)
+	return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
+				\ l:ui.client.name =~? 'Firenvim'
+endfunction
+
+function! OnUIEnter(event) abort
+	if s:IsFirenvimActive(a:event)
+		set lines=20
+		set columns=66
+	"%d
+	endif
+endfunction
+autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
+
+function! OnBrowserEnter()
+	set tw=65
+	set spelllang=fr,en
+	set spell
+	source ~/prog/026_sinapt_ter/accents_french/v_3lettre.vim
+	source ~/prog/026_sinapt_ter/accents_french/v_global.vim
+	inoremap ↹ <Esc>:wq<CR>
+	noremap ↹ :wq<CR>
+endfunction
+"autocmd! BufNewFile *.browser call OnBrowserEnter()
+
+if exists('g:started_by_firenvim')
+	"set laststatus=1
+	source ~/prog/026_sinapt_ter/accents_french/v_3lettre.vim
+	source ~/prog/026_sinapt_ter/accents_french/v_global.vim
+	set tw=60
+	"inoremap <S-CR> <Esc>:!(sleep 2; xdotool key Control_L+A; sleep .1; xsel -op\|xsel -ib)&<CR>:wq<CR>
+	"inoremap <S-CR> <Esc>gg"+yG:!(sleep 2; notify-send bar; xdotool key Control_L+V; sleep 1; xdotool key Return)&<CR>:wq<CR>
+	"inoremap <S-CR> <Esc>gg"+yGggdG:!(sleep 1; xdotool key Control_L+15; sleep .2; xdotool key Control_L+V; xdotool sleep .2; xdotool key Return; sleep .5; xdotool key Control_L+15)&<CR>:q!<CR>
+	inoremap <S-CR> <Esc>gg"+yGggdG:!(sleep 1; xdotool key Control_L+15; sleep .2; xdotool key 192; sleep .2; xdotool key Return; xdotool sleep .2; xdotool key Return; sleep .2; xdotool key Control_L+15)&<CR>:wq<CR>
+	"set guifont=Apple_Color_Emoji:h18
+	"set lines=20
+	startinsert|
+else
+	"set laststatus=2
+endif
 
 highlight Normal guifg=white guibg=black
 " better contrast
@@ -201,14 +266,14 @@ hi Title ctermfg=225 cterm=bold ctermbg=black guifg=magenta gui=bold
 "changed on /usr file as root/sudo
 "TODO check if you did that too or uncomment next line
 hi Special ctermfg=202 guifg=orange
-hi Visual ctermbg=240
+hi Visual ctermbg=239
 "Gvim: scrollbarS but no menus
 set guioptions="br"
 hi ColorColumn ctermbg=234 guibg=#202020
-hi MatchParen ctermbg=6 ctermfg=0
+hi MatchParen ctermbg=14 ctermfg=0
 hi Tabline     cterm=none ctermfg=white ctermbg=239
-hi TablineSel  cterm=none ctermfg=black ctermbg=83
-hi TablineFill cterm=none ctermbg=black
+hi TablineSel  cterm=none ctermfg=0 ctermbg=83
+hi TablineFill cterm=none ctermbg=0
 
 set cursorline
 set nocursorcolumn
@@ -217,7 +282,6 @@ set norelativenumber
 set mouse=a
 set hlsearch
 set lazyredraw
-set autoindent
 set smartindent
 "set cin
 set backspace=indent,eol,start
@@ -229,16 +293,17 @@ set scrolloff=3
 set guicursor=a:block-Cursor
 "set guicursor+=i:blinkon1
 set guicursor+=a:blinkon0
-hi Search cterm=NONE ctermbg=yellow ctermfg=black guibg=yellow guifg=black
-hi IncSearch cterm=NONE ctermbg=red ctermfg=black guibg=red guifg=black
-hi Folded cterm=NONE ctermbg=NONE ctermfg=102
+hi VertSplit cterm=NONE ctermfg=white
+hi! Search cterm=NONE ctermbg=yellow ctermfg=black guibg=yellow guifg=black
+hi! IncSearch cterm=NONE ctermbg=red ctermfg=black guibg=red guifg=black
+hi! Folded cterm=NONE ctermbg=NONE ctermfg=102
 "hi FoldColumn cterm=NONE ctermbg=blue ctermfg=red
-hi LineNr cterm=NONE ctermbg=black ctermfg=102 guifg=#808080
-hi CursorLineNr ctermbg=234 ctermfg=yellow
-hi CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=#202020 guifg=NONE
-hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
+hi! LineNr cterm=NONE ctermbg=black ctermfg=102 ctermbg=0 guifg=#808080
+hi! CursorLineNr ctermbg=234 ctermfg=yellow
+hi! CursorLine cterm=NONE ctermbg=234 ctermfg=NONE guibg=#202020 guifg=NONE
+hi! CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=black guifg=white
 au InsertEnter * setlocal cursorcolumn
-hi CursorColumn cterm=NONE ctermbg=18 ctermfg=white guibg=#000055 guifg=#ffffff
+hi! CursorColumn cterm=NONE ctermbg=17 ctermfg=white guibg=#000055 guifg=#ffffff
 au InsertLeave * setlocal nocursorcolumn
 "au InsertLeave * hi CursorColumn cterm=NONE ctermbg=black ctermfg=white guibg=#000000 guifg=#ffffff
 "only for neovim
@@ -261,6 +326,7 @@ hi EasyMotionTarget cterm=bold ctermbg=black ctermfg=red guibg=black guifg=red
 set tabstop=4
 set shiftwidth=4
 set noexpandtab
+set autoindent
 set nojs
 set clipboard=unnamed
 set wildmenu
@@ -269,23 +335,25 @@ set showmode
 set ru
 set foldmethod=marker
 set ttimeoutlen=0
-"set wrapscan
-"set nowrap
 
 "tab all
 "use file hierarchy instead
+let g:airline#extensions#whitespace#mixed_indent_algo = 1
+let g:tex_flavor='latex'
 augroup user_group_filetype
 	"au FileType c,h,cpp,hpp source ~/.vim/.cpp.vimrc
 	"au FileType c,cpp,java set mps+==:;
-	au FileType text setlocal textwidth=80
+	"au FileType text setlocal textwidth=80
 	"au FileType text setlocal colorcolumn=8,16,24,32,40,48,56,64
 	au FileType text setlocal iskeyword+=',-
 	au! BufNewFile,BufRead *.help setf help
-	au! BufNewFile,BufRead *.tuto,*.not source ~/.vim/perso/not.vim
+	"TODO ftdetect
+	au! BufNewFile,BufRead *.tuto,*.not setf not
 	"au! BufNewFile *.help hi Special ctermfg=202
 augroup END
 
 "setglobal complete-=i     " Searching includes can be slow
 "setglobal foldopen+=jump
+" *VT100*translations: #override\Ctrl<Key>i:string("\033[Y")
 
 source ~/.vim.new
