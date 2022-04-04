@@ -1,0 +1,207 @@
+set timefmt ' 2006-01-02 15:04:05'
+set promptfmt "\033[32;1m%u@%h\033[0m:\033[34;1m%w\033[0m\033[1m%f\033[0m"
+set color256 true
+set drawbox true
+set sortby name
+set incsearch true
+set ratios '1:2:3:6'
+set scrolloff 3
+
+
+cmd open
+
+cmd software-open ${{
+	case $(file --mime-type "$f" -b) in
+		audio/*|application/octet-stream) tmux rename-window "🖿 mpv  "; mpv $fx; tmux rename-window "🖿      ";;
+		#video/*) setsid mpv $fx > /dev/null 2>&1 & ;;
+		video/*) var="/ram/mpv_lf.fifo"; ((pgrep -f "^mpv --input-file=$var" && echo "$f" | sed "s/^.*$/loadfile & append/" > $var) || (rm $var; mkfifo $var && setsid mpv --input-file=$var "$f" )) >/dev/null 2>&1 & echo "loading '$f'";;
+		application/octet-stream) var="/ram/mpv_lf.fifo"; ((pgrep -f "^mpv --input-file=$var" && echo "$f" | sed "s/^.*$/loadfile & append/" > $var) || (rm $var; mkfifo $var && setsid mpv --input-file=$var "$f" )) >/dev/null 2>&1 & echo "loading '$f'";;
+		application/pdf) (zathura $f 1>/dev/null 2>&1) &;;
+		application/csv) vd $f;;
+		image/vnd.djvu) (zathura $f 1>/dev/null 2>&1) &;;
+		image/*) (sxiv $fx >/dev/null 2>&1) & ;;
+		text/html) (chromium $f 1>/dev/null 2>&1) &;;
+        text/*) if (echo $f | grep "plt" >/dev/null); then (mpv --playlist="$f" 1>/dev/null 2>&1 &) & else tmux rename-window "🖿 nvim "; nvim "$fx"; tmux rename-window "🖿      "; fi;;
+		inode/*) echo bla;;
+		*) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
+	esac
+	#*/
+}}
+
+cmd on-cd &{{
+	( sleep .1; tmux rename-window "🖿 $( pwd | sed "s/.*\/\([^/]\{5\}\)[^/]*$/\1/ ; s/^/     / ; s/^.*\(.....\)$/\1/" )" )&
+}}
+
+cmd recol %{{
+	w=$(tput cols)
+	if [ $w -le 60 ]; then
+	lf -remote "send $id set ratios 1:2"
+	elif [ $w -le 120 ]; then
+	lf -remote "send $id set ratios 1:2:3"
+	else
+	lf -remote "send $id set ratios 1:2:3:6"
+	fi
+}}
+
+map '!' shell-wait
+map '?' shell
+map ';' :source ~/.config/lf/lfrc
+map '"' push :glob-select<space>*.
+map '§' push :glob-unselect<space>*.
+map '&' shell-async
+map '|' shell-pipe
+
+map @ mark-save
+map ≠ mark-remove
+map p paste
+map P $ rm $f
+map "'" cut
+map <delete> cut
+map ° :{{
+	$mv $fx ~/.local/share/Trash/lf
+	unselect
+}}
+map y copy
+map Y clear
+
+map _ mark-load
+
+set previewer ~/.config/lf/pv.sh
+map o $~/.config/lf/pv_less.sh $f | less
+map O $$PAGER $fx
+map a software-open
+map i $tmux rename-window "$(echo $fx | sed "s# .*# …#g;s#^.*/##;s#^#LV #")" && nvim $fx && tmux rename-window "🖿      "
+map <insert> $$EDITOR $fx
+map u rename
+map <c-u> rename
+map h invert
+
+
+map - push $chmod<space><space>$fx<left><left><left><left>
+map … push $mkdir<space>
+map . push $touch<space>
+map , unselect
+map k :toggle; down
+map K :up; toggle
+map <space> :toggle
+
+map e set hidden!
+
+map éb set number!
+map éc :set sortby time
+map ém :set sortby size
+map él :set sortby name
+map éf :set sortby natural
+map éz set ratios 1:1:1:1:1:1
+
+map ég set reverse!
+map ét set info time
+map és set info size
+map én set info
+map ér set info size:time
+map éx recol
+
+map éd set info ctime
+map év set sortby ctime
+map éj set info atime
+map éw set sortby atime
+
+
+map ( page-up
+map ) page-down
+map <lt> find-back
+map <gt> find
+map '#' $for i in *;do mv "$i" $(echo $i| sed "s/ /_/g");done
+
+map c find-prev
+map m up
+map <c-p> up
+map l find-next
+map f half-up
+map F page-up
+map z push $<space><space>$fx<left><left><left><left>
+
+map G bottom
+map <c-e> bottom
+
+map t :updir; on-cd
+map <c-b> :updir; on-cd
+map s down
+map <c-n> down
+map n :open; on-cd
+map <c-f> :open; on-cd
+map r half-down
+map R page-down
+map x ! $f
+
+map <c-d> :{{
+	$rm /ram/lfcd 2>/dev/null
+	quit
+}}
+map q :{{
+	$rm /ram/lfcd 2>/dev/null
+	quit
+}}
+map d search
+map v search-next
+map j :updir; up; open; on-cd
+map w :updir; down; open; on-cd
+
+
+map Q :{{
+	$pwd > /ram/lfcd
+	quit
+}}
+map D search-back
+map V search-prev
+
+
+map <enter> half-down
+map g top
+map <c-a> top
+
+map èb :cd /bin ; on-cd
+map èc :cd ~/.config ; on-cd
+map èd :cd ~/Desktop ; on-cd
+map èe :cd /etc ; on-cd
+map èh :cd ~ ; on-cd
+map èk :cd /ram ; on-cd
+map èl :cd ~/.local ; on-cd
+map èm :cd /media ; on-cd
+map èn :cd ~/note ; on-cd
+map èo :cd ~/Downloads ; on-cd
+map èp :cd ~/prog ; on-cd
+map èq :cd ~/.local/share/Trash ; on-cd
+map èr :cd / ; on-cd
+map ès :cd ~/.script ; on-cd
+map èt :cd /tmp ; on-cd
+map èu :cd /usr ; on-cd
+map èv :cd ~/.vim ; on-cd
+map èy :cd ~/cloc ; on-cd
+map èz :cd ~/.oh-my-zsh ; on-cd
+
+map ègb :cd ~/Public ; on-cd
+map ègd :cd ~/Documents ; on-cd
+map ègg :cd ~/git ; on-cd
+map ègm :cd ~/Music ; on-cd
+map ègp :cd ~/Pictures ; on-cd
+map ègt :cd ~/Templates ; on-cd
+map ègv :cd ~/Videos ; on-cd
+
+map <c-l> redraw
+map <c-r> reload
+map <c-z> :{{
+	$pwd > /ram/lfcd
+	$kill -STOP $PPID
+}}
+
+cmap <up> cmd-history-prev
+cmap <down> cmd-history-next
+cmap <c-t> cmd-word-back
+cmap <c-o> cmd-word
+
+
+
+
+
+

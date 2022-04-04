@@ -1,0 +1,39 @@
+
+#var
+
+link-style=cyan,bold
+active-link-style=bgcyan,bold,black
+match-style=bgyellow,black
+
+#info
+
+? get-help-window
+; man
+: execute-command
+
+( prev-node
+) next-node
+
+b history-node
+c move-to-prev-xref
+m up-line
+l move-to-next-xref
+f scroll-half-screen-up
+
+M prev-line
+
+t prev-node
+s down-line
+n next-node
+r scroll-half-screen-down
+
+S next-line
+
+d search
+v search-next
+j backward-word
+w forward-word
+
+D search-backward
+V search-previous
+

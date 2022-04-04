@@ -1,0 +1,65 @@
+0,usable,structured,comment
+1,.i3blocks.conf,main/i3blocks.conf,status bar
+1,.tmux.conf,main/tmux.conf,terminal multiplexer
+1,.infokey,main/pagers/infokey,GNU manual
+1,.inputrc,main/inputrc,command line for several languages
+1,.jackdrc,main/jackdrc,sound
+1,.leditrc,main/leditrc,command line
+1,.lesskey,main/pagers/lesskey,pager (binary)
+1,.lesskey_aux,main/pagers/lesskey_aux,pager (human)
+1,.mostrc,main/pagers/mostrc,pager (depreciated)
+1,.visidatarc,main/visidatarc,spreadsheet
+1,.xsessionrc,main/xsessionrc,start with this
+1,.zshrc,main/zsh/zshrc,shell
+1,.oh-my-zsh/custom/themes/user.zsh-theme,main/zsh/user.zsh-theme,shell them
+1,.oh-my-zsh/custom/themes/test.zsh-theme,main/zsh/test.zsh-theme,shell them
+1,.weechat/weechat.conf,main/weechat.conf,IRC
+1,.config/i3/config,main/i3-config,window manager
+1,.config/rofi/config,main/rofi/config,menu
+1,.config/rofi/theme_itzv.rasi,main/rofi/theme_itzv.rasi,
+1,.config/lf/lfrc,main/lf/lfrc,file manager
+1,.config/lf/pv.sh,main/lf/pv.sh,file manager: previewer
+1,.config/mpv/mpv.conf,main/mpv/mpv.conf,multimedia player
+1,.config/mpv/input.conf,main/mpv/input.conf,multimedia player: keyboard shortcuts
+1,.config/mpv/script/shortcuts_utils.lua,main/mpv/script/shortcuts_utils.lua,multimedia player: more keyboard shortcuts
+1,.config/zathura/zathurarc,main/zathurarc,PDF reader
+1,.config/kdenliveui.rc,main/kdenliveui.rc,video editor
+1,.config/feh/keys,main/sxiv/feh/keys,images viewer
+1,.config/feh/themes,main/sxiv/feh/themes,images viewer
+1,.config/inkscape/keys/default.xml,main/inkscape_keys.xml,
+1,.config/newsboat/config,main/newsboat/config,RSS
+1,.config/newsboat/urls,main/newsboat/urls,RSS
+1,.config/octave/qt-settings,main/octave_qt-settings,maths
+1,.config/pipe-viewer/pipe-viewer.conf,main/pipe-viewer.conf,youtube wo video
+1,git/htop/Action.c,main/htop/Action.c,terminal task manager
+1,git/htop/COPYING,main/htop/COPYING,GPL2
+1,git/sxiv/config.h,main/sxiv/config.h,images viewer
+1,git/sxiv/exec/image-info,main/sxiv/exec/images-info,
+1,git/sxiv/exec/key-handler,main/sxiv/exec/key-handler,
+1,.config/nvim/init.vim,vim-main/init.vim,text editor
+1,.vim.new,vim-main/keys.vim,text editor: keyboard shortcuts
+1,.config/nvim/after/ftplugin/not.vim,vim-main/not.vim,custom syntax
+1,.vim/perso/v_3lettre.vim,vim-iabbrev/v_3lettre.vim,abréviations automatiques
+1,.vim/perso/v_global.vim,vim-iabbrev/v_global.vim,accents automatiques
+1,.vim/bundle/undotree/autoload/undotree.vim,vim-plugin/undotree.vim,vim-plugin: undotree (shortcuts changed)
+1,.vim/bundle/nerdtree/plugin/NERD_tree.vim,vim-plugin/NERD_tree.vim,vim-plugin: nerdtree (shortcuts changed)
+1,.vim/bundle/Vundle.vim/autoload/vundle/scripts.vim,vim-plugin/vundle_scripts.vim,package manager
+1,.vim/bundle/nerdcommenter/plugin/NERD_commenter.vim,vim-plugin/NERD_commenter.vim,
+1,.vim/bundle/neosnippet-snippets/neosnippets/_.snip,vim-plugin/neosnippets/_.snip
+1,.vim/bundle/neosnippet-snippets/neosnippets/c.snip,vim-plugin/neosnippets/c.snip
+1,.vim/bundle/neosnippet-snippets/neosnippets/cpp.snip,vim-plugin/neosnippets/cpp.snip
+1,.vim/bundle/neosnippet-snippets/neosnippets/html.snip,vim-plugin/neosnippets/html.snip
+1,.vim/bundle/neosnippet-snippets/neosnippets/javascript.snip,vim-plugin/neosnippets/javascript.snip
+1,.script/count_words.sh,script/count_words.sh,statistics for words frequency
+1,.script/memory_folder.sh,script/memory_folder.sh,
+1,.script/mouse.sh,script/mouse.sh,
+1,.script/mouse_goto.sh,script/mouse_goto.sh,
+1,.script/mouse_local.sh,script/mouse_local.sh,
+1,.script/mouse_save.sh,script/mouse_save.sh,
+1,.script/vim.sh,script/vim.sh,write any message inside Vim
+1,.script/yta.sh,script/yta.sh,youtube-dl for a text list
+1,.script/yta_help.txt,script/yta_help.txt,youtube-dl for a text list
+1,.XCompose,keyboard/XCompose,dead keys sequences
+0,/usr/share/X11/xkb/symbols/oo,keyboard/xkb_symbols_oo,etusina layout for French language
+0,/usr/share/X11/xkb/types/level5,keyboard/xkb_types_level5,numlock maths mode
+1,git/qmk_firmware/keyboards/ergodox_ez/keymaps/eg067/ergodox_etusina.tar.gz,keyboard/ergodox_etusina.tar.gz,

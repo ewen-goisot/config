@@ -1,0 +1,122 @@
+
+* {
+	blue:     #0000FF;
+	navy:     #00005f;
+	white:    #FFFFFF;
+	black:    #000000;
+	grey:     #4e4e4e;
+	darkgrey: #1c1c1c;
+	brown:    #3b3b00;
+	red:      #ff0000;
+	yellow:   #ffff00;
+	lime:     #66ff66;
+	seagreen: #5fffaf;
+	pink:     #ff4444;
+
+	background-color: #00000000;
+	spacing:0px;
+	anchor: south;
+}
+#mainbox {
+	children: [ listview, message, inputbar, mode-switcher ];
+}
+#window {
+	background-color: #440044bb;
+	border-color: @pink;
+	y-offset: -15%;
+	border: 5px;
+}
+#listview {
+	scrollbar: true;
+	border: 0px 0px 5px 0px;
+	padding: 0px 0px 0px 0px;
+	border-color: @pink;
+}
+#scrollbar {
+	width: 8px;
+	border: 0px 0px 0px -1px;
+	handle-color: @lime;
+	background-color: @grey;
+}
+#element {
+	highlight: bold underline;
+}
+#element normal.normal {
+	text-color: @white;
+	background-color: @darkgrey;
+}
+#element normal.active {
+	text-color: @yellow;
+	background-color: @blue;
+}
+#element normal.urgent {
+	text-color: @navy;
+	background-color: @yellow;
+}
+#element selected.normal {
+	text-color: @black;
+	background-color: @lime;
+}
+#element selected.active {
+	text-color: @black;
+	background-color: @pink;
+}
+#element selected.urgent {
+	text-color: @white;
+	background-color: @red;
+}
+#element alternate.normal {
+	text-color: @white;
+	background-color: @black;
+}
+#element alternate.active {
+	text-color: @yellow;
+	background-color: @blue;
+}
+#element alternate.urgent {
+	text-color: @navy;
+	background-color: @yellow;
+}
+#message {
+	background-color: @white;
+	text-color: @black;
+}
+#inputbar {
+	background-color: @black;
+	index: 0;
+}
+#prompt{
+	background-color: @grey;
+	text-color: @white;
+	padding: 0px 10px;
+	border-radius: 0px 10px 10px 0px;
+}
+#entry{
+	text-color: @white;
+	background-color: @black;
+	padding: 0px 10px;
+}
+#case-indicator{
+	background-color: @grey;
+	text-color: @white;
+	padding: 0px 10px;
+	border-radius: 10px 0px 0px 10px;
+}
+#mode-switcher {
+	/* previously named sidebar */
+	background-color: @darkgrey;
+}
+#button normal {
+	text-color: @navy;
+	background-color: @yellow;
+	border-radius: 10px;
+	border: 0px 10px;
+}
+#button selected {
+	text-color: @white;
+	background-color: @red;
+	border-radius: 10px;
+	border: 0px 10px;
+}
+
+// vim: ft=css

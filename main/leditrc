@@ -1,0 +1,5 @@
+
+"\C-t": backward-word
+"\C-s": end-of-history
+"\C-o": forward-word
+"\C-w": backward-kill-word

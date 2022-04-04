@@ -1,0 +1,55 @@
+
+(L'affichage de l'aide désactive les éventuels téléchargements demandés ici.)
+
+Aide:
+
+Permet d'enregistrer les audios (musiques, audiobooks, ...) de vidéos youtube grâce à youtube-dl sans jamais télécharger la partie vidéo.
+Vous n'a pas besoin de \"faire télécharger la vidéo à un autre site\" tels que font la plupart des sites de téléchargement en ligne.
+Veuillez vous assurer que vous avez déjà téléchargé youtube-dl avant d'utiliser ce script.
+Prends les URLs (de vidéos YouTube) de votre fichier $nom, et télécharge les audios .mp3 corespondants.
+
+Options:
+	-h : affiche cette aide.
+	-o : spécifie le répertoire dans lequel seront enregistrés les audios.
+	-O : comme -o, mais crée le répertoire s'il n'existe pas, au lieu de retourner un message d'erreur.
+	-i : spécifie le répertoire où se trouve la liste d'URLs.
+	-I : spécifie le répertoire et la liste d'URLs.
+	-n : permet de choisir un autre nom que $nom pour le fichier contenant les URLs.
+	-f : permet de choisir un format éventuellement autre que .mp3 .
+	-k : active l'actualisation: les URLs seront envoyées vers un fichier $nom.old.
+	-s : silencieux: n'affiche que les messages d'erreurs de youtube-dl, masque les autres.
+	-S : silencieux+: n'affiche ni les messages standards ni les messages d'erreurs de youtube-dl.
+	-u : rajoute n'importe quelle option de youtube-dl à chaque téléchargement
+	-uv : universel pour les vidéos seules uniquement
+	-up : universel pour les playlist uniquement
+	TODO:
+	-c : nomme les fichiers 001 002 003...
+	-c1 : comme -c, préciser le premier indice.
+	-cn : nomme les fichiers $nom_audio\_001 $nom_audio\_002 ...
+	-cn1 : -cn et -c1, précisez d'abord l'indice
+
+Futures options:
+	TODO : (t) sous-titres
+	TODO : moifications légères de l'aide selon les options précédemment sélectionnées (partiellement fait)
+	TODO : améliorer le silencieux, utiliser les option de youtube dl
+
+Dans le fichier $nom:
+si le premier caractère d'une ligne est,
+	(pas de caractère special) : enregistre la vidéo seule (option --no-playlist dans youtube-dl).
+	- : garde le format par défaut (webm)
+	+ : télécharge la playlist correspondante lorsque cela a un sens, la vidéo seule sinon (option --yes-playlist)
+	-+ : playlist, garde le format webm
+	# : ne tient pas compte de cette ligne (la traite comme un commentaire)
+
+
+Exemples d'utilisation:
+----> basique:
+	$thisthis
+----> aide:
+	$thisthis -h
+----> enregistrer les audios dans \"Musiques\"
+	$thisthis -o ~/Musiques
+----> complet (depuis ~/Documents/$nom vers ~/Musiques/ma_playlist_5 au format audio aac et actualiser) :
+	$thisthis https://www.youtube.com/watch?v=V2vSq0YoWjA.sh -O ~/Musiques/ma_playlist_5 -k -i ~/Documents -n $nom -f aac -s
+----> si ces options ne vous suffisent pas:
+	Utilisez directement youtube-dl ou un équivalent, ou faites votre propre script.

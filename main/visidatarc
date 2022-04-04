@@ -1,0 +1,4 @@
+
+globalCommand('zm', 'go-pagedown', 'one page scroll')
+globalCommand('i', 'go-pagedown', 'one page scroll')
+TableSheet.bindkey('i', 'go-pagedown')

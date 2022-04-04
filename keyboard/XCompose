@@ -1,0 +1,486 @@
+include "%L"
+
+
+# mots courants (mieux: vimrc)
+#<Multi_key> <a> <j> <d> : " aujourd'hui "
+#<Multi_key> <a> <z> : " AZERTY "
+#<Multi_key> <b> <p> : " BÉPO "
+#<Multi_key> <c> : " comme "
+#<Multi_key> <d> <j> : " déjà "
+#<Multi_key> <é> : " c'est "
+#<Multi_key> <e> : <être>
+#<Multi_key> <g> <l> : " GNU/Linux "
+#<Multi_key> <k> : " à "
+#<Multi_key> <l> <k> : " là "
+#<Multi_key> <m> : <même>
+#<Multi_key> <o> <k> : " où "
+#<Multi_key> <q> <w> : " QWERTY "
+#<Multi_key> <s> <r> : " sûr "
+#<Multi_key> <t> : " tout "
+
+# exposants et indices, source: bépo wiki https://bepo.fr/wiki/Exposant_et_indice
+##UFDDE : exposants
+# Chiffres
+<UFDDE> <0> : "⁰" U2070
+<UFDDE> <KP_0> : "⁰" U2070
+<UFDDE> <1> : "¹" onesuperior
+<UFDDE> <KP_1> : "¹" onesuperior
+<UFDDE> <2> : "²" twosuperior
+<UFDDE> <KP_2> : "²" twosuperior
+<UFDDE> <3> : "³" threesuperior
+<UFDDE> <KP_3> : "³" threesuperior
+<UFDDE> <4> : "⁴" U2074
+<UFDDE> <KP_4> : "⁴" U2074
+<UFDDE> <5> : "⁵" U2075
+<UFDDE> <KP_5> : "⁵" U2075
+<UFDDE> <6> : "⁶" U2076
+<UFDDE> <KP_6> : "⁶" U2076
+<UFDDE> <7> : "⁷" U2077
+<UFDDE> <KP_7> : "⁷" U2077
+<UFDDE> <8> : "⁸" U2078
+<UFDDE> <KP_8> : "⁸" U2078
+<UFDDE> <9> : "⁹" U2079
+<UFDDE> <KP_9> : "⁹" U2079
+<UFDDE> <plus> : "⁺" U207A
+<UFDDE> <KP_Add> : "⁺" U207A
+<UFDDE> <minus> : "⁻" U207B
+<UFDDE> <KP_Subtract> : "⁻" U207B
+<UFDDE> <equal> : "⁼" U207C
+<UFDDE> <parenleft> : "⁽" U207D
+<UFDDE> <parenright> : "⁾" U207E
+
+# Bas-de-casse
+<UFDDE> <a> : "ᵃ" U1D43
+<UFDDE> <b> : "ᵇ" U1D47
+<UFDDE> <c> : "ᶜ" U1D9C
+<UFDDE> <d> : "ᵇ" U1D48
+<UFDDE> <e> : "ᵉ" U1D49
+<UFDDE> <f> : "ᶠ" U1DA0
+<UFDDE> <g> : "ᵍ" U1D4D
+<UFDDE> <h> : "ʰ" U02B0
+<UFDDE> <i> : "ⁱ" U2071
+<UFDDE> <j> : "ʲ" U0282
+<UFDDE> <k> : "ᵏ" U1D4F
+<UFDDE> <l> : "ˡ" U02E1
+<UFDDE> <m> : "ᵐ" U1D50
+<UFDDE> <n> : "ⁿ" U207F
+<UFDDE> <o> : "ᵒ" U1D52
+<UFDDE> <oe> : "ꟹ" UA7F9
+<UFDDE> <p> : "ᵖ" U1D56
+# <UFDDE> <q> : ???
+<UFDDE> <r> : "ʳ" U02B3
+<UFDDE> <s> : "ˢ" U02E2
+<UFDDE> <t> : "ᵗ" U1D57
+<UFDDE> <u> : "ᵘ" U1D58
+<UFDDE> <v> : "ᵛ" U1D5B
+<UFDDE> <w> : "ʷ" U02B7
+<UFDDE> <x> : "ˣ" U02E3
+<UFDDE> <y> : "ʸ" U02B8
+<UFDDE> <z> : "ᶻ" U1DBB
+
+#Capitales
+<UFDDE> <A> : "ᴬ" U1D2C
+<UFDDE> <AE> : "ᴭ" U1D2D
+<UFDDE> <B> : "ᴮ" U1D2E
+#<UFDDE> <C> : "" U ??
+<UFDDE> <D> : "ᴰ" U1D30
+<UFDDE> <E> : "ᴱ" U1D31
+# <UFDDE> <F> : "" U ??
+<UFDDE> <G> : "ᴳ" U1D33
+<UFDDE> <H> : "ᴴ" U1D34
+<UFDDE> <I> : "ᴵ" U1D35
+<UFDDE> <J> : "ᴶ" U1D36
+<UFDDE> <K> : "ᴷ" U1D37
+<UFDDE> <L> : "ᴸ" U1D38
+<UFDDE> <M> : "ᴹ" U1D39
+<UFDDE> <N> : "ᴺ" U1D3A
+<UFDDE> <O> : "ᴼ" U1D3C
+# <UFDDE> <OE> : "" U
+<UFDDE> <P> : "ᴾ" U1D3E
+# <UFDDE> <Q> : "" U ??
+<UFDDE> <R> : "ᴿ" U1D3F
+# <UFDDE> <S> : "" U ??
+<UFDDE> <T> : "ᵀ" U1D40
+<UFDDE> <U> : "ᵁ" U1D41
+# <UFDDE> <V> : "ⱽ" U2C27
+<UFDDE> <W> : "ᵂ" U1D42
+#<UFDDE> <X> : "" U
+#<UFDDE> <Y> : "" U
+#<UFDDE> <Z> : "" U
+
+##UFDD1 : indices et petites capitales
+#Chiffres et symboles
+<UFDD1> <0> : "₀" U2080
+<UFDD1> <KP_0> : "₀" U2080
+<UFDD1> <1> : "₁" U2081
+<UFDD1> <KP_1> : "₁" U2081
+<UFDD1> <2> : "₂" U2082
+<UFDD1> <KP_2> : "₂" U2082
+<UFDD1> <3> : "₃" U2083
+<UFDD1> <KP_3> : "₃" U2083
+<UFDD1> <4> : "₄" U2084
+<UFDD1> <KP_4> : "₄" U2084
+<UFDD1> <5> : "₅" U2085
+<UFDD1> <KP_5> : "₅" U2085
+<UFDD1> <6> : "₆" U2086
+<UFDD1> <KP_6> : "₆" U2086
+<UFDD1> <7> : "₇" U2087
+<UFDD1> <KP_7> : "₇" U2087
+<UFDD1> <8> : "₈" U2088
+<UFDD1> <KP_8> : "₈" U2088
+<UFDD1> <9> : "₉" U2089
+<UFDD1> <KP_9> : "₉" U2089
+<UFDD1> <plus> : "₊" U208A
+<UFDD1> <KP_Add> : "₊" U208A
+<UFDD1> <minus> : "₋" U208B
+<UFDD1> <KP_Subtract> : "₋" U208B
+<UFDD1> <equal> : "₌" U208C
+<UFDD1> <parenleft> : "₍" U208D
+<UFDD1> <parenright> : "₎" U208E
+
+#Bas-de-casse
+<UFDD1> <a> : "ₐ" U2090
+# <UFDD1> <ae> : "" U
+# <UFDD1> <b> : "" U
+# <UFDD1> <c> : "" U
+# <UFDD1> <d> : "" U
+<UFDD1> <e> : "ₑ" U2091
+# <UFDD1> <f> : "" U
+# <UFDD1> <g> : "" U
+<UFDD1> <h> : "ₕ" U2095
+<UFDD1> <i> : "ᵢ" U1D62
+<UFDD1> <j> : "ⱼ" U27C7
+<UFDD1> <k> : "ₖ" U2096
+<UFDD1> <l> : "ₗ" U2097
+<UFDD1> <m> : "ₘ" U2098
+<UFDD1> <n> : "ₙ" U2099
+<UFDD1> <o> : "ₒ" U2092
+# <UFDD1> <oe> : "" U
+<UFDD1> <p> : "ₚ" U209A
+# <UFDD1> <q> : "" U
+<UFDD1> <r> : "ᵣ" U1D63
+<UFDD1> <s> : "ₛ" U209B
+<UFDD1> <t> : "ₜ" U209C
+<UFDD1> <u> : "ᵤ" U1D64
+<UFDD1> <v> : "ᵥ" U1D65
+# <UFDD1> <w> : "" U
+<UFDD1> <x> : "ₓ" U2093
+# <UFDD1> <y> : "" U
+# <UFDD1> <z> : "" U
+
+#Petites capitales
+#(Où trouver les accentuées ? :| )
+<UFDD1> <A> : "ᴀ" U1D00
+<UFDD1> <AE> : "ᴁ" U1D01
+<UFDD1> <B> : "ʙ" U0299
+<UFDD1> <C> : "ᴄ" U1D04
+<UFDD1> <D> : "ᴅ" U1D05
+<UFDD1> <E> : "ᴇ" U1D07
+<UFDD1> <F> : "ꜰ" UA730
+<UFDD1> <G> : "ɢ" U0262
+<UFDD1> <H> : "ʜ" U209C
+<UFDD1> <I> : "ɪ" U026A
+<UFDD1> <J> : "ᴊ" UAD0A
+<UFDD1> <K> : "ᴋ" UAD0B
+<UFDD1> <L> : "ʟ" U209F
+<UFDD1> <M> : "ᴍ" U1D0D
+<UFDD1> <N> : "ɴ" U0274
+<UFDD1> <O> : "ᴏ" U1D0F
+<UFDD1> <OE> : "ɶ" U0276
+<UFDD1> <P> : "ᴘ" U1D18
+# <UFDD1> <Q> : "" U
+<UFDD1> <R> : "ʀ" U0280
+<UFDD1> <S> : "ꜱ" UA731
+<UFDD1> <T> : "ᴛ" UAD1B
+<UFDD1> <U> : "ᴜ" U1D1C
+<UFDD1> <V> : "ᴠ" U1D20
+<UFDD1> <W> : "ᴡ" U1D21
+# <UFDD1> <X> : "" U
+<UFDD1> <Y> : "ʏ" U028F
+<UFDD1> <Z> : "ᴢ" U1D22
+
+
+# maths, source: bépo https://bepo.fr/wiki/Compose
+# On charge la base de donnée de Compose la plus complète en UTF-8
+include "/usr/share/X11/locale/en_US.UTF-8/Compose"
+
+###################
+#    Ensembles    #
+###################
+
+<Multi_key> <N> <N> : "ℕ" U2115
+<Multi_key> <Z> <Z> : "ℤ" U2124
+<Multi_key> <Q> <Q> : "ℚ" U211A
+<Multi_key> <R> <R> : "ℝ" U211D
+<Multi_key> <C> <C> : "ℂ" U2102
+<Multi_key> <H> <H> : "ℍ" U210D
+<Multi_key> <P> <P> : "ℙ" U2119
+<Multi_key> <i> <n> : "⊂" U2282
+<Multi_key> <n> <i> : "⊃" U2283
+<Multi_key> <slash> <i> <n> : "⊄" U2284
+<Multi_key> <slash> <n> <i> : "⊅" U2285
+<Multi_key> <slash> <U2282> : "⊄" U2284
+<Multi_key> <slash> <U2283> : "⊅" U2285
+<Multi_key> <equal> <i> <n> : "⊆" U2286
+<Multi_key> <equal> <n> <i> : "⊇" U2287
+<Multi_key> <slash> <equal> <i> <n> : "⊈" U2288
+<Multi_key> <slash> <equal> <n> <i> : "⊉" U2289
+<Multi_key> <slash> <U2286> : "⊈" U2288
+<Multi_key> <slash> <U2287> : "⊉" U2289
+
+
+################################
+#    equality and relations    #
+################################
+
+<Multi_key> <equal> <equal> : "≣" U2263
+<Multi_key> <equal> <minus> : "≡" U2261
+<Multi_key> <equal> <asciitilde> : "≅" U2245
+<Multi_key> <minus> <asciitilde> : "≃" U2243
+<Multi_key> <asciitilde> <asciitilde> : "≈" U2248
+<Multi_key> <asciitilde> <minus> : "≂" U2242
+<Multi_key> <equal> <d> : "≝" U225D
+<Multi_key> <equal> <degree> : "≗" U2257
+<Multi_key> <equal> <asciicircum> : "≙" U2259
+<Multi_key> <equal> <v> : "≚" U225A
+<Multi_key> <equal> <asterisk> : "≛" U225B
+<Multi_key> <equal> <Greek_DELTA> : "≜" U225C
+<Multi_key> <equal> <space> <D>: "≜" U225C
+<Multi_key> <equal> <m> : "≞" U225E
+<Multi_key> <equal> <question> : "≟" U225F
+<Multi_key> <equal> <slash> : "≠" U2260
+<Multi_key> <slash> <minus> <asciitilde> : "≄" U2244
+<Multi_key> <slash> <equal> <asciitilde> : "≇" U2247
+<Multi_key> <slash> <equal> <minus> : "≢" U2262
+<Multi_key> <greater> <equal> : "≥" U2265
+<Multi_key> <less> <equal> : "≤" U2264
+<Multi_key> <greater> <asciitilde> : "≳" U2273
+<Multi_key> <less> <asciitilde> : "≲" U2272
+<Multi_key> <less> <less> : "≪" U226A
+<Multi_key> <greater> <greater> : "≫" U226B
+<Multi_key> <greater> <less> : "≶" U2276
+<Multi_key> <less> <greater> : "≷" U2277
+<Multi_key> <slash> <greater> <equal> : "≱" U2271
+<Multi_key> <slash> <less> <equal> : "≰" U2270
+<Multi_key> <slash> <greater> <asciitilde> : "≵" U2275
+<Multi_key> <slash> <less> <asciitilde> : "≴" U2274
+<Multi_key> <slash> <greater> <less> : "≸" U2278
+<Multi_key> <slash> <less> <greater> : "≹" U2279
+<Multi_key> <greater> <slash> : "≯" U226F
+<Multi_key> <less> <slash> : "≮" U226E
+<Multi_key> <greater> <bar> : "⊳" U22B3
+<Multi_key> <less> <bar> : "⊲" U22B2
+<Multi_key> <bar> <greater> <equal> : "⊵" U22B5
+<Multi_key> <bar> <less> <equal> : "⊴" U22B4
+<Multi_key> <slash> <greater> <bar> : "⋫" U22EB
+<Multi_key> <slash> <less> <bar> : "⋪" U22EA
+<Multi_key> <slash> <bar> <greater> <equal> : "⋭" U22ED
+<Multi_key> <slash> <bar> <less> <equal> : "⋬" U22EC
+<Multi_key> <greater> <period> : "⋗" U22D7
+<Multi_key> <less> <period> : "⋖" U22D6
+
+<Multi_key> <bar> <bar> : "∥" U2225
+<Multi_key> <slash> <bar> <bar> : "∦" U2226
+<Multi_key> <bar> <slash> : "∤" U2224
+
+
+#################
+#    Flèches    #
+#################
+
+<Multi_key> <minus> <greater> : "→" U2192         # déjà présent de base
+<Multi_key> <minus> <less> : "←" U2190            # consistent with equal-less
+<Multi_key> <bar> <asciicircum> : "↑" U2191
+<Multi_key> <bar> <v> : "↓" U2193
+<Multi_key> <minus> <x> : "↔" U2194
+<Multi_key> <equal> <greater> : "⇒" U21D2
+<Multi_key> <equal> <less> : "⇐" U21D0            # less equal is taken
+<Multi_key> <U2225> <asciicircum> : "⇑" U21D1
+<Multi_key> <U2225> <v> : "⇓" U21D3
+<Multi_key> <quotedbl> <asciicircum> : "⇑" U21D1
+<Multi_key> <quotedbl> <v> : "⇓" U21D3
+<Multi_key> <equal> <x> : "⇔" U21D4
+
+
+###########################
+#    Opérateurs divers    #
+###########################
+
+#slash-o, period-o, etc already taken => use o-slash, etc
+<Multi_key> <o> <plus> : "⊕" U2295
+<Multi_key> <o> <minus> : "⊝" U229D
+<Multi_key> <o> <asterisk> : "⊛" U229B
+<Multi_key> <o> <slash> : "⊘" U2298
+<Multi_key> <o> <x> : "⊗" U2297
+<Multi_key> <o> <o> : "⊚" U229A
+<Multi_key> <o> <period> : "⊙" U2299
+<Multi_key> <o> <equal> : "⊜" U229C
+<Multi_key> <v> <v> : "√" U221A
+<Multi_key> <2> <v> : "√" U221A
+<Multi_key> <3> <v> : "∛" U221B
+<Multi_key> <4> <v> : "∜" U221C
+<Multi_key> <asterisk> <asterisk> : "∗" U2217
+<Multi_key> <asterisk> <x> : "×" multiply
+<Multi_key> <asterisk> <period> : "·" periodcentered
+<Multi_key> <asterisk> <o> : "∘" U2218
+
+#<Multi_key> <> <> : "" U
+
+# LaTeX commands <Multi_key> <c> <o> <m> <m> <a> <n> <d>
+# Partially started in another file
+
+# bold small
+<UFDD2> <a> : "𝐚" U1D41A
+<UFDD2> <b> : "𝐛" U1D41B
+<UFDD2> <c> : "𝐜" U1D41C
+<UFDD2> <d> : "𝐝" U1D41D
+<UFDD2> <e> : "𝐞" U1D41E
+<UFDD2> <f> : "𝐟" U1D41F
+<UFDD2> <g> : "𝐠" U1D420
+<UFDD2> <h> : "𝐡" U1D421
+<UFDD2> <i> : "𝐢" U1D422
+<UFDD2> <j> : "𝐣" U1D423
+<UFDD2> <k> : "𝐤" U1D424
+<UFDD2> <l> : "𝐥" U1D425
+<UFDD2> <m> : "𝐦" U1D426
+<UFDD2> <n> : "𝐧" U1D427
+<UFDD2> <o> : "𝐨" U1D428
+<UFDD2> <p> : "𝐩" U1D429
+<UFDD2> <q> : "𝐪" U1D42A
+<UFDD2> <r> : "𝐫" U1D42B
+<UFDD2> <s> : "𝐬" U1D42C
+<UFDD2> <t> : "𝐭" U1D42D
+<UFDD2> <u> : "𝐮" U1D42E
+<UFDD2> <v> : "𝐯" U1D42F
+<UFDD2> <w> : "𝐰" U1D430
+<UFDD2> <x> : "𝐱" U1D431
+<UFDD2> <y> : "𝐲" U1D432
+<UFDD2> <z> : "𝐳" U1D433
+
+# bold capital
+<UFDD2> <A> : "𝐀" U1D400
+<UFDD2> <B> : "𝐁" U1D401
+<UFDD2> <C> : "𝐂" U1D402
+<UFDD2> <D> : "𝐃" U1D403
+<UFDD2> <E> : "𝐄" U1D404
+<UFDD2> <F> : "𝐅" U1D405
+<UFDD2> <G> : "𝐆" U1D406
+<UFDD2> <H> : "𝐇" U1D407
+<UFDD2> <I> : "𝐈" U1D408
+<UFDD2> <J> : "𝐉" U1D409
+<UFDD2> <K> : "𝐊" U1D40A
+<UFDD2> <L> : "𝐋" U1D40B
+<UFDD2> <M> : "𝐌" U1D40C
+<UFDD2> <N> : "𝐍" U1D40D
+<UFDD2> <O> : "𝐎" U1D40E
+<UFDD2> <P> : "𝐏" U1D40F
+<UFDD2> <Q> : "𝐐" U1D410
+<UFDD2> <R> : "𝐑" U1D411
+<UFDD2> <S> : "𝐒" U1D412
+<UFDD2> <T> : "𝐓" U1D413
+<UFDD2> <U> : "𝐔" U1D414
+<UFDD2> <V> : "𝐕" U1D415
+<UFDD2> <W> : "𝐖" U1D416
+<UFDD2> <X> : "𝐗" U1D417
+<UFDD2> <Y> : "𝐘" U1D418
+<UFDD2> <Z> : "𝐙" U1D419
+
+<UFDD2> <0> : "𝟎" U1D7CE
+<UFDD2> <1> : "𝟏" U1D7CF
+<UFDD2> <2> : "𝟐" U1D7D0
+<UFDD2> <3> : "𝟑" U1D7D1
+<UFDD2> <4> : "𝟒" U1D7D2
+<UFDD2> <5> : "𝟓" U1D7D3
+<UFDD2> <6> : "𝟔" U1D7D4
+<UFDD2> <7> : "𝟕" U1D7D5
+<UFDD2> <8> : "𝟖" U1D7D6
+<UFDD2> <9> : "𝟗" U1D7D7
+
+<UFDD2> <KP_0> : "𝟎" U1D7CE
+<UFDD2> <KP_1> : "𝟏" U1D7CF
+<UFDD2> <KP_2> : "𝟐" U1D7D0
+<UFDD2> <KP_3> : "𝟑" U1D7D1
+<UFDD2> <KP_4> : "𝟒" U1D7D2
+<UFDD2> <KP_5> : "𝟓" U1D7D3
+<UFDD2> <KP_6> : "𝟔" U1D7D4
+<UFDD2> <KP_7> : "𝟕" U1D7D5
+<UFDD2> <KP_8> : "𝟖" U1D7D6
+<UFDD2> <KP_9> : "𝟗" U1D7D7
+
+# circled small : negative
+<UFDD7> <a> : "🅐 " U1F150
+<UFDD7> <b> : "🅑 " U1F151
+<UFDD7> <c> : "🅒 " U1F152
+<UFDD7> <d> : "🅓 " U1F153
+<UFDD7> <e> : "🅔 " U1F154
+<UFDD7> <f> : "🅕 " U1F155
+<UFDD7> <g> : "🅖 " U1F156
+<UFDD7> <h> : "🅗 " U1F157
+<UFDD7> <i> : "🅘 " U1F158
+<UFDD7> <j> : "🅙 " U1F159
+<UFDD7> <k> : "🅚 " U1F15a
+<UFDD7> <l> : "🅛 " U1F15b
+<UFDD7> <m> : "🅜 " U1F15c
+<UFDD7> <n> : "🅝 " U1F15d
+<UFDD7> <o> : "🅞 " U1F15e
+<UFDD7> <p> : "🅟 " U1F15f
+<UFDD7> <q> : "🅠 " U1F160
+<UFDD7> <r> : "🅡 " U1F161
+<UFDD7> <s> : "🅢 " U1F162
+<UFDD7> <t> : "🅣 " U1F163
+<UFDD7> <u> : "🅤 " U1F164
+<UFDD7> <v> : "🅥 " U1F165
+<UFDD7> <w> : "🅦 " U1F166
+<UFDD7> <x> : "🅧 " U1F167
+<UFDD7> <y> : "🅨 " U1F168
+<UFDD7> <z> : "🅩 " U1F169
+
+# circled capital
+<UFDD7> <A> : "Ⓐ " U24B6
+<UFDD7> <B> : "Ⓑ " U24B7
+<UFDD7> <C> : "Ⓒ " U24B8
+<UFDD7> <D> : "Ⓓ " U24B9
+<UFDD7> <E> : "Ⓔ " U24BA
+<UFDD7> <F> : "Ⓕ " U24BB
+<UFDD7> <G> : "Ⓖ " U24BC
+<UFDD7> <H> : "Ⓗ " U24BD
+<UFDD7> <I> : "Ⓘ " U24BE
+<UFDD7> <J> : "Ⓙ " U24BF
+<UFDD7> <K> : "Ⓚ " U24C0
+<UFDD7> <L> : "Ⓛ " U24C1
+<UFDD7> <M> : "Ⓜ " U24C2
+<UFDD7> <N> : "Ⓝ " U24C3
+<UFDD7> <O> : "Ⓞ " U24C4
+<UFDD7> <P> : "Ⓟ " U24C5
+<UFDD7> <Q> : "Ⓠ " U24C6
+<UFDD7> <R> : "Ⓡ " U24C7
+<UFDD7> <S> : "Ⓢ " U24C8
+<UFDD7> <T> : "Ⓣ " U24C9
+<UFDD7> <U> : "Ⓤ " U24CA
+<UFDD7> <V> : "Ⓥ " U24CB
+<UFDD7> <W> : "Ⓦ " U24CC
+<UFDD7> <X> : "Ⓧ " U24CD
+<UFDD7> <Y> : "Ⓨ " U24CE
+<UFDD7> <Z> : "Ⓩ " U24CF
+
+<UFDD7> <0> : "🄌 " U1f10c
+<UFDD7> <1> : "➊ " U278a
+<UFDD7> <2> : "➋ " U278b
+<UFDD7> <3> : "➌ " U278c
+<UFDD7> <4> : "➍ " U278d
+<UFDD7> <5> : "➎ " U278e
+<UFDD7> <6> : "➏ " U278f
+<UFDD7> <7> : "➐ " U2790
+<UFDD7> <8> : "➑ " U2791
+<UFDD7> <9> : "➒ " U2792
+
+<UFDD7> <KP_0> : "🄌 " U1f10c
+<UFDD7> <KP_1> : "➊ " U278a
+<UFDD7> <KP_2> : "➋ " U278b
+<UFDD7> <KP_3> : "➌ " U278c
+<UFDD7> <KP_4> : "➍ " U278d
+<UFDD7> <KP_5> : "➎ " U278e
+<UFDD7> <KP_6> : "➏ " U278f
+<UFDD7> <KP_7> : "➐ " U2790
+<UFDD7> <KP_8> : "➑ " U2791
+<UFDD7> <KP_9> : "➒ " U2792

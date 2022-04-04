@@ -426,3 +426,4 @@ partial default xkb_types "default" {
 
 
 };
+// vim: ft=xkb

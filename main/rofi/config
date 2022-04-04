@@ -1,0 +1,125 @@
+
+# using:
+# https://git.teknik.io/matf/rofiemoji-rofiunicode
+# (cloned on my ~/.config folder)
+rofi.modi: ssh,windowcd,window,run,drun,unicode:~/.config/rofiemoji-rofiunicode/rofiunicode.sh,emoji:~/.config/rofiemoji-rofiunicode/rofiemoji.sh
+rofi.theme: ~/.config/rofi/theme_itzv.rasi
+
+
+#                  fond1,   ecritur,  fond2,   select, ecriture_select
+rofi.color-window: #333300, #dddddd, #ffffff
+rofi.color-normal: #000000, #eeeeff, #1c1c1c, #ff0000, #ffffff
+rofi.color-active: #333300, #ffffff, #3b3b00, #ffff00, #00005f
+rofi.color-urgent: #003333, #ffffff, #003333, #00ffff, #00005f
+#rofi.theme-str: "#window { x-offset: 10%; }"
+
+rofi.width: 90
+#rofi.height: 50
+rofi.line-margin: 0
+rofi.lines: 25
+rofi.font: Monoid Nerd Font Mono Regular 12
+#rofi.separator-style: none
+rofi.columns: 4
+rofi.bw: 2
+rofi.eh: 1
+rofi.hide-scrollbar: false
+#rofi.auto-select: true
+###########
+
+#!rofi.display-drun:⚌
+rofi.sidebar-mode: true
+rofi.case-sensitive: false
+#pour voir les racourcis clavier de rofi dans rofi, "rofi -show keys"
+rofi.fixed-num-lines:false
+rofi.location:6
+
+rofi.show-icons: true
+rofi.disabble-history: true
+rofi.matching: regex
+
+rofi.kb-custom-1:  Control+parenleft
+rofi.kb-custom-2:  Control+parenright
+rofi.kb-custom-3:  Control+less
+rofi.kb-custom-4:  Control+greater
+rofi.kb-custom-5:  Control+numbersign
+rofi.kb-custom-6:  Control+exclam
+rofi.kb-custom-7:  Control+question
+rofi.kb-custom-8:  Control+semicolon
+rofi.kb-custom-9:  Control+colon
+rofi.kb-custom-10: Control+quotedbl
+
+rofi.kb-select-1:  Super+parenleft
+rofi.kb-select-2:  Super+parenright
+rofi.kb-select-3:  Super+less
+rofi.kb-select-4:  Super+greater
+rofi.kb-select-5:  Super+numbersign
+rofi.kb-select-6:  Super+exclam
+rofi.kb-select-7:  Super+question
+rofi.kb-select-8:  Super+semicolon
+rofi.kb-select-9:  Super+colon
+rofi.kb-select-10: Super+quotedbl
+rofi.kb-select-11: Control+Super+parenleft
+rofi.kb-select-12: Control+Super+parenright
+rofi.kb-select-13: Control+Super+less
+rofi.kb-select-14: Control+Super+greater
+rofi.kb-select-15: Control+Super+numbersign
+rofi.kb-select-16: Control+Super+exclam
+rofi.kb-select-17: Control+Super+question
+rofi.kb-select-18: Control+Super+semicolon
+rofi.kb-select-19: Control+Super+colon
+rofi.kb-select-20: Control+Super+quotedbl
+
+# shortcuts choisis:
+# flèches
+# i3wm-like
+# shell-like
+
+rofi.kb-remove-word-back:        Super+egrave,Control+w,Control+BackSpace
+rofi.kb-remove-char-back:        Super+eacute,Control+h,BackSpace
+rofi.kb-move-word-back:          Super+p,Control+t
+rofi.kb-remove-char-forward:     Super+apostrophe,Control+d,Delete
+rofi.kb-row-select:              super+y,Insert,Control+Insert,Control+y
+
+rofi.kb-remove-word-forward:     Super+o,Control+j,Control+Delete
+rofi.kb-move-char-back:          Super+a,Control+b,Left
+rofi.kb-move-word-forward:       Super+i,Control+s
+rofi.kb-move-char-forward:       Super+u,Control+f,Right
+rofi.kb-primary-paste:           Super+h,Control+apostrophe,Shift+Insert
+
+rofi.kb-move-front:              Super+plus,Control+a
+rofi.kb-move-end:                Super+minus,Control+e
+rofi.kb-remove-to-sol:           Super+period
+rofi.kb-remove-to-eol:           Super+comma,Control+k
+rofi.kb-secondary-paste:         Super+k,Control+eacute
+
+
+rofi.kb-row-tab:                 Super+b,Tab
+rofi.kb-mode-previous:           Super+c,Control+plus,Control+Page_Up
+rofi.kb-row-up:                  Super+m,Up,Control+p
+rofi.kb-mode-next:               Super+l,Control+minus,Control+Page_Down
+rofi.kb-page-prev:               Super+f,Control+q,Page_Up
+
+rofi.kb-delete-entry:            Super+g,Control+l
+rofi.kb-row-left:                Super+t,Control+period
+rofi.kb-row-down:                Super+s,Down,Control+n
+rofi.kb-row-right:               Super+n,Control+comma
+rofi.kb-page-next:               Super+r,Control+v,Page_Down
+rofi.kb-accept-custom:           Super+x
+
+rofi.kb-clear-line:              Super+q,Control+u
+rofi.kb-toggle-case-sensitivity: Super+d,Control+egrave
+rofi.kb-toggle-sort:             Super+v,Control+o
+rofi.kb-row-first:               Super+j,Home,KP_Home
+rofi.kb-row-last:                Super+w,End,KP_End
+
+rofi.kb-accept-entry:            Return,KP_Enter,Control+m
+rofi.kb-accept-alt:              Super+space,Control+i
+rofi.kb-accept-entry-continue:   Super+Return
+
+rofi.kb-cancel:                  Escape,Control+c
+rofi.key-window:
+rofi.key-run:
+rofi.key-ssh:
+
+rofi.kb-screenshot:              Control+x,Print
+

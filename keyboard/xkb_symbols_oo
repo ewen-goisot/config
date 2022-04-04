@@ -38,7 +38,7 @@ key <AE08>{[ less, U0304, U2264, U27f6, F2, U1F539]};
 key <AE09>{[ greater, U0302, U2265, U2194, F3, U1F538]};
 key <AE10>{[ numbersign, U20d7, U2205, U2195, F4, U29BF]};
 
-key <TLDE>{[ exclam, exclamdown, U2202, U221a, F5, U1F48E]};
+key <TLDE>{[ exclam, exclamdown, U221a, U2202, F5, U1F48E]};
 key <AE01>{[ question, questiondown, U2308, U21ce, F6, U2642]};
 key <AE02>{[ semicolon, EuroSign, U2309, U21cf, F7, U2640 ]};
 key <AE03>{[ colon, Ub6, U230a, U21d4, F6, U1F4AD]};
